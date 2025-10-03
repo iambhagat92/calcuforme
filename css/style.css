@@ -136,37 +136,38 @@ a {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
     margin-top: 1rem;
     background: white;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-    min-width: 850px;
-    max-width: 950px;
+    min-width: 900px;
+    max-width: 1000px;
     padding: 1.5rem;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 100;
-    max-height: 80vh;
+    max-height: calc(100vh - 120px);
     overflow-y: auto;
 }
 
 .nav-item:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .dropdown-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .dropdown-category {
     padding: 0.5rem;
+    min-height: 100%;
 }
 
 .dropdown-category h4 {
@@ -184,12 +185,10 @@ a {
     display: block;
     padding: 0.6rem 0.75rem;
     color: var(--text-dark);
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     border-radius: 6px;
     transition: all 0.2s ease;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.4;
 }
 
 .dropdown-category a:hover {
@@ -211,6 +210,25 @@ a {
 
 .dropdown-category a::after {
     display: none;
+}
+
+/* Dropdown Scrollbar Styling */
+.dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
 }
 
 .mobile-menu-btn {
@@ -838,15 +856,31 @@ a {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .dropdown-menu {
+        min-width: 90vw;
+        max-width: 90vw;
+    }
+    
+    .dropdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
     
     .dropdown-menu {
-        min-width: 100vw;
-        left: -20px;
-        right: -20px;
+        min-width: 95vw;
+        max-width: 95vw;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    
+    .nav-item:hover .dropdown-menu {
+        transform: translateX(-50%) translateY(0);
     }
     
     .dropdown-grid {
