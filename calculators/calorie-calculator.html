@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Calorie Calculator - Calculate your daily calorie needs based on age, gender, weight, height, and activity level.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="CalcuForMe">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calcuforme.com/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalcuForMe">
+    <title>Calorie Calculator - Daily Caloric Needs | CalcuForMe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-fire"></i> Calorie Calculator</h1>
+                    <p>Calculate your daily caloric needs based on your activity level and goals</p>
+                </div>
+
+                <form id="calorieForm">
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Age (years)</label>
+                        <input type="number" id="age" min="15" max="80" value="30" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Unit System</label>
+                        <select id="unitSystem">
+                            <option value="metric">Metric (kg, cm)</option>
+                            <option value="imperial">Imperial (lbs, inches)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="weightMetric">
+                        <label>Weight (kg)</label>
+                        <input type="number" id="weightKg" min="30" max="300" step="0.1" value="70" required>
+                    </div>
+
+                    <div class="form-group" id="weightImperial" style="display: none;">
+                        <label>Weight (lbs)</label>
+                        <input type="number" id="weightLbs" min="66" max="660" step="0.1" value="154">
+                    </div>
+
+                    <div class="form-group" id="heightMetric">
+                        <label>Height (cm)</label>
+                        <input type="number" id="heightCm" min="120" max="250" step="0.1" value="175" required>
+                    </div>
+
+                    <div class="form-group" id="heightImperial" style="display: none;">
+                        <label>Height (inches)</label>
+                        <input type="number" id="heightIn" min="47" max="98" step="0.1" value="69">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Activity Level</label>
+                        <select id="activityLevel">
+                            <option value="1.2">Sedentary (little or no exercise)</option>
+                            <option value="1.375">Lightly Active (exercise 1-3 days/week)</option>
+                            <option value="1.55" selected>Moderately Active (exercise 3-5 days/week)</option>
+                            <option value="1.725">Very Active (exercise 6-7 days/week)</option>
+                            <option value="1.9">Super Active (intense exercise & physical job)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Goal</label>
+                        <select id="goal">
+                            <option value="lose">Lose Weight (500 cal deficit)</option>
+                            <option value="maintain" selected>Maintain Weight</option>
+                            <option value="gain">Gain Weight (500 cal surplus)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Calories
+                    </button>
+                </form>
+
+                <div id="resultContainer" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Your Caloric Needs</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">BMR (Basal Metabolic Rate)</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="bmr">0</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">calories/day</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">TDEE (Maintenance)</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="tdee">0</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">calories/day</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Goal Calories</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="goalCalories">0</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">calories/day</div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Macronutrient Recommendations</h4>
+                        <div style="display: grid; gap: 0.75rem; color: #718096;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Protein (30%):</span>
+                                <strong id="protein">0g</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Carbohydrates (40%):</span>
+                                <strong id="carbs">0g</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Fats (30%):</span>
+                                <strong id="fats">0g</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="goalAdvice" style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-bottom: 0.5rem;">Advice</h4>
+                        <p id="adviceText" style="color: #718096; margin: 0;">-</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">About Calorie Calculation</h3>
+                    <p style="color: #718096; line-height: 1.8; margin-bottom: 1rem;">
+                        This calculator uses the Mifflin-St Jeor Equation to estimate your Basal Metabolic Rate (BMR), then multiplies it by your activity level to get your Total Daily Energy Expenditure (TDEE).
+                    </p>
+                    <h4 style="color: #2d3748; margin: 1.5rem 0 0.75rem 0;">Understanding the Results:</h4>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>BMR:</strong> Calories burned at rest, maintaining basic bodily functions</li>
+                        <li><strong>TDEE:</strong> Total calories burned daily including activity</li>
+                        <li><strong>Weight Loss:</strong> 500 calorie deficit = ~1 lb weight loss per week</li>
+                        <li><strong>Weight Gain:</strong> 500 calorie surplus = ~1 lb weight gain per week</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        const unitSystem = document.getElementById('unitSystem');
+        const calorieForm = document.getElementById('calorieForm');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // Toggle unit system
+        unitSystem.addEventListener('change', (e) => {
+            const isMetric = e.target.value === 'metric';
+            document.getElementById('weightMetric').style.display = isMetric ? 'block' : 'none';
+            document.getElementById('weightImperial').style.display = isMetric ? 'none' : 'block';
+            document.getElementById('heightMetric').style.display = isMetric ? 'block' : 'none';
+            document.getElementById('heightImperial').style.display = isMetric ? 'none' : 'block';
+        });
+
+        calorieForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateCalories();
+        });
+
+        function calculateCalories() {
+            const gender = document.getElementById('gender').value;
+            const age = parseInt(document.getElementById('age').value);
+            const isMetric = unitSystem.value === 'metric';
+            const activityLevel = parseFloat(document.getElementById('activityLevel').value);
+            const goal = document.getElementById('goal').value;
+
+            // Get weight and height in metric
+            let weightKg, heightCm;
+            if (isMetric) {
+                weightKg = parseFloat(document.getElementById('weightKg').value);
+                heightCm = parseFloat(document.getElementById('heightCm').value);
+            } else {
+                const weightLbs = parseFloat(document.getElementById('weightLbs').value);
+                const heightIn = parseFloat(document.getElementById('heightIn').value);
+                weightKg = weightLbs * 0.453592;
+                heightCm = heightIn * 2.54;
+            }
+
+            // Calculate BMR using Mifflin-St Jeor Equation
+            let bmr;
+            if (gender === 'male') {
+                bmr = (10 * weightKg) + (6.25 * heightCm) - (5 * age) + 5;
+            } else {
+                bmr = (10 * weightKg) + (6.25 * heightCm) - (5 * age) - 161;
+            }
+
+            // Calculate TDEE
+            const tdee = bmr * activityLevel;
+
+            // Calculate goal calories
+            let goalCalories;
+            let advice;
+            if (goal === 'lose') {
+                goalCalories = tdee - 500;
+                advice = 'To lose weight safely, aim for this calorie target. Combine with regular exercise for best results. Losing 1-2 lbs per week is considered healthy.';
+            } else if (goal === 'gain') {
+                goalCalories = tdee + 500;
+                advice = 'To gain weight, consume this amount of calories daily. Focus on nutrient-dense foods and strength training to build muscle mass.';
+            } else {
+                goalCalories = tdee;
+                advice = 'To maintain your current weight, consume this amount of calories daily while maintaining your activity level.';
+            }
+
+            // Calculate macros (30/40/30 split)
+            const proteinCal = goalCalories * 0.30;
+            const carbsCal = goalCalories * 0.40;
+            const fatsCal = goalCalories * 0.30;
+
+            const proteinG = proteinCal / 4; // 4 cal per gram
+            const carbsG = carbsCal / 4;
+            const fatsG = fatsCal / 9; // 9 cal per gram
+
+            // Display results
+            document.getElementById('bmr').textContent = Math.round(bmr);
+            document.getElementById('tdee').textContent = Math.round(tdee);
+            document.getElementById('goalCalories').textContent = Math.round(goalCalories);
+            
+            document.getElementById('protein').textContent = Math.round(proteinG) + 'g (' + Math.round(proteinCal) + ' cal)';
+            document.getElementById('carbs').textContent = Math.round(carbsG) + 'g (' + Math.round(carbsCal) + ' cal)';
+            document.getElementById('fats').textContent = Math.round(fatsG) + 'g (' + Math.round(fatsCal) + ' cal)';
+            
+            document.getElementById('adviceText').textContent = advice;
+
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>

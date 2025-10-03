@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free BMI Calculator - Calculate your Body Mass Index instantly. Check if your weight is healthy for your height.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="CalcuForMe">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calcuforme.com/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalcuForMe">
+    <title>BMI Calculator - Body Mass Index | CalcuForMe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    <style>
+        /* Share buttons styling */
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .share-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .share-btn i {
+            font-size: 1.1rem;
+        }
+        
+        .share-btn-save {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .share-btn-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .share-btn-facebook {
+            background: #4267B2;
+            color: white;
+        }
+        
+        .share-btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .share-btn-copy {
+            background: #718096;
+            color: white;
+        }
+        
+        .share-btn-export {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .share-buttons {
+                flex-direction: column;
+            }
+            
+            .share-btn {
+                width: 100%;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Calculator Page -->
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-weight"></i> BMI Calculator</h1>
+                    <p>Calculate your Body Mass Index (BMI) to assess if your weight is healthy for your height</p>
+                </div>
+
+                <form id="bmiForm">
+                    <!-- Unit System -->
+                    <div class="form-group">
+                        <label>Unit System</label>
+                        <select id="unitSystem" class="form-control">
+                            <option value="metric">Metric (kg, cm)</option>
+                            <option value="imperial">Imperial (lbs, inches)</option>
+                        </select>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select id="gender" class="form-control">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <!-- Age -->
+                    <div class="form-group">
+                        <label>Age (years)</label>
+                        <input type="number" id="age" min="2" max="120" value="25" required>
+                    </div>
+
+                    <!-- Weight (Metric) -->
+                    <div class="form-group" id="weightMetricGroup">
+                        <label>Weight (kg)</label>
+                        <input type="number" id="weightKg" min="1" max="500" step="0.1" placeholder="e.g., 70">
+                    </div>
+
+                    <!-- Weight (Imperial) -->
+                    <div class="form-group" id="weightImperialGroup" style="display: none;">
+                        <label>Weight (lbs)</label>
+                        <input type="number" id="weightLbs" min="1" max="1000" step="0.1" placeholder="e.g., 154">
+                    </div>
+
+                    <!-- Height (Metric) -->
+                    <div class="form-group" id="heightMetricGroup">
+                        <label>Height (cm)</label>
+                        <input type="number" id="heightCm" min="50" max="300" step="0.1" placeholder="e.g., 175">
+                    </div>
+
+                    <!-- Height (Imperial) -->
+                    <div id="heightImperialGroup" style="display: none;">
+                        <div class="form-group">
+                            <label>Height (feet)</label>
+                            <input type="number" id="heightFt" min="1" max="9" step="1" placeholder="e.g., 5">
+                        </div>
+                        <div class="form-group">
+                            <label>Height (inches)</label>
+                            <input type="number" id="heightIn" min="0" max="11" step="1" placeholder="e.g., 9">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate BMI
+                    </button>
+                </form>
+
+                <!-- Results -->
+                <div id="resultContainer" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Your Results</h3>
+                    
+                    <div class="result-item">
+                        <div class="result-label">Your BMI</div>
+                        <div class="result-value" id="bmiValue">0.00</div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-label">Category</div>
+                        <div class="result-value" id="bmiCategory" style="font-size: 1.3rem;">-</div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-label">Healthy Weight Range</div>
+                        <div style="font-size: 1.1rem; color: #667eea; font-weight: 600;" id="healthyRange">-</div>
+                    </div>
+
+                    <div id="bmiAdvice" style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-bottom: 0.5rem;">Health Advice</h4>
+                        <p id="adviceText" style="color: #718096; margin: 0;">-</p>
+                    </div>
+                    
+                    <!-- Share, Save, Export Buttons -->
+                    <div class="share-buttons" id="shareButtons" style="display: none;">
+                        <button class="share-btn share-btn-save" onclick="saveBMICalculation()" title="Save to browser">
+                            <i class="fas fa-save"></i> Save Result
+                        </button>
+                        <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('I just calculated my BMI on CalcuForMe! Check it out 💪')" title="Share on Twitter">
+                            <i class="fab fa-twitter"></i> Tweet
+                        </button>
+                        <button class="share-btn share-btn-facebook" onclick="shareOnFacebook()" title="Share on Facebook">
+                            <i class="fab fa-facebook"></i> Share
+                        </button>
+                        <button class="share-btn share-btn-whatsapp" onclick="shareOnWhatsApp('Check out this BMI Calculator!')" title="Share on WhatsApp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="share-btn share-btn-copy" onclick="copyToClipboard(window.location.href)" title="Copy link">
+                            <i class="fas fa-link"></i> Copy Link
+                        </button>
+                        <button class="share-btn share-btn-export" onclick="exportBMIResults()" title="Export as text">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info Section -->
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">About BMI</h3>
+                    <p style="color: #718096; line-height: 1.8; margin-bottom: 1rem;">
+                        Body Mass Index (BMI) is a screening tool that indicates whether a person is underweight, healthy weight, overweight, or obese. BMI is calculated by dividing weight by height squared.
+                    </p>
+                    <h4 style="color: #2d3748; margin: 1.5rem 0 0.75rem 0;">BMI Categories:</h4>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>Underweight:</strong> BMI less than 18.5</li>
+                        <li><strong>Normal weight:</strong> BMI 18.5 to 24.9</li>
+                        <li><strong>Overweight:</strong> BMI 25 to 29.9</li>
+                        <li><strong>Obese:</strong> BMI 30 or greater</li>
+                    </ul>
+                    <p style="color: #718096; line-height: 1.8; margin-top: 1rem; font-size: 0.9rem; font-style: italic;">
+                        Note: BMI is a useful indicator but doesn't directly measure body fat or muscle mass. Consult with healthcare professionals for a comprehensive health assessment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../index.html#popular">Popular Calculators</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // BMI Calculator Logic
+        const unitSystem = document.getElementById('unitSystem');
+        const bmiForm = document.getElementById('bmiForm');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // Toggle between metric and imperial
+        unitSystem.addEventListener('change', (e) => {
+            const isMetric = e.target.value === 'metric';
+            
+            document.getElementById('weightMetricGroup').style.display = isMetric ? 'block' : 'none';
+            document.getElementById('weightImperialGroup').style.display = isMetric ? 'none' : 'block';
+            document.getElementById('heightMetricGroup').style.display = isMetric ? 'block' : 'none';
+            document.getElementById('heightImperialGroup').style.display = isMetric ? 'none' : 'block';
+        });
+
+        // Form submission
+        bmiForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateBMI();
+        });
+
+        function calculateBMI() {
+            const isMetric = unitSystem.value === 'metric';
+            const age = parseInt(document.getElementById('age').value);
+            const gender = document.getElementById('gender').value;
+            
+            let weightKg, heightM;
+            
+            if (isMetric) {
+                weightKg = parseFloat(document.getElementById('weightKg').value);
+                const heightCm = parseFloat(document.getElementById('heightCm').value);
+                heightM = heightCm / 100;
+            } else {
+                const weightLbs = parseFloat(document.getElementById('weightLbs').value);
+                const heightFt = parseFloat(document.getElementById('heightFt').value) || 0;
+                const heightIn = parseFloat(document.getElementById('heightIn').value) || 0;
+                
+                weightKg = weightLbs * 0.453592;
+                const totalInches = (heightFt * 12) + heightIn;
+                heightM = totalInches * 0.0254;
+            }
+
+            // Validate inputs
+            if (!weightKg || !heightM || weightKg <= 0 || heightM <= 0) {
+                alert('Please enter valid weight and height values.');
+                return;
+            }
+
+            // Calculate BMI
+            const bmi = weightKg / (heightM * heightM);
+            
+            // Get category and advice
+            const category = getBMICategory(bmi);
+            const advice = getBMIAdvice(bmi);
+            
+            // Calculate healthy weight range
+            const minHealthyWeight = 18.5 * (heightM * heightM);
+            const maxHealthyWeight = 24.9 * (heightM * heightM);
+            
+            // Display results
+            document.getElementById('bmiValue').textContent = bmi.toFixed(1);
+            document.getElementById('bmiCategory').textContent = category.name;
+            document.getElementById('bmiCategory').style.color = category.color;
+            document.getElementById('adviceText').textContent = advice;
+            
+            if (isMetric) {
+                document.getElementById('healthyRange').textContent = 
+                    `${minHealthyWeight.toFixed(1)} kg - ${maxHealthyWeight.toFixed(1)} kg`;
+            } else {
+                const minLbs = minHealthyWeight * 2.20462;
+                const maxLbs = maxHealthyWeight * 2.20462;
+                document.getElementById('healthyRange').textContent = 
+                    `${minLbs.toFixed(1)} lbs - ${maxLbs.toFixed(1)} lbs`;
+            }
+            
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Show share buttons after calculation
+            document.getElementById('shareButtons').style.display = 'flex';
+        }
+
+        function getBMICategory(bmi) {
+            if (bmi < 18.5) {
+                return { name: 'Underweight', color: '#4299e1' };
+            } else if (bmi >= 18.5 && bmi < 25) {
+                return { name: 'Normal Weight', color: '#43e97b' };
+            } else if (bmi >= 25 && bmi < 30) {
+                return { name: 'Overweight', color: '#fee140' };
+            } else {
+                return { name: 'Obese', color: '#f5576c' };
+            }
+        }
+
+        function getBMIAdvice(bmi) {
+            if (bmi < 18.5) {
+                return 'You are underweight. Consider consulting with a healthcare provider or nutritionist to develop a healthy weight gain plan with proper nutrition and exercise.';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                return 'Congratulations! You are at a healthy weight. Maintain your weight through a balanced diet and regular physical activity.';
+            } else if (bmi >= 25 && bmi < 30) {
+                return 'You are overweight. Consider adopting a healthier lifestyle with a balanced diet and regular exercise. Consult with a healthcare provider for personalized advice.';
+            } else {
+                return 'You are in the obese range. It is important to consult with a healthcare provider to create a comprehensive weight management plan focusing on diet, exercise, and lifestyle changes.';
+            }
+        }
+        
+        // Save BMI calculation to localStorage
+        function saveBMICalculation() {
+            const bmiValue = document.getElementById('bmiValue').textContent;
+            const category = document.getElementById('bmiCategory').textContent;
+            const healthyRange = document.getElementById('healthyRange').textContent;
+            const isMetric = unitSystem.value === 'metric';
+            
+            const inputs = {
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                weight: isMetric ? document.getElementById('weightKg').value + ' kg' : document.getElementById('weightLbs').value + ' lbs',
+                height: isMetric ? document.getElementById('heightCm').value + ' cm' : document.getElementById('heightFt').value + "'" + document.getElementById('heightIn').value + '"'
+            };
+            
+            const results = {
+                bmi: bmiValue,
+                category: category,
+                healthyRange: healthyRange
+            };
+            
+            saveCalculation('BMI Calculator', inputs, results);
+        }
+        
+        // Export BMI results as text
+        function exportBMIResults() {
+            const bmiValue = document.getElementById('bmiValue').textContent;
+            const category = document.getElementById('bmiCategory').textContent;
+            const healthyRange = document.getElementById('healthyRange').textContent;
+            const advice = document.getElementById('adviceText').textContent;
+            const isMetric = unitSystem.value === 'metric';
+            
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const weight = isMetric ? document.getElementById('weightKg').value + ' kg' : document.getElementById('weightLbs').value + ' lbs';
+            const height = isMetric ? document.getElementById('heightCm').value + ' cm' : document.getElementById('heightFt').value + "'" + document.getElementById('heightIn').value + '"';
+            
+            const exportText = `BMI CALCULATOR RESULTS\n` +
+                `${'='.repeat(50)}\n\n` +
+                `Generated: ${new Date().toLocaleString()}\n` +
+                `Calculator: CalcuForMe BMI Calculator\n\n` +
+                `INPUT VALUES\n` +
+                `${'-'.repeat(50)}\n` +
+                `Age: ${age} years\n` +
+                `Gender: ${gender}\n` +
+                `Weight: ${weight}\n` +
+                `Height: ${height}\n\n` +
+                `RESULTS\n` +
+                `${'-'.repeat(50)}\n` +
+                `BMI: ${bmiValue}\n` +
+                `Category: ${category}\n` +
+                `Healthy Weight Range: ${healthyRange}\n\n` +
+                `HEALTH ADVICE\n` +
+                `${'-'.repeat(50)}\n` +
+                `${advice}\n\n` +
+                `${'='.repeat(50)}\n` +
+                `Calculate your BMI: ${window.location.href}\n` +
+                `© ${new Date().getFullYear()} CalcuForMe - Free Online Calculators`;
+            
+            downloadFile(exportText, 'BMI_Results_' + Date.now() + '.txt', 'text/plain');
+        }
+    </script>
+</body>
+</html>

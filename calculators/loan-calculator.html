@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Loan Calculator - Calculate EMI, total payment, and interest for any loan. View amortization schedule.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="CalcuForMe">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calcuforme.com/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalcuForMe">
+    <title>Loan Calculator - EMI & Amortization | CalcuForMe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-money-bill-wave"></i> Loan Calculator</h1>
+                    <p>Calculate your loan EMI, total payment, and view complete amortization schedule</p>
+                </div>
+
+                <form id="loanForm">
+                    <!-- Currency Selector -->
+                    <div class="form-group">
+                        <label for="currency">
+                            <i class="fas fa-coins"></i> Currency
+                        </label>
+                        <select id="currency" onchange="updateCurrencySymbols()">
+                            <option value="USD" data-symbol="$">USD - US Dollar ($)</option>
+                            <option value="EUR" data-symbol="€">EUR - Euro (€)</option>
+                            <option value="GBP" data-symbol="£">GBP - British Pound (£)</option>
+                            <option value="CAD" data-symbol="C$">CAD - Canadian Dollar (C$)</option>
+                            <option value="AUD" data-symbol="A$">AUD - Australian Dollar (A$)</option>
+                            <option value="JPY" data-symbol="¥">JPY - Japanese Yen (¥)</option>
+                            <option value="CHF" data-symbol="CHF">CHF - Swiss Franc (CHF)</option>
+                            <option value="INR" data-symbol="₹">INR - Indian Rupee (₹)</option>
+                            <option value="CNY" data-symbol="¥">CNY - Chinese Yuan (¥)</option>
+                            <option value="MXN" data-symbol="$">MXN - Mexican Peso ($)</option>
+                            <option value="BRL" data-symbol="R$">BRL - Brazilian Real (R$)</option>
+                            <option value="ZAR" data-symbol="R">ZAR - South African Rand (R)</option>
+                            <option value="SGD" data-symbol="S$">SGD - Singapore Dollar (S$)</option>
+                            <option value="NZD" data-symbol="NZ$">NZD - New Zealand Dollar (NZ$)</option>
+                            <option value="HKD" data-symbol="HK$">HKD - Hong Kong Dollar (HK$)</option>
+                        </select>
+                        <small>Select your preferred currency</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Amount (<span class="currency-symbol">$</span>)</label>
+                        <input type="number" id="loanAmount" min="100" step="100" value="10000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Interest Rate (% per year)</label>
+                        <input type="number" id="interestRate" min="0" max="50" step="0.1" value="7.5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Term</label>
+                        <input type="number" id="loanTerm" min="1" max="50" value="5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Term Type</label>
+                        <select id="termType">
+                            <option value="years">Years</option>
+                            <option value="months">Months</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Loan
+                    </button>
+                </form>
+
+                <div id="resultContainer" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Loan Summary</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Monthly Payment (EMI)</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="monthlyPayment"><span class="currency-symbol">$</span>0</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">Total Payment</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #667eea;" id="totalPayment"><span class="currency-symbol">$</span>0</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">Total Interest</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #f5576c;" id="totalInterest"><span class="currency-symbol">$</span>0</div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Payment Breakdown</h4>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">Principal Amount:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="principalAmount"><span class="currency-symbol">$</span>0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">Number of Payments:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="numPayments">0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #718096;">Effective Interest Rate:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="effectiveRate">0%</span>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleSchedule()" class="btn btn-primary" style="margin-bottom: 1rem;">
+                        <i class="fas fa-table"></i> <span id="scheduleToggle">Show Amortization Schedule</span>
+                    </button>
+
+                    <div id="amortizationSchedule" style="display: none; background: white; padding: 1.5rem; border-radius: 12px; overflow-x: auto;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Amortization Schedule</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: #f8f9fa;">
+                                    <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Payment #</th>
+                                    <th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #e2e8f0;">Payment</th>
+                                    <th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #e2e8f0;">Principal</th>
+                                    <th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #e2e8f0;">Interest</th>
+                                    <th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #e2e8f0;">Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduleBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">How Loan EMI is Calculated</h3>
+                    <p style="color: #718096; line-height: 1.8; margin-bottom: 1rem;">
+                        The EMI (Equated Monthly Installment) is calculated using the formula:
+                    </p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; margin: 1.5rem 0; font-family: monospace;">
+                        EMI = [P x R x (1+R)^N] / [(1+R)^N-1]
+                    </div>
+                    <p style="color: #718096; line-height: 1.8;">
+                        Where: P = Principal loan amount, R = Monthly interest rate, N = Number of monthly payments
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // Currency Helper Functions
+        function getCurrencySymbol() {
+            const currencySelect = document.getElementById('currency');
+            if (!currencySelect) return '$';
+            const selectedOption = currencySelect.options[currencySelect.selectedIndex];
+            return selectedOption.getAttribute('data-symbol');
+        }
+
+        function updateCurrencySymbols() {
+            const symbol = getCurrencySymbol();
+            document.querySelectorAll('.currency-symbol').forEach(el => {
+                el.textContent = symbol;
+            });
+        }
+
+        function formatCurrency(amount) {
+            const symbol = getCurrencySymbol();
+            return '<span class="currency-symbol">' + symbol + '</span>' + amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        const loanForm = document.getElementById('loanForm');
+        const resultContainer = document.getElementById('resultContainer');
+
+        loanForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateLoan();
+        });
+
+        function calculateLoan() {
+            const principal = parseFloat(document.getElementById('loanAmount').value);
+            const annualRate = parseFloat(document.getElementById('interestRate').value);
+            const term = parseFloat(document.getElementById('loanTerm').value);
+            const termType = document.getElementById('termType').value;
+
+            const months = termType === 'years' ? term * 12 : term;
+            const monthlyRate = annualRate / 100 / 12;
+
+            const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, months)) / 
+                                   (Math.pow(1 + monthlyRate, months) - 1);
+            
+            const totalPayment = monthlyPayment * months;
+            const totalInterest = totalPayment - principal;
+
+            document.getElementById('monthlyPayment').innerHTML = formatCurrency(monthlyPayment);
+            document.getElementById('totalPayment').innerHTML = formatCurrency(totalPayment);
+            document.getElementById('totalInterest').innerHTML = formatCurrency(totalInterest);
+            document.getElementById('principalAmount').innerHTML = formatCurrency(principal);
+            document.getElementById('numPayments').textContent = months;
+            document.getElementById('effectiveRate').textContent = annualRate + '%';
+
+            generateAmortizationSchedule(principal, monthlyRate, months, monthlyPayment);
+
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function generateAmortizationSchedule(principal, monthlyRate, months, payment) {
+            const tbody = document.getElementById('scheduleBody');
+            tbody.innerHTML = '';
+            
+            let balance = principal;
+            
+            for (let i = 1; i <= months; i++) {
+                const interestPayment = balance * monthlyRate;
+                const principalPayment = payment - interestPayment;
+                balance -= principalPayment;
+                
+                if (balance < 0.01) balance = 0;
+                
+                const symbol = getCurrencySymbol();
+                const row = `
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.75rem;">${i}</td>
+                        <td style="padding: 0.75rem; text-align: right;">${symbol}${payment.toFixed(2)}</td>
+                        <td style="padding: 0.75rem; text-align: right; color: #43e97b;">${symbol}${principalPayment.toFixed(2)}</td>
+                        <td style="padding: 0.75rem; text-align: right; color: #f5576c;">${symbol}${interestPayment.toFixed(2)}</td>
+                        <td style="padding: 0.75rem; text-align: right; font-weight: 600;">${symbol}${balance.toFixed(2)}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            }
+        }
+
+        function toggleSchedule() {
+            const schedule = document.getElementById('amortizationSchedule');
+            const toggle = document.getElementById('scheduleToggle');
+            
+            if (schedule.style.display === 'none') {
+                schedule.style.display = 'block';
+                toggle.textContent = 'Hide Amortization Schedule';
+            } else {
+                schedule.style.display = 'none';
+                toggle.textContent = 'Show Amortization Schedule';
+            }
+        }
+    </script>
+</body>
+</html>

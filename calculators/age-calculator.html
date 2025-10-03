@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Age Calculator - Calculate your exact age in years, months, days, hours, and minutes from your birth date.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="CalcuForMe">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calcuforme.com/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalcuForMe">
+    <title>Age Calculator - Calculate Your Age | CalcuForMe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    <style>
+        /* Share buttons styling */
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .share-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .share-btn i {
+            font-size: 1.1rem;
+        }
+        
+        .share-btn-save {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .share-btn-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .share-btn-facebook {
+            background: #4267B2;
+            color: white;
+        }
+        
+        .share-btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .share-btn-copy {
+            background: #718096;
+            color: white;
+        }
+        
+        .share-btn-export {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .share-buttons {
+                flex-direction: column;
+            }
+            
+            .share-btn {
+                width: 100%;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Calculator Page -->
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-birthday-cake"></i> Age Calculator</h1>
+                    <p>Calculate your exact age in years, months, days, hours, and minutes</p>
+                </div>
+
+                <form id="ageForm">
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date" id="birthDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Calculate Age At (Optional - defaults to today)</label>
+                        <input type="date" id="targetDate">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Age
+                    </button>
+                </form>
+
+                <!-- Results -->
+                <div id="resultContainer" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Your Age</h3>
+                    
+                    <div class="result-item">
+                        <div class="result-label">Total Age</div>
+                        <div class="result-value" id="totalAge">-</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: #667eea;" id="monthsValue">0</div>
+                            <div style="color: #718096; margin-top: 0.5rem;">Total Months</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: #667eea;" id="weeksValue">0</div>
+                            <div style="color: #718096; margin-top: 0.5rem;">Total Weeks</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: #667eea;" id="daysValue">0</div>
+                            <div style="color: #718096; margin-top: 0.5rem;">Total Days</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: #667eea;" id="hoursValue">0</div>
+                            <div style="color: #718096; margin-top: 0.5rem;">Total Hours</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: #667eea;" id="minutesValue">0</div>
+                            <div style="color: #718096; margin-top: 0.5rem;">Total Minutes</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: #667eea;" id="secondsValue">0</div>
+                            <div style="color: #718096; margin-top: 0.5rem;">Total Seconds</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                        <h4 style="margin-bottom: 1rem; color: white;"><i class="fas fa-gift"></i> Next Birthday</h4>
+                        <div style="font-size: 1.2rem; margin-bottom: 0.5rem;" id="nextBirthday">-</div>
+                        <div style="opacity: 0.9;" id="daysUntilBirthday">-</div>
+                    </div>
+                    
+                    <!-- Share, Save, Export Buttons -->
+                    <div class="share-buttons" id="shareButtons" style="display: none;">
+                        <button class="share-btn share-btn-save" onclick="saveAgeCalculation()" title="Save to browser">
+                            <i class="fas fa-save"></i> Save Result
+                        </button>
+                        <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('I just calculated my age on CalcuForMe! Check it out 🎂')" title="Share on Twitter">
+                            <i class="fab fa-twitter"></i> Tweet
+                        </button>
+                        <button class="share-btn share-btn-facebook" onclick="shareOnFacebook()" title="Share on Facebook">
+                            <i class="fab fa-facebook"></i> Share
+                        </button>
+                        <button class="share-btn share-btn-whatsapp" onclick="shareOnWhatsApp('Check out this Age Calculator!')" title="Share on WhatsApp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="share-btn share-btn-copy" onclick="copyToClipboard(window.location.href)" title="Copy link">
+                            <i class="fas fa-link"></i> Copy Link
+                        </button>
+                        <button class="share-btn share-btn-export" onclick="exportAgeResults()" title="Export as text">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info Section -->
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">How to Use</h3>
+                    <p style="color: #718096; line-height: 1.8;">
+                        Simply enter your date of birth and optionally select a date to calculate your age at that point. 
+                        The calculator will show your exact age in multiple formats including years, months, weeks, days, 
+                        hours, minutes, and seconds. You can also see when your next birthday is and how many days are left!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../index.html#popular">Popular Calculators</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // Age Calculator Logic
+        const ageForm = document.getElementById('ageForm');
+        const resultContainer = document.getElementById('resultContainer');
+        const birthDateInput = document.getElementById('birthDate');
+        const targetDateInput = document.getElementById('targetDate');
+
+        // Set max date to today
+        const today = new Date().toISOString().split('T')[0];
+        birthDateInput.max = today;
+
+        // Form submission
+        ageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateAge();
+        });
+
+        function calculateAge() {
+            const birthDate = new Date(birthDateInput.value);
+            const targetDate = targetDateInput.value ? new Date(targetDateInput.value) : new Date();
+
+            if (birthDate > targetDate) {
+                alert('Birth date cannot be in the future!');
+                return;
+            }
+
+            // Calculate age in years, months, days
+            let years = targetDate.getFullYear() - birthDate.getFullYear();
+            let months = targetDate.getMonth() - birthDate.getMonth();
+            let days = targetDate.getDate() - birthDate.getDate();
+
+            if (days < 0) {
+                months--;
+                const prevMonth = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            // Calculate total values
+            const totalDays = Math.floor((targetDate - birthDate) / (1000 * 60 * 60 * 24));
+            const totalWeeks = Math.floor(totalDays / 7);
+            const totalMonths = years * 12 + months;
+            const totalHours = totalDays * 24;
+            const totalMinutes = totalHours * 60;
+            const totalSeconds = totalMinutes * 60;
+
+            // Display results
+            document.getElementById('totalAge').textContent = 
+                `${years} Year${years !== 1 ? 's' : ''}, ${months} Month${months !== 1 ? 's' : ''}, ${days} Day${days !== 1 ? 's' : ''}`;
+            
+            document.getElementById('monthsValue').textContent = totalMonths.toLocaleString();
+            document.getElementById('weeksValue').textContent = totalWeeks.toLocaleString();
+            document.getElementById('daysValue').textContent = totalDays.toLocaleString();
+            document.getElementById('hoursValue').textContent = totalHours.toLocaleString();
+            document.getElementById('minutesValue').textContent = totalMinutes.toLocaleString();
+            document.getElementById('secondsValue').textContent = totalSeconds.toLocaleString();
+
+            // Calculate next birthday
+            const nextBirthday = new Date(targetDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+            if (nextBirthday <= targetDate) {
+                nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+            }
+
+            const daysUntilBirthday = Math.ceil((nextBirthday - targetDate) / (1000 * 60 * 60 * 24));
+            
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('nextBirthday').textContent = nextBirthday.toLocaleDateString('en-US', options);
+            document.getElementById('daysUntilBirthday').textContent = 
+                `${daysUntilBirthday} day${daysUntilBirthday !== 1 ? 's' : ''} until your next birthday! 🎉`;
+
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Show share buttons after calculation
+            document.getElementById('shareButtons').style.display = 'flex';
+        }
+        
+        // Save Age calculation to localStorage
+        function saveAgeCalculation() {
+            const totalAge = document.getElementById('totalAge').textContent;
+            const nextBirthday = document.getElementById('nextBirthday').textContent;
+            const daysUntil = document.getElementById('daysUntilBirthday').textContent;
+            
+            const inputs = {
+                birthDate: birthDateInput.value,
+                calculatedAt: targetDateInput.value || today
+            };
+            
+            const results = {
+                age: totalAge,
+                totalMonths: document.getElementById('monthsValue').textContent,
+                totalDays: document.getElementById('daysValue').textContent,
+                nextBirthday: nextBirthday,
+                daysUntilBirthday: daysUntil
+            };
+            
+            saveCalculation('Age Calculator', inputs, results);
+        }
+        
+        // Export Age results as text
+        function exportAgeResults() {
+            const totalAge = document.getElementById('totalAge').textContent;
+            const totalMonths = document.getElementById('monthsValue').textContent;
+            const totalWeeks = document.getElementById('weeksValue').textContent;
+            const totalDays = document.getElementById('daysValue').textContent;
+            const totalHours = document.getElementById('hoursValue').textContent;
+            const totalMinutes = document.getElementById('minutesValue').textContent;
+            const totalSeconds = document.getElementById('secondsValue').textContent;
+            const nextBirthday = document.getElementById('nextBirthday').textContent;
+            const daysUntil = document.getElementById('daysUntilBirthday').textContent;
+            
+            const exportText = `AGE CALCULATOR RESULTS\n` +
+                `${'='.repeat(50)}\n\n` +
+                `Generated: ${new Date().toLocaleString()}\n` +
+                `Calculator: CalcuForMe Age Calculator\n\n` +
+                `INPUT VALUES\n` +
+                `${'-'.repeat(50)}\n` +
+                `Date of Birth: ${birthDateInput.value}\n` +
+                `Calculated At: ${targetDateInput.value || today}\n\n` +
+                `YOUR AGE\n` +
+                `${'-'.repeat(50)}\n` +
+                `${totalAge}\n\n` +
+                `DETAILED BREAKDOWN\n` +
+                `${'-'.repeat(50)}\n` +
+                `Total Months: ${totalMonths}\n` +
+                `Total Weeks: ${totalWeeks}\n` +
+                `Total Days: ${totalDays}\n` +
+                `Total Hours: ${totalHours}\n` +
+                `Total Minutes: ${totalMinutes}\n` +
+                `Total Seconds: ${totalSeconds}\n\n` +
+                `NEXT BIRTHDAY\n` +
+                `${'-'.repeat(50)}\n` +
+                `${nextBirthday}\n` +
+                `${daysUntil}\n\n` +
+                `${'='.repeat(50)}\n` +
+                `Calculate your age: ${window.location.href}\n` +
+                `© ${new Date().getFullYear()} CalcuForMe - Free Online Calculators`;
+            
+            downloadFile(exportText, 'Age_Calculation_' + Date.now() + '.txt', 'text/plain');
+        }
+
+        // Set default target date to today
+        targetDateInput.value = today;
+    </script>
+</body>
+</html>

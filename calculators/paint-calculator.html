@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Paint Calculator - Calculate how much paint you need for your room or project. Estimate paint coverage and costs.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="CalcuForMe">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calcuforme.com/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalcuForMe">
+    <title>Paint Calculator - Room Paint Estimator | CalcuForMe</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Calculator Page -->
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-paint-roller"></i> Paint Calculator</h1>
+                    <p>Calculate how much paint you need for your room or project with accurate coverage estimates</p>
+                </div>
+
+                <form id="paintForm">
+                    <!-- Unit System -->
+                    <div class="form-group">
+                        <label>Unit System</label>
+                        <select id="unitSystem" class="form-control">
+                            <option value="metric">Metric (meters)</option>
+                            <option value="imperial">Imperial (feet)</option>
+                        </select>
+                    </div>
+
+                    <!-- Room Length -->
+                    <div class="form-group">
+                        <label>Room Length <span id="lengthUnit">(meters)</span></label>
+                        <input type="number" id="roomLength" min="0.1" step="0.1" placeholder="e.g., 5" required>
+                    </div>
+
+                    <!-- Room Width -->
+                    <div class="form-group">
+                        <label>Room Width <span id="widthUnit">(meters)</span></label>
+                        <input type="number" id="roomWidth" min="0.1" step="0.1" placeholder="e.g., 4" required>
+                    </div>
+
+                    <!-- Room Height -->
+                    <div class="form-group">
+                        <label>Room Height (ceiling) <span id="heightUnit">(meters)</span></label>
+                        <input type="number" id="roomHeight" min="0.1" step="0.1" placeholder="e.g., 2.5" required>
+                    </div>
+
+                    <!-- Number of Doors -->
+                    <div class="form-group">
+                        <label>Number of Doors</label>
+                        <input type="number" id="numDoors" min="0" max="20" value="1" required>
+                    </div>
+
+                    <!-- Number of Windows -->
+                    <div class="form-group">
+                        <label>Number of Windows</label>
+                        <input type="number" id="numWindows" min="0" max="20" value="2" required>
+                    </div>
+
+                    <!-- Number of Coats -->
+                    <div class="form-group">
+                        <label>Number of Coats</label>
+                        <select id="numCoats" class="form-control">
+                            <option value="1">1 Coat</option>
+                            <option value="2" selected>2 Coats (Recommended)</option>
+                            <option value="3">3 Coats</option>
+                        </select>
+                    </div>
+
+                    <!-- Paint Coverage -->
+                    <div class="form-group">
+                        <label>Paint Coverage <span id="coverageUnit">(sq meters per liter)</span></label>
+                        <input type="number" id="paintCoverage" min="1" step="0.1" value="10" placeholder="e.g., 10" required>
+                        <small style="display: block; margin-top: 0.5rem; color: #718096;">Standard coverage is ~10 m²/L or ~350 sq ft/gallon</small>
+                    </div>
+
+                    <!-- Paint Price (Optional) -->
+                    <div class="form-group">
+                        <label>Paint Price per Container (Optional)</label>
+                        <input type="number" id="paintPrice" min="0" step="0.01" placeholder="e.g., 25.00">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Paint Needed
+                    </button>
+                </form>
+
+                <!-- Results -->
+                <div id="resultContainer" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Your Results</h3>
+                    
+                    <div class="result-item">
+                        <div class="result-label">Total Wall Area</div>
+                        <div class="result-value" id="wallArea">0.00 m²</div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-label">Paint Needed</div>
+                        <div class="result-value" id="paintNeeded">0.00 L</div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-label">Containers Required</div>
+                        <div style="font-size: 1.8rem; color: #667eea; font-weight: 700;" id="containersNeeded">0</div>
+                    </div>
+
+                    <div id="costEstimate" style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #43e97b;">
+                        <h4 style="margin-bottom: 0.5rem;">Cost Estimate</h4>
+                        <p id="costText" style="color: #718096; margin: 0; font-size: 1.2rem; font-weight: 600;">-</p>
+                    </div>
+
+                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 0.95rem;">Breakdown</h4>
+                        <ul id="breakdown" style="color: #718096; margin: 0; padding-left: 1.5rem; line-height: 1.8;">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Info Section -->
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">About Paint Coverage</h3>
+                    <p style="color: #718096; line-height: 1.8; margin-bottom: 1rem;">
+                        This paint calculator helps you estimate the amount of paint needed for your room or project. It calculates the total wall area, subtracts doors and windows, and accounts for multiple coats.
+                    </p>
+                    <h4 style="color: #2d3748; margin: 1.5rem 0 0.75rem 0;">Standard Coverage Rates:</h4>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>Metric:</strong> ~10 square meters per liter</li>
+                        <li><strong>Imperial:</strong> ~350 square feet per gallon</li>
+                        <li><strong>Typical Door:</strong> 2 m² or ~20 sq ft</li>
+                        <li><strong>Typical Window:</strong> 1.5 m² or ~15 sq ft</li>
+                    </ul>
+                    <p style="color: #718096; line-height: 1.8; margin-top: 1rem; font-size: 0.9rem; font-style: italic;">
+                        Note: Actual coverage may vary based on paint type, surface texture, and application method. Always purchase slightly more paint than calculated to account for variations and touch-ups.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../index.html#popular">Popular Calculators</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // Paint Calculator Logic
+        const unitSystem = document.getElementById('unitSystem');
+        const paintForm = document.getElementById('paintForm');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // Update unit labels when system changes
+        unitSystem.addEventListener('change', (e) => {
+            const isMetric = e.target.value === 'metric';
+            
+            if (isMetric) {
+                document.getElementById('lengthUnit').textContent = '(meters)';
+                document.getElementById('widthUnit').textContent = '(meters)';
+                document.getElementById('heightUnit').textContent = '(meters)';
+                document.getElementById('coverageUnit').textContent = '(sq meters per liter)';
+                document.getElementById('paintCoverage').value = '10';
+            } else {
+                document.getElementById('lengthUnit').textContent = '(feet)';
+                document.getElementById('widthUnit').textContent = '(feet)';
+                document.getElementById('heightUnit').textContent = '(feet)';
+                document.getElementById('coverageUnit').textContent = '(sq feet per gallon)';
+                document.getElementById('paintCoverage').value = '350';
+            }
+        });
+
+        // Form submission
+        paintForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculatePaint();
+        });
+
+        function calculatePaint() {
+            const isMetric = unitSystem.value === 'metric';
+            
+            // Get form values
+            const length = parseFloat(document.getElementById('roomLength').value);
+            const width = parseFloat(document.getElementById('roomWidth').value);
+            const height = parseFloat(document.getElementById('roomHeight').value);
+            const numDoors = parseInt(document.getElementById('numDoors').value);
+            const numWindows = parseInt(document.getElementById('numWindows').value);
+            const numCoats = parseInt(document.getElementById('numCoats').value);
+            const paintCoverage = parseFloat(document.getElementById('paintCoverage').value);
+            const paintPrice = parseFloat(document.getElementById('paintPrice').value) || 0;
+
+            // Validate inputs
+            if (!length || !width || !height || length <= 0 || width <= 0 || height <= 0) {
+                alert('Please enter valid room dimensions.');
+                return;
+            }
+
+            if (!paintCoverage || paintCoverage <= 0) {
+                alert('Please enter a valid paint coverage value.');
+                return;
+            }
+
+            // Calculate wall area
+            const wallArea = 2 * (length * height) + 2 * (width * height);
+            
+            // Subtract door and window areas
+            // Standard door: 2 m² (metric) or 20 sq ft (imperial)
+            // Standard window: 1.5 m² (metric) or 15 sq ft (imperial)
+            const doorArea = isMetric ? 2 : 20;
+            const windowArea = isMetric ? 1.5 : 15;
+            
+            const totalDoorArea = numDoors * doorArea;
+            const totalWindowArea = numWindows * windowArea;
+            const netArea = Math.max(0, wallArea - totalDoorArea - totalWindowArea);
+            
+            // Calculate paint needed
+            const areaToPaint = netArea * numCoats;
+            const paintNeeded = areaToPaint / paintCoverage;
+            
+            // Calculate containers (round up)
+            const containerSize = isMetric ? 1 : 1; // 1 liter or 1 gallon
+            const containersNeeded = Math.ceil(paintNeeded / containerSize);
+            
+            // Calculate cost
+            const totalCost = paintPrice > 0 ? containersNeeded * paintPrice : 0;
+            
+            // Display results
+            const unit = isMetric ? 'm²' : 'sq ft';
+            const volumeUnit = isMetric ? 'L' : 'gal';
+            
+            document.getElementById('wallArea').textContent = `${netArea.toFixed(2)} ${unit}`;
+            document.getElementById('paintNeeded').textContent = `${paintNeeded.toFixed(2)} ${volumeUnit}`;
+            document.getElementById('containersNeeded').textContent = containersNeeded;
+            
+            if (paintPrice > 0) {
+                document.getElementById('costText').textContent = `$${totalCost.toFixed(2)}`;
+                document.getElementById('costEstimate').style.display = 'block';
+            } else {
+                document.getElementById('costEstimate').style.display = 'none';
+            }
+            
+            // Create breakdown
+            const breakdown = [
+                `Total wall area: ${wallArea.toFixed(2)} ${unit}`,
+                `Doors subtracted: ${totalDoorArea.toFixed(2)} ${unit} (${numDoors} doors)`,
+                `Windows subtracted: ${totalWindowArea.toFixed(2)} ${unit} (${numWindows} windows)`,
+                `Net paintable area: ${netArea.toFixed(2)} ${unit}`,
+                `Area with ${numCoats} coat(s): ${areaToPaint.toFixed(2)} ${unit}`,
+                `Paint coverage rate: ${paintCoverage} ${unit}/${volumeUnit}`,
+            ];
+            
+            const breakdownList = document.getElementById('breakdown');
+            breakdownList.innerHTML = breakdown.map(item => `<li>${item}</li>`).join('');
+            
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
