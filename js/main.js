@@ -222,6 +222,52 @@ document.querySelectorAll('.category-card, .calculator-item, .feature-item').for
     observer.observe(el);
 });
 
+// Daily Use Calculator on Homepage
+function calculateDaily() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const operator = document.getElementById('operator').value;
+    const resultDiv = document.getElementById('dailyResult');
+    const resultValue = document.getElementById('dailyResultValue');
+    
+    if (isNaN(num1) || isNaN(num2)) {
+        alert('Please enter valid numbers');
+        return;
+    }
+    
+    let result;
+    switch(operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 === 0) {
+                alert('Cannot divide by zero');
+                return;
+            }
+            result = num1 / num2;
+            break;
+    }
+    
+    resultValue.textContent = result.toFixed(2);
+    resultDiv.style.display = 'block';
+    
+    // Animate result
+    resultDiv.style.opacity = '0';
+    resultDiv.style.transform = 'translateY(-10px)';
+    setTimeout(() => {
+        resultDiv.style.transition = 'all 0.4s ease';
+        resultDiv.style.opacity = '1';
+        resultDiv.style.transform = 'translateY(0)';
+    }, 10);
+}
+
 // Quick Percentage Calculator on Homepage
 function calculateQuickPercentage() {
     const number = parseFloat(document.getElementById('quickNumber').value);
@@ -251,7 +297,20 @@ function calculateQuickPercentage() {
     }, 10);
 }
 
-// Allow Enter key to calculate
+// Allow Enter key to calculate - Daily Calculator
+if (document.getElementById('num1')) {
+    document.getElementById('num1').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calculateDaily();
+    });
+}
+
+if (document.getElementById('num2')) {
+    document.getElementById('num2').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calculateDaily();
+    });
+}
+
+// Allow Enter key to calculate - Percentage Calculator
 if (document.getElementById('quickNumber')) {
     document.getElementById('quickNumber').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') calculateQuickPercentage();
