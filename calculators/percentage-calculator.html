@@ -95,12 +95,13 @@
                             <div class="result-label">Result</div>
                             <div class="result-value" id="result1Value">0</div>
                         </div>
-                        <div class="share-buttons" id="shareButtons1" style="display: none;">
-                            <button onclick="shareToTwitter('percentage')" class="share-btn twitter"><i class="fab fa-twitter"></i> Share</button>
-                            <button onclick="shareToFacebook()" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Share</button>
-                            <button onclick="shareToWhatsApp('percentage')" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> Share</button>
-                            <button onclick="savePercentageCalc()" class="share-btn save"><i class="fas fa-save"></i> Save</button>
-                            <button onclick="exportPercentageCalc()" class="share-btn export"><i class="fas fa-download"></i> Export</button>
+                        <div class="share-buttons" id="shareButtons1" style="display: flex;">
+                            <button onclick="shareOnTwitter('Check out this Percentage Calculator result!')" class="share-btn share-btn-twitter"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button onclick="shareOnFacebook()" class="share-btn share-btn-facebook"><i class="fab fa-facebook-f"></i> Share</button>
+                            <button onclick="shareOnWhatsApp('Check out CalcuForMe Percentage Calculator!')" class="share-btn share-btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                            <button onclick="copyToClipboard(window.location.href)" class="share-btn share-btn-copy"><i class="fas fa-link"></i> Copy Link</button>
+                            <button onclick="savePercentageCalc()" class="share-btn share-btn-save"><i class="fas fa-save"></i> Save</button>
+                            <button onclick="exportPercentageCalc()" class="share-btn share-btn-export"><i class="fas fa-download"></i> Export</button>
                         </div>
                     </div>
                 </div>

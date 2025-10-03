@@ -383,6 +383,15 @@ if (!document.querySelector('#calc-utils-styles')) {
     document.head.appendChild(style);
 }
 
+/**
+ * Export results as formatted text file
+ */
+function exportAsTextFile(content, filename = 'calculation') {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+    const fullFilename = `${filename}_${timestamp}.txt`;
+    downloadFile(content, fullFilename, 'text/plain');
+}
+
 // ==================== ANALYTICS ====================
 
 /**
