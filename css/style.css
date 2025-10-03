@@ -951,6 +951,12 @@ a {
     .container {
         padding: 0 15px;
     }
+    
+    /* Quick Calculator Mobile Styles */
+    #quickNumber,
+    #quickPercent {
+        font-size: 16px !important; /* Prevent zoom on iOS */
+    }
 }
 
 /* Utility Classes */

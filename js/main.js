@@ -222,6 +222,48 @@ document.querySelectorAll('.category-card, .calculator-item, .feature-item').for
     observer.observe(el);
 });
 
+// Quick Percentage Calculator on Homepage
+function calculateQuickPercentage() {
+    const number = parseFloat(document.getElementById('quickNumber').value);
+    const percent = parseFloat(document.getElementById('quickPercent').value);
+    const resultDiv = document.getElementById('quickResult');
+    const resultValue = document.getElementById('quickResultValue');
+    const resultText = document.getElementById('quickResultText');
+    
+    if (isNaN(number) || isNaN(percent)) {
+        alert('Please enter valid numbers');
+        return;
+    }
+    
+    const result = (number * percent) / 100;
+    
+    resultValue.textContent = result.toFixed(2);
+    resultText.textContent = `${percent}% of ${number} is ${result.toFixed(2)}`;
+    resultDiv.style.display = 'block';
+    
+    // Animate result
+    resultDiv.style.opacity = '0';
+    resultDiv.style.transform = 'translateY(-10px)';
+    setTimeout(() => {
+        resultDiv.style.transition = 'all 0.4s ease';
+        resultDiv.style.opacity = '1';
+        resultDiv.style.transform = 'translateY(0)';
+    }, 10);
+}
+
+// Allow Enter key to calculate
+if (document.getElementById('quickNumber')) {
+    document.getElementById('quickNumber').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calculateQuickPercentage();
+    });
+}
+
+if (document.getElementById('quickPercent')) {
+    document.getElementById('quickPercent').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') calculateQuickPercentage();
+    });
+}
+
 // Console welcome message
 console.log('%cCalcuForMe', 'color: #667eea; font-size: 24px; font-weight: bold;');
 console.log('%cYour complete calculator suite!', 'color: #764ba2; font-size: 14px;');
