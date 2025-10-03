@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohm's Law Calculator - V=IR | CalcuForMe</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-bolt"></i> Ohm's Law Calculator</h1>
+                    <p>Calculate Voltage (V), Current (I), Resistance (R), and Power (P)</p>
+                    <div style="padding: 1rem; background: #e6f2ff; border-radius: 8px; margin-top: 1rem;">
+                        <strong>Formula:</strong> V = I × R | P = V × I
+                    </div>
+                </div>
+
+                <form id="ohmsForm">
+                    <div class="form-group">
+                        <label><i class="fas fa-plug"></i> Voltage (V)</label>
+                        <input type="number" id="voltage" step="0.01" placeholder="Enter voltage in Volts">
+                        <small>Volts (V)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-bolt"></i> Current (I)</label>
+                        <input type="number" id="current" step="0.01" placeholder="Enter current in Amperes">
+                        <small>Amperes (A)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-tachometer-alt"></i> Resistance (R)</label>
+                        <input type="number" id="resistance" step="0.01" placeholder="Enter resistance in Ohms">
+                        <small>Ohms (Ω)</small>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block" onclick="calculateOhms()">
+                        <i class="fas fa-calculator"></i> Calculate
+                    </button>
+                </form>
+
+                <div id="result" class="result-container">
+                    <h3>Results</h3>
+                    <div id="resultText"></div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="margin-bottom: 1rem;">How to Use</h3>
+                    <p style="color: #718096; line-height: 1.8;">
+                        Enter any two values to calculate the remaining parameters:
+                    </p>
+                    <ul style="color: #718096; line-height: 1.8; margin-left: 1.5rem;">
+                        <li>V (Voltage) and I (Current) → Calculate R and P</li>
+                        <li>V (Voltage) and R (Resistance) → Calculate I and P</li>
+                        <li>I (Current) and R (Resistance) → Calculate V and P</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function calculateOhms() {
+            const V = parseFloat(document.getElementById('voltage').value);
+            const I = parseFloat(document.getElementById('current').value);
+            const R = parseFloat(document.getElementById('resistance').value);
+            
+            let results = [];
+            let count = (!isNaN(V) ? 1 : 0) + (!isNaN(I) ? 1 : 0) + (!isNaN(R) ? 1 : 0);
+            
+            if (count < 2) {
+                alert('Please enter at least two values');
+                return;
+            }
+            
+            if (!isNaN(V) && !isNaN(I)) {
+                const resistance = V / I;
+                const power = V * I;
+                results.push(`<strong>Resistance (R):</strong> ${resistance.toFixed(2)} Ω`);
+                results.push(`<strong>Power (P):</strong> ${power.toFixed(2)} W`);
+            }
+            else if (!isNaN(V) && !isNaN(R)) {
+                const current = V / R;
+                const power = (V * V) / R;
+                results.push(`<strong>Current (I):</strong> ${current.toFixed(2)} A`);
+                results.push(`<strong>Power (P):</strong> ${power.toFixed(2)} W`);
+            }
+            else if (!isNaN(I) && !isNaN(R)) {
+                const voltage = I * R;
+                const power = I * I * R;
+                results.push(`<strong>Voltage (V):</strong> ${voltage.toFixed(2)} V`);
+                results.push(`<strong>Power (P):</strong> ${power.toFixed(2)} W`);
+            }
+            
+            document.getElementById('resultText').innerHTML = results.join('<br><br>');
+            document.getElementById('result').classList.add('active');
+        }
+    </script>
+</body>
+</html>
