@@ -323,6 +323,40 @@ if (document.getElementById('quickPercent')) {
     });
 }
 
+// Dark Mode Toggle
+const themeToggle = document.createElement('button');
+themeToggle.className = 'theme-toggle';
+themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+themeToggle.setAttribute('aria-label', 'Toggle Dark Mode');
+document.body.appendChild(themeToggle);
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+// Update icon based on current theme
+if (currentTheme === 'dark') {
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+}
+
+// Theme toggle functionality
+themeToggle.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update icon with animation
+    themeToggle.style.transform = 'rotate(360deg)';
+    setTimeout(() => {
+        themeToggle.innerHTML = newTheme === 'dark' 
+            ? '<i class="fas fa-sun"></i>' 
+            : '<i class="fas fa-moon"></i>';
+        themeToggle.style.transform = 'rotate(0deg)';
+    }, 150);
+});
+
 // Console welcome message
 console.log('%cCalcuForMe', 'color: #667eea; font-size: 24px; font-weight: bold;');
 console.log('%cYour complete calculator suite!', 'color: #764ba2; font-size: 14px;');

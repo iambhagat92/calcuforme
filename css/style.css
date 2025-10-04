@@ -22,6 +22,48 @@
     --transition: all 0.3s ease;
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-color: #7c8ff5;
+    --secondary-color: #9066c4;
+    --light-bg: #0f0f1e;
+    --text-dark: #e2e8f0;
+    --text-light: #a0aec0;
+    --white: #1a1a2e;
+    --dark-bg: #0a0a14;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;
