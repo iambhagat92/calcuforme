@@ -14,8 +14,17 @@
     <title>Scientific Calculator | CalcuForMe</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
     <style>
         .calculator-display {
             background: #1a1a2e;
@@ -127,9 +136,7 @@
                     <p>Advanced calculator with trigonometry, logarithms, and more</p>
                 </div>
 
-                <div class="calculator-display" id="display">0</div>
-
-                <div class="calc-buttons">
+                <div class="calculator-display" id="display">0</div>                <div class="calc-buttons">
                     <!-- Row 1 - Functions -->
                     <button class="calc-btn function" onclick="calcFunction('sin')">sin</button>
                     <button class="calc-btn function" onclick="calcFunction('cos')">cos</button>
@@ -170,6 +177,28 @@
                     <button class="calc-btn" onclick="appendNumber('.')">.</button>
                     <button class="calc-btn equals" onclick="calculate()">=</button>
                     <button class="calc-btn operator" onclick="appendOperator('+')">+</button>
+                </div>
+
+                <!-- Share and Save Buttons -->
+                <div class="share-buttons" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #e2e8f0;">
+                    <button class="share-btn share-btn-save" onclick="saveScientificCalculation()" style="flex: 1; min-width: 120px; padding: 0.75rem 1rem; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('Check out this Scientific Calculator on CalcuForMe!')" style="flex: 1; min-width: 120px; padding: 0.75rem 1rem; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background: #1da1f2; color: white;">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </button>
+                    <button class="share-btn share-btn-facebook" onclick="shareOnFacebook()" style="flex: 1; min-width: 120px; padding: 0.75rem 1rem; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background: #4267B2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </button>
+                    <button class="share-btn share-btn-whatsapp" onclick="shareOnWhatsApp('Check out this Scientific Calculator: ' + window.location.href)" style="flex: 1; min-width: 120px; padding: 0.75rem 1rem; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background: #25D366; color: white;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <button class="share-btn share-btn-copy" onclick="copyToClipboard(window.location.href)" style="flex: 1; min-width: 120px; padding: 0.75rem 1rem; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background: #718096; color: white;">
+                        <i class="fas fa-link"></i> Copy Link
+                    </button>
+                    <button class="share-btn share-btn-export" onclick="exportScientificResults()" style="flex: 1; min-width: 120px; padding: 0.75rem 1rem; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+                        <i class="fas fa-download"></i> Export
+                    </button>
                 </div>
 
                 <div style="margin-top: 2rem; padding: 1.5rem; background: #e6f2ff; border-radius: 12px; border-left: 4px solid #667eea;">
@@ -311,9 +340,7 @@
 
         function updateDisplay() {
             display.textContent = currentValue;
-        }
-
-        // Keyboard support
+        }        // Keyboard support
         document.addEventListener('keydown', (e) => {
             if (e.key >= '0' && e.key <= '9') appendNumber(e.key);
             if (e.key === '.') appendNumber('.');
@@ -325,6 +352,49 @@
             if (e.key === 'Escape') clearDisplay();
             if (e.key === 'Backspace') deleteLast();
         });
+
+        // Save calculation to localStorage
+        function saveScientificCalculation() {
+            const displayValue = document.getElementById('display').textContent;
+            
+            if (!displayValue || displayValue === '0' || displayValue === 'Error') {
+                showNotification('Please perform a calculation first before saving!', 'warning');
+                return;
+            }
+            
+            const calculation = {
+                type: 'Scientific Calculator',
+                expression: currentValue,
+                result: displayValue,
+                date: new Date().toLocaleDateString(),
+                url: window.location.href
+            };
+            
+            saveCalculation('scientific-calculator', calculation);
+            showNotification('Calculation saved successfully!', 'success');
+        }
+
+        // Export results as text file
+        function exportScientificResults() {
+            const displayValue = document.getElementById('display').textContent;
+            
+            if (!displayValue || displayValue === '0' || displayValue === 'Error') {
+                showNotification('Please perform a calculation first before exporting!', 'warning');
+                return;
+            }
+            
+            const exportText = `Scientific Calculator Results
+Generated on: ${new Date().toLocaleDateString()}
+
+Expression: ${currentValue}
+Result: ${displayValue}
+
+Calculated using CalcuForMe - ${window.location.href}`;
+            
+            downloadTextFile(exportText, 'scientific-calculator-results.txt');
+            showNotification('Results exported successfully!', 'success');
+        }
     </script>
+    <script src="../js/calculator-utils.js"></script>
 </body>
 </html>

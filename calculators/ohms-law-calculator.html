@@ -3,10 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Ohm's Law Calculator - Calculate voltage, current, resistance, and power using V=IR formula. Perfect for electrical engineering and electronics.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="CalcuForMe">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calcuforme.vercel.app/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalcuForMe">
     <title>Ohm's Law Calculator - V=IR | CalcuForMe</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Share buttons styling */
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .share-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .share-btn i {
+            font-size: 1.1rem;
+        }
+        
+        .share-btn-save {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .share-btn-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .share-btn-facebook {
+            background: #4267B2;
+            color: white;
+        }
+        
+        .share-btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .share-btn-copy {
+            background: #718096;
+            color: white;
+        }
+        
+        .share-btn-export {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .share-buttons {
+                flex-direction: column;
+            }
+            
+            .share-btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -57,11 +153,31 @@
                     <button type="button" class="btn btn-primary btn-block" onclick="calculateOhms()">
                         <i class="fas fa-calculator"></i> Calculate
                     </button>
-                </form>
-
-                <div id="result" class="result-container">
+                </form>                <div id="result" class="result-container">
                     <h3>Results</h3>
                     <div id="resultText"></div>
+                    
+                    <!-- Share and Save Buttons -->
+                    <div class="share-buttons">
+                        <button class="share-btn share-btn-save" onclick="saveOhmsCalculation()">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                        <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('Check out my Ohm\'s Law calculation on CalcuForMe!')">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </button>
+                        <button class="share-btn share-btn-facebook" onclick="shareOnFacebook()">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                        <button class="share-btn share-btn-whatsapp" onclick="shareOnWhatsApp('Check out this Ohm\'s Law Calculator: ' + window.location.href)">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="share-btn share-btn-copy" onclick="copyToClipboard(window.location.href)">
+                            <i class="fas fa-link"></i> Copy Link
+                        </button>
+                        <button class="share-btn share-btn-export" onclick="exportOhmsResults()">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
                 </div>
 
                 <div style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 12px;">
@@ -77,9 +193,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <script src="../js/main.js"></script>
+    </section>    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
     <script>
         function calculateOhms() {
             const V = parseFloat(document.getElementById('voltage').value);
@@ -115,6 +230,59 @@
             
             document.getElementById('resultText').innerHTML = results.join('<br><br>');
             document.getElementById('result').classList.add('active');
+        }
+
+        // Save calculation to localStorage
+        function saveOhmsCalculation() {
+            const V = document.getElementById('voltage').value;
+            const I = document.getElementById('current').value;
+            const R = document.getElementById('resistance').value;
+            const resultText = document.getElementById('resultText').innerHTML;
+            
+            if (!resultText) {
+                showNotification('Please calculate first before saving!', 'warning');
+                return;
+            }
+            
+            const calculation = {
+                type: 'Ohms Law',
+                inputs: { voltage: V, current: I, resistance: R },
+                results: resultText,
+                date: new Date().toLocaleDateString(),
+                url: window.location.href
+            };
+            
+            saveCalculation('ohms-law', calculation);
+            showNotification('Calculation saved successfully!', 'success');
+        }
+
+        // Export results as text file
+        function exportOhmsResults() {
+            const V = document.getElementById('voltage').value;
+            const I = document.getElementById('current').value;
+            const R = document.getElementById('resistance').value;
+            const resultText = document.getElementById('resultText').innerHTML;
+            
+            if (!resultText) {
+                showNotification('Please calculate first before exporting!', 'warning');
+                return;
+            }
+            
+            const exportText = `Ohm's Law Calculator Results
+Generated on: ${new Date().toLocaleDateString()}
+
+Inputs:
+- Voltage (V): ${V || 'Not provided'} V
+- Current (I): ${I || 'Not provided'} A  
+- Resistance (R): ${R || 'Not provided'} Ω
+
+Results:
+${resultText.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ')}
+
+Calculated using CalcuForMe - ${window.location.href}`;
+            
+            downloadTextFile(exportText, 'ohms-law-calculation.txt');
+            showNotification('Results exported successfully!', 'success');
         }
     </script>
 </body>
