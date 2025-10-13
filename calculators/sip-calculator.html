@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator - Systematic Investment Plan Calculator India | CalcuForMe</title>
+    <meta name="description" content="Free SIP calculator for mutual funds in India. Calculate SIP returns, future value, and wealth gain. Compare lumpsum vs SIP investments with step-up SIP option.">
+    <meta name="keywords" content="sip calculator, systematic investment plan calculator, mutual fund sip calculator, sip return calculator, sip investment calculator india, monthly sip calculator">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .calculator-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #333; font-size: 2.5em; margin-bottom: 10px; }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .calculator-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .input-group { margin-bottom: 25px; }
+        .input-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .range-slider { margin-top: 10px; }
+        .range-slider input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 6px;
+            background: #e0e0e0;
+            outline: none;
+            border-radius: 3px;
+        }
+        .range-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .calculate-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .result-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+        }
+        .result-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { font-size: 0.9em; opacity: 0.9; margin-bottom: 5px; }
+        .result-value { font-size: 1.8em; font-weight: 700; }
+        .comparison-table {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th { background: #f8f9fa; font-weight: 600; }
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .tips-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .calculator-section { grid-template-columns: 1fr; }
+            .header h1 { font-size: 1.8em; }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <a href="../index.html" class="nav-link">← Back to Home</a>
+            
+            <div class="header">
+                <h1>SIP Calculator</h1>
+                <p>Calculate returns on your Systematic Investment Plan</p>
+            </div>
+
+            <div class="calculator-section">
+                <div class="input-section">
+                    <h3>Investment Details</h3>
+                    
+                    <div class="input-group">
+                        <label for="monthlyAmount">Monthly Investment Amount (₹)</label>
+                        <input type="number" id="monthlyAmount" value="10000" min="500" max="1000000">
+                        <div class="range-slider">
+                            <input type="range" id="monthlyAmountSlider" min="500" max="100000" value="10000" step="500">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="expectedReturn">Expected Return Rate (% per annum)</label>
+                        <input type="number" id="expectedReturn" value="12" min="1" max="30" step="0.1">
+                        <div class="range-slider">
+                            <input type="range" id="expectedReturnSlider" min="1" max="30" value="12" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="timePeriod">Investment Period (Years)</label>
+                        <input type="number" id="timePeriod" value="10" min="1" max="40">
+                        <div class="range-slider">
+                            <input type="range" id="timePeriodSlider" min="1" max="40" value="10">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="stepUp">Annual Step-up (% Optional)</label>
+                        <input type="number" id="stepUp" value="0" min="0" max="50" step="1">
+                        <small style="color: #666; display: block; margin-top: 5px;">Increase SIP amount yearly</small>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateSIP()">Calculate Returns</button>
+                </div>
+
+                <div class="result-section">
+                    <div class="result-box">
+                        <div class="result-item">
+                            <div class="result-label">Future Value</div>
+                            <div class="result-value" id="futureValue">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Investment</div>
+                            <div class="result-value" id="totalInvestment">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Wealth Gain</div>
+                            <div class="result-value" id="wealthGain">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Returns</div>
+                            <div class="result-value" id="returnPercentage">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table" id="comparisonTable" style="display: none;">
+                <h3>SIP vs Lumpsum Comparison</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Investment Type</th>
+                            <th>Total Investment</th>
+                            <th>Future Value</th>
+                            <th>Returns</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SIP (Monthly)</td>
+                            <td id="sipInvestment">₹0</td>
+                            <td id="sipValue">₹0</td>
+                            <td id="sipReturns">₹0</td>
+                        </tr>
+                        <tr>
+                            <td>Lumpsum (One-time)</td>
+                            <td id="lumpsumInvestment">₹0</td>
+                            <td id="lumpsumValue">₹0</td>
+                            <td id="lumpsumReturns">₹0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chart-container" id="chartContainer" style="display: none;">
+                <h3>Investment Growth Chart</h3>
+                <canvas id="growthChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="tips-box">
+                <h4>📈 SIP Investment Tips:</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Start early to benefit from power of compounding</li>
+                    <li>SIP helps in rupee cost averaging during market volatility</li>
+                    <li>Consider step-up SIP to increase investment with income growth</li>
+                    <li>Equity mutual funds have given 12-15% returns historically</li>
+                    <li>Stay invested for long term (10+ years) for best results</li>
+                    <li>ELSS funds offer tax benefits under Section 80C</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize sliders
+        function initSliders() {
+            const monthlyAmountInput = document.getElementById('monthlyAmount');
+            const monthlyAmountSlider = document.getElementById('monthlyAmountSlider');
+            const expectedReturnInput = document.getElementById('expectedReturn');
+            const expectedReturnSlider = document.getElementById('expectedReturnSlider');
+            const timePeriodInput = document.getElementById('timePeriod');
+            const timePeriodSlider = document.getElementById('timePeriodSlider');
+
+            monthlyAmountSlider.addEventListener('input', function() {
+                monthlyAmountInput.value = this.value;
+                calculateSIP();
+            });
+            monthlyAmountInput.addEventListener('input', function() {
+                monthlyAmountSlider.value = this.value;
+            });
+
+            expectedReturnSlider.addEventListener('input', function() {
+                expectedReturnInput.value = this.value;
+                calculateSIP();
+            });
+            expectedReturnInput.addEventListener('input', function() {
+                expectedReturnSlider.value = this.value;
+            });
+
+            timePeriodSlider.addEventListener('input', function() {
+                timePeriodInput.value = this.value;
+                calculateSIP();
+            });
+            timePeriodInput.addEventListener('input', function() {
+                timePeriodSlider.value = this.value;
+            });
+        }
+
+        function calculateSIP() {
+            const P = parseFloat(document.getElementById('monthlyAmount').value);
+            const rate = parseFloat(document.getElementById('expectedReturn').value);
+            const years = parseFloat(document.getElementById('timePeriod').value);
+            const stepUp = parseFloat(document.getElementById('stepUp').value) || 0;
+            
+            const monthlyRate = rate / 12 / 100;
+            const months = years * 12;
+            
+            let futureValue = 0;
+            let totalInvestment = 0;
+            
+            if (stepUp > 0) {
+                // Step-up SIP calculation
+                let currentSIP = P;
+                for (let year = 1; year <= years; year++) {
+                    for (let month = 1; month <= 12; month++) {
+                        const monthsRemaining = (years * 12) - ((year - 1) * 12 + month) + 1;
+                        futureValue += currentSIP * Math.pow(1 + monthlyRate, monthsRemaining);
+                        totalInvestment += currentSIP;
+                    }
+                    currentSIP = currentSIP * (1 + stepUp / 100);
+                }
+            } else {
+                // Regular SIP calculation
+                futureValue = P * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+                totalInvestment = P * months;
+            }
+            
+            const wealthGain = futureValue - totalInvestment;
+            const returnPercentage = ((futureValue - totalInvestment) / totalInvestment) * 100;
+            
+            // Format currency
+            const formatINR = (num) => '₹' + Math.round(num).toLocaleString('en-IN');
+            
+            // Display results
+            document.getElementById('futureValue').textContent = formatINR(futureValue);
+            document.getElementById('totalInvestment').textContent = formatINR(totalInvestment);
+            document.getElementById('wealthGain').textContent = formatINR(wealthGain);
+            document.getElementById('returnPercentage').textContent = returnPercentage.toFixed(1) + '%';
+            
+            // Calculate lumpsum comparison
+            const lumpsumAmount = totalInvestment;
+            const lumpsumFutureValue = lumpsumAmount * Math.pow(1 + rate/100, years);
+            const lumpsumReturns = lumpsumFutureValue - lumpsumAmount;
+            
+            // Update comparison table
+            document.getElementById('sipInvestment').textContent = formatINR(totalInvestment);
+            document.getElementById('sipValue').textContent = formatINR(futureValue);
+            document.getElementById('sipReturns').textContent = formatINR(wealthGain);
+            document.getElementById('lumpsumInvestment').textContent = formatINR(lumpsumAmount);
+            document.getElementById('lumpsumValue').textContent = formatINR(lumpsumFutureValue);
+            document.getElementById('lumpsumReturns').textContent = formatINR(lumpsumReturns);
+            
+            document.getElementById('comparisonTable').style.display = 'block';
+            document.getElementById('chartContainer').style.display = 'block';
+            
+            drawGrowthChart(P, years, monthlyRate, stepUp);
+        }
+
+        function drawGrowthChart(monthlyAmount, years, monthlyRate, stepUp) {
+            const canvas = document.getElementById('growthChart');
+            const ctx = canvas.getContext('2d');
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw axes
+            ctx.beginPath();
+            ctx.moveTo(40, 20);
+            ctx.lineTo(40, 160);
+            ctx.lineTo(380, 160);
+            ctx.stroke();
+            
+            // Draw growth line
+            ctx.beginPath();
+            ctx.strokeStyle = '#667eea';
+            ctx.lineWidth = 2;
+            
+            let currentSIP = monthlyAmount;
+            let cumulativeValue = 0;
+            let cumulativeInvestment = 0;
+            
+            for (let month = 0; month <= years * 12; month++) {
+                if (month > 0) {
+                    cumulativeValue = (cumulativeValue + currentSIP) * (1 + monthlyRate);
+                    cumulativeInvestment += currentSIP;
+                    
+                    if (month % 12 === 0 && stepUp > 0) {
+                        currentSIP = currentSIP * (1 + stepUp / 100);
+                    }
+                }
+                
+                const x = 40 + (month / (years * 12)) * 340;
+                const y = 160 - (cumulativeValue / (cumulativeValue || 1)) * 130;
+                
+                if (month === 0) {
+                    ctx.moveTo(x, 160);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.stroke();
+            
+            // Labels
+            ctx.fillStyle = '#333';
+            ctx.font = '12px Arial';
+            ctx.fillText('0', 30, 175);
+            ctx.fillText(years + ' years', 350, 175);
+        }
+
+        window.onload = function() {
+            initSliders();
+            calculateSIP();
+        };
+    </script>
+</body>
+</html>
