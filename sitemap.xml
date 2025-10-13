@@ -277,6 +277,38 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- New Comprehensive Calculator Guides -->
+  <url>
+    <loc>https://calcuforme.vercel.app/blog/investment-calculator-complete-guide.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcuforme.vercel.app/blog/age-calculator-life-planning-guide.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcuforme.vercel.app/blog/salary-calculator-income-planning-guide.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcuforme.vercel.app/blog/scientific-calculator-functions-guide.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calcuforme.vercel.app/blog/currency-converter-exchange-rate-guide.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Legal & Info Pages -->
   <url>
