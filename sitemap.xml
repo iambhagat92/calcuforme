@@ -138,9 +138,33 @@
   </url>
 
   
-  <!-- Compound Interest Calculator India -->
+  <!-- Indian Financial Calculators -->
   <url>
     <loc>https://calcuforme.vercel.app/calculators/compound-interest-calculator-india.html</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://calcuforme.vercel.app/calculators/emi-calculator.html</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://calcuforme.vercel.app/calculators/gst-calculator-india.html</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://calcuforme.vercel.app/calculators/sip-calculator.html</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://calcuforme.vercel.app/calculators/fd-calculator.html</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
