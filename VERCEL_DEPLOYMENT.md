@@ -50,7 +50,7 @@ Since the Vercel CLI has network issues, use the **web-based deployment** method
 4. **Deploy**
    - Click "Deploy"
    - Wait 1-2 minutes
-   - Get your live URL: `https://calcuforme.vercel.app`
+   - Get your live URL: `https://calculateforme.xyz`
 
 ---
 
@@ -152,7 +152,7 @@ vercel --prod
 ## 📊 Expected Result
 
 After deployment, you'll get:
-- 🌐 Live URL: `https://calcuforme.vercel.app`
+- 🌐 Live URL: `https://calculateforme.xyz`
 - 🚀 Instant HTTPS
 - 🌍 Global CDN
 - 📱 Fast loading worldwide
@@ -163,7 +163,7 @@ After deployment, you'll get:
 ## 🎉 Success!
 
 Once deployed:
-1. Share your URL: `https://calcuforme.vercel.app`
+1. Share your URL: `https://calculateforme.xyz`
 2. Add to your portfolio
 3. Monitor traffic with Google Analytics
 4. Add more calculators based on user feedback
@@ -176,3 +176,4 @@ Once deployed:
 - Or just drag & drop to Netlify Drop: https://app.netlify.com/drop
 
 **Status:** Ready to Deploy! 🚀
+

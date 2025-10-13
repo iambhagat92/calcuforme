@@ -3,7 +3,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://calcuforme.vercel.app/</loc>
+    <loc>https://calculateforme.xyz/</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -12,73 +12,73 @@
   
   <!-- Financial Calculators -->
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/loan-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/loan-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/mortgage-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/mortgage-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/roi-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/roi-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/investment-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/investment-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/discount-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/discount-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/tip-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/tip-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/percentage-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/percentage-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/freelancer-tax-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/freelancer-tax-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/compound-interest-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/compound-interest-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/savings-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/savings-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/retirement-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/retirement-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/currency-converter.html</loc>
+    <loc>https://calculateforme.xyz/calculators/currency-converter.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -87,13 +87,13 @@
   
   <!-- Health & Fitness Calculators -->
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/bmi-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/bmi-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/calorie-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/calorie-calculator.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -101,13 +101,13 @@
   
   <!-- New Specialized Calculators -->
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/quarterly-tax-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/quarterly-tax-calculator.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/body-fat-percentage-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/body-fat-percentage-calculator.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -116,7 +116,7 @@
   
   <!-- Education Calculators -->
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/gpa-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/gpa-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -125,13 +125,13 @@
   
   <!-- Engineering & Science Calculators -->
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/scientific-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/scientific-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/ohms-law-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/ohms-law-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -140,31 +140,31 @@
   
   <!-- Indian Financial Calculators -->
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/compound-interest-calculator-india.html</loc>
+    <loc>https://calculateforme.xyz/calculators/compound-interest-calculator-india.html</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/emi-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/emi-calculator.html</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/gst-calculator-india.html</loc>
+    <loc>https://calculateforme.xyz/calculators/gst-calculator-india.html</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/sip-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/sip-calculator.html</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/fd-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/fd-calculator.html</loc>
     <lastmod>2025-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -172,13 +172,13 @@
 
   <!-- Date & Time Calculators -->
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/age-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/age-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/date-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/date-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -187,7 +187,7 @@
   
   <!-- Home & DIY Calculators -->
   <url>
-    <loc>https://calcuforme.vercel.app/calculators/paint-calculator.html</loc>
+    <loc>https://calculateforme.xyz/calculators/paint-calculator.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -196,31 +196,31 @@
   
   <!-- Category Pages -->
   <url>
-    <loc>https://calcuforme.vercel.app/categories/financial.html</loc>
+    <loc>https://calculateforme.xyz/categories/financial.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/categories/health.html</loc>
+    <loc>https://calculateforme.xyz/categories/health.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/categories/home.html</loc>
+    <loc>https://calculateforme.xyz/categories/home.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/categories/education.html</loc>
+    <loc>https://calculateforme.xyz/categories/education.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/categories/everyday.html</loc>
+    <loc>https://calculateforme.xyz/categories/everyday.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -228,7 +228,7 @@
 
   <!-- Blog Main Page -->
   <url>
-    <loc>https://calcuforme.vercel.app/blog.html</loc>
+    <loc>https://calculateforme.xyz/blog.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -238,31 +238,31 @@
   
   <!-- Financial Calculation Guides Cluster -->
   <url>
-    <loc>https://calcuforme.vercel.app/blog/how-to-calculate-compound-interest-step-by-step.html</loc>
+    <loc>https://calculateforme.xyz/blog/how-to-calculate-compound-interest-step-by-step.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/quarterly-tax-calculator-freelancers-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/quarterly-tax-calculator-freelancers-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/how-to-calculate-mortgage-payment-formula-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/how-to-calculate-mortgage-payment-formula-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/roi-calculator-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/roi-calculator-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/loan-calculator-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/loan-calculator-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -270,19 +270,19 @@
 
   <!-- Health & Fitness Calculation Guides Cluster -->
   <url>
-    <loc>https://calcuforme.vercel.app/blog/bmi-calculator-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/bmi-calculator-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/how-to-calculate-body-fat-percentage-methods-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/how-to-calculate-body-fat-percentage-methods-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/calorie-calculator-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/calorie-calculator-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -290,13 +290,13 @@
 
   <!-- Education Calculation Guides Cluster -->
   <url>
-    <loc>https://calcuforme.vercel.app/blog/how-to-calculate-gpa-weighted-unweighted-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/how-to-calculate-gpa-weighted-unweighted-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/gpa-calculator-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/gpa-calculator-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -304,7 +304,7 @@
 
   <!-- Everyday Math Calculation Guides Cluster -->
   <url>
-    <loc>https://calcuforme.vercel.app/blog/percentage-calculator-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/percentage-calculator-guide.html</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -312,31 +312,31 @@
 
   <!-- New Comprehensive Calculator Guides -->
   <url>
-    <loc>https://calcuforme.vercel.app/blog/investment-calculator-complete-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/investment-calculator-complete-guide.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/age-calculator-life-planning-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/age-calculator-life-planning-guide.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/salary-calculator-income-planning-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/salary-calculator-income-planning-guide.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/scientific-calculator-functions-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/scientific-calculator-functions-guide.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/blog/currency-converter-exchange-rate-guide.html</loc>
+    <loc>https://calculateforme.xyz/blog/currency-converter-exchange-rate-guide.html</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -344,28 +344,29 @@
   
   <!-- Legal & Info Pages -->
   <url>
-    <loc>https://calcuforme.vercel.app/about.html</loc>
+    <loc>https://calculateforme.xyz/about.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/privacy-policy.html</loc>
+    <loc>https://calculateforme.xyz/privacy-policy.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/terms-of-service.html</loc>
+    <loc>https://calculateforme.xyz/terms-of-service.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://calcuforme.vercel.app/saved-calculations.html</loc>
+    <loc>https://calculateforme.xyz/saved-calculations.html</loc>
     <lastmod>2025-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
 </urlset>
+

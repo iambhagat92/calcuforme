@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://calcuforme.vercel.app/sitemap.xml
+Sitemap: https://calculateforme.xyz/sitemap.xml
 
 # Block search engine indexing of any future admin or private directories
 Disallow: /admin/

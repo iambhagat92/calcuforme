@@ -77,7 +77,7 @@ Post Template:
 ✓ Percentage Calculator
 ✓ And more...
 
-Try it: https://calcuforme.vercel.app
+Try it: https://calculateforme.xyz
 #calculator #freeonline #productivity"
 ```
 
@@ -128,3 +128,4 @@ Try it: https://calcuforme.vercel.app
 - User engagement
 
 You'll start seeing results in 2-3 weeks! 🚀
+

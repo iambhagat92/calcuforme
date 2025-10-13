@@ -5,7 +5,7 @@
 ### Step 1: Get Your Verification Code
 1. Visit: https://search.google.com/search-console
 2. Click "Add Property"
-3. Enter: `https://calcuforme.vercel.app`
+3. Enter: `https://calculateforme.xyz`
 4. Select "HTML tag" method
 5. Copy the code like: `abc123xyz456...`
 
@@ -74,3 +74,4 @@ If you have access to your domain's DNS settings (like Vercel DNS), you can use 
 
 ## Need Help?
 Email: bhagatpaaji@gmail.com
+
