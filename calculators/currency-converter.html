@@ -342,34 +342,36 @@
             </div>
             
             <div class="exchange-rate">
-                <p id="exchangeRateDisplay">1 USD = 0.92 EUR</p>
+                <p id="exchangeRateDisplay">1 USD = 0.95 EUR</p>
             </div>
         </div>
 
         <div class="info-box">
-            <p><strong>ℹ️ Note:</strong> This calculator uses approximate exchange rates for demonstration purposes. For real-time conversions, please use live exchange rate data from financial APIs or services.</p>
+            <p><strong>⚠️ Important:</strong> This calculator uses <strong>approximate exchange rates</strong> for demonstration purposes only. Actual rates fluctuate constantly based on market conditions.</p>
+            <p style="margin-top: 10px;"><strong>For accurate conversions:</strong> Please check current rates from banks, Google, or financial services. These rates were last updated in January 2025 and may differ significantly from current market rates.</p>
         </div>
     </div>
 
     <script>
         // Approximate exchange rates (relative to USD) - for demonstration
         // These rates show how many units of each currency equal 1 USD
+        // Last updated: January 2025 (These are approximate rates for demo purposes)
         const exchangeRates = {
             USD: 1,
-            EUR: 0.92,     // 1 USD = 0.92 EUR (EUR is stronger)
-            GBP: 0.79,     // 1 USD = 0.79 GBP (GBP is stronger)
-            JPY: 149.50,   // 1 USD = 149.50 JPY (JPY is weaker)
-            AUD: 1.56,     // 1 USD = 1.56 AUD (AUD is weaker)
-            CAD: 1.36,     // 1 USD = 1.36 CAD (CAD is weaker)
-            CHF: 0.90,     // 1 USD = 0.90 CHF (CHF is stronger)
-            CNY: 7.30,     // 1 USD = 7.30 CNY (CNY is weaker)
-            INR: 83.25,    // 1 USD = 83.25 INR (INR is weaker)
-            MXN: 17.85,    // 1 USD = 17.85 MXN (MXN is weaker)
-            BRL: 5.02,     // 1 USD = 5.02 BRL (BRL is weaker)
-            ZAR: 18.95,    // 1 USD = 18.95 ZAR (ZAR is weaker)
-            KRW: 1340,     // 1 USD = 1340 KRW (KRW is weaker)
-            SGD: 1.35,     // 1 USD = 1.35 SGD (SGD is weaker)
-            HKD: 7.83      // 1 USD = 7.83 HKD (HKD is weaker)
+            EUR: 0.95,     // 1 USD = 0.95 EUR (EUR is stronger)
+            GBP: 0.81,     // 1 USD = 0.81 GBP (GBP is stronger) 
+            JPY: 157.50,   // 1 USD = 157.50 JPY (JPY is weaker)
+            AUD: 1.58,     // 1 USD = 1.58 AUD (AUD is weaker)
+            CAD: 1.39,     // 1 USD = 1.39 CAD (CAD is weaker)
+            CHF: 0.91,     // 1 USD = 0.91 CHF (CHF is stronger)
+            CNY: 7.34,     // 1 USD = 7.34 CNY (CNY is weaker)
+            INR: 84.85,    // 1 USD = 84.85 INR (INR is weaker) - Updated to current rate
+            MXN: 20.15,    // 1 USD = 20.15 MXN (MXN is weaker)
+            BRL: 6.10,     // 1 USD = 6.10 BRL (BRL is weaker)
+            ZAR: 18.25,    // 1 USD = 18.25 ZAR (ZAR is weaker)
+            KRW: 1425,     // 1 USD = 1425 KRW (KRW is weaker)
+            SGD: 1.36,     // 1 USD = 1.36 SGD (SGD is weaker)
+            HKD: 7.80      // 1 USD = 7.80 HKD (HKD is pegged to USD)
         };
 
         document.getElementById('currencyForm').addEventListener('submit', function(e) {
