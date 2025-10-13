@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator India 2024-25 - New & Old Tax Regime | CalcuForMe</title>
+    <meta name="description" content="Calculate income tax for FY 2024-25 (AY 2025-26) in India. Compare new vs old tax regime, calculate tax savings with deductions under 80C, 80D, HRA, and more.">
+    <meta name="keywords" content="income tax calculator india, income tax calculator 2024-25, new tax regime calculator, old tax regime calculator, tax calculator india, income tax slab calculator">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .calculator-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 40px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #333; font-size: 2.5em; margin-bottom: 10px; }
+        .nav-link { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; font-weight: 500; }
+        .regime-selector { display: flex; gap: 10px; margin-bottom: 30px; justify-content: center; }
+        .regime-btn { padding: 10px 20px; background: #f0f0f0; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .regime-btn.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .calculator-section { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; color: #333; font-weight: 600; margin-bottom: 8px; }
+        .input-group input, .input-group select { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; }
+        .input-group input:focus { outline: none; border-color: #667eea; }
+        .deductions-section { background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px; }
+        button { padding: 15px 30px; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; width: 100%; margin-top: 10px; }
+        .calculate-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .result-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; color: white; }
+        .result-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { font-size: 0.9em; opacity: 0.9; margin-bottom: 5px; }
+        .result-value { font-size: 1.8em; font-weight: 700; }
+        .comparison-table { background: white; border-radius: 10px; padding: 20px; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f8f9fa; font-weight: 600; }
+        .tax-slab-info { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        @media (max-width: 768px) { .calculator-section { grid-template-columns: 1fr; } }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <a href="../index.html" class="nav-link">← Back to Home</a>
+            
+            <div class="header">
+                <h1>Income Tax Calculator India FY 2024-25</h1>
+                <p>Calculate tax for AY 2025-26 with New & Old Tax Regime</p>
+            </div>
+
+            <div class="regime-selector">
+                <button class="regime-btn active" onclick="setRegime('new')">New Tax Regime</button>
+                <button class="regime-btn" onclick="setRegime('old')">Old Tax Regime</button>
+                <button class="regime-btn" onclick="setRegime('compare')">Compare Both</button>
+            </div>
+
+            <div class="calculator-section">
+                <div>
+                    <h3>Income Details</h3>
+                    
+                    <div class="input-group">
+                        <label for="grossSalary">Gross Annual Salary (₹)</label>
+                        <input type="number" id="grossSalary" value="1000000" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="otherIncome">Other Income (₹)</label>
+                        <input type="number" id="otherIncome" value="0" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="ageGroup">Age Group</label>
+                        <select id="ageGroup">
+                            <option value="below60">Below 60 years</option>
+                            <option value="60to80">60 to 80 years</option>
+                            <option value="above80">Above 80 years</option>
+                        </select>
+                    </div>
+
+                    <div class="deductions-section" id="deductionsSection">
+                        <h4>Deductions (Old Regime Only)</h4>
+                        
+                        <div class="input-group">
+                            <label for="section80C">Section 80C (Max ₹1,50,000)</label>
+                            <input type="number" id="section80C" value="150000" min="0" max="150000">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="section80D">Section 80D - Health Insurance (Max ₹25,000)</label>
+                            <input type="number" id="section80D" value="25000" min="0" max="25000">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="hra">HRA Exemption</label>
+                            <input type="number" id="hra" value="0" min="0">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="homeLoanInterest">Home Loan Interest (Sec 24)</label>
+                            <input type="number" id="homeLoanInterest" value="0" min="0" max="200000">
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateTax()">Calculate Tax</button>
+                </div>
+
+                <div>
+                    <div class="result-box">
+                        <div class="result-item">
+                            <div class="result-label">Taxable Income</div>
+                            <div class="result-value" id="taxableIncome">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Income Tax</div>
+                            <div class="result-value" id="incomeTax">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Education Cess (4%)</div>
+                            <div class="result-value" id="cess">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Tax Payable</div>
+                            <div class="result-value" id="totalTax">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Take Home Salary</div>
+                            <div class="result-value" id="takeHome">₹0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table" id="comparisonTable" style="display: none;">
+                <h3>Tax Regime Comparison</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Particulars</th>
+                            <th>New Regime</th>
+                            <th>Old Regime</th>
+                            <th>Savings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gross Income</td>
+                            <td id="newGross">₹0</td>
+                            <td id="oldGross">₹0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Deductions</td>
+                            <td id="newDeductions">₹0</td>
+                            <td id="oldDeductions">₹0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Taxable Income</td>
+                            <td id="newTaxable">₹0</td>
+                            <td id="oldTaxable">₹0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr style="font-weight: bold;">
+                            <td>Total Tax</td>
+                            <td id="newTotal">₹0</td>
+                            <td id="oldTotal">₹0</td>
+                            <td id="savings">₹0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tax-slab-info">
+                <h4>📊 Tax Slabs FY 2024-25:</h4>
+                <p><strong>New Regime:</strong> 0-3L: 0% | 3-7L: 5% | 7-10L: 10% | 10-12L: 15% | 12-15L: 20% | Above 15L: 30%</p>
+                <p><strong>Old Regime:</strong> 0-2.5L: 0% | 2.5-5L: 5% | 5-10L: 20% | Above 10L: 30%</p>
+                <p><strong>Standard Deduction:</strong> ₹75,000 (New) | ₹50,000 (Old)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentRegime = 'new';
+
+        function setRegime(regime) {
+            currentRegime = regime;
+            document.querySelectorAll('.regime-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.getElementById('deductionsSection').style.display = 
+                regime === 'old' || regime === 'compare' ? 'block' : 'none';
+            document.getElementById('comparisonTable').style.display = 
+                regime === 'compare' ? 'block' : 'none';
+                
+            calculateTax();
+        }
+
+        function calculateTax() {
+            const grossSalary = parseFloat(document.getElementById('grossSalary').value) || 0;
+            const otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
+            const ageGroup = document.getElementById('ageGroup').value;
+            
+            const totalIncome = grossSalary + otherIncome;
+            
+            if (currentRegime === 'compare') {
+                const newTax = calculateNewRegimeTax(totalIncome, ageGroup);
+                const oldTax = calculateOldRegimeTax(totalIncome, ageGroup);
+                displayComparison(totalIncome, newTax, oldTax);
+            } else if (currentRegime === 'new') {
+                const tax = calculateNewRegimeTax(totalIncome, ageGroup);
+                displayResult(totalIncome, tax);
+            } else {
+                const tax = calculateOldRegimeTax(totalIncome, ageGroup);
+                displayResult(totalIncome, tax);
+            }
+        }
+
+        function calculateNewRegimeTax(income, ageGroup) {
+            const standardDeduction = 75000;
+            let taxableIncome = Math.max(0, income - standardDeduction);
+            let tax = 0;
+
+            // New regime slabs
+            if (taxableIncome > 1500000) {
+                tax += (taxableIncome - 1500000) * 0.30;
+                taxableIncome = 1500000;
+            }
+            if (taxableIncome > 1200000) {
+                tax += (taxableIncome - 1200000) * 0.20;
+                taxableIncome = 1200000;
+            }
+            if (taxableIncome > 1000000) {
+                tax += (taxableIncome - 1000000) * 0.15;
+                taxableIncome = 1000000;
+            }
+            if (taxableIncome > 700000) {
+                tax += (taxableIncome - 700000) * 0.10;
+                taxableIncome = 700000;
+            }
+            if (taxableIncome > 300000) {
+                tax += (taxableIncome - 300000) * 0.05;
+            }
+
+            const cess = tax * 0.04;
+            return {
+                taxableIncome: income - standardDeduction,
+                tax: tax,
+                cess: cess,
+                total: tax + cess,
+                deductions: standardDeduction
+            };
+        }
+
+        function calculateOldRegimeTax(income, ageGroup) {
+            const standardDeduction = 50000;
+            const section80C = parseFloat(document.getElementById('section80C').value) || 0;
+            const section80D = parseFloat(document.getElementById('section80D').value) || 0;
+            const hra = parseFloat(document.getElementById('hra').value) || 0;
+            const homeLoanInterest = parseFloat(document.getElementById('homeLoanInterest').value) || 0;
+            
+            const totalDeductions = standardDeduction + section80C + section80D + hra + homeLoanInterest;
+            let taxableIncome = Math.max(0, income - totalDeductions);
+            let tax = 0;
+
+            // Old regime slabs
+            if (taxableIncome > 1000000) {
+                tax += (taxableIncome - 1000000) * 0.30;
+                taxableIncome = 1000000;
+            }
+            if (taxableIncome > 500000) {
+                tax += (taxableIncome - 500000) * 0.20;
+                taxableIncome = 500000;
+            }
+            if (taxableIncome > 250000) {
+                tax += (taxableIncome - 250000) * 0.05;
+            }
+
+            const cess = tax * 0.04;
+            return {
+                taxableIncome: income - totalDeductions,
+                tax: tax,
+                cess: cess,
+                total: tax + cess,
+                deductions: totalDeductions
+            };
+        }
+
+        function displayResult(income, taxData) {
+            const formatINR = (num) => '₹' + Math.round(num).toLocaleString('en-IN');
+            
+            document.getElementById('taxableIncome').textContent = formatINR(taxData.taxableIncome);
+            document.getElementById('incomeTax').textContent = formatINR(taxData.tax);
+            document.getElementById('cess').textContent = formatINR(taxData.cess);
+            document.getElementById('totalTax').textContent = formatINR(taxData.total);
+            document.getElementById('takeHome').textContent = formatINR(income - taxData.total);
+        }
+
+        function displayComparison(income, newTax, oldTax) {
+            const formatINR = (num) => '₹' + Math.round(num).toLocaleString('en-IN');
+            
+            document.getElementById('newGross').textContent = formatINR(income);
+            document.getElementById('oldGross').textContent = formatINR(income);
+            document.getElementById('newDeductions').textContent = formatINR(newTax.deductions);
+            document.getElementById('oldDeductions').textContent = formatINR(oldTax.deductions);
+            document.getElementById('newTaxable').textContent = formatINR(newTax.taxableIncome);
+            document.getElementById('oldTaxable').textContent = formatINR(oldTax.taxableIncome);
+            document.getElementById('newTotal').textContent = formatINR(newTax.total);
+            document.getElementById('oldTotal').textContent = formatINR(oldTax.total);
+            
+            const savings = oldTax.total - newTax.total;
+            document.getElementById('savings').textContent = formatINR(Math.abs(savings));
+            document.getElementById('savings').style.color = savings > 0 ? 'green' : 'red';
+            
+            // Also display in result box the better regime
+            const betterTax = newTax.total < oldTax.total ? newTax : oldTax;
+            displayResult(income, betterTax);
+        }
+
+        window.onload = function() { calculateTax(); };
+    </script>
+</body>
+</html>

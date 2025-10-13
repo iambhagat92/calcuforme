@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratuity Calculator India - Payment of Gratuity Act 1972 | CalcuForMe</title>
+    <meta name="description" content="Calculate gratuity amount as per Indian labor laws. Gratuity calculator for private sector employees based on last salary and years of service.">
+    <meta name="keywords" content="gratuity calculator india, gratuity calculator, gratuity calculation formula, payment of gratuity act calculator">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .calculator-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 40px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #333; font-size: 2.5em; margin-bottom: 10px; }
+        .nav-link { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; font-weight: 500; }
+        .calculator-section { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; color: #333; font-weight: 600; margin-bottom: 8px; }
+        .input-group input, .input-group select { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; }
+        button { padding: 15px 30px; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; width: 100%; margin-top: 10px; }
+        .calculate-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .result-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; color: white; }
+        .result-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { font-size: 0.9em; opacity: 0.9; margin-bottom: 5px; }
+        .result-value { font-size: 1.8em; font-weight: 700; }
+        .info-box { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        @media (max-width: 768px) { .calculator-section { grid-template-columns: 1fr; } }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <a href="../index.html" class="nav-link">← Back to Home</a>
+            
+            <div class="header">
+                <h1>Gratuity Calculator India</h1>
+                <p>Calculate gratuity as per Payment of Gratuity Act, 1972</p>
+            </div>
+
+            <div class="calculator-section">
+                <div>
+                    <h3>Employment Details</h3>
+                    
+                    <div class="input-group">
+                        <label for="employeeType">Employee Type</label>
+                        <select id="employeeType">
+                            <option value="covered">Covered under Gratuity Act</option>
+                            <option value="notcovered">Not Covered under Act</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="lastSalary">Last Drawn Salary - Basic + DA (₹/month)</label>
+                        <input type="number" id="lastSalary" value="50000" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="yearsOfService">Years of Service</label>
+                        <input type="number" id="yearsOfService" value="5" min="0" max="50">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="monthsOfService">Additional Months</label>
+                        <input type="number" id="monthsOfService" value="0" min="0" max="11">
+                        <small style="color: #666;">6+ months count as 1 year</small>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateGratuity()">Calculate Gratuity</button>
+                </div>
+
+                <div>
+                    <div class="result-box">
+                        <div class="result-item">
+                            <div class="result-label">Gratuity Amount</div>
+                            <div class="result-value" id="gratuityAmount">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Service Years</div>
+                            <div class="result-value" id="totalYears">0 years</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Tax on Gratuity</div>
+                            <div class="result-value" id="taxAmount">₹0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📋 Gratuity Calculation Formula:</h4>
+                <p><strong>Covered under Act:</strong> (Last Salary × 15 × Years of Service) ÷ 26</p>
+                <p><strong>Not Covered:</strong> (Last Salary × 15 × Years of Service) ÷ 30</p>
+                <p><strong>Eligibility:</strong> Minimum 5 years of continuous service</p>
+                <p><strong>Tax Exemption:</strong> Up to ₹20 lakhs is tax-free</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateGratuity() {
+            const employeeType = document.getElementById('employeeType').value;
+            const lastSalary = parseFloat(document.getElementById('lastSalary').value) || 0;
+            const years = parseFloat(document.getElementById('yearsOfService').value) || 0;
+            const months = parseFloat(document.getElementById('monthsOfService').value) || 0;
+            
+            // Calculate total years (6+ months = 1 year)
+            const totalYears = years + (months >= 6 ? 1 : 0);
+            
+            // Calculate gratuity
+            let gratuity = 0;
+            if (totalYears >= 5) {
+                if (employeeType === 'covered') {
+                    // Covered under Gratuity Act: (Salary × 15 × Years) ÷ 26
+                    gratuity = (lastSalary * 15 * totalYears) / 26;
+                } else {
+                    // Not covered: (Salary × 15 × Years) ÷ 30
+                    gratuity = (lastSalary * 15 * totalYears) / 30;
+                }
+            }
+            
+            // Tax calculation (exempt up to 20 lakhs)
+            const taxExemptLimit = 2000000;
+            const taxableGratuity = Math.max(0, gratuity - taxExemptLimit);
+            const tax = taxableGratuity * 0.30; // Assuming 30% tax bracket
+            
+            // Format currency
+            const formatINR = (num) => '₹' + Math.round(num).toLocaleString('en-IN');
+            
+            // Display results
+            document.getElementById('gratuityAmount').textContent = formatINR(gratuity);
+            document.getElementById('totalYears').textContent = totalYears + ' years';
+            document.getElementById('taxAmount').textContent = tax > 0 ? formatINR(tax) : 'Nil (Exempt)';
+        }
+
+        window.onload = function() { calculateGratuity(); };
+    </script>
+</body>
+</html>
