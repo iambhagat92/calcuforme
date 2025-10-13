@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Percentage Calculator - Navy Method & Jackson-Pollock Formula 2025</title>
+    <meta name="description" content="Calculate body fat percentage using Navy method, Jackson-Pollock, and other proven formulas. Free body composition calculator for fitness tracking and health goals.">
+    <meta name="keywords" content="body fat percentage calculator, Navy method calculator, Jackson Pollock calculator, body composition calculator, body fat formula calculator">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .calculator-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        .method-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .method-btn {
+            padding: 12px 20px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+        .method-btn.active {
+            border-color: #38b2ac;
+            background: #38b2ac;
+            color: white;
+        }
+        .method-btn:hover {
+            border-color: #38b2ac;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #38b2ac;
+            box-shadow: 0 0 0 3px rgba(56, 178, 172, 0.1);
+        }
+        .calculate-btn {
+            background: linear-gradient(135deg, #38b2ac 0%, #4fd1c7 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 100%;
+        }
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+        }
+        .results-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            display: none;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-label {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .result-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #38b2ac;
+        }
+        .category-display {
+            background: #e6fffa;
+            border: 2px solid #38b2ac;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .ranges-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .ranges-table th,
+        .ranges-table td {
+            padding: 12px 16px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .ranges-table th {
+            background: #38b2ac;
+            color: white;
+            font-weight: 600;
+        }
+        .ranges-table tr:hover {
+            background: #f8f9fa;
+        }
+        .info-section {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid #38b2ac;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #38b2ac;
+            margin-bottom: 1rem;
+        }
+        .method-form {
+            display: none;
+        }
+        .method-form.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../about.html">About</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#categories">Calculators</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../about.html">About</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h1 style="color: #2d3748; margin-bottom: 1rem;">Body Fat Percentage Calculator</h1>
+                <p style="font-size: 1.2rem; color: #718096; max-width: 700px; margin: 0 auto;">
+                    Calculate your body fat percentage using proven methods including Navy formula, Jackson-Pollock, and YMCA. 
+                    Get accurate body composition analysis for fitness and health tracking.
+                </p>
+            </div>
+
+            <div class="calculator-container">
+                <!-- Method Selector -->
+                <div class="method-selector">
+                    <button class="method-btn active" data-method="navy">Navy Method</button>
+                    <button class="method-btn" data-method="jackson3">Jackson-Pollock 3-Site</button>
+                    <button class="method-btn" data-method="ymca">YMCA Formula</button>
+                </div>
+
+                <!-- Navy Method Form -->
+                <form id="navyForm" class="method-form active">
+                    <h3 style="color: #38b2ac; margin-bottom: 1rem;">U.S. Navy Method</h3>
+                    <p style="color: #718096; margin-bottom: 2rem;">Uses circumference measurements - most accessible and accurate for general population.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div>
+                            <div class="form-group">
+                                <label for="navyGender">Gender</label>
+                                <select id="navyGender" name="navyGender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="navyHeight">Height (inches)</label>
+                                <input type="number" id="navyHeight" name="navyHeight" placeholder="70" step="0.1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="navyWaist">Waist Circumference (inches)</label>
+                                <input type="number" id="navyWaist" name="navyWaist" placeholder="32" step="0.1" required>
+                                <small style="color: #718096;">Measure at narrowest point (men) or natural waistline (women)</small>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="form-group">
+                                <label for="navyNeck">Neck Circumference (inches)</label>
+                                <input type="number" id="navyNeck" name="navyNeck" placeholder="15" step="0.1" required>
+                                <small style="color: #718096;">Measure just below larynx (Adam's apple)</small>
+                            </div>
+                            
+                            <div class="form-group" id="navyHipGroup" style="display: none;">
+                                <label for="navyHip">Hip Circumference (inches)</label>
+                                <input type="number" id="navyHip" name="navyHip" placeholder="38" step="0.1">
+                                <small style="color: #718096;">For women: Measure at widest point of hips</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">
+                        <i class="fas fa-calculator"></i> Calculate Body Fat (Navy Method)
+                    </button>
+                </form>
+
+                <!-- Jackson-Pollock 3-Site Form -->
+                <form id="jackson3Form" class="method-form">
+                    <h3 style="color: #38b2ac; margin-bottom: 1rem;">Jackson-Pollock 3-Site Method</h3>
+                    <p style="color: #718096; margin-bottom: 2rem;">Uses skinfold calipers - requires proper technique but provides good accuracy.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div>
+                            <div class="form-group">
+                                <label for="jpGender">Gender</label>
+                                <select id="jpGender" name="jpGender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jpAge">Age (years)</label>
+                                <input type="number" id="jpAge" name="jpAge" placeholder="30" min="18" max="100" required>
+                            </div>
+                            
+                            <div class="form-group" id="jpSite1Group">
+                                <label for="jpSite1">Chest/Tricep Skinfold (mm)</label>
+                                <input type="number" id="jpSite1" name="jpSite1" placeholder="10" step="0.1" required>
+                                <small style="color: #718096;">Men: Chest | Women: Tricep</small>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="form-group" id="jpSite2Group">
+                                <label for="jpSite2">Abdomen/Suprailiac Skinfold (mm)</label>
+                                <input type="number" id="jpSite2" name="jpSite2" placeholder="15" step="0.1" required>
+                                <small style="color: #718096;">Men: Abdomen | Women: Suprailiac</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jpSite3">Thigh Skinfold (mm)</label>
+                                <input type="number" id="jpSite3" name="jpSite3" placeholder="12" step="0.1" required>
+                                <small style="color: #718096;">Front of thigh, midway between kneecap and hip</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">
+                        <i class="fas fa-calculator"></i> Calculate Body Fat (Jackson-Pollock)
+                    </button>
+                </form>
+
+                <!-- YMCA Form -->
+                <form id="ymcaForm" class="method-form">
+                    <h3 style="color: #38b2ac; margin-bottom: 1rem;">YMCA Formula</h3>
+                    <p style="color: #718096; margin-bottom: 2rem;">Simplified method using waist measurement and weight - quick but less accurate.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div>
+                            <div class="form-group">
+                                <label for="ymcaWeight">Weight (pounds)</label>
+                                <input type="number" id="ymcaWeight" name="ymcaWeight" placeholder="150" step="0.1" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="form-group">
+                                <label for="ymcaWaist">Waist Circumference (inches)</label>
+                                <input type="number" id="ymcaWaist" name="ymcaWaist" placeholder="32" step="0.1" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">
+                        <i class="fas fa-calculator"></i> Calculate Body Fat (YMCA)
+                    </button>
+                </form>
+
+                <div class="results-section" id="resultsSection">
+                    <h3 style="margin-bottom: 1rem; color: #2d3748;">Your Body Fat Analysis</h3>
+                    <div class="result-item">
+                        <span class="result-label">Body Fat Percentage:</span>
+                        <span class="result-value" id="bodyFatResult">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Method Used:</span>
+                        <span class="result-value" id="methodUsed">-</span>
+                    </div>
+                    <div class="category-display" id="categoryDisplay">
+                        <h4 style="margin-bottom: 0.5rem; color: #2d3748;">Category: <span id="categoryName">-</span></h4>
+                        <p style="margin-bottom: 0; color: #718096;" id="categoryDescription">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Healthy Ranges Table -->
+            <section style="margin: 3rem 0;">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #2d3748;">Healthy Body Fat Percentage Ranges</h2>
+                <table class="ranges-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Men</th>
+                            <th>Women</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Essential Fat</strong></td>
+                            <td>2-5%</td>
+                            <td>10-13%</td>
+                            <td>Minimal for basic functions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Athletic</strong></td>
+                            <td>6-13%</td>
+                            <td>14-20%</td>
+                            <td>Typical for athletes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fitness</strong></td>
+                            <td>14-17%</td>
+                            <td>21-24%</td>
+                            <td>Fit and healthy appearance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Average</strong></td>
+                            <td>18-24%</td>
+                            <td>25-31%</td>
+                            <td>Normal healthy range</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Above Average</strong></td>
+                            <td>25%+</td>
+                            <td>32%+</td>
+                            <td>May need attention</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Features Section -->
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Multiple Methods</h3>
+                    <p>Choose from Navy method, Jackson-Pollock, or YMCA formulas for different accuracy levels and requirements.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Accurate Results</h3>
+                    <p>Using scientifically proven formulas to provide reliable body fat percentage estimates for your fitness goals.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health Insights</h3>
+                    <p>Get categorized results and understand what your body fat percentage means for your health and fitness.</p>
+                </div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="info-section">
+                <h2>Understanding Body Fat Percentage</h2>
+                <p>Body fat percentage is the proportion of your total body weight that consists of fat tissue. Unlike BMI, it distinguishes between muscle mass and fat, providing a more accurate assessment of body composition.</p>
+                
+                <h3>Why Body Fat Percentage Matters</h3>
+                <ul>
+                    <li><strong>Health Assessment:</strong> Better indicator than weight alone for health risks</li>
+                    <li><strong>Fitness Goals:</strong> Track progress in muscle building and fat loss</li>
+                    <li><strong>Athletic Performance:</strong> Optimal body fat ranges vary by sport and activity</li>
+                    <li><strong>Overall Wellness:</strong> Balance is key - too low or high can be unhealthy</li>
+                </ul>
+                
+                <h3>Method Accuracy Comparison</h3>
+                <ul>
+                    <li><strong>Navy Method:</strong> ±4-7% accuracy, easy to perform, requires only measuring tape</li>
+                    <li><strong>Jackson-Pollock:</strong> ±3-6% accuracy, requires calipers and proper technique</li>
+                    <li><strong>YMCA Formula:</strong> ±5-8% accuracy, very simple but less precise</li>
+                </ul>
+            </div>
+
+            <!-- Tips Section -->
+            <section style="margin: 3rem 0; background: white; padding: 2rem; border-radius: 12px;">
+                <h2>Measurement Tips for Best Results</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <h3 style="color: #38b2ac;">Navy Method Tips</h3>
+                        <ul>
+                            <li>Measure in the morning before eating</li>
+                            <li>Stand straight, breathe normally</li>
+                            <li>Don't compress the measuring tape</li>
+                            <li>Take measurements 3 times and average</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: #38b2ac;">Skinfold Tips</h3>
+                        <ul>
+                            <li>Use quality calipers with consistent pressure</li>
+                            <li>Measure on right side of body</li>
+                            <li>Pinch skin 1cm above measurement site</li>
+                            <li>Avoid measuring after exercise</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section style="margin: 3rem 0;">
+                <h2 style="margin-bottom: 2rem; color: #2d3748;">Frequently Asked Questions</h2>
+                <div itemscope itemtype="https://schema.org/FAQPage">
+                    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px;">
+                        <h3 itemprop="name">Which method is most accurate?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Jackson-Pollock methods are generally most accurate (±3-6%), but Navy method offers good accuracy (±4-7%) with simpler measurements. Choose based on available tools and desired precision.</p>
+                        </div>
+                    </div>
+                    
+                    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px;">
+                        <h3 itemprop="name">How often should I measure body fat percentage?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Weekly or bi-weekly measurements are ideal for tracking progress. Daily measurements aren't recommended due to normal fluctuations. Focus on long-term trends rather than daily changes.</p>
+                        </div>
+                    </div>
+                    
+                    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px;">
+                        <h3 itemprop="name">Can body fat percentage be too low?</h3>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Yes, essential fat is necessary for basic body functions. Below 2-5% for men and 10-13% for women can cause health problems including hormone disruption and immune system issues.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Resources -->
+            <section style="margin: 3rem 0; padding: 2rem; background: white; border-radius: 12px;">
+                <h3>Related Health Calculators</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <a href="../blog/how-to-calculate-body-fat-percentage-methods-guide.html" style="text-decoration: none; color: #4a5568; padding: 1rem; background: #f8f9fa; border-radius: 8px; border: 2px solid #e2e8f0;">
+                        <i class="fas fa-book" style="color: #38b2ac;"></i> Body Fat Guide
+                    </a>
+                    <a href="bmi-calculator.html" style="text-decoration: none; color: #4a5568; padding: 1rem; background: #f8f9fa; border-radius: 8px; border: 2px solid #e2e8f0;">
+                        <i class="fas fa-weight" style="color: #38b2ac;"></i> BMI Calculator
+                    </a>
+                    <a href="calorie-calculator.html" style="text-decoration: none; color: #4a5568; padding: 1rem; background: #f8f9fa; border-radius: 8px; border: 2px solid #e2e8f0;">
+                        <i class="fas fa-fire" style="color: #38b2ac;"></i> Calorie Calculator
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-calculator"></i>
+                        <span>CalcuForMe</span>
+                    </div>
+                    <p>Your go-to destination for free, accurate, and easy-to-use calculators for all your daily needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Calculators</h4>
+                    <a href="bmi-calculator.html">BMI Calculator</a>
+                    <a href="percentage-calculator.html">Percentage Calculator</a>
+                    <a href="tip-calculator.html">Tip Calculator</a>
+                    <a href="loan-calculator.html">Loan Calculator</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Method selector functionality
+        document.querySelectorAll('.method-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and forms
+                document.querySelectorAll('.method-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.method-form').forEach(f => f.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding form
+                const method = btn.dataset.method;
+                document.getElementById(method + 'Form').classList.add('active');
+                
+                // Update gender-specific fields
+                if (method === 'navy') {
+                    updateNavyGenderFields();
+                } else if (method === 'jackson3') {
+                    updateJacksonGenderFields();
+                }
+            });
+        });
+
+        // Gender-specific field updates
+        function updateNavyGenderFields() {
+            const gender = document.getElementById('navyGender').value;
+            const hipGroup = document.getElementById('navyHipGroup');
+            const hipInput = document.getElementById('navyHip');
+            
+            if (gender === 'female') {
+                hipGroup.style.display = 'block';
+                hipInput.required = true;
+            } else {
+                hipGroup.style.display = 'none';
+                hipInput.required = false;
+                hipInput.value = '';
+            }
+        }
+
+        function updateJacksonGenderFields() {
+            const gender = document.getElementById('jpGender').value;
+            const site1Label = document.getElementById('jpSite1Group').querySelector('label');
+            const site2Label = document.getElementById('jpSite2Group').querySelector('label');
+            
+            if (gender === 'male') {
+                site1Label.textContent = 'Chest Skinfold (mm)';
+                site2Label.textContent = 'Abdomen Skinfold (mm)';
+                document.getElementById('jpSite1Group').querySelector('small').textContent = 'Diagonal fold on pectoralis major';
+                document.getElementById('jpSite2Group').querySelector('small').textContent = 'Vertical fold beside navel';
+            } else if (gender === 'female') {
+                site1Label.textContent = 'Tricep Skinfold (mm)';
+                site2Label.textContent = 'Suprailiac Skinfold (mm)';
+                document.getElementById('jpSite1Group').querySelector('small').textContent = 'Vertical fold on back of upper arm';
+                document.getElementById('jpSite2Group').querySelector('small').textContent = 'Diagonal fold above hip bone';
+            }
+        }
+
+        // Event listeners for gender changes
+        document.getElementById('navyGender').addEventListener('change', updateNavyGenderFields);
+        document.getElementById('jpGender').addEventListener('change', updateJacksonGenderFields);
+
+        // Form submissions
+        document.getElementById('navyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const gender = document.getElementById('navyGender').value;
+            const height = parseFloat(document.getElementById('navyHeight').value);
+            const waist = parseFloat(document.getElementById('navyWaist').value);
+            const neck = parseFloat(document.getElementById('navyNeck').value);
+            const hip = gender === 'female' ? parseFloat(document.getElementById('navyHip').value) : 0;
+            
+            let bodyFat;
+            if (gender === 'male') {
+                bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+            } else {
+                bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+            }
+            
+            displayResults(Math.max(0, bodyFat), 'Navy Method', gender);
+        });
+
+        document.getElementById('jackson3Form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const gender = document.getElementById('jpGender').value;
+            const age = parseFloat(document.getElementById('jpAge').value);
+            const site1 = parseFloat(document.getElementById('jpSite1').value);
+            const site2 = parseFloat(document.getElementById('jpSite2').value);
+            const site3 = parseFloat(document.getElementById('jpSite3').value);
+            
+            const sum = site1 + site2 + site3;
+            let bodyDensity;
+            
+            if (gender === 'male') {
+                bodyDensity = 1.10938 - (0.0008267 * sum) + (0.0000016 * sum * sum) - (0.0002574 * age);
+            } else {
+                bodyDensity = 1.0994921 - (0.0009929 * sum) + (0.0000023 * sum * sum) - (0.0001392 * age);
+            }
+            
+            const bodyFat = (495 / bodyDensity) - 450;
+            displayResults(Math.max(0, bodyFat), 'Jackson-Pollock 3-Site', gender);
+        });
+
+        document.getElementById('ymcaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const weight = parseFloat(document.getElementById('ymcaWeight').value);
+            const waist = parseFloat(document.getElementById('ymcaWaist').value);
+            
+            const bodyFat = (waist * 0.74) - (weight * 0.082) + 44.74;
+            displayResults(Math.max(0, bodyFat), 'YMCA Formula', 'male'); // YMCA formula is unisex
+        });
+
+        function displayResults(bodyFat, method, gender) {
+            document.getElementById('bodyFatResult').textContent = bodyFat.toFixed(1) + '%';
+            document.getElementById('methodUsed').textContent = method;
+            
+            // Categorize results
+            let category, description;
+            const isMale = gender === 'male';
+            
+            if (isMale) {
+                if (bodyFat < 2) { category = 'Dangerously Low'; description = 'Below essential fat levels - health risks'; }
+                else if (bodyFat <= 5) { category = 'Essential Fat'; description = 'Minimal for basic functions'; }
+                else if (bodyFat <= 13) { category = 'Athletic'; description = 'Typical for athletes'; }
+                else if (bodyFat <= 17) { category = 'Fitness'; description = 'Fit and healthy appearance'; }
+                else if (bodyFat <= 24) { category = 'Average'; description = 'Normal healthy range'; }
+                else { category = 'Above Average'; description = 'May need attention'; }
+            } else {
+                if (bodyFat < 10) { category = 'Dangerously Low'; description = 'Below essential fat levels - health risks'; }
+                else if (bodyFat <= 13) { category = 'Essential Fat'; description = 'Minimal for basic functions'; }
+                else if (bodyFat <= 20) { category = 'Athletic'; description = 'Typical for athletes'; }
+                else if (bodyFat <= 24) { category = 'Fitness'; description = 'Fit and healthy appearance'; }
+                else if (bodyFat <= 31) { category = 'Average'; description = 'Normal healthy range'; }
+                else { category = 'Above Average'; description = 'May need attention'; }
+            }
+            
+            document.getElementById('categoryName').textContent = category;
+            document.getElementById('categoryDescription').textContent = description;
+            
+            document.getElementById('resultsSection').style.display = 'block';
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Body Fat Percentage Calculator",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "description": "Free body fat percentage calculator using Navy method, Jackson-Pollock, and YMCA formulas. Calculate body composition for fitness and health tracking.",
+        "url": "https://calcuforme.com/calculators/body-fat-percentage-calculator.html",
+        "author": {
+            "@type": "Organization",
+            "name": "CalcuForMe"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</body>
+</html>
