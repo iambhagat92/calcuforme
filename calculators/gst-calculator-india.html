@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Calculator India - Calculate GST, CGST, SGST, IGST Online | CalcuForMe</title>
+    <meta name="description" content="Free GST calculator for India. Calculate GST amount, CGST, SGST, IGST for different tax slabs (5%, 12%, 18%, 28%). GST inclusive and exclusive price calculator.">
+    <meta name="keywords" content="gst calculator india, gst calculator, cgst sgst calculator, igst calculator, gst calculation, gst rate calculator, goods and services tax calculator">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .calculator-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .gst-type-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .gst-type-btn {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .gst-type-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .calculator-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .gst-rate-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .rate-btn {
+            padding: 10px;
+            background: #f0f0f0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .rate-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .calculate-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .result-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+        }
+        .result-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        .result-value {
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        .breakdown-table {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .calculator-section { grid-template-columns: 1fr; }
+            .gst-rate-buttons { grid-template-columns: repeat(2, 1fr); }
+            .header h1 { font-size: 1.8em; }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <a href="../index.html" class="nav-link">← Back to Home</a>
+            
+            <div class="header">
+                <h1>GST Calculator India</h1>
+                <p>Calculate Goods and Services Tax for your business</p>
+            </div>
+
+            <div class="gst-type-selector">
+                <button class="gst-type-btn active" onclick="setGSTType('exclusive')">GST Exclusive</button>
+                <button class="gst-type-btn" onclick="setGSTType('inclusive')">GST Inclusive</button>
+            </div>
+
+            <div class="calculator-section">
+                <div class="input-section">
+                    <h3 id="calculationType">Add GST to Amount</h3>
+                    
+                    <div class="input-group">
+                        <label for="amount">Amount (₹)</label>
+                        <input type="number" id="amount" placeholder="Enter amount" value="10000" min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label>GST Rate (%)</label>
+                        <div class="gst-rate-buttons">
+                            <button class="rate-btn" onclick="setGSTRate(0)">0%</button>
+                            <button class="rate-btn" onclick="setGSTRate(5)">5%</button>
+                            <button class="rate-btn" onclick="setGSTRate(12)">12%</button>
+                            <button class="rate-btn active" onclick="setGSTRate(18)">18%</button>
+                            <button class="rate-btn" onclick="setGSTRate(28)">28%</button>
+                            <button class="rate-btn" onclick="setGSTRate(3)">3%</button>
+                            <button class="rate-btn" onclick="setCustomRate()">Custom</button>
+                        </div>
+                    </div>
+
+                    <div class="input-group" id="customRateGroup" style="display: none;">
+                        <label for="customRate">Custom GST Rate (%)</label>
+                        <input type="number" id="customRate" placeholder="Enter custom rate" min="0" max="100" step="0.1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gstType">GST Type</label>
+                        <select id="gstType">
+                            <option value="cgst-sgst">CGST + SGST (Within State)</option>
+                            <option value="igst">IGST (Inter-State)</option>
+                        </select>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateGST()">Calculate GST</button>
+                </div>
+
+                <div class="result-section">
+                    <div class="result-box">
+                        <div class="result-item">
+                            <div class="result-label">Original Amount</div>
+                            <div class="result-value" id="originalAmount">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">GST Amount</div>
+                            <div class="result-value" id="gstAmount">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Amount</div>
+                            <div class="result-value" id="totalAmount">₹0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breakdown-table" id="breakdownTable" style="display: none;">
+                <h3>GST Breakdown</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Rate</th>
+                            <th>Amount (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="breakdownBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h4>📊 GST Rates in India:</h4>
+                <ul style="margin-left: 20px;">
+                    <li><strong>0%:</strong> Essential items (milk, eggs, fresh vegetables)</li>
+                    <li><strong>5%:</strong> Common use items (sugar, tea, coffee)</li>
+                    <li><strong>12%:</strong> Standard items (mobile phones, processed food)</li>
+                    <li><strong>18%:</strong> Most goods and services</li>
+                    <li><strong>28%:</strong> Luxury items (cars, tobacco, aerated drinks)</li>
+                    <li><strong>3%:</strong> Gold and precious stones</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentGSTRate = 18;
+        let calculationType = 'exclusive';
+
+        function setGSTType(type) {
+            calculationType = type;
+            document.querySelectorAll('.gst-type-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            document.getElementById('calculationType').textContent = 
+                type === 'exclusive' ? 'Add GST to Amount' : 'Extract GST from Amount';
+            
+            calculateGST();
+        }
+
+        function setGSTRate(rate) {
+            currentGSTRate = rate;
+            document.querySelectorAll('.rate-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            document.getElementById('customRateGroup').style.display = 'none';
+            calculateGST();
+        }
+
+        function setCustomRate() {
+            document.querySelectorAll('.rate-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            document.getElementById('customRateGroup').style.display = 'block';
+        }
+
+        function calculateGST() {
+            const amount = parseFloat(document.getElementById('amount').value) || 0;
+            const customRateInput = document.getElementById('customRate').value;
+            const rate = customRateInput ? parseFloat(customRateInput) : currentGSTRate;
+            const gstType = document.getElementById('gstType').value;
+            
+            let originalAmount, gstAmount, totalAmount;
+            
+            if (calculationType === 'exclusive') {
+                // Adding GST to amount
+                originalAmount = amount;
+                gstAmount = (amount * rate) / 100;
+                totalAmount = originalAmount + gstAmount;
+            } else {
+                // Extracting GST from amount (inclusive)
+                totalAmount = amount;
+                originalAmount = (amount * 100) / (100 + rate);
+                gstAmount = totalAmount - originalAmount;
+            }
+            
+            // Format currency
+            const formatINR = (num) => '₹' + num.toLocaleString('en-IN', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            
+            // Display results
+            document.getElementById('originalAmount').textContent = formatINR(originalAmount);
+            document.getElementById('gstAmount').textContent = formatINR(gstAmount);
+            document.getElementById('totalAmount').textContent = formatINR(totalAmount);
+            
+            // Show breakdown
+            const tbody = document.getElementById('breakdownBody');
+            tbody.innerHTML = '';
+            
+            if (gstType === 'cgst-sgst') {
+                tbody.innerHTML = `
+                    <tr>
+                        <td>Base Amount</td>
+                        <td>-</td>
+                        <td>${formatINR(originalAmount)}</td>
+                    </tr>
+                    <tr>
+                        <td>CGST</td>
+                        <td>${rate/2}%</td>
+                        <td>${formatINR(gstAmount/2)}</td>
+                    </tr>
+                    <tr>
+                        <td>SGST</td>
+                        <td>${rate/2}%</td>
+                        <td>${formatINR(gstAmount/2)}</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>Total</td>
+                        <td>${rate}%</td>
+                        <td>${formatINR(totalAmount)}</td>
+                    </tr>
+                `;
+            } else {
+                tbody.innerHTML = `
+                    <tr>
+                        <td>Base Amount</td>
+                        <td>-</td>
+                        <td>${formatINR(originalAmount)}</td>
+                    </tr>
+                    <tr>
+                        <td>IGST</td>
+                        <td>${rate}%</td>
+                        <td>${formatINR(gstAmount)}</td>
+                    </tr>
+                    <tr style="font-weight: bold;">
+                        <td>Total</td>
+                        <td>${rate}%</td>
+                        <td>${formatINR(totalAmount)}</td>
+                    </tr>
+                `;
+            }
+            
+            document.getElementById('breakdownTable').style.display = 'block';
+        }
+
+        // Initialize
+        window.onload = function() {
+            calculateGST();
+        };
+    </script>
+</body>
+</html>
