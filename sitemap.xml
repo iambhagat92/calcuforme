@@ -138,6 +138,14 @@
   </url>
 
   
+  <!-- Compound Interest Calculator India -->
+  <url>
+    <loc>https://calcuforme.vercel.app/calculators/compound-interest-calculator-india.html</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Date & Time Calculators -->
   <url>
     <loc>https://calcuforme.vercel.app/calculators/age-calculator.html</loc>
