@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags - Exact Keyword Targeting -->
+    <title>How to Calculate Compound Interest in Excel for Days - Daily Compounding Formula 2025</title>
+    <meta name="description" content="Learn how to calculate compound interest in Excel for days with daily compounding formulas. Perfect for short-term FD, liquid funds, and day-wise interest calculations with examples.">
+    <meta name="keywords" content="how to calculate compound interest in excel for days, daily compound interest excel, compound interest formula for days excel, calculate daily interest excel, excel daily compounding formula">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="How to Calculate Compound Interest in Excel for Days - Complete Guide">
+    <meta property="og:description" content="Master daily compound interest calculations in Excel with formulas for short-term investments and day-wise returns.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://calculateforme.xyz/blog/how-to-calculate-compound-interest-in-excel-for-days.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://calculateforme.xyz/blog/how-to-calculate-compound-interest-in-excel-for-days.html">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Calculate Compound Interest in Excel for Days",
+      "description": "Step-by-step guide to calculate daily compound interest in Excel",
+      "totalTime": "PT10M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Enter principal and rate",
+          "text": "Input your principal amount and annual interest rate"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Convert to daily rate",
+          "text": "Divide annual rate by 365 for daily compounding"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Apply daily formula",
+          "text": "Use =Principal*(1+Rate/365)^Days"
+        }
+      ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../about.html">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 4rem 0 2rem;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; color: white;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">How to Calculate Compound Interest in Excel for Days: Daily Compounding Guide</h1>
+                <p style="font-size: 1.2rem;">Master the Excel formulas for calculating compound interest on a daily basis</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article style="padding: 3rem 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                
+                <!-- Introduction -->
+                <section>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #4a5568; margin-bottom: 1.5rem;">
+                        Learning <strong>how to calculate compound interest in Excel for days</strong> is crucial for short-term investments, liquid funds, and any scenario where you need precise daily interest calculations. This guide shows you exactly how to use Excel formulas for daily compound interest, whether it's for 30 days, 90 days, or any specific number of days.
+                    </p>
+                    
+                    <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.5rem; margin: 2rem 0; border-radius: 8px;">
+                        <h3 style="color: #856404; margin-bottom: 0.5rem;">💡 When Daily Compounding Matters</h3>
+                        <p style="color: #856404; margin: 0;">
+                            Daily compounding is used in liquid funds, some savings accounts, and short-term FDs. The difference becomes significant for large amounts - ₹10 lakhs at 7% for 365 days gives ₹72,501 with daily compounding vs ₹70,000 with simple interest!
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Main Formula Section -->
+                <section>
+                    <h2 style="color: #2d3748; font-size: 2rem; margin: 2.5rem 0 1.5rem;">
+                        Excel Formula: How to Calculate Compound Interest in Excel for Days
+                    </h2>
+                    
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                        <h3 style="margin-bottom: 1rem;">📊 Daily Compound Interest Formula</h3>
+                        <code style="display: block; background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; font-size: 1.2rem;">
+                            A = P × (1 + r/365)^days
+                        </code>
+                        <div style="margin-top: 1rem;">
+                            Where:<br>
+                            A = Final amount<br>
+                            P = Principal amount<br>
+                            r = Annual interest rate (decimal)<br>
+                            365 = Days in a year<br>
+                            days = Number of days for investment
+                        </div>
+                    </div>
+
+                    <h3 style="color: #2d3748; margin: 2rem 0 1rem;">Excel Implementation</h3>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                        <p><strong>Basic Formula:</strong></p>
+                        <code style="color: #d63384; display: block; margin: 0.5rem 0;">
+                            =Principal*(1+AnnualRate/365)^Days
+                        </code>
+                        <p style="margin-top: 1rem;"><strong>With cell references:</strong></p>
+                        <code style="color: #d63384; display: block;">
+                            =A1*(1+B1/365)^C1
+                        </code>
+                        <p style="color: #718096; font-size: 0.9rem; margin-top: 0.5rem;">
+                            A1 = Principal, B1 = Annual Rate, C1 = Days
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Real Examples -->
+                <section>
+                    <h2 style="color: #2d3748; font-size: 2rem; margin: 2.5rem 0 1.5rem;">
+                        Practical Examples: Calculate Compound Interest in Excel for Days
+                    </h2>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Example 1: 90-Day Fixed Deposit</h3>
+                        <p style="color: #4a5568;">Principal: ₹5,00,000 | Rate: 6.5% p.a. | Period: 90 days</p>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <code style="color: #d63384;">
+                                =500000*(1+0.065/365)^90
+                            </code>
+                            <p style="margin-top: 0.5rem;"><strong>Result:</strong> ₹5,08,088.52</p>
+                            <p><strong>Interest Earned:</strong> ₹8,088.52</p>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Example 2: 30-Day Liquid Fund</h3>
+                        <p style="color: #4a5568;">Principal: ₹10,00,000 | Rate: 7.2% p.a. | Period: 30 days</p>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <code style="color: #d63384;">
+                                =1000000*(1+0.072/365)^30
+                            </code>
+                            <p style="margin-top: 0.5rem;"><strong>Result:</strong> ₹10,05,934.25</p>
+                            <p><strong>Interest Earned:</strong> ₹5,934.25</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #2d3748; margin: 2rem 0 1rem;">Comparison Table: Different Day Periods</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+                        <thead>
+                            <tr style="background: #667eea; color: white;">
+                                <th style="padding: 1rem;">Days</th>
+                                <th style="padding: 1rem;">Principal</th>
+                                <th style="padding: 1rem;">Rate</th>
+                                <th style="padding: 1rem;">Excel Formula</th>
+                                <th style="padding: 1rem;">Maturity</th>
+                                <th style="padding: 1rem;">Interest</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 1rem;">7</td>
+                                <td style="padding: 1rem;">₹1,00,000</td>
+                                <td style="padding: 1rem;">6%</td>
+                                <td style="padding: 1rem;">=100000*(1+0.06/365)^7</td>
+                                <td style="padding: 1rem;">₹1,00,115</td>
+                                <td style="padding: 1rem;">₹115</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem;">15</td>
+                                <td style="padding: 1rem;">₹1,00,000</td>
+                                <td style="padding: 1rem;">6%</td>
+                                <td style="padding: 1rem;">=100000*(1+0.06/365)^15</td>
+                                <td style="padding: 1rem;">₹1,00,247</td>
+                                <td style="padding: 1rem;">₹247</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 1rem;">30</td>
+                                <td style="padding: 1rem;">₹1,00,000</td>
+                                <td style="padding: 1rem;">6%</td>
+                                <td style="padding: 1rem;">=100000*(1+0.06/365)^30</td>
+                                <td style="padding: 1rem;">₹1,00,494</td>
+                                <td style="padding: 1rem;">₹494</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem;">60</td>
+                                <td style="padding: 1rem;">₹1,00,000</td>
+                                <td style="padding: 1rem;">6%</td>
+                                <td style="padding: 1rem;">=100000*(1+0.06/365)^60</td>
+                                <td style="padding: 1rem;">₹1,00,990</td>
+                                <td style="padding: 1rem;">₹990</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 1rem;">90</td>
+                                <td style="padding: 1rem;">₹1,00,000</td>
+                                <td style="padding: 1rem;">6%</td>
+                                <td style="padding: 1rem;">=100000*(1+0.06/365)^90</td>
+                                <td style="padding: 1rem;">₹1,01,489</td>
+                                <td style="padding: 1rem;">₹1,489</td>
+                            </tr>
+                            <tr style="background: #e6f2ff;">
+                                <td style="padding: 1rem;"><strong>180</strong></td>
+                                <td style="padding: 1rem;"><strong>₹1,00,000</strong></td>
+                                <td style="padding: 1rem;"><strong>6%</strong></td>
+                                <td style="padding: 1rem;"><strong>=100000*(1+0.06/365)^180</strong></td>
+                                <td style="padding: 1rem;"><strong>₹1,03,009</strong></td>
+                                <td style="padding: 1rem;"><strong>₹3,009</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Step by Step Guide -->
+                <section>
+                    <h2 style="color: #2d3748; font-size: 2rem; margin: 2.5rem 0 1.5rem;">
+                        Step-by-Step: How to Calculate Compound Interest in Excel for Days
+                    </h2>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Step 1: Set Up Your Spreadsheet</h3>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">Cell</td>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">Label</td>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">Example Value</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">A1</td>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">Principal Amount (₹)</td>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">500000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">A2</td>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">Annual Interest Rate (%)</td>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">7.5</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">A3</td>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">Number of Days</td>
+                                <td style="padding: 1rem; border: 1px solid #e2e8f0;">45</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Step 2: Apply the Daily Compound Interest Formula</h3>
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                            <p>In cell A5, enter:</p>
+                            <code style="color: #d63384; font-size: 1.1rem;">
+                                =B1*(1+B2/100/365)^B3
+                            </code>
+                            <p style="margin-top: 1rem; color: #718096;">This calculates the maturity amount with daily compounding</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Step 3: Calculate Interest Earned</h3>
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                            <p>In cell A6, calculate interest:</p>
+                            <code style="color: #d63384; font-size: 1.1rem;">
+                                =A5-B1
+                            </code>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Step 4: Calculate Effective Annual Yield</h3>
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                            <p>To find annualized return:</p>
+                            <code style="color: #d63384; font-size: 1.1rem;">
+                                =((A5/B1)^(365/B3)-1)*100
+                            </code>
+                            <p style="margin-top: 1rem; color: #718096;">This shows the effective annual rate based on daily compounding</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advanced Scenarios -->
+                <section>
+                    <h2 style="color: #2d3748; font-size: 2rem; margin: 2.5rem 0 1.5rem;">
+                        Advanced Daily Compound Interest Calculations
+                    </h2>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Leap Year Adjustment</h3>
+                        <p style="color: #4a5568; margin-bottom: 1rem;">For precise calculations in leap years:</p>
+                        <code style="display: block; background: #f8f9fa; padding: 1rem; border-radius: 8px; color: #d63384;">
+                            =IF(MOD(YEAR(TODAY()),4)=0,
+                               Principal*(1+Rate/366)^Days,
+                               Principal*(1+Rate/365)^Days)
+                        </code>
+                    </div>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Date-Based Calculation</h3>
+                        <p style="color: #4a5568; margin-bottom: 1rem;">Calculate using actual dates:</p>
+                        <code style="display: block; background: #f8f9fa; padding: 1rem; border-radius: 8px; color: #d63384;">
+                            =Principal*(1+Rate/365)^(EndDate-StartDate)
+                        </code>
+                        <p style="color: #718096; margin-top: 1rem;">Example: A1=₹100000, B1=7%, C1=DATE(2025,1,1), D1=DATE(2025,3,15)</p>
+                        <code style="display: block; background: #f8f9fa; padding: 1rem; border-radius: 8px; color: #d63384; margin-top: 0.5rem;">
+                            =A1*(1+B1/365)^(D1-C1)
+                        </code>
+                    </div>
+                </section>
+
+                <!-- Daily vs Other Compounding -->
+                <section>
+                    <h2 style="color: #2d3748; font-size: 2rem; margin: 2.5rem 0 1.5rem;">
+                        Daily vs Other Compounding Frequencies
+                    </h2>
+
+                    <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.5rem; margin: 2rem 0; border-radius: 8px;">
+                        <h3 style="color: #856404;">₹10,00,000 at 8% for 365 Days</h3>
+                        <table style="width: 100%; margin-top: 1rem;">
+                            <tr>
+                                <td style="padding: 0.5rem;"><strong>Simple Interest:</strong></td>
+                                <td style="padding: 0.5rem;">₹10,80,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem;"><strong>Annual Compounding:</strong></td>
+                                <td style="padding: 0.5rem;">₹10,80,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem;"><strong>Quarterly Compounding:</strong></td>
+                                <td style="padding: 0.5rem;">₹10,82,432</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem;"><strong>Monthly Compounding:</strong></td>
+                                <td style="padding: 0.5rem;">₹10,83,000</td>
+                            </tr>
+                            <tr style="background: #fff;">
+                                <td style="padding: 0.5rem;"><strong>Daily Compounding:</strong></td>
+                                <td style="padding: 0.5rem;"><strong>₹10,83,278</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Common Use Cases -->
+                <section>
+                    <h2 style="color: #2d3748; font-size: 2rem; margin: 2.5rem 0 1.5rem;">
+                        When to Use Daily Compound Interest in Excel
+                    </h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h4 style="color: #667eea; margin-bottom: 0.5rem;">🏦 Short-term FDs</h4>
+                            <p style="color: #718096; font-size: 0.9rem;">7-day to 180-day fixed deposits with daily compounding</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h4 style="color: #667eea; margin-bottom: 0.5rem;">💧 Liquid Funds</h4>
+                            <p style="color: #718096; font-size: 0.9rem;">Ultra-short duration funds with daily NAV calculation</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h4 style="color: #667eea; margin-bottom: 0.5rem;">💳 Credit Card Interest</h4>
+                            <p style="color: #718096; font-size: 0.9rem;">Daily interest charges on outstanding balances</p>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h4 style="color: #667eea; margin-bottom: 0.5rem;">💰 Savings Accounts</h4>
+                            <p style="color: #718096; font-size: 0.9rem;">Some banks offer daily compounding on savings</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQs -->
+                <section>
+                    <h2 style="color: #2d3748; font-size: 2rem; margin: 2.5rem 0 1.5rem;">
+                        FAQs: How to Calculate Compound Interest in Excel for Days
+                    </h2>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Q1: Should I use 365 or 360 days for banking calculations?</h3>
+                        <p style="color: #4a5568; line-height: 1.8;">
+                            Most banks use 365 days (actual/365 convention). Some use 360 days for simplification. Check with your bank. In Excel: <code>=Principal*(1+Rate/360)^Days</code> for 360-day year.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Q2: How to calculate if investment spans multiple years?</h3>
+                        <p style="color: #4a5568; line-height: 1.8;">
+                            Use total days directly. For 400 days: <code>=Principal*(1+Rate/365)^400</code>. Excel handles multi-year calculations automatically.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #2d3748;">Q3: What's the formula for continuous compounding?</h3>
+                        <p style="color: #4a5568; line-height: 1.8;">
+                            For theoretical continuous compounding: <code>=Principal*EXP(Rate*Days/365)</code>. This gives the mathematical limit of infinite compounding frequency.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section>
+                    <h2 style="color: #2d3748; font-size: 2rem; margin: 2.5rem 0 1.5rem;">
+                        Conclusion
+                    </h2>
+                    
+                    <p style="color: #4a5568; line-height: 1.8; margin-bottom: 1.5rem;">
+                        Now you know exactly <strong>how to calculate compound interest in Excel for days</strong> using the daily compounding formula. Whether you're analyzing short-term FDs, liquid fund returns, or any investment with daily compounding, these Excel formulas provide accurate calculations for informed decision-making.
+                    </p>
+
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                        <h3 style="margin-bottom: 1rem;">📊 Key Takeaways</h3>
+                        <ul style="line-height: 2; margin-left: 1.5rem;">
+                            <li>Use formula: =P*(1+r/365)^days for daily compounding</li>
+                            <li>Daily compounding adds 0.3-0.5% extra annually vs simple interest</li>
+                            <li>Perfect for short-term investments and liquid funds</li>
+                            <li>Always verify if bank uses 365 or 360 day convention</li>
+                            <li>Date functions in Excel make calculations easier</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">Calculate Daily Compound Interest Instantly</h3>
+                    <a href="../calculators/compound-interest-calculator-india.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                        Try Online Calculator →
+                    </a>
+                </div>
+
+                <!-- Related Articles -->
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e2e8f0;">
+                    <h3 style="color: #2d3748; margin-bottom: 1.5rem;">Related Guides</h3>
+                    <ul style="color: #667eea; line-height: 2;">
+                        <li><a href="monthly-compound-interest-calculator-india.html" style="color: #667eea;">Monthly Compound Interest Calculator India</a></li>
+                        <li><a href="how-to-calculate-compound-interest-in-excel-for-5-years.html" style="color: #667eea;">5-Year Compound Interest Guide</a></li>
+                        <li><a href="compound-interest-formula-excel-with-monthly-contributions.html" style="color: #667eea;">Monthly Contributions Formula</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
