@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator 2024 - Federal & State Income Tax | CalcuForMe</title>
+    <meta name="description" content="Free income tax calculator for 2024. Calculate federal and state taxes, deductions, and tax refunds with updated tax brackets.">
+    <meta name="keywords" content="tax calculator, income tax calculator, federal tax calculator, state tax calculator, tax refund calculator">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Tax Calculator 2024 - Federal & State Income Tax">
+    <meta property="og:description" content="Calculate your 2024 income taxes with our free tax calculator. Federal and state tax brackets included.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculateforme.xyz/calculators/tax-calculator.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .calculator-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .calculator-content {
+            padding: 30px;
+        }
+
+        .section-title {
+            color: #1e293b;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #475569;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .input-group small {
+            display: block;
+            color: #64748b;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+            color: #475569;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: transform 0.3s;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .results-container {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .results-container.active {
+            display: block;
+        }
+
+        .result-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .result-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #cbd5e1;
+        }
+
+        .result-card.primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            border: none;
+        }
+
+        .result-card h4 {
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .result-card.primary h4 {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .result-card .amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .result-card.primary .amount {
+            color: white;
+        }
+
+        .tax-breakdown {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .tax-breakdown h3 {
+            background: #f8fafc;
+            padding: 15px 20px;
+            color: #1e293b;
+            font-size: 18px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .tax-breakdown table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tax-breakdown td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .tax-breakdown .label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .tax-breakdown .value {
+            text-align: right;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .tax-breakdown .total {
+            background: #f8fafc;
+            font-weight: 700;
+        }
+
+        .tax-breakdown .deduction {
+            color: #10b981;
+        }
+
+        .tax-breakdown .tax {
+            color: #ef4444;
+        }
+
+        .effective-rate-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .effective-rate-box h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .effective-rate-box .rate {
+            font-size: 32px;
+            font-weight: 700;
+            color: #78350f;
+        }
+
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: #3730a3;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="nav-link">← Back to Home</a>
+        
+        <div class="calculator-card">
+            <div class="header">
+                <h1>📊 Tax Calculator 2024</h1>
+                <p>Calculate federal and state income taxes with current tax brackets</p>
+            </div>
+
+            <div class="calculator-content">
+                <h2 class="section-title">Income Information</h2>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="grossIncome">Annual Gross Income</label>
+                        <input type="number" id="grossIncome" placeholder="75000" value="75000">
+                        <small>Your total yearly income before taxes</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="filingStatus">Filing Status</label>
+                        <select id="filingStatus">
+                            <option value="single" selected>Single</option>
+                            <option value="married-joint">Married Filing Jointly</option>
+                            <option value="married-separate">Married Filing Separately</option>
+                            <option value="head">Head of Household</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="state">State</label>
+                        <select id="state">
+                            <option value="CA">California (13.3%)</option>
+                            <option value="TX">Texas (No Income Tax)</option>
+                            <option value="NY" selected>New York (10.9%)</option>
+                            <option value="FL">Florida (No Income Tax)</option>
+                            <option value="IL">Illinois (4.95%)</option>
+                            <option value="WA">Washington (No Income Tax)</option>
+                            <option value="PA">Pennsylvania (3.07%)</option>
+                            <option value="NJ">New Jersey (10.75%)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Deductions & Credits</h2>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="deductionType">Deduction Type</label>
+                        <select id="deductionType" onchange="toggleDeductionInputs()">
+                            <option value="standard" selected>Standard Deduction</option>
+                            <option value="itemized">Itemized Deductions</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" id="standardDeductionGroup">
+                        <label for="standardDeduction">Standard Deduction Amount</label>
+                        <input type="number" id="standardDeduction" value="13850" readonly>
+                        <small>2024 standard deduction (auto-calculated)</small>
+                    </div>
+
+                    <div class="input-group" id="itemizedDeductionGroup" style="display: none;">
+                        <label for="itemizedAmount">Total Itemized Deductions</label>
+                        <input type="number" id="itemizedAmount" placeholder="0" value="0">
+                        <small>Sum of all itemized deductions</small>
+                    </div>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="retirement401k">401(k) Contributions</label>
+                        <input type="number" id="retirement401k" placeholder="0" value="0">
+                        <small>Annual pre-tax retirement contributions</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="healthInsurance">Health Insurance Premiums</label>
+                        <input type="number" id="healthInsurance" placeholder="0" value="0">
+                        <small>Annual health insurance premiums</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="dependents">Number of Dependents</label>
+                        <input type="number" id="dependents" placeholder="0" value="0" min="0">
+                        <small>Children or qualifying dependents</small>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Additional Withholdings</h2>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="additionalWithholding">Additional Federal Withholding</label>
+                        <input type="number" id="additionalWithholding" placeholder="0" value="0">
+                        <small>Extra amount to withhold per paycheck</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="payFrequency">Pay Frequency</label>
+                        <select id="payFrequency">
+                            <option value="weekly">Weekly (52 paychecks)</option>
+                            <option value="biweekly" selected>Bi-weekly (26 paychecks)</option>
+                            <option value="semimonthly">Semi-monthly (24 paychecks)</option>
+                            <option value="monthly">Monthly (12 paychecks)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateTax()">Calculate Tax</button>
+
+                <div class="results-container" id="results">
+                    <h2 style="color: #1e293b; margin-bottom: 20px;">Tax Calculation Results</h2>
+                    
+                    <div class="result-summary">
+                        <div class="result-card">
+                            <h4>Gross Income</h4>
+                            <div class="amount" id="resultGross">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <h4>Total Tax</h4>
+                            <div class="amount tax" id="resultTotalTax" style="color: #ef4444;">$0</div>
+                        </div>
+                        <div class="result-card primary">
+                            <h4>After-Tax Income</h4>
+                            <div class="amount" id="resultNetIncome">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <h4>Take-Home per Check</h4>
+                            <div class="amount" id="resultPerCheck">$0</div>
+                        </div>
+                    </div>
+
+                    <div class="tax-breakdown">
+                        <h3>Tax Breakdown</h3>
+                        <table>
+                            <tr>
+                                <td class="label">Gross Income</td>
+                                <td class="value" id="breakdownGross">$0</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Adjustments (401k, etc.)</td>
+                                <td class="value deduction" id="breakdownAdjustments">-$0</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Adjusted Gross Income (AGI)</td>
+                                <td class="value" id="breakdownAGI">$0</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Deductions</td>
+                                <td class="value deduction" id="breakdownDeductions">-$0</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Taxable Income</td>
+                                <td class="value" id="breakdownTaxable">$0</td>
+                            </tr>
+                            <tr style="background: #f8fafc;">
+                                <td colspan="2" style="padding: 5px;"></td>
+                            </tr>
+                            <tr>
+                                <td class="label">Federal Income Tax</td>
+                                <td class="value tax" id="breakdownFederal">$0</td>
+                            </tr>
+                            <tr>
+                                <td class="label">State Income Tax</td>
+                                <td class="value tax" id="breakdownState">$0</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Social Security (6.2%)</td>
+                                <td class="value tax" id="breakdownSS">$0</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Medicare (1.45%)</td>
+                                <td class="value tax" id="breakdownMedicare">$0</td>
+                            </tr>
+                            <tr class="total">
+                                <td class="label"><strong>Total Tax & Deductions</strong></td>
+                                <td class="value"><strong id="breakdownTotal">$0</strong></td>
+                            </tr>
+                            <tr class="total">
+                                <td class="label"><strong>Net Income</strong></td>
+                                <td class="value" style="color: #10b981;"><strong id="breakdownNet">$0</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="effective-rate-box">
+                        <h4>Effective Tax Rate</h4>
+                        <div class="rate" id="effectiveRate">0%</div>
+                        <p style="color: #92400e; margin-top: 10px;">This is your average tax rate across all income</p>
+                    </div>
+
+                    <div class="tax-breakdown" style="margin-top: 20px;">
+                        <h3>Federal Tax Brackets Applied</h3>
+                        <table id="bracketTable">
+                            <!-- Will be populated dynamically -->
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>📋 2024 Tax Information</h4>
+                    <p>• Standard deduction: $13,850 (Single), $27,700 (Married Filing Jointly)</p>
+                    <p>• Social Security tax: 6.2% on income up to $160,200</p>
+                    <p>• Medicare tax: 1.45% on all income (additional 0.9% on high earners)</p>
+                    <p>• This calculator provides estimates only. Consult a tax professional for accurate calculations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 2024 Federal tax brackets
+        const federalBrackets = {
+            single: [
+                { min: 0, max: 11000, rate: 0.10 },
+                { min: 11000, max: 44725, rate: 0.12 },
+                { min: 44725, max: 95375, rate: 0.22 },
+                { min: 95375, max: 182050, rate: 0.24 },
+                { min: 182050, max: 231250, rate: 0.32 },
+                { min: 231250, max: 578125, rate: 0.35 },
+                { min: 578125, max: Infinity, rate: 0.37 }
+            ],
+            'married-joint': [
+                { min: 0, max: 22000, rate: 0.10 },
+                { min: 22000, max: 89450, rate: 0.12 },
+                { min: 89450, max: 190750, rate: 0.22 },
+                { min: 190750, max: 364200, rate: 0.24 },
+                { min: 364200, max: 462500, rate: 0.32 },
+                { min: 462500, max: 693750, rate: 0.35 },
+                { min: 693750, max: Infinity, rate: 0.37 }
+            ]
+        };
+
+        const standardDeductions = {
+            single: 13850,
+            'married-joint': 27700,
+            'married-separate': 13850,
+            head: 20800
+        };
+
+        const stateTaxRates = {
+            CA: 0.133,
+            TX: 0,
+            NY: 0.109,
+            FL: 0,
+            IL: 0.0495,
+            WA: 0,
+            PA: 0.0307,
+            NJ: 0.1075
+        };
+
+        function updateStandardDeduction() {
+            const status = document.getElementById('filingStatus').value;
+            document.getElementById('standardDeduction').value = standardDeductions[status];
+        }
+
+        document.getElementById('filingStatus').addEventListener('change', updateStandardDeduction);
+
+        function toggleDeductionInputs() {
+            const type = document.getElementById('deductionType').value;
+            const standardGroup = document.getElementById('standardDeductionGroup');
+            const itemizedGroup = document.getElementById('itemizedDeductionGroup');
+            
+            if (type === 'standard') {
+                standardGroup.style.display = 'block';
+                itemizedGroup.style.display = 'none';
+            } else {
+                standardGroup.style.display = 'none';
+                itemizedGroup.style.display = 'block';
+            }
+        }
+
+        function calculateFederalTax(taxableIncome, filingStatus) {
+            const brackets = federalBrackets[filingStatus] || federalBrackets['single'];
+            let tax = 0;
+            let bracketDetails = [];
+            
+            for (let bracket of brackets) {
+                if (taxableIncome > bracket.min) {
+                    const taxableInBracket = Math.min(taxableIncome - bracket.min, bracket.max - bracket.min);
+                    const bracketTax = taxableInBracket * bracket.rate;
+                    tax += bracketTax;
+                    
+                    if (bracketTax > 0) {
+                        bracketDetails.push({
+                            range: `$${bracket.min.toLocaleString()} - ${bracket.max === Infinity ? 'above' : '$' + bracket.max.toLocaleString()}`,
+                            rate: (bracket.rate * 100).toFixed(0) + '%',
+                            income: taxableInBracket,
+                            tax: bracketTax
+                        });
+                    }
+                }
+            }
+            
+            return { tax, bracketDetails };
+        }
+
+        function calculateTax() {
+            // Get inputs
+            const grossIncome = parseFloat(document.getElementById('grossIncome').value) || 0;
+            const filingStatus = document.getElementById('filingStatus').value;
+            const state = document.getElementById('state').value;
+            const deductionType = document.getElementById('deductionType').value;
+            const retirement = parseFloat(document.getElementById('retirement401k').value) || 0;
+            const healthInsurance = parseFloat(document.getElementById('healthInsurance').value) || 0;
+            const dependents = parseInt(document.getElementById('dependents').value) || 0;
+            const payFrequency = document.getElementById('payFrequency').value;
+            
+            // Calculate deductions
+            let deductions = 0;
+            if (deductionType === 'standard') {
+                deductions = parseFloat(document.getElementById('standardDeduction').value);
+            } else {
+                deductions = parseFloat(document.getElementById('itemizedAmount').value) || 0;
+            }
+            
+            // Calculate AGI
+            const adjustments = retirement + healthInsurance;
+            const agi = grossIncome - adjustments;
+            
+            // Calculate taxable income
+            const taxableIncome = Math.max(0, agi - deductions);
+            
+            // Calculate federal tax
+            const federalResult = calculateFederalTax(taxableIncome, filingStatus);
+            const federalTax = federalResult.tax;
+            
+            // Calculate state tax
+            const stateTax = taxableIncome * stateTaxRates[state];
+            
+            // Calculate FICA taxes
+            const socialSecurity = Math.min(grossIncome, 160200) * 0.062;
+            const medicare = grossIncome * 0.0145;
+            const additionalMedicare = grossIncome > 200000 ? (grossIncome - 200000) * 0.009 : 0;
+            
+            // Calculate totals
+            const totalTax = federalTax + stateTax + socialSecurity + medicare + additionalMedicare;
+            const netIncome = grossIncome - totalTax - adjustments;
+            const effectiveTaxRate = (totalTax / grossIncome) * 100;
+            
+            // Calculate per paycheck
+            const payPeriods = {
+                weekly: 52,
+                biweekly: 26,
+                semimonthly: 24,
+                monthly: 12
+            };
+            const perCheck = netIncome / payPeriods[payFrequency];
+            
+            // Update results
+            document.getElementById('resultGross').textContent = formatCurrency(grossIncome);
+            document.getElementById('resultTotalTax').textContent = formatCurrency(totalTax);
+            document.getElementById('resultNetIncome').textContent = formatCurrency(netIncome);
+            document.getElementById('resultPerCheck').textContent = formatCurrency(perCheck);
+            
+            // Update breakdown
+            document.getElementById('breakdownGross').textContent = formatCurrency(grossIncome);
+            document.getElementById('breakdownAdjustments').textContent = '-' + formatCurrency(adjustments);
+            document.getElementById('breakdownAGI').textContent = formatCurrency(agi);
+            document.getElementById('breakdownDeductions').textContent = '-' + formatCurrency(deductions);
+            document.getElementById('breakdownTaxable').textContent = formatCurrency(taxableIncome);
+            document.getElementById('breakdownFederal').textContent = formatCurrency(federalTax);
+            document.getElementById('breakdownState').textContent = formatCurrency(stateTax);
+            document.getElementById('breakdownSS').textContent = formatCurrency(socialSecurity);
+            document.getElementById('breakdownMedicare').textContent = formatCurrency(medicare + additionalMedicare);
+            document.getElementById('breakdownTotal').textContent = formatCurrency(totalTax + adjustments);
+            document.getElementById('breakdownNet').textContent = formatCurrency(netIncome);
+            
+            document.getElementById('effectiveRate').textContent = effectiveTaxRate.toFixed(2) + '%';
+            
+            // Update bracket table
+            const bracketTable = document.getElementById('bracketTable');
+            bracketTable.innerHTML = '';
+            federalResult.bracketDetails.forEach(bracket => {
+                const row = bracketTable.insertRow();
+                row.innerHTML = `
+                    <td class="label">${bracket.range} at ${bracket.rate}</td>
+                    <td class="value">${formatCurrency(bracket.tax)}</td>
+                `;
+            });
+            
+            // Show results
+            document.getElementById('results').classList.add('active');
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+    </script>
+</body>
+</html>
