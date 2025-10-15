@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Calculator - BMI & Unit Converter | CalcuForMe</title>
+    <meta name="description" content="Free weight calculator with BMI calculation and weight unit conversion. Convert kg to pounds, calculate ideal weight, and track your health metrics.">
+    <meta name="keywords" content="weight calculator, BMI calculator, kg to pounds, weight converter, ideal weight, health calculator">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="calculator-header-content">
+                <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    <a href="../index.html" style="color: rgba(255,255,255,0.8);">Home</a> > 
+                    <a href="../index.html#categories" style="color: rgba(255,255,255,0.8);">Calculators</a> > 
+                    <span>Weight Calculator</span>
+                </nav>
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Weight Calculator</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Calculate BMI, convert weight units, and track your health metrics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-content" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px;">
+            
+            <!-- Calculator Tabs -->
+            <div class="calculator-tabs" style="display: flex; justify-content: center; margin-bottom: 3rem; border-bottom: 1px solid #e2e8f0;">
+                <button class="tab-btn active" onclick="switchTab('bmi')" style="padding: 1rem 2rem; border: none; background: none; color: #667eea; font-weight: bold; border-bottom: 2px solid #667eea; cursor: pointer;">
+                    <i class="fas fa-weight"></i> BMI Calculator
+                </button>
+                <button class="tab-btn" onclick="switchTab('converter')" style="padding: 1rem 2rem; border: none; background: none; color: #6b7280; font-weight: bold; border-bottom: 2px solid transparent; cursor: pointer;">
+                    <i class="fas fa-exchange-alt"></i> Weight Converter
+                </button>
+            </div>
+
+            <div class="calculator-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                
+                <!-- BMI Calculator Tab -->
+                <div id="bmi-tab" class="tab-content">
+                    <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                            <i class="fas fa-calculator" style="color: #667eea;"></i> BMI Calculator
+                        </h2>
+                        
+                        <form id="bmi-form">
+                            <!-- Weight Input -->
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Weight</label>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="number" id="bmi-weight" placeholder="Enter weight" 
+                                           style="flex: 1; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" step="0.1" required>
+                                    <select id="weight-unit" style="padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                        <option value="kg">KG</option>
+                                        <option value="lbs">LBS</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Height Input -->
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Height</label>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="number" id="bmi-height" placeholder="Enter height" 
+                                           style="flex: 1; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" step="0.1" required>
+                                    <select id="height-unit" style="padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                        <option value="cm">CM</option>
+                                        <option value="ft">FT</option>
+                                        <option value="m">M</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Age & Gender (Optional) -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                                <div class="form-group">
+                                    <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Age (Optional)</label>
+                                    <input type="number" id="age" placeholder="Age" 
+                                           style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="1" max="120">
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Gender (Optional)</label>
+                                    <select id="gender" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" 
+                                    style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                                <i class="fas fa-calculator"></i> Calculate BMI
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Weight Converter Tab -->
+                <div id="converter-tab" class="tab-content" style="display: none;">
+                    <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                        <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                            <i class="fas fa-exchange-alt" style="color: #667eea;"></i> Weight Unit Converter
+                        </h2>
+                        
+                        <form id="converter-form">
+                            <!-- From Weight -->
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">From</label>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="number" id="from-weight" placeholder="Enter weight" 
+                                           style="flex: 1; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" step="0.01" required>
+                                    <select id="from-unit" style="padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                        <option value="kg">Kilograms (kg)</option>
+                                        <option value="lbs">Pounds (lbs)</option>
+                                        <option value="g">Grams (g)</option>
+                                        <option value="oz">Ounces (oz)</option>
+                                        <option value="st">Stones (st)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- To Weight -->
+                            <div class="form-group" style="margin-bottom: 2rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">To</label>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <input type="number" id="to-weight" placeholder="Result" readonly
+                                           style="flex: 1; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background-color: #f9fafb;">
+                                    <select id="to-unit" style="padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                        <option value="lbs">Pounds (lbs)</option>
+                                        <option value="kg">Kilograms (kg)</option>
+                                        <option value="g">Grams (g)</option>
+                                        <option value="oz">Ounces (oz)</option>
+                                        <option value="st">Stones (st)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="swapUnits()" 
+                                    style="width: 100%; background: #f59e0b; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-bottom: 1rem;">
+                                <i class="fas fa-exchange-alt"></i> Swap Units
+                            </button>
+                        </form>
+
+                        <!-- Quick Conversion Buttons -->
+                        <div style="border-top: 1px solid #e5e7eb; padding-top: 1.5rem; margin-top: 1.5rem;">
+                            <h4 style="color: #374151; margin-bottom: 1rem;">Quick Conversions</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <button onclick="quickConvert(70, 'kg', 'lbs')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">70 kg → lbs</button>
+                                <button onclick="quickConvert(150, 'lbs', 'kg')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">150 lbs → kg</button>
+                                <button onclick="quickConvert(1, 'kg', 'g')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">1 kg → g</button>
+                                <button onclick="quickConvert(1000, 'g', 'kg')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">1000 g → kg</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <!-- BMI Results -->
+                    <div id="bmi-results" class="results-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); margin-bottom: 2rem; display: none;">
+                        <h3 style="color: #2d3748; margin-bottom: 1.5rem;">
+                            <i class="fas fa-chart-bar" style="color: #667eea;"></i> Your BMI Results
+                        </h3>
+                        <div id="bmi-display" style="text-align: center; margin-bottom: 2rem;">
+                            <div style="font-size: 3rem; font-weight: bold; color: #667eea; margin-bottom: 0.5rem;" id="bmi-value">--</div>
+                            <div style="font-size: 1.2rem; color: #6b7280; margin-bottom: 1rem;" id="bmi-category">BMI Category</div>
+                        </div>
+                        
+                        <div id="bmi-interpretation" style="padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                            <p id="bmi-message" style="margin-bottom: 1rem; line-height: 1.6;"></p>
+                        </div>
+
+                        <!-- BMI Chart -->
+                        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 12px;">
+                            <h4 style="color: #374151; margin-bottom: 1rem;">BMI Categories</h4>
+                            <div style="display: grid; gap: 0.5rem; font-size: 0.9rem;">
+                                <div style="display: flex; justify-content: space-between; padding: 0.5rem; border-radius: 6px; background: #dbeafe;">
+                                    <span>Underweight</span><span>&lt; 18.5</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 0.5rem; border-radius: 6px; background: #d1fae5;">
+                                    <span>Normal weight</span><span>18.5 - 24.9</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 0.5rem; border-radius: 6px; background: #fef3c7;">
+                                    <span>Overweight</span><span>25 - 29.9</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 0.5rem; border-radius: 6px; background: #fed7d7;">
+                                    <span>Obese</span><span>&ge; 30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ideal Weight Range -->
+                    <div id="ideal-weight" class="results-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); display: none;">
+                        <h3 style="color: #2d3748; margin-bottom: 1.5rem;">
+                            <i class="fas fa-bullseye" style="color: #10b981;"></i> Ideal Weight Range
+                        </h3>
+                        <div id="ideal-weight-display" style="text-align: center; margin-bottom: 1.5rem;">
+                            <div style="font-size: 1.5rem; color: #10b981; font-weight: bold;" id="ideal-range">--</div>
+                            <div style="color: #6b7280; margin-top: 0.5rem;">Healthy weight range for your height</div>
+                        </div>
+                        
+                        <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #10b981;">
+                            <p style="color: #047857; line-height: 1.6; margin: 0;">
+                                <strong>Tip:</strong> A healthy weight range gives you the best chance for overall health and reduces the risk of weight-related diseases.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                        <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.getElementById('bmi-tab').style.display = tabName === 'bmi' ? 'block' : 'none';
+            document.getElementById('converter-tab').style.display = tabName === 'converter' ? 'block' : 'none';
+            
+            // Update active tab button
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.color = '#6b7280';
+                btn.style.borderBottom = '2px solid transparent';
+            });
+            
+            if (tabName === 'bmi') {
+                document.querySelector('.tab-btn').classList.add('active');
+                document.querySelector('.tab-btn').style.color = '#667eea';
+                document.querySelector('.tab-btn').style.borderBottom = '2px solid #667eea';
+            } else {
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+                document.querySelectorAll('.tab-btn')[1].style.color = '#667eea';
+                document.querySelectorAll('.tab-btn')[1].style.borderBottom = '2px solid #667eea';
+            }
+        }
+
+        // BMI Calculator
+        document.getElementById('bmi-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateBMI();
+        });
+
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById('bmi-weight').value);
+            let height = parseFloat(document.getElementById('bmi-height').value);
+            const weightUnit = document.getElementById('weight-unit').value;
+            const heightUnit = document.getElementById('height-unit').value;
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+
+            if (!weight || !height || weight <= 0 || height <= 0) {
+                alert('Please enter valid weight and height values.');
+                return;
+            }
+
+            // Convert weight to kg
+            if (weightUnit === 'lbs') {
+                weight = weight * 0.453592;
+            }
+
+            // Convert height to meters
+            if (heightUnit === 'cm') {
+                height = height / 100;
+            } else if (heightUnit === 'ft') {
+                height = height * 0.3048;
+            }
+
+            // Calculate BMI
+            const bmi = weight / (height * height);
+            
+            // Display results
+            displayBMIResults(bmi, age, gender, weight, height);
+        }
+
+        function displayBMIResults(bmi, age, gender, weightKg, heightM) {
+            document.getElementById('bmi-value').textContent = bmi.toFixed(1);
+            
+            let category, message, bgColor;
+            
+            if (bmi < 18.5) {
+                category = 'Underweight';
+                message = 'Your BMI indicates that you are underweight. Consider consulting with a healthcare provider about healthy ways to gain weight.';
+                bgColor = '#dbeafe';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                category = 'Normal weight';
+                message = 'Congratulations! Your BMI is in the healthy weight range. Maintain your current lifestyle to stay healthy.';
+                bgColor = '#d1fae5';
+            } else if (bmi >= 25 && bmi < 30) {
+                category = 'Overweight';
+                message = 'Your BMI indicates that you are overweight. Consider adopting a healthier diet and increasing physical activity.';
+                bgColor = '#fef3c7';
+            } else {
+                category = 'Obese';
+                message = 'Your BMI indicates obesity. We recommend consulting with a healthcare provider for personalized advice on weight management.';
+                bgColor = '#fed7d7';
+            }
+            
+            document.getElementById('bmi-category').textContent = category;
+            document.getElementById('bmi-message').textContent = message;
+            document.getElementById('bmi-interpretation').style.backgroundColor = bgColor;
+            
+            // Calculate ideal weight range
+            const minIdealWeight = 18.5 * (heightM * heightM);
+            const maxIdealWeight = 24.9 * (heightM * heightM);
+            
+            document.getElementById('ideal-range').textContent = 
+                `${minIdealWeight.toFixed(1)} - ${maxIdealWeight.toFixed(1)} kg`;
+            
+            // Show results
+            document.getElementById('bmi-results').style.display = 'block';
+            document.getElementById('ideal-weight').style.display = 'block';
+        }
+
+        // Weight Converter
+        const conversionRates = {
+            kg: 1,
+            lbs: 2.20462,
+            g: 1000,
+            oz: 35.274,
+            st: 0.157473
+        };
+
+        function convertWeight() {
+            const fromWeight = parseFloat(document.getElementById('from-weight').value);
+            const fromUnit = document.getElementById('from-unit').value;
+            const toUnit = document.getElementById('to-unit').value;
+            
+            if (!fromWeight || fromWeight < 0) {
+                document.getElementById('to-weight').value = '';
+                return;
+            }
+            
+            // Convert to kg first, then to target unit
+            const weightInKg = fromWeight / conversionRates[fromUnit];
+            const convertedWeight = weightInKg * conversionRates[toUnit];
+            
+            document.getElementById('to-weight').value = convertedWeight.toFixed(4);
+        }
+
+        // Auto-convert on input change
+        document.getElementById('from-weight').addEventListener('input', convertWeight);
+        document.getElementById('from-unit').addEventListener('change', convertWeight);
+        document.getElementById('to-unit').addEventListener('change', convertWeight);
+
+        function swapUnits() {
+            const fromUnit = document.getElementById('from-unit');
+            const toUnit = document.getElementById('to-unit');
+            const fromWeight = document.getElementById('from-weight');
+            const toWeight = document.getElementById('to-weight');
+            
+            // Swap units
+            const tempUnit = fromUnit.value;
+            fromUnit.value = toUnit.value;
+            toUnit.value = tempUnit;
+            
+            // Swap values
+            const tempWeight = fromWeight.value;
+            fromWeight.value = toWeight.value;
+            toWeight.value = tempWeight;
+            
+            convertWeight();
+        }
+
+        function quickConvert(weight, fromUnit, toUnit) {
+            document.getElementById('from-weight').value = weight;
+            document.getElementById('from-unit').value = fromUnit;
+            document.getElementById('to-unit').value = toUnit;
+            convertWeight();
+        }
+
+        // Initialize converter
+        convertWeight();
+    </script>
+</body>
+</html>

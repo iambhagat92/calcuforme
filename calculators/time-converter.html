@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Converter - Hours to Minutes, Seconds to Days | CalcuForMe</title>
+    <meta name="description" content="Free time converter. Convert between seconds, minutes, hours, days, weeks, months, and years. Calculate time differences and durations instantly.">
+    <meta name="keywords" content="time converter, hours to seconds, minutes to days, days to hours, time calculation, duration converter">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="calculator-header-content">
+                <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    <a href="../index.html" style="color: rgba(255,255,255,0.8);">Home</a> > 
+                    <a href="../index.html#categories" style="color: rgba(255,255,255,0.8);">Calculators</a> > 
+                    <span>Time Converter</span>
+                </nav>
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Time Unit Converter</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Convert between seconds, minutes, hours, days, weeks, and more</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-content" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px;">
+            
+            <div class="calculator-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                
+                <!-- Time Converter -->
+                <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                        <i class="fas fa-clock" style="color: #667eea;"></i> Time Unit Converter
+                    </h2>
+                    
+                    <!-- Input Time -->
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Enter Time Value</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="number" id="input-time" placeholder="Enter time value" 
+                                   style="flex: 1; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" step="0.001" min="0">
+                            <select id="input-unit" onchange="convertTime()" style="padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                <option value="seconds">Seconds</option>
+                                <option value="minutes">Minutes</option>
+                                <option value="hours">Hours</option>
+                                <option value="days">Days</option>
+                                <option value="weeks">Weeks</option>
+                                <option value="months">Months</option>
+                                <option value="years">Years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Results Grid -->
+                    <div id="conversion-results">
+                        <h3 style="color: #374151; margin-bottom: 1.5rem; font-size: 1.2rem;">Converted Time Values</h3>
+                        
+                        <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #22c55e;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-stopwatch"></i> Seconds:</span>
+                                <span id="seconds-result" style="font-weight: bold; color: #22c55e; font-size: 1.1rem;">0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-clock"></i> Minutes:</span>
+                                <span id="minutes-result" style="font-weight: bold; color: #3b82f6; font-size: 1.1rem;">0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-hourglass-half"></i> Hours:</span>
+                                <span id="hours-result" style="font-weight: bold; color: #f59e0b; font-size: 1.1rem;">0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #ef4444;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-calendar-day"></i> Days:</span>
+                                <span id="days-result" style="font-weight: bold; color: #ef4444; font-size: 1.1rem;">0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-calendar-week"></i> Weeks:</span>
+                                <span id="weeks-result" style="font-weight: bold; color: #8b5cf6; font-size: 1.1rem;">0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #ec4899;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-calendar"></i> Months:</span>
+                                <span id="months-result" style="font-weight: bold; color: #ec4899; font-size: 1.1rem;">0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #10b981;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-calendar-alt"></i> Years:</span>
+                                <span id="years-result" style="font-weight: bold; color: #10b981; font-size: 1.1rem;">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Conversion Buttons -->
+                    <div style="border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+                        <h4 style="color: #374151; margin-bottom: 1rem;">Quick Conversions</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <button onclick="quickConvert(1, 'hours')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">1 Hour</button>
+                            <button onclick="quickConvert(8, 'hours')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">Work Day (8h)</button>
+                            <button onclick="quickConvert(24, 'hours')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">1 Day (24h)</button>
+                            <button onclick="quickConvert(1, 'weeks')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">1 Week</button>
+                            <button onclick="quickConvert(1, 'months')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">1 Month</button>
+                            <button onclick="quickConvert(1, 'years')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">1 Year</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Human-readable format -->
+                    <div id="human-readable" style="background: #f0fdf4; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #22c55e; margin-top: 1.5rem; display: none;">
+                        <h4 style="color: #047857; margin-bottom: 0.5rem;"><i class="fas fa-eye"></i> Human Readable Format</h4>
+                        <div id="readable-result" style="color: #065f46; font-weight: bold; font-size: 1.1rem;"></div>
+                    </div>
+                </div>
+
+                <!-- Time Reference & Formulas -->
+                <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                        <i class="fas fa-chart-line" style="color: #667eea;"></i> Time Conversion Reference
+                    </h2>
+                    
+                    <!-- Conversion Table -->
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: #374151; margin-bottom: 1rem;">Time Unit Equivalents</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                    <th style="padding: 0.75rem; text-align: left; border: 1px solid #e5e7eb;">Unit</th>
+                                    <th style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">In Seconds</th>
+                                    <th style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">Common Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb; font-weight: 600;">Second</td>
+                                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">1</td>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb;">Base unit</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb; font-weight: 600;">Minute</td>
+                                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">60</td>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb;">Short durations</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb; font-weight: 600;">Hour</td>
+                                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">3,600</td>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb;">Work periods</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb; font-weight: 600;">Day</td>
+                                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">86,400</td>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb;">Daily cycles</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb; font-weight: 600;">Week</td>
+                                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">604,800</td>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb;">Work cycles</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb; font-weight: 600;">Month (avg)</td>
+                                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">2,629,746</td>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb;">Monthly planning</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb; font-weight: 600;">Year (365 days)</td>
+                                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">31,536,000</td>
+                                    <td style="padding: 0.75rem; border: 1px solid #e5e7eb;">Annual planning</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Common Time Facts -->
+                    <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #3b82f6; margin-bottom: 2rem;">
+                        <h4 style="color: #1e40af; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> Interesting Time Facts</h4>
+                        <ul style="color: #1e3a8a; line-height: 1.8; margin: 0; padding-left: 1.2rem;">
+                            <li>There are 525,600 minutes in a year</li>
+                            <li>The average human blinks every 4 seconds</li>
+                            <li>Light travels 299,792,458 meters in one second</li>
+                            <li>One million seconds ≈ 11.6 days</li>
+                            <li>One billion seconds ≈ 31.7 years</li>
+                        </ul>
+                    </div>
+
+                    <!-- Conversion Formulas -->
+                    <div style="background: #fef7ff; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #8b5cf6;">
+                        <h4 style="color: #7c3aed; margin-bottom: 1rem;"><i class="fas fa-calculator"></i> Quick Conversion Formulas</h4>
+                        <div style="font-family: 'Courier New', monospace; color: #6b21a8; line-height: 1.8; font-size: 0.95rem;">
+                            <div><strong>Hours to Seconds:</strong> hours × 3600</div>
+                            <div><strong>Days to Hours:</strong> days × 24</div>
+                            <div><strong>Minutes to Days:</strong> minutes ÷ 1440</div>
+                            <div><strong>Weeks to Days:</strong> weeks × 7</div>
+                            <div><strong>Years to Days:</strong> years × 365.25</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="weight-calculator.html">Weight Calculator</a></li>
+                        <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Time conversion rates (all in seconds)
+        const timeUnits = {
+            seconds: 1,
+            minutes: 60,
+            hours: 3600,
+            days: 86400,
+            weeks: 604800,
+            months: 2629746, // Average month (30.44 days)
+            years: 31556952  // Average year (365.25 days)
+        };
+
+        function convertTime() {
+            const inputTime = parseFloat(document.getElementById('input-time').value);
+            const inputUnit = document.getElementById('input-unit').value;
+            
+            if (isNaN(inputTime) || inputTime < 0) {
+                resetResults();
+                return;
+            }
+            
+            // Convert input to seconds first
+            const totalSeconds = inputTime * timeUnits[inputUnit];
+            
+            // Convert to all other units
+            const results = {};
+            for (const unit in timeUnits) {
+                results[unit] = totalSeconds / timeUnits[unit];
+            }
+            
+            // Display results
+            displayResults(results);
+            displayHumanReadable(totalSeconds);
+        }
+
+        function displayResults(results) {
+            document.getElementById('seconds-result').textContent = formatNumber(results.seconds);
+            document.getElementById('minutes-result').textContent = formatNumber(results.minutes);
+            document.getElementById('hours-result').textContent = formatNumber(results.hours);
+            document.getElementById('days-result').textContent = formatNumber(results.days);
+            document.getElementById('weeks-result').textContent = formatNumber(results.weeks);
+            document.getElementById('months-result').textContent = formatNumber(results.months);
+            document.getElementById('years-result').textContent = formatNumber(results.years);
+        }
+
+        function displayHumanReadable(totalSeconds) {
+            if (totalSeconds === 0) {
+                document.getElementById('human-readable').style.display = 'none';
+                return;
+            }
+
+            let readable = '';
+            let seconds = Math.floor(totalSeconds);
+            
+            const years = Math.floor(seconds / timeUnits.years);
+            seconds %= timeUnits.years;
+            
+            const months = Math.floor(seconds / timeUnits.months);
+            seconds %= timeUnits.months;
+            
+            const days = Math.floor(seconds / timeUnits.days);
+            seconds %= timeUnits.days;
+            
+            const hours = Math.floor(seconds / timeUnits.hours);
+            seconds %= timeUnits.hours;
+            
+            const minutes = Math.floor(seconds / timeUnits.minutes);
+            seconds %= timeUnits.minutes;
+            
+            const parts = [];
+            if (years > 0) parts.push(`${years} year${years !== 1 ? 's' : ''}`);
+            if (months > 0) parts.push(`${months} month${months !== 1 ? 's' : ''}`);
+            if (days > 0) parts.push(`${days} day${days !== 1 ? 's' : ''}`);
+            if (hours > 0) parts.push(`${hours} hour${hours !== 1 ? 's' : ''}`);
+            if (minutes > 0) parts.push(`${minutes} minute${minutes !== 1 ? 's' : ''}`);
+            if (seconds > 0) parts.push(`${seconds} second${seconds !== 1 ? 's' : ''}`);
+            
+            if (parts.length > 0) {
+                readable = parts.slice(0, 3).join(', '); // Show only first 3 parts
+                document.getElementById('readable-result').textContent = readable;
+                document.getElementById('human-readable').style.display = 'block';
+            } else {
+                document.getElementById('human-readable').style.display = 'none';
+            }
+        }
+
+        function formatNumber(num) {
+            if (num === 0) return '0';
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(2) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(2) + 'K';
+            } else if (num >= 1) {
+                return num.toFixed(3);
+            } else {
+                return num.toExponential(2);
+            }
+        }
+
+        function resetResults() {
+            document.getElementById('seconds-result').textContent = '0';
+            document.getElementById('minutes-result').textContent = '0';
+            document.getElementById('hours-result').textContent = '0';
+            document.getElementById('days-result').textContent = '0';
+            document.getElementById('weeks-result').textContent = '0';
+            document.getElementById('months-result').textContent = '0';
+            document.getElementById('years-result').textContent = '0';
+            document.getElementById('human-readable').style.display = 'none';
+        }
+
+        function quickConvert(time, unit) {
+            document.getElementById('input-time').value = time;
+            document.getElementById('input-unit').value = unit;
+            convertTime();
+        }
+
+        // Auto-convert on input change
+        document.getElementById('input-time').addEventListener('input', convertTime);
+
+        // Initialize with default values
+        convertTime();
+    </script>
+</body>
+</html>

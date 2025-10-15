@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Size Converter - International Ring Size Chart | CalcuForMe</title>
+    <meta name="description" content="Free ring size converter with international ring size charts. Convert between US, UK, European, Japanese, and Asian ring sizes instantly.">
+    <meta name="keywords" content="ring size converter, ring size chart, US ring size, UK ring size, European ring size, Japanese ring size">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="calculator-header-content">
+                <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    <a href="../index.html" style="color: rgba(255,255,255,0.8);">Home</a> > 
+                    <a href="../index.html#categories" style="color: rgba(255,255,255,0.8);">Calculators</a> > 
+                    <span>Ring Size Converter</span>
+                </nav>
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Ring Size Converter</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Convert between international ring sizes with accurate measurements</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-content" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px;">
+            
+            <div class="calculator-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                
+                <!-- Ring Size Converter -->
+                <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                        <i class="fas fa-ring" style="color: #f093fb;"></i> International Ring Size Converter
+                    </h2>
+                    
+                    <!-- Input Ring Size -->
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Enter Your Ring Size</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="number" id="ring-size" placeholder="Enter size" 
+                                   style="flex: 1; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" step="0.25" min="1" max="20">
+                            <select id="input-standard" onchange="convertRingSizes()" style="padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                <option value="us">US / Canada</option>
+                                <option value="uk">UK / Australia</option>
+                                <option value="eu">European</option>
+                                <option value="jp">Japanese</option>
+                                <option value="diameter">Diameter (mm)</option>
+                                <option value="circumference">Circumference (mm)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Results Grid -->
+                    <div id="conversion-results" style="display: none;">
+                        <h3 style="color: #374151; margin-bottom: 1.5rem; font-size: 1.2rem;">Converted Ring Sizes</h3>
+                        
+                        <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-flag-usa"></i> US / Canada:</span>
+                                <span id="us-size" style="font-weight: bold; color: #3b82f6;">-</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #10b981;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-flag"></i> UK / Australia:</span>
+                                <span id="uk-size" style="font-weight: bold; color: #10b981;">-</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-star"></i> European:</span>
+                                <span id="eu-size" style="font-weight: bold; color: #f59e0b;">-</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #ef4444;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-torii-gate"></i> Japanese:</span>
+                                <span id="jp-size" style="font-weight: bold; color: #ef4444;">-</span>
+                            </div>
+                        </div>
+
+                        <!-- Measurements -->
+                        <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #22c55e;">
+                            <h4 style="color: #047857; margin-bottom: 1rem;"><i class="fas fa-ruler"></i> Ring Measurements</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div>
+                                    <span style="color: #065f46; font-weight: 600;">Diameter:</span>
+                                    <span id="diameter" style="color: #047857; font-weight: bold; margin-left: 0.5rem;">- mm</span>
+                                </div>
+                                <div>
+                                    <span style="color: #065f46; font-weight: 600;">Circumference:</span>
+                                    <span id="circumference" style="color: #047857; font-weight: bold; margin-left: 0.5rem;">- mm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How to Measure -->
+                    <div style="background: #fef7ff; padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid #f093fb;">
+                        <h4 style="color: #92400e; margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> How to Measure Your Ring Size</h4>
+                        <ol style="color: #78350f; line-height: 1.6; margin: 0; padding-left: 1.2rem;">
+                            <li>Wrap a string around your finger</li>
+                            <li>Mark where the string overlaps</li>
+                            <li>Measure the string length in millimeters</li>
+                            <li>Use this as circumference in the converter</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Ring Size Chart -->
+                <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                        <i class="fas fa-table" style="color: #f093fb;"></i> International Ring Size Chart
+                    </h2>
+                    
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+                                    <th style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">US/CA</th>
+                                    <th style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">UK/AU</th>
+                                    <th style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">EU</th>
+                                    <th style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">JP</th>
+                                    <th style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb;">Diameter (mm)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="size-chart-body">
+                                <!-- Chart rows will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Ring Sizing Tips -->
+                    <div style="margin-top: 2rem; background: #f0f9ff; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                        <h4 style="color: #1e40af; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> Ring Sizing Tips</h4>
+                        <ul style="color: #1e3a8a; line-height: 1.6; margin: 0; padding-left: 1.2rem;">
+                            <li>Measure your ring size at the end of the day when fingers are largest</li>
+                            <li>Consider the width of the band - wider bands need larger sizes</li>
+                            <li>Temperature affects finger size - avoid measuring when very hot or cold</li>
+                            <li>If between sizes, choose the larger size for comfort</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="weight-calculator.html">Weight Calculator</a></li>
+                        <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ring size data with diameter in mm
+        const ringSizeData = [
+            { us: 3, uk: "F", eu: 44, jp: 4, diameter: 14.0 },
+            { us: 3.5, uk: "G", eu: 46, jp: 5, diameter: 14.6 },
+            { us: 4, uk: "H", eu: 47, jp: 6, diameter: 15.2 },
+            { us: 4.5, uk: "I", eu: 49, jp: 7, diameter: 15.9 },
+            { us: 5, uk: "J", eu: 50, jp: 8, diameter: 16.5 },
+            { us: 5.5, uk: "K", eu: 52, jp: 9, diameter: 17.2 },
+            { us: 6, uk: "L", eu: 53, jp: 10, diameter: 17.8 },
+            { us: 6.5, uk: "M", eu: 55, jp: 11, diameter: 18.4 },
+            { us: 7, uk: "N", eu: 56, jp: 12, diameter: 19.1 },
+            { us: 7.5, uk: "O", eu: 58, jp: 13, diameter: 19.7 },
+            { us: 8, uk: "P", eu: 59, jp: 14, diameter: 20.3 },
+            { us: 8.5, uk: "Q", eu: 61, jp: 15, diameter: 21.0 },
+            { us: 9, uk: "R", eu: 62, jp: 16, diameter: 21.6 },
+            { us: 9.5, uk: "S", eu: 64, jp: 17, diameter: 22.2 },
+            { us: 10, uk: "T", eu: 65, jp: 18, diameter: 22.9 },
+            { us: 10.5, uk: "U", eu: 67, jp: 19, diameter: 23.5 },
+            { us: 11, uk: "V", eu: 68, jp: 20, diameter: 24.1 },
+            { us: 11.5, uk: "W", eu: 70, jp: 21, diameter: 24.8 },
+            { us: 12, uk: "X", eu: 71, jp: 22, diameter: 25.4 },
+            { us: 12.5, uk: "Y", eu: 73, jp: 23, diameter: 26.0 },
+            { us: 13, uk: "Z", eu: 74, jp: 24, diameter: 26.6 }
+        ];
+
+        // Populate ring size chart
+        function populateChart() {
+            const tbody = document.getElementById('size-chart-body');
+            ringSizeData.forEach((size, index) => {
+                const row = document.createElement('tr');
+                row.style.backgroundColor = index % 2 === 0 ? '#f9fafb' : 'white';
+                row.innerHTML = `
+                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb; font-weight: 600;">${size.us}</td>
+                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb; font-weight: 600;">${size.uk}</td>
+                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb; font-weight: 600;">${size.eu}</td>
+                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb; font-weight: 600;">${size.jp}</td>
+                    <td style="padding: 0.75rem; text-align: center; border: 1px solid #e5e7eb; font-weight: 600;">${size.diameter}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Convert ring sizes
+        function convertRingSizes() {
+            const inputSize = parseFloat(document.getElementById('ring-size').value);
+            const inputStandard = document.getElementById('input-standard').value;
+            
+            if (!inputSize || inputSize <= 0) {
+                document.getElementById('conversion-results').style.display = 'none';
+                return;
+            }
+            
+            let targetSize;
+            
+            // Find the ring size data based on input
+            if (inputStandard === 'diameter') {
+                targetSize = findByDiameter(inputSize);
+            } else if (inputStandard === 'circumference') {
+                const diameter = inputSize / Math.PI;
+                targetSize = findByDiameter(diameter);
+            } else {
+                targetSize = findByStandard(inputSize, inputStandard);
+            }
+            
+            if (targetSize) {
+                displayResults(targetSize);
+                document.getElementById('conversion-results').style.display = 'block';
+            } else {
+                document.getElementById('conversion-results').style.display = 'none';
+                alert('Ring size not found in our chart. Please enter a valid size.');
+            }
+        }
+        
+        function findByStandard(size, standard) {
+            return ringSizeData.find(data => {
+                switch(standard) {
+                    case 'us': return Math.abs(data.us - size) < 0.1;
+                    case 'uk': return data.uk.toLowerCase() === size.toString().toLowerCase();
+                    case 'eu': return data.eu === size;
+                    case 'jp': return data.jp === size;
+                    default: return false;
+                }
+            });
+        }
+        
+        function findByDiameter(diameter) {
+            // Find closest diameter match
+            return ringSizeData.reduce((prev, curr) => 
+                Math.abs(curr.diameter - diameter) < Math.abs(prev.diameter - diameter) ? curr : prev
+            );
+        }
+        
+        function displayResults(sizeData) {
+            document.getElementById('us-size').textContent = sizeData.us;
+            document.getElementById('uk-size').textContent = sizeData.uk;
+            document.getElementById('eu-size').textContent = sizeData.eu;
+            document.getElementById('jp-size').textContent = sizeData.jp;
+            document.getElementById('diameter').textContent = sizeData.diameter + ' mm';
+            document.getElementById('circumference').textContent = (sizeData.diameter * Math.PI).toFixed(1) + ' mm';
+        }
+
+        // Auto-convert on input change
+        document.getElementById('ring-size').addEventListener('input', convertRingSizes);
+
+        // Initialize chart
+        populateChart();
+    </script>
+</body>
+</html>
