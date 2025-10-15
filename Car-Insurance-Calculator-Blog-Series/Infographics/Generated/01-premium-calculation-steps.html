@@ -5,7 +5,499 @@
     <meta name="viewport" content="width=1200, height=628">
     <title>Premium Calculation Steps</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/infographic-styles.css">
+    <style>/* Car Insurance Calculator Infographics - Master Styles */
+
+:root {
+    /* Brand Colors */
+    --primary-blue: #0066CC;
+    --success-green: #00AA55;
+    --action-orange: #FF6633;
+    --danger-red: #CC0000;
+    --neutral-gray: #666666;
+    --light-gray: #F5F5F5;
+    --white: #FFFFFF;
+    --dark-text: #333333;
+    
+    /* Gradients */
+    --gradient-blue: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+    --gradient-green: linear-gradient(135deg, #00AA55 0%, #008844 100%);
+    --gradient-orange: linear-gradient(135deg, #FF6633 0%, #FF4411 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+    --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
+    
+    /* Typography */
+    --font-primary: 'Montserrat', 'Segoe UI', sans-serif;
+    --font-secondary: 'Open Sans', 'Arial', sans-serif;
+    --font-hindi: 'Noto Sans Devanagari', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Infographic Container */
+.infographic-container {
+    width: 1200px;
+    height: 628px;
+    background: var(--white);
+    position: relative;
+    font-family: var(--font-primary);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Long Form Infographic */
+.infographic-long {
+    width: 800px;
+    height: 2000px;
+}
+
+/* Header Styles */
+.infographic-header {
+    background: var(--gradient-blue);
+    color: var(--white);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.infographic-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.infographic-header .subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+.hindi-text {
+    font-family: var(--font-hindi);
+    font-size: 16px;
+    color: var(--action-orange);
+    font-weight: 600;
+}
+
+/* Content Area */
+.infographic-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Step-by-Step Styles */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: var(--light-gray);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-blue);
+    transition: transform 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    color: var(--dark-text);
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.step-content p {
+    color: var(--neutral-gray);
+    font-size: 14px;
+    font-family: var(--font-secondary);
+}
+
+/* Icon Styles */
+.icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.icon-car::before { content: "🚗"; }
+.icon-money::before { content: "💰"; }
+.icon-calculator::before { content: "🧮"; }
+.icon-chart::before { content: "📊"; }
+.icon-shield::before { content: "🛡️"; }
+.icon-check::before { content: "✅"; }
+.icon-warning::before { content: "⚠️"; }
+.icon-time::before { content: "⏱️"; }
+.icon-mobile::before { content: "📱"; }
+.icon-document::before { content: "📋"; }
+
+/* Comparison Table */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.comparison-table thead {
+    background: var(--gradient-blue);
+    color: var(--white);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--light-gray);
+}
+
+/* Feature Cards */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--white);
+    border: 2px solid var(--light-gray);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+.feature-card .icon {
+    margin: 0 auto 15px;
+    background: var(--light-gray);
+    border-radius: 50%;
+}
+
+.feature-card h4 {
+    color: var(--dark-text);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--neutral-gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Do's and Don'ts */
+.dos-donts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.dos-section,
+.donts-section {
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.dos-section {
+    background: linear-gradient(135deg, rgba(0,170,85,0.1) 0%, rgba(0,170,85,0.05) 100%);
+    border: 2px solid var(--success-green);
+}
+
+.donts-section {
+    background: linear-gradient(135deg, rgba(204,0,0,0.1) 0%, rgba(204,0,0,0.05) 100%);
+    border: 2px solid var(--danger-red);
+}
+
+.dos-section h3 {
+    color: var(--success-green);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.donts-section h3 {
+    color: var(--danger-red);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.list-item .check {
+    color: var(--success-green);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.list-item .cross {
+    color: var(--danger-red);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+/* Process Flow */
+.process-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+}
+
+.process-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.process-step::after {
+    content: "→";
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: var(--primary-blue);
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 36px;
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.process-step h4 {
+    color: var(--dark-text);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.process-step p {
+    color: var(--neutral-gray);
+    font-size: 12px;
+}
+
+/* Statistics Display */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px;
+    background: var(--light-gray);
+    border-radius: 12px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--neutral-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Percentage Bars */
+.percentage-bar {
+    width: 100%;
+    height: 40px;
+    background: var(--light-gray);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.percentage-fill {
+    height: 100%;
+    background: var(--gradient-green);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+    color: var(--white);
+    font-weight: 600;
+    transition: width 1s ease;
+}
+
+/* Call to Action */
+.cta-section {
+    background: var(--gradient-orange);
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.cta-section h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--white);
+    color: var(--action-orange);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Footer */
+.infographic-footer {
+    background: var(--dark-text);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.website-url {
+    color: var(--action-orange);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Responsive adjustments for export */
+@media print {
+    .infographic-container {
+        width: 100%;
+        height: auto;
+        page-break-inside: avoid;
+    }
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background: linear-gradient(135deg, rgba(255,102,51,0.1) 0%, rgba(255,102,51,0.05) 100%);
+    border-left: 4px solid var(--action-orange);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.highlight-box h4 {
+    color: var(--action-orange);
+    margin-bottom: 10px;
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-new {
+    background: var(--success-green);
+    color: var(--white);
+}
+
+.badge-popular {
+    background: var(--action-orange);
+    color: var(--white);
+}
+
+.badge-recommended {
+    background: var(--primary-blue);
+    color: var(--white);
+}</style>
 </head>
 <body>
     <div class="infographic-container">
