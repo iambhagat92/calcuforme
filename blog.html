@@ -3,29 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Car Insurance Savings & Tips | CalcuForMe</title>
+    <meta name="description" content="Read our latest blog posts on car insurance calculators, how to save on premiums, and tips for getting the best auto insurance quotes.">
     
-    <!-- Primary Meta Tags -->
-    <title>Calculator Guides & Tips - CalcuForMe Blog 2025</title>
-    <meta name="title" content="Calculator Guides & Tips - CalcuForMe Blog">
-    <meta name="description" content="Learn how to use calculators effectively. Expert guides, tips, and tutorials for BMI, loan, percentage, and more calculators.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://calculateforme.xyz/blog.html">
-    <meta property="og:title" content="Calculator Guides & Tips - CalcuForMe Blog">
-    <meta property="og:description" content="Expert guides and tutorials for all your calculator needs.">
-    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://calculateforme.xyz/blog.html">
-    <meta name="twitter:title" content="Calculator Guides & Tips - CalcuForMe Blog">
-    <meta name="twitter:description" content="Expert guides and tutorials for all your calculator needs.">
-    <meta name="twitter:image" content="https://calculateforme.xyz/favicon.svg">
-    
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
     <!-- Navigation -->
@@ -37,11 +20,20 @@
                     <span>CalcuForMe</span>
                 </a>
                 <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="index.html#categories">Calculators</a>
-                    <a href="blog.html" style="color: #667eea;">Blog</a>
-                    <a href="saved-calculations.html">Saved</a>
-                    <a href="about.html">About</a>
+                    <div class="nav-item">
+                        <a href="index.html#categories">
+                            Calculators <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                        </a>
+                    </div>
+                    <a href="index.html#popular">Popular</a>
+                    <a href="blog.html" class="active">
+                        <i class="fas fa-book"></i> Blog
+                    </a>
+                    <a href="saved-calculations.html" style="color: #667eea;">
+                        <i class="fas fa-save"></i> Saved
+                    </a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
                 </div>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
@@ -56,295 +48,160 @@
             <i class="fas fa-times"></i>
         </button>
         <div class="mobile-menu-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#categories">Calculators</a>
+             <a href="index.html#categories">Categories</a>
+            <a href="index.html#popular">Popular</a>
             <a href="blog.html">Blog</a>
-            <a href="saved-calculations.html">Saved</a>
-            <a href="about.html">About</a>
+            <a href="saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
         </div>
     </div>
 
-    <!-- Blog Hero -->
-    <section class="hero" style="padding: 4rem 0;">
+    <!-- Blog Hero Section -->
+    <section class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 40vh;">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title" style="font-size: 3rem;">📚 Calculator Guides & Tips</h1>
-                <p class="hero-subtitle">Learn how to use calculators effectively with our expert guides and tutorials</p>
+            <div class="hero-content" style="padding: 4rem 0;">
+                <h1 class="hero-title">The CalcuForMe Blog</h1>
+                <p class="hero-subtitle">Your guide to saving money on car insurance with our easy-to-use calculators.</p>
             </div>
         </div>
     </section>
 
-    <!-- Blog Grid -->
-    <section style="padding: 5rem 0; background: #f8f9fa;">
+    <!-- Blog Posts Grid Section -->
+    <section class="blog-posts" style="padding: 4rem 0;">
         <div class="container">
-            <div class="calculator-grid">                <!-- Blog Post 1 -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/bmi-calculator-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <i class="fas fa-weight"></i>
-                    </div>
-                    <h3>How to Calculate BMI: Complete Guide</h3>
-                    <p>Learn everything about Body Mass Index - what it means, how to calculate it, and how to interpret your results.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge">Health</span>
-                        <span style="color: #718096; font-size: 0.85rem;">5 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/loan-calculator-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3>Understanding Loan Calculations & EMI</h3>
-                    <p>Master loan calculations, understand EMI, interest rates, and make informed borrowing decisions.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge">Financial</span>
-                        <span style="color: #718096; font-size: 0.85rem;">7 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/percentage-calculator-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        <i class="fas fa-percentage"></i>
-                    </div>
-                    <h3>Percentage Calculator: Tips & Tricks</h3>
-                    <p>Master percentage calculations for discounts, tips, grades, and everyday math problems.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge">Education</span>
-                        <span style="color: #718096; font-size: 0.85rem;">4 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 4 -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/roi-calculator-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>ROI Calculator for Business Success</h3>
-                    <p>Calculate return on investment like a pro. Essential guide for entrepreneurs and investors.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge">Business</span>
-                        <span style="color: #718096; font-size: 0.85rem;">6 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 5 -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/gpa-calculator-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3>GPA Calculator: Student's Complete Guide</h3>
-                    <p>Everything students need to know about calculating and improving their Grade Point Average.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge">Education</span>
-                        <span style="color: #718096; font-size: 0.85rem;">5 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 6 -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/calorie-calculator-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Calorie Calculator for Weight Goals</h3>
-                    <p>Learn how to calculate daily calorie needs for weight loss, maintenance, or muscle gain.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge">Health</span>
-                        <span style="color: #718096; font-size: 0.85rem;">6 min read</span>
-                    </div>
-                </article>
-
-                <!-- New Comprehensive Blog Posts -->
-                
-                <!-- Blog Post 7 - Investment Calculator Guide -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/investment-calculator-complete-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Investment Calculator Complete Guide</h3>
-                    <p>Master SIP calculations, future value planning, and wealth-building strategies with comprehensive examples.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #667eea;">Investment</span>
-                        <span style="color: #718096; font-size: 0.85rem;">12 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 8 - Age Calculator Guide -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/age-calculator-life-planning-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
-                        <i class="fas fa-birthday-cake"></i>
-                    </div>
-                    <h3>Age Calculator & Life Planning Guide</h3>
-                    <p>Calculate age precisely and plan life milestones, retirement age, and age-based financial strategies.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #9b59b6;">Life Planning</span>
-                        <span style="color: #718096; font-size: 0.85rem;">11 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 9 - Salary Calculator Guide -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/salary-calculator-income-planning-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
-                    <h3>Salary Calculator & Income Planning</h3>
-                    <p>Calculate take-home pay, hourly conversions, tax implications, and salary negotiation strategies.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #2ecc71;">Salary</span>
-                        <span style="color: #718096; font-size: 0.85rem;">13 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 10 - Scientific Calculator Guide -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/scientific-calculator-functions-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Scientific Calculator Functions Guide</h3>
-                    <p>Master advanced math operations, trigonometry, logarithms, and scientific notation with examples.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #8e44ad;">Scientific</span>
-                        <span style="color: #718096; font-size: 0.85rem;">15 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 11 - Currency Converter Guide -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/currency-converter-exchange-rate-guide.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <h3>Currency Converter & Exchange Rate Guide</h3>
-                    <p>Master currency conversion, forex trading basics, international transfers, and exchange rate factors.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #f39c12;">Currency</span>
-                        <span style="color: #718096; font-size: 0.85rem;">14 min read</span>
-                    </div>
-                </article>
-
-                <!-- New Compound Interest Blog Posts -->
-
-                <!-- Blog Post 12 - Monthly Compound Interest Calculator India -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/monthly-compound-interest-calculator-india.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <i class="fas fa-rupee-sign"></i>
-                    </div>
-                    <h3>Monthly Compound Interest Calculator India</h3>
-                    <p>Calculate compound interest in India with monthly compounding. RD, SIP, FD returns with Indian examples.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #667eea;">Financial</span>
-                        <span style="color: #718096; font-size: 0.85rem;">10 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 13 - Compound Interest Excel Indian Rupees -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/how-to-calculate-compound-interest-in-excel-in-indian-rupees.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <h3>Calculate Compound Interest in Excel (₹)</h3>
-                    <p>Step-by-step guide to calculate compound interest in Excel with Indian rupees. FD, RD, and PPF formulas.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #43e97b;">Excel</span>
-                        <span style="color: #718096; font-size: 0.85rem;">12 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 14 - 5-Year Compound Interest Excel -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/how-to-calculate-compound-interest-in-excel-for-5-years.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>5-Year Compound Interest in Excel</h3>
-                    <p>Calculate compound interest in Excel for 5-year investments. Quarterly, monthly, and annual compounding.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #fa709a;">Investment</span>
-                        <span style="color: #718096; font-size: 0.85rem;">11 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 15 - Monthly Contributions Formula -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/compound-interest-formula-excel-with-monthly-contributions.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3>Compound Interest + Monthly Contributions</h3>
-                    <p>Excel formulas for compound interest with regular monthly deposits. Perfect for SIP and retirement planning.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #4facfe;">Savings</span>
-                        <span style="color: #718096; font-size: 0.85rem;">13 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 16 - Daily Compound Interest -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/how-to-calculate-compound-interest-in-excel-for-days.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);">
-                        <i class="fas fa-calendar-day"></i>
-                    </div>
-                    <h3>Daily Compound Interest in Excel</h3>
-                    <p>Calculate compound interest for specific days. Short-term FDs, liquid funds, and daily compounding formulas.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #f5576c;">Banking</span>
-                        <span style="color: #718096; font-size: 0.85rem;">9 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 17 - Compound Interest Formula Excel India -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/compound-interest-formula-excel-india.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #FF9933 0%, #138808 100%);">
-                        <i class="fas fa-rupee-sign"></i>
-                    </div>
-                    <h3>Compound Interest Excel India Guide</h3>
-                    <p>Complete guide for Indian banking: FD, RD, PPF calculations with TDS and tax implications in Excel.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #FF9933;">India</span>
-                        <span style="color: #718096; font-size: 0.85rem;">12 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 18 - Compound Interest Formula Calculator Monthly -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/compound-interest-formula-calculator-monthly.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Monthly Compound Interest Calculator</h3>
-                    <p>Free online calculator and Excel formulas for monthly compounding. Savings, loans, and investment planning.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #667eea;">Calculator</span>
-                        <span style="color: #718096; font-size: 0.85rem;">8 min read</span>
-                    </div>
-                </article>
-
-                <!-- Blog Post 19 - Compound Interest Calculator Monthly Deposit Formula -->
-                <article class="calculator-item" style="cursor: pointer;" onclick="window.location.href='blog/compound-interest-calculator-monthly-deposit-formula.html'">
-                    <div class="calculator-icon" style="background: linear-gradient(135deg, #4CAF50 0%, #2196F3 100%);">
-                        <i class="fas fa-piggy-bank"></i>
-                    </div>
-                    <h3>Monthly Deposit Compound Interest</h3>
-                    <p>SIP & RD calculator with monthly deposits. Complete formulas for systematic investment planning.</p>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                        <span class="badge" style="background: #4CAF50;">SIP/RD</span>
-                        <span style="color: #718096; font-size: 0.85rem;">10 min read</span>
-                    </div>
-                </article>
-
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <p>A complete 15-part series on understanding and using car insurance calculators.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section style="padding: 4rem 0; background: white; text-align: center;">
-        <div class="container">
-            <h2 style="margin-bottom: 1rem;">Ready to Calculate?</h2>
-            <p style="color: #718096; font-size: 1.1rem; margin-bottom: 2rem;">Try our free calculators now!</p>
-            <a href="index.html#categories" class="btn btn-primary" style="text-decoration: none;">
-                <i class="fas fa-calculator"></i> Browse All Calculators
-            </a>
+            
+            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;" id="blog-posts-container">
+                <a href="blog/01-motor-insurance-premium-calculator.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/motor-insurance-premium-calculator-main.png" alt="Motor Insurance Premium Calculator">
+    <div class="blog-card-content">
+        <h3>Motor Insurance Premium Calculator: A Comprehensive Guide</h3>
+        <p>Learn how a motor insurance premium calculator can help you find the best coverage for your vehicle.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/02-automobile-insurance-calculator-guide.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/automobile-insurance-calculator-guide-main.png" alt="Automobile Insurance Calculator Guide">
+    <div class="blog-card-content">
+        <h3>Automobile Insurance Calculator: A Complete Guide</h3>
+        <p>A comprehensive guide to using an automobile insurance calculator to get the best insurance rates.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/03-car-insurance-calculators-beginners.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/car-insurance-calculators-beginners-main.png" alt="Car Insurance Calculators for Beginners">
+    <div class="blog-card-content">
+        <h3>A Beginner's Guide to Car Insurance Calculators</h3>
+        <p>This tutorial will walk you through the basics of car insurance calculators and how to use them effectively.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/04-insurance-calculator-car-save-money.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/insurance-calculator-car-save-money-main.png" alt="Save Money on Car Insurance">
+    <div class="blog-card-content">
+        <h3>How an Insurance Calculator for Your Car Can Save You Money</h3>
+        <p>Discover how using an insurance calculator can help you find hidden savings on your car insurance.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/05-insurance-car-calculator-best-practices.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/insurance-car-calculator-best-practices-main.png" alt="Car Insurance Calculator Best Practices">
+    <div class="blog-card-content">
+        <h3>Best Practices for Using a Car Insurance Calculator</h3>
+        <p>Learn the best practices for using a car insurance calculator to get accurate and reliable quotes.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/06-insurance-car-calculator.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/insurance-car-calculator-main.png" alt="Insurance Car Calculator">
+    <div class="blog-card-content">
+        <h3>Insurance for Your Car: How to Use a Calculator to Estimate Your Premium</h3>
+        <p>A step-by-step guide to using an insurance car calculator to estimate your premium quickly and easily.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/07-car-insurance-estimate-online.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/car-insurance-estimate-online-main.png" alt="Car Insurance Estimate Online">
+    <div class="blog-card-content">
+        <h3>How to Get a Reliable Car Insurance Estimate Online in 2025</h3>
+        <p>This guide will help you get a reliable car insurance estimate online with the latest tools and techniques.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/08-insurance-car-estimate-explained.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/insurance-car-estimate-explained-main.png" alt="Insurance Car Estimate Explained">
+    <div class="blog-card-content">
+        <h3>Understanding Your Insurance Car Estimate: A Detailed Explanation</h3>
+        <p>A detailed breakdown of the factors that determine your car insurance estimate and what they mean.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/09-auto-insurance-estimate-calculator.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/auto-insurance-estimate-calculator-main.png" alt="Auto Insurance Estimate Calculator">
+    <div class="blog-card-content">
+        <h3>How an Auto Insurance Estimate Calculator Can Help You Budget for Coverage</h3>
+        <p>Learn how to use an auto insurance estimate calculator to budget for your coverage and avoid overspending.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/10-car-insurance-estimate-calculator.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/car-insurance-estimate-calculator-main.png" alt="Car Insurance Estimate Calculator">
+    <div class="blog-card-content">
+        <h3>How a Car Insurance Estimate Calculator Helps You Compare Premiums</h3>
+        <p>Learn how a car insurance estimate calculator simplifies the process of comparing premiums and helps you find the best deal.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/11-car-insurance-estimator.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/car-insurance-estimator-main.png" alt="Car Insurance Estimator">
+    <div class="blog-card-content">
+        <h3>Tips for Finding the Right Car Insurance Estimator for Your Vehicle</h3>
+        <p>Find the perfect car insurance estimator for your specific vehicle type and usage pattern with our expert tips.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/12-car-insurance-cost-calculator.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/car-insurance-cost-calculator-main.png" alt="Car Insurance Cost Calculator">
+    <div class="blog-card-content">
+        <h3>Car Insurance Cost Calculator: How to Calculate Your Premium Quickly</h3>
+        <p>Learn how to use a car insurance cost calculator for quick and accurate premium calculations with our time-saving tips.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/13-auto-insurance-premium-calculator.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/auto-insurance-premium-calculator-main.png" alt="Auto Insurance Premium Calculator">
+    <div class="blog-card-content">
+        <h3>Auto Insurance Premium Calculator: A Key Tool to Save on Coverage</h3>
+        <p>Learn how to use an auto insurance premium calculator as a money-saving strategy to reduce your coverage costs.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/14-calculate-car-insurance-premium.html" class="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/calculate-car-insurance-premium-main.png" alt="Calculate Car Insurance Premium">
+    <div class="blog-card-content">
+        <h3>How to Calculate Car Insurance Premium Using Online Calculators</h3>
+        <p>A detailed methodology on how to calculate car insurance premium using online calculators for accurate results.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+<a href="blog/15-car-insurance-premium-calculators-essential.html" class_="blog-card">
+    <img src="Car-Insurance-Calculator-Blog-Series/Infographics/car-insurance-premium-calculators-essential-main.png" alt="Car Insurance Premium Calculators Essential">
+    <div class="blog-card-content">
+        <h3>Why Car Insurance Premium Calculators Are Essential for Every Car Owner</h3>
+        <p>A comprehensive guide on why car insurance premium calculators are an essential tool for every car owner.</p>
+        <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+    </div>
+</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -352,36 +209,32 @@
                     <p>Your comprehensive suite of free online calculators for every need.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Categories</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="categories/financial.html">Financial & Business</a></li>
+                        <li><a href="categories/health.html">Health & Wellness</a></li>
+                        <li><a href="categories/home.html">Home & Garden</a></li>
+                        <li><a href="categories/education.html">Education & Science</a></li>
+                        <li><a href="categories/everyday.html">Everyday & Misc</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Popular Tools</h4>
-                    <ul>
-                        <li><a href="calculators/bmi-calculator.html">BMI Calculator</a></li>
-                        <li><a href="calculators/loan-calculator.html">Loan Calculator</a></li>
-                        <li><a href="calculators/percentage-calculator.html">Percentage Calculator</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:bhagatpaaji@gmail.com">Email Us</a></li>
                         <li><a href="terms-of-service.html">Terms of Service</a></li>
+                         <li><a href="mailto:bhagatpaaji@gmail.com">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 CalcuForMe. All rights reserved. Made with <i class="fas fa-heart"></i> for everyone.</p>
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/calculator-utils.js"></script>
 </body>
 </html>
