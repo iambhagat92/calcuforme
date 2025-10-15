@@ -1,4 +1,4 @@
-# How to Use a Motor Insurance Premium Calculator to Get Accurate Quotes
+﻿# How to Use a Motor Insurance Premium Calculator to Get Accurate Quotes
 
 **Category:** Car & Auto Insurance Calculators Guide  
 **Published:** 2025  
@@ -263,6 +263,6 @@ A: हाँ, अधिकतर platforms पर email या PDF में sav
 
 **Last Updated**: October 2025
 
-**Author**: Insurance Expert Team
+**Author**: Admin
 
 **Category**: Car & Auto Insurance Calculators Guide
