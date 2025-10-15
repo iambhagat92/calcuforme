@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce Product Profit Calculator - Calculate Your Business Margins | CalcuForMe</title>
+    <meta name="description" content="Free eCommerce profit calculator to analyze product profitability, margins, ROI, and break-even points. Perfect for online sellers, retailers, and business owners.">
+    <meta name="keywords" content="ecommerce profit calculator, product profit margin, business profitability, retail margin calculator, online seller calculator, profit analysis">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <div class="nav-item">
+                        <a href="../index.html#categories">
+                            Calculators <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
+                        </a>
+                    </div>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html">
+                        <i class="fas fa-book"></i> Blog
+                    </a>
+                    <a href="../saved-calculations.html" style="color: #667eea;">
+                        <i class="fas fa-save"></i> Saved
+                    </a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <a href="../categories/financial.html">Financial</a>
+                    <span>/</span>
+                    <span>eCommerce Profit Calculator</span>
+                </div>
+                <h1><i class="fas fa-shopping-cart"></i> eCommerce Product Profit Calculator</h1>
+                <p>Calculate your product profitability, margins, and ROI for your eCommerce business</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <!-- Input Panel -->
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <h3><i class="fas fa-tag"></i> Product Costs</h3>
+                        <div class="form-group">
+                            <label for="productCost">Product Cost (₹)</label>
+                            <input type="number" id="productCost" placeholder="Enter product manufacturing/purchase cost" value="100" min="0" step="0.01">
+                            <small>Cost to manufacture or purchase the product</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="shippingCost">Shipping Cost (₹)</label>
+                            <input type="number" id="shippingCost" placeholder="Enter shipping cost" value="50" min="0" step="0.01">
+                            <small>Cost to ship the product to customer</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="packagingCost">Packaging Cost (₹)</label>
+                            <input type="number" id="packagingCost" placeholder="Enter packaging cost" value="20" min="0" step="0.01">
+                            <small>Cost of packaging materials</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="marketingCost">Marketing Cost per Unit (₹)</label>
+                            <input type="number" id="marketingCost" placeholder="Enter marketing cost per unit" value="30" min="0" step="0.01">
+                            <small>Advertising and marketing cost allocated per unit</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="platformFees">Platform Fees (₹)</label>
+                            <input type="number" id="platformFees" placeholder="Enter platform/transaction fees" value="25" min="0" step="0.01">
+                            <small>Amazon, Flipkart, or payment gateway fees</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="otherCosts">Other Costs (₹)</label>
+                            <input type="number" id="otherCosts" placeholder="Enter other miscellaneous costs" value="10" min="0" step="0.01">
+                            <small>Storage, handling, or other miscellaneous costs</small>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <h3><i class="fas fa-rupee-sign"></i> Pricing Information</h3>
+                        <div class="form-group">
+                            <label for="sellingPrice">Selling Price (₹)</label>
+                            <input type="number" id="sellingPrice" placeholder="Enter selling price" value="350" min="0" step="0.01">
+                            <small>Price at which you sell the product</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="targetQuantity">Target Monthly Quantity</label>
+                            <input type="number" id="targetQuantity" placeholder="Enter target monthly sales" value="100" min="1" step="1">
+                            <small>Number of units you plan to sell per month</small>
+                        </div>
+                    </div>
+
+                    <div class="calculator-buttons">
+                        <button onclick="calculateProfit()" class="calculate-btn">
+                            <i class="fas fa-calculator"></i> Calculate Profit
+                        </button>
+                        <button onclick="clearCalculator()" class="clear-btn">
+                            <i class="fas fa-refresh"></i> Clear All
+                        </button>
+                        <button onclick="saveCalculation()" class="save-btn">
+                            <i class="fas fa-save"></i> Save Result
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="calculator-results">
+                    <h3><i class="fas fa-chart-pie"></i> Profit Analysis</h3>
+                    <div class="results-content" id="resultsContent">
+                        <div class="result-item">
+                            <span class="result-label">Total Cost per Unit:</span>
+                            <span class="result-value" id="totalCost">₹235.00</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="result-label">Profit per Unit:</span>
+                            <span class="result-value" id="unitProfit">₹115.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Profit Margin:</span>
+                            <span class="result-value" id="profitMargin">32.86%</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">ROI (Return on Investment):</span>
+                            <span class="result-value" id="roi">48.94%</span>
+                        </div>
+                        <div class="result-item monthly">
+                            <span class="result-label">Monthly Revenue (Target):</span>
+                            <span class="result-value" id="monthlyRevenue">₹35,000</span>
+                        </div>
+                        <div class="result-item monthly">
+                            <span class="result-label">Monthly Profit (Target):</span>
+                            <span class="result-value" id="monthlyProfit">₹11,500</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Break-even Price:</span>
+                            <span class="result-value" id="breakEvenPrice">₹235.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Cost Breakdown Chart -->
+                    <div class="cost-breakdown">
+                        <h4><i class="fas fa-chart-bar"></i> Cost Breakdown</h4>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Product Cost</span>
+                            <div class="breakdown-bar">
+                                <div class="bar-fill product-cost" id="productCostBar"></div>
+                            </div>
+                            <span class="breakdown-value" id="productCostPercent">42.55%</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Shipping Cost</span>
+                            <div class="breakdown-bar">
+                                <div class="bar-fill shipping-cost" id="shippingCostBar"></div>
+                            </div>
+                            <span class="breakdown-value" id="shippingCostPercent">21.28%</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="breakdown-label">Other Costs</span>
+                            <div class="breakdown-bar">
+                                <div class="bar-fill other-costs" id="otherCostsBar"></div>
+                            </div>
+                            <span class="breakdown-value" id="otherCostsPercent">36.17%</span>
+                        </div>
+                        <div class="breakdown-item profit">
+                            <span class="breakdown-label">Profit</span>
+                            <div class="breakdown-bar">
+                                <div class="bar-fill profit-bar" id="profitBar"></div>
+                            </div>
+                            <span class="breakdown-value" id="profitPercent">32.86%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-content">
+                <div class="info-item">
+                    <h3><i class="fas fa-lightbulb"></i> How to Use</h3>
+                    <ul>
+                        <li>Enter all your product-related costs including manufacturing, shipping, and marketing</li>
+                        <li>Add platform fees (Amazon, Flipkart commission) and other miscellaneous costs</li>
+                        <li>Set your desired selling price and target monthly quantity</li>
+                        <li>Click "Calculate Profit" to see detailed profit analysis and ROI</li>
+                        <li>Use the cost breakdown to optimize your pricing strategy</li>
+                    </ul>
+                </div>
+                
+                <div class="info-item">
+                    <h3><i class="fas fa-chart-line"></i> Key Metrics Explained</h3>
+                    <ul>
+                        <li><strong>Profit Margin:</strong> (Selling Price - Total Cost) / Selling Price × 100</li>
+                        <li><strong>ROI:</strong> (Profit per Unit / Total Cost) × 100</li>
+                        <li><strong>Break-even Price:</strong> Minimum selling price to cover all costs</li>
+                        <li><strong>Monthly Projections:</strong> Based on your target quantity</li>
+                        <li><strong>Cost Breakdown:</strong> Visual representation of cost distribution</li>
+                    </ul>
+                </div>
+                
+                <div class="info-item">
+                    <h3><i class="fas fa-tips"></i> Optimization Tips</h3>
+                    <ul>
+                        <li>Aim for a profit margin of at least 20-30% for sustainable business</li>
+                        <li>Consider bulk purchasing to reduce per-unit product costs</li>
+                        <li>Negotiate better rates with shipping and packaging suppliers</li>
+                        <li>Optimize marketing spend for better ROI per customer acquisition</li>
+                        <li>Regularly review and adjust pricing based on market conditions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../categories/financial.html">Financial & Business</a></li>
+                        <li><a href="../categories/health.html">Health & Wellness</a></li>
+                        <li><a href="../categories/home.html">Home & Garden</a></li>
+                        <li><a href="../categories/education.html">Education & Science</a></li>
+                        <li><a href="../categories/everyday.html">Everyday & Misc</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="mailto:bhagatpaaji@gmail.com">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        function calculateProfit() {
+            // Get input values
+            const productCost = parseFloat(document.getElementById('productCost').value) || 0;
+            const shippingCost = parseFloat(document.getElementById('shippingCost').value) || 0;
+            const packagingCost = parseFloat(document.getElementById('packagingCost').value) || 0;
+            const marketingCost = parseFloat(document.getElementById('marketingCost').value) || 0;
+            const platformFees = parseFloat(document.getElementById('platformFees').value) || 0;
+            const otherCosts = parseFloat(document.getElementById('otherCosts').value) || 0;
+            const sellingPrice = parseFloat(document.getElementById('sellingPrice').value) || 0;
+            const targetQuantity = parseInt(document.getElementById('targetQuantity').value) || 1;
+
+            // Calculations
+            const totalCost = productCost + shippingCost + packagingCost + marketingCost + platformFees + otherCosts;
+            const unitProfit = sellingPrice - totalCost;
+            const profitMargin = sellingPrice > 0 ? (unitProfit / sellingPrice) * 100 : 0;
+            const roi = totalCost > 0 ? (unitProfit / totalCost) * 100 : 0;
+            const monthlyRevenue = sellingPrice * targetQuantity;
+            const monthlyProfit = unitProfit * targetQuantity;
+            const breakEvenPrice = totalCost;
+
+            // Update results
+            document.getElementById('totalCost').textContent = `₹${totalCost.toFixed(2)}`;
+            document.getElementById('unitProfit').textContent = `₹${unitProfit.toFixed(2)}`;
+            document.getElementById('profitMargin').textContent = `${profitMargin.toFixed(2)}%`;
+            document.getElementById('roi').textContent = `${roi.toFixed(2)}%`;
+            document.getElementById('monthlyRevenue').textContent = `₹${monthlyRevenue.toLocaleString('en-IN')}`;
+            document.getElementById('monthlyProfit').textContent = `₹${monthlyProfit.toLocaleString('en-IN')}`;
+            document.getElementById('breakEvenPrice').textContent = `₹${breakEvenPrice.toFixed(2)}`;
+
+            // Update profit color based on positive/negative
+            const unitProfitElement = document.getElementById('unitProfit');
+            const monthlyProfitElement = document.getElementById('monthlyProfit');
+            if (unitProfit >= 0) {
+                unitProfitElement.style.color = '#22c55e';
+                monthlyProfitElement.style.color = '#22c55e';
+            } else {
+                unitProfitElement.style.color = '#ef4444';
+                monthlyProfitElement.style.color = '#ef4444';
+            }
+
+            // Update cost breakdown
+            updateCostBreakdown(productCost, shippingCost, packagingCost + marketingCost + platformFees + otherCosts, sellingPrice, totalCost);
+
+            // Add animation to results
+            document.getElementById('resultsContent').style.animation = 'slideInRight 0.5s ease-out';
+        }
+
+        function updateCostBreakdown(productCost, shippingCost, otherCosts, sellingPrice, totalCost) {
+            if (sellingPrice <= 0) return;
+
+            const productPercent = (productCost / sellingPrice) * 100;
+            const shippingPercent = (shippingCost / sellingPrice) * 100;
+            const otherPercent = (otherCosts / sellingPrice) * 100;
+            const profitPercent = ((sellingPrice - totalCost) / sellingPrice) * 100;
+
+            // Update percentages
+            document.getElementById('productCostPercent').textContent = `${productPercent.toFixed(2)}%`;
+            document.getElementById('shippingCostPercent').textContent = `${shippingPercent.toFixed(2)}%`;
+            document.getElementById('otherCostsPercent').textContent = `${otherPercent.toFixed(2)}%`;
+            document.getElementById('profitPercent').textContent = `${profitPercent.toFixed(2)}%`;
+
+            // Update bar widths
+            document.getElementById('productCostBar').style.width = `${Math.min(productPercent, 100)}%`;
+            document.getElementById('shippingCostBar').style.width = `${Math.min(shippingPercent, 100)}%`;
+            document.getElementById('otherCostsBar').style.width = `${Math.min(otherPercent, 100)}%`;
+            document.getElementById('profitBar').style.width = `${Math.min(Math.abs(profitPercent), 100)}%`;
+
+            // Change profit bar color based on positive/negative
+            const profitBar = document.getElementById('profitBar');
+            if (profitPercent >= 0) {
+                profitBar.style.background = '#22c55e';
+            } else {
+                profitBar.style.background = '#ef4444';
+            }
+        }
+
+        function clearCalculator() {
+            document.getElementById('productCost').value = '';
+            document.getElementById('shippingCost').value = '';
+            document.getElementById('packagingCost').value = '';
+            document.getElementById('marketingCost').value = '';
+            document.getElementById('platformFees').value = '';
+            document.getElementById('otherCosts').value = '';
+            document.getElementById('sellingPrice').value = '';
+            document.getElementById('targetQuantity').value = '';
+            
+            // Reset results
+            document.getElementById('totalCost').textContent = '₹0.00';
+            document.getElementById('unitProfit').textContent = '₹0.00';
+            document.getElementById('profitMargin').textContent = '0.00%';
+            document.getElementById('roi').textContent = '0.00%';
+            document.getElementById('monthlyRevenue').textContent = '₹0';
+            document.getElementById('monthlyProfit').textContent = '₹0';
+            document.getElementById('breakEvenPrice').textContent = '₹0.00';
+            
+            // Reset breakdown bars
+            const bars = ['productCostBar', 'shippingCostBar', 'otherCostsBar', 'profitBar'];
+            bars.forEach(bar => {
+                document.getElementById(bar).style.width = '0%';
+            });
+            
+            document.getElementById('productCostPercent').textContent = '0.00%';
+            document.getElementById('shippingCostPercent').textContent = '0.00%';
+            document.getElementById('otherCostsPercent').textContent = '0.00%';
+            document.getElementById('profitPercent').textContent = '0.00%';
+        }
+
+        function saveCalculation() {
+            const calculation = {
+                type: 'eCommerce Profit Calculator',
+                inputs: {
+                    productCost: document.getElementById('productCost').value,
+                    shippingCost: document.getElementById('shippingCost').value,
+                    packagingCost: document.getElementById('packagingCost').value,
+                    marketingCost: document.getElementById('marketingCost').value,
+                    platformFees: document.getElementById('platformFees').value,
+                    otherCosts: document.getElementById('otherCosts').value,
+                    sellingPrice: document.getElementById('sellingPrice').value,
+                    targetQuantity: document.getElementById('targetQuantity').value
+                },
+                results: {
+                    totalCost: document.getElementById('totalCost').textContent,
+                    unitProfit: document.getElementById('unitProfit').textContent,
+                    profitMargin: document.getElementById('profitMargin').textContent,
+                    roi: document.getElementById('roi').textContent,
+                    monthlyProfit: document.getElementById('monthlyProfit').textContent
+                },
+                timestamp: new Date().toLocaleString()
+            };
+            
+            saveCalculationToStorage(calculation);
+            showSaveMessage();
+        }
+
+        // Auto-calculate on input change
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = ['productCost', 'shippingCost', 'packagingCost', 'marketingCost', 'platformFees', 'otherCosts', 'sellingPrice', 'targetQuantity'];
+            inputs.forEach(inputId => {
+                document.getElementById(inputId).addEventListener('input', calculateProfit);
+            });
+            
+            // Initial calculation
+            calculateProfit();
+        });
+    </script>
+</body>
+</html>
