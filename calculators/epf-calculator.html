@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPF Calculator - Employee Provident Fund Calculator India | CalcuForMe</title>
+    <meta name="description" content="Free EPF Calculator for Indian employees. Calculate EPF maturity amount, monthly contributions, and retirement corpus with current EPF rates and tax benefits.">
+    <meta name="keywords" content="EPF calculator, employee provident fund, PF calculator India, retirement planning India, EPF maturity calculator">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="calculator-header-content">
+                <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    <a href="../index.html" style="color: rgba(255,255,255,0.8);">Home</a> > 
+                    <a href="../index.html#categories" style="color: rgba(255,255,255,0.8);">Calculators</a> > 
+                    <span>EPF Calculator</span>
+                </nav>
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">EPF Calculator India</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Calculate your Employee Provident Fund maturity amount and retirement planning</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-content" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px;">
+            
+            <div class="calculator-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                
+                <!-- EPF Calculator Form -->
+                <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                        <i class="fas fa-piggy-bank" style="color: #667eea;"></i> EPF Calculator
+                    </h2>
+                    
+                    <form id="epf-form">
+                        <!-- Current Age -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Current Age</label>
+                            <input type="number" id="current-age" placeholder="Enter current age" value="28"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="18" max="60" required>
+                        </div>
+
+                        <!-- Retirement Age -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Retirement Age</label>
+                            <input type="number" id="retirement-age" placeholder="Enter retirement age" value="58"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="50" max="65" required>
+                        </div>
+
+                        <!-- Current Monthly Salary -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Current Monthly Salary (₹)</label>
+                            <input type="number" id="monthly-salary" placeholder="Enter monthly salary" value="50000"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="1000" required>
+                        </div>
+
+                        <!-- Current EPF Balance -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Current EPF Balance (₹)</label>
+                            <input type="number" id="current-balance" placeholder="Enter current EPF balance" value="200000"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="0">
+                        </div>
+
+                        <!-- Employee EPF Contribution -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Employee EPF Contribution (%)</label>
+                            <select id="employee-contribution" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                <option value="12">12% (Standard)</option>
+                                <option value="10">10% (Special cases)</option>
+                            </select>
+                        </div>
+
+                        <!-- Employer EPF Contribution -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Employer EPF Contribution (%)</label>
+                            <input type="number" id="employer-contribution" value="3.67" step="0.01"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="0" max="12">
+                            <small style="color: #6b7280; font-size: 0.85rem;">Note: 8.33% goes to EPS, 3.67% to EPF</small>
+                        </div>
+
+                        <!-- Annual Salary Increase -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Expected Annual Salary Increase (%)</label>
+                            <input type="number" id="salary-increase" placeholder="Annual salary increase" value="8" step="0.1"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="0" max="20">
+                        </div>
+
+                        <!-- EPF Interest Rate -->
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">EPF Interest Rate (%)</label>
+                            <input type="number" id="interest-rate" placeholder="EPF interest rate" value="8.15" step="0.01"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="6" max="12">
+                            <small style="color: #6b7280; font-size: 0.85rem;">Current EPF rate: 8.15% (FY 2023-24)</small>
+                        </div>
+
+                        <button type="submit" 
+                                style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-calculator"></i> Calculate EPF Maturity
+                        </button>
+                    </form>
+
+                    <!-- Quick Scenarios -->
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #f8fafc; border-radius: 12px;">
+                        <h4 style="color: #374151; margin-bottom: 1rem;">Quick Scenarios</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+                            <button onclick="setScenario('fresher')" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer;">Fresh Graduate</button>
+                            <button onclick="setScenario('experienced')" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer;">5 Years Experience</button>
+                            <button onclick="setScenario('senior')" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer;">Senior Professional</button>
+                            <button onclick="setScenario('manager')" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer;">Manager Level</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <!-- EPF Maturity Results -->
+                    <div id="epf-results" class="results-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); margin-bottom: 2rem; display: none;">
+                        <h3 style="color: #2d3748; margin-bottom: 1.5rem;">
+                            <i class="fas fa-chart-pie" style="color: #667eea;"></i> EPF Maturity Results
+                        </h3>
+                        
+                        <!-- Total Maturity Amount -->
+                        <div style="text-align: center; margin-bottom: 2rem; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                            <div style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0.5rem;">Total EPF Maturity Amount</div>
+                            <div id="total-maturity" style="font-size: 2.5rem; font-weight: bold;">₹0</div>
+                        </div>
+
+                        <!-- Breakdown -->
+                        <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #22c55e;">
+                                <span style="font-weight: 600; color: #374151;">Your Total Contribution:</span>
+                                <span id="employee-total" style="font-weight: bold; color: #22c55e;">₹0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #eff6ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <span style="font-weight: 600; color: #374151;">Employer Contribution:</span>
+                                <span id="employer-total" style="font-weight: bold; color: #3b82f6;">₹0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <span style="font-weight: 600; color: #374151;">Interest Earned:</span>
+                                <span id="interest-earned" style="font-weight: bold; color: #f59e0b;">₹0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444;">
+                                <span style="font-weight: 600; color: #374151;">Years to Retirement:</span>
+                                <span id="years-remaining" style="font-weight: bold; color: #ef4444;">0 years</span>
+                            </div>
+                        </div>
+
+                        <!-- Monthly Contribution Info -->
+                        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 12px;">
+                            <h4 style="color: #374151; margin-bottom: 1rem;">Monthly Contribution Details</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+                                <div style="text-align: center;">
+                                    <div style="color: #6b7280;">Your Monthly EPF</div>
+                                    <div id="monthly-employee" style="font-weight: bold; color: #22c55e; font-size: 1.1rem;">₹0</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="color: #6b7280;">Employer Monthly EPF</div>
+                                    <div id="monthly-employer" style="font-weight: bold; color: #3b82f6; font-size: 1.1rem;">₹0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EPF vs Other Investments -->
+                    <div id="comparison-chart" class="results-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); display: none;">
+                        <h3 style="color: #2d3748; margin-bottom: 1.5rem;">
+                            <i class="fas fa-chart-bar" style="color: #10b981;"></i> EPF vs Other Investments
+                        </h3>
+                        
+                        <div id="investment-comparison" style="display: grid; gap: 1rem;">
+                            <!-- Comparison will be populated by JavaScript -->
+                        </div>
+
+                        <!-- Tax Benefits -->
+                        <div style="background: #f0fff4; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #22c55e; margin-top: 1.5rem;">
+                            <h4 style="color: #047857; margin-bottom: 1rem;"><i class="fas fa-receipt"></i> Tax Benefits</h4>
+                            <ul style="color: #065f46; line-height: 1.6; margin: 0; padding-left: 1.2rem; font-size: 0.95rem;">
+                                <li><strong>Section 80C:</strong> EPF contributions up to ₹1.5 lakh are tax deductible</li>
+                                <li><strong>Tax-free Interest:</strong> EPF interest is tax-free if withdrawn after 5 years</li>
+                                <li><strong>EEE Status:</strong> Exempt-Exempt-Exempt for tax purposes</li>
+                                <li><strong>Partial Withdrawal:</strong> Tax-free for specific purposes like home purchase</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- EPF Tips -->
+                    <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                        <h3 style="color: #2d3748; margin-bottom: 1.5rem;">
+                            <i class="fas fa-lightbulb" style="color: #f59e0b;"></i> EPF Tips & Guidelines
+                        </h3>
+                        
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="background: #fef7ff; padding: 1rem; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                                <h5 style="color: #7c3aed; margin-bottom: 0.5rem;">VPF (Voluntary Provident Fund)</h5>
+                                <p style="color: #6b21a8; margin: 0; font-size: 0.9rem;">Contribute more than 12% to maximize your retirement corpus</p>
+                            </div>
+                            
+                            <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <h5 style="color: #1d4ed8; margin-bottom: 0.5rem;">UAN (Universal Account Number)</h5>
+                                <p style="color: #1e3a8a; margin: 0; font-size: 0.9rem;">Link all your EPF accounts with UAN for easy transfers</p>
+                            </div>
+                            
+                            <div style="background: #f0fdf4; padding: 1rem; border-radius: 8px; border-left: 4px solid #22c55e;">
+                                <h5 style="color: #16a34a; margin-bottom: 0.5rem;">Online Services</h5>
+                                <p style="color: #15803d; margin: 0; font-size: 0.9rem;">Use EPFO portal for balance check, withdrawal, and transfers</p>
+                            </div>
+                            
+                            <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <h5 style="color: #d97706; margin-bottom: 0.5rem;">Nomination</h5>
+                                <p style="color: #92400e; margin: 0; font-size: 0.9rem;">Always update your nomination details for family's security</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="compound-interest-calculator-india.html">Compound Interest Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // EPF Calculator Logic
+        document.getElementById('epf-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateEPF();
+        });
+
+        function calculateEPF() {
+            // Get input values
+            const currentAge = parseInt(document.getElementById('current-age').value);
+            const retirementAge = parseInt(document.getElementById('retirement-age').value);
+            const monthlySalary = parseFloat(document.getElementById('monthly-salary').value);
+            const currentBalance = parseFloat(document.getElementById('current-balance').value) || 0;
+            const employeeContribution = parseFloat(document.getElementById('employee-contribution').value);
+            const employerContribution = parseFloat(document.getElementById('employer-contribution').value);
+            const salaryIncrease = parseFloat(document.getElementById('salary-increase').value) / 100;
+            const interestRate = parseFloat(document.getElementById('interest-rate').value) / 100;
+
+            // Validation
+            if (currentAge >= retirementAge) {
+                alert('Retirement age should be greater than current age');
+                return;
+            }
+
+            if (monthlySalary <= 0) {
+                alert('Please enter a valid monthly salary');
+                return;
+            }
+
+            const yearsToRetirement = retirementAge - currentAge;
+            
+            // Calculate EPF maturity
+            const result = calculateEPFMaturity(
+                currentBalance,
+                monthlySalary,
+                employeeContribution / 100,
+                employerContribution / 100,
+                yearsToRetirement,
+                salaryIncrease,
+                interestRate
+            );
+            
+            displayResults(result, yearsToRetirement);
+        }
+
+        function calculateEPFMaturity(currentBalance, monthlySalary, empRate, emplerRate, years, salaryIncrease, interestRate) {
+            let totalBalance = currentBalance;
+            let totalEmployeeContribution = 0;
+            let totalEmployerContribution = 0;
+            let currentSalary = monthlySalary;
+            
+            for (let year = 0; year < years; year++) {
+                for (let month = 0; month < 12; month++) {
+                    const monthlyEmpContribution = currentSalary * empRate;
+                    const monthlyEmplerContribution = currentSalary * emplerRate;
+                    
+                    totalEmployeeContribution += monthlyEmpContribution;
+                    totalEmployerContribution += monthlyEmplerContribution;
+                    
+                    totalBalance += monthlyEmpContribution + monthlyEmplerContribution;
+                }
+                
+                // Apply interest at year end
+                totalBalance = totalBalance * (1 + interestRate);
+                
+                // Increase salary
+                currentSalary = currentSalary * (1 + salaryIncrease);
+            }
+            
+            const totalContributions = totalEmployeeContribution + totalEmployerContribution + currentBalance;
+            const interestEarned = totalBalance - totalContributions;
+            
+            return {
+                totalMaturity: totalBalance,
+                totalEmployeeContribution: totalEmployeeContribution,
+                totalEmployerContribution: totalEmployerContribution,
+                interestEarned: interestEarned,
+                currentMonthlyEmployee: monthlySalary * empRate,
+                currentMonthlyEmployer: monthlySalary * emplerRate
+            };
+        }
+
+        function displayResults(result, years) {
+            // Display main results
+            document.getElementById('total-maturity').textContent = formatCurrency(result.totalMaturity);
+            document.getElementById('employee-total').textContent = formatCurrency(result.totalEmployeeContribution);
+            document.getElementById('employer-total').textContent = formatCurrency(result.totalEmployerContribution);
+            document.getElementById('interest-earned').textContent = formatCurrency(result.interestEarned);
+            document.getElementById('years-remaining').textContent = years + ' years';
+            document.getElementById('monthly-employee').textContent = formatCurrency(result.currentMonthlyEmployee);
+            document.getElementById('monthly-employer').textContent = formatCurrency(result.currentMonthlyEmployer);
+            
+            // Show results
+            document.getElementById('epf-results').style.display = 'block';
+            
+            // Show comparison
+            displayInvestmentComparison(result.totalMaturity, years);
+            document.getElementById('comparison-chart').style.display = 'block';
+        }
+
+        function displayInvestmentComparison(epfAmount, years) {
+            const totalInvestment = (result.totalEmployeeContribution + result.totalEmployerContribution) / years / 12;
+            const monthlyInvestment = totalInvestment;
+            
+            const investments = [
+                { name: 'EPF (8.15%)', amount: epfAmount, color: '#667eea', risk: 'Low' },
+                { name: 'PPF (7.1%)', amount: calculateSIPMaturity(monthlyInvestment, years, 0.071), color: '#22c55e', risk: 'Low' },
+                { name: 'Mutual Fund SIP (12%)', amount: calculateSIPMaturity(monthlyInvestment, years, 0.12), color: '#f59e0b', risk: 'Moderate' },
+                { name: 'Equity (15%)', amount: calculateSIPMaturity(monthlyInvestment, years, 0.15), color: '#ef4444', risk: 'High' }
+            ];
+            
+            const comparisonHTML = investments.map(inv => `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: ${inv.color}15; border-radius: 8px; border-left: 4px solid ${inv.color};">
+                    <div>
+                        <div style="font-weight: 600; color: #374151;">${inv.name}</div>
+                        <div style="font-size: 0.85rem; color: #6b7280;">${inv.risk} Risk</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-weight: bold; color: ${inv.color}; font-size: 1.1rem;">${formatCurrency(inv.amount)}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('investment-comparison').innerHTML = comparisonHTML;
+        }
+
+        function calculateSIPMaturity(monthlyAmount, years, annualRate) {
+            const monthlyRate = annualRate / 12;
+            const totalMonths = years * 12;
+            return monthlyAmount * (((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate));
+        }
+
+        function formatCurrency(amount) {
+            if (amount >= 10000000) { // 1 crore
+                return '₹' + (amount / 10000000).toFixed(2) + ' Cr';
+            } else if (amount >= 100000) { // 1 lakh
+                return '₹' + (amount / 100000).toFixed(2) + ' L';
+            } else {
+                return '₹' + amount.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+            }
+        }
+
+        function setScenario(type) {
+            const scenarios = {
+                fresher: {
+                    age: 23,
+                    retirement: 58,
+                    salary: 25000,
+                    balance: 0,
+                    increase: 10
+                },
+                experienced: {
+                    age: 28,
+                    retirement: 58,
+                    salary: 45000,
+                    balance: 150000,
+                    increase: 8
+                },
+                senior: {
+                    age: 35,
+                    retirement: 60,
+                    salary: 80000,
+                    balance: 500000,
+                    increase: 7
+                },
+                manager: {
+                    age: 40,
+                    retirement: 60,
+                    salary: 120000,
+                    balance: 1200000,
+                    increase: 6
+                }
+            };
+            
+            const scenario = scenarios[type];
+            document.getElementById('current-age').value = scenario.age;
+            document.getElementById('retirement-age').value = scenario.retirement;
+            document.getElementById('monthly-salary').value = scenario.salary;
+            document.getElementById('current-balance').value = scenario.balance;
+            document.getElementById('salary-increase').value = scenario.increase;
+        }
+
+        // Auto-calculate on input change
+        const inputs = ['current-age', 'retirement-age', 'monthly-salary', 'current-balance', 
+                       'employee-contribution', 'employer-contribution', 'salary-increase', 'interest-rate'];
+        
+        inputs.forEach(inputId => {
+            document.getElementById(inputId).addEventListener('input', function() {
+                if (document.getElementById('epf-results').style.display === 'block') {
+                    calculateEPF();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

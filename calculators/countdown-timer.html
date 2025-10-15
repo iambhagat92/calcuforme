@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer & Digital Clock - Online Timer Tools | CalcuForMe</title>
+    <meta name="description" content="Free online countdown timer, stopwatch, digital clock and alarm. Perfect for workouts, cooking, studying, meetings and productivity. Multiple timer modes available.">
+    <meta name="keywords" content="countdown timer, online timer, stopwatch, digital clock, alarm clock, timer online, countdown clock, race timer">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <style>
+        .timer-display {
+            font-family: 'Courier New', monospace;
+            font-size: 4rem;
+            font-weight: bold;
+            color: #2d3748;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 2rem 0;
+        }
+        
+        .timer-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .timer-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+        }
+        
+        .timer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .timer-tabs {
+            display: flex;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timer-tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .timer-tab.active {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .preset-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .preset-btn {
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .preset-btn:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+        
+        .time-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .time-input-group {
+            text-align: center;
+        }
+        
+        .time-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 2rem;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .digital-clock {
+            background: #1f2937;
+            color: #10b981;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .alarm-list {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .alarm-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .timer-display {
+                font-size: 2.5rem;
+            }
+            
+            .timer-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .time-inputs {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .pulsing {
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>CalcuForMe</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="calculator-header-content">
+                <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    <a href="../index.html" style="color: rgba(255,255,255,0.8);">Home</a> > 
+                    <a href="../index.html#categories" style="color: rgba(255,255,255,0.8);">Calculators</a> > 
+                    <span>Countdown Timer</span>
+                </nav>
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Countdown Timer & Time Tools</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Free online countdown timer, stopwatch, digital clock and alarm tools</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timer Tools Section -->
+    <section class="calculator-content" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1000px;">
+            
+            <!-- Timer Mode Tabs -->
+            <div class="timer-tabs">
+                <div class="timer-tab active" onclick="switchMode('countdown')">
+                    <i class="fas fa-hourglass-half"></i> Countdown Timer
+                </div>
+                <div class="timer-tab" onclick="switchMode('stopwatch')">
+                    <i class="fas fa-stopwatch"></i> Stopwatch
+                </div>
+                <div class="timer-tab" onclick="switchMode('clock')">
+                    <i class="fas fa-clock"></i> Digital Clock
+                </div>
+                <div class="timer-tab" onclick="switchMode('alarm')">
+                    <i class="fas fa-bell"></i> Alarm
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div id="countdown-section" class="timer-section">
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
+                    
+                    <!-- Timer Display -->
+                    <div id="countdown-display" class="timer-display">00:00:00</div>
+                    
+                    <!-- Time Input -->
+                    <div class="time-inputs">
+                        <div class="time-input-group">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Hours</label>
+                            <input type="number" id="hours-input" class="time-input" min="0" max="23" value="0">
+                        </div>
+                        <div class="time-input-group">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Minutes</label>
+                            <input type="number" id="minutes-input" class="time-input" min="0" max="59" value="5">
+                        </div>
+                        <div class="time-input-group">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Seconds</label>
+                            <input type="number" id="seconds-input" class="time-input" min="0" max="59" value="0">
+                        </div>
+                    </div>
+                    
+                    <!-- Preset Buttons -->
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setPreset(0,1,0)">1 Min</button>
+                        <button class="preset-btn" onclick="setPreset(0,5,0)">5 Min</button>
+                        <button class="preset-btn" onclick="setPreset(0,10,0)">10 Min</button>
+                        <button class="preset-btn" onclick="setPreset(0,15,0)">15 Min</button>
+                        <button class="preset-btn" onclick="setPreset(0,30,0)">30 Min</button>
+                        <button class="preset-btn" onclick="setPreset(1,0,0)">1 Hour</button>
+                    </div>
+                    
+                    <!-- Timer Controls -->
+                    <div class="timer-controls">
+                        <button id="start-btn" class="timer-btn btn-success" onclick="startCountdown()">
+                            <i class="fas fa-play"></i> Start
+                        </button>
+                        <button id="pause-btn" class="timer-btn btn-warning" onclick="pauseCountdown()" disabled>
+                            <i class="fas fa-pause"></i> Pause
+                        </button>
+                        <button id="reset-btn" class="timer-btn btn-danger" onclick="resetCountdown()">
+                            <i class="fas fa-stop"></i> Reset
+                        </button>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div style="background: #e5e7eb; border-radius: 10px; margin: 2rem 0; overflow: hidden;">
+                        <div id="progress-bar" style="height: 8px; background: linear-gradient(90deg, #22c55e, #16a34a); width: 0%; transition: width 1s ease;"></div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Stopwatch -->
+            <div id="stopwatch-section" class="timer-section" style="display: none;">
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
+                    
+                    <div id="stopwatch-display" class="timer-display">00:00:00</div>
+                    
+                    <div class="timer-controls">
+                        <button id="stopwatch-start" class="timer-btn btn-success" onclick="startStopwatch()">
+                            <i class="fas fa-play"></i> Start
+                        </button>
+                        <button id="stopwatch-pause" class="timer-btn btn-warning" onclick="pauseStopwatch()" disabled>
+                            <i class="fas fa-pause"></i> Pause
+                        </button>
+                        <button id="stopwatch-reset" class="timer-btn btn-danger" onclick="resetStopwatch()">
+                            <i class="fas fa-stop"></i> Reset
+                        </button>
+                        <button id="lap-btn" class="timer-btn btn-primary" onclick="recordLap()" disabled>
+                            <i class="fas fa-flag"></i> Lap
+                        </button>
+                    </div>
+                    
+                    <!-- Lap Times -->
+                    <div id="lap-times" style="margin-top: 2rem; max-height: 300px; overflow-y: auto;"></div>
+                    
+                </div>
+            </div>
+
+            <!-- Digital Clock -->
+            <div id="clock-section" class="timer-section" style="display: none;">
+                <div class="digital-clock">
+                    <div id="digital-time" style="font-size: 4rem; margin-bottom: 1rem;">00:00:00</div>
+                    <div id="digital-date" style="font-size: 1.5rem; opacity: 0.8;">Monday, January 1, 2024</div>
+                    <div id="timezone" style="font-size: 1rem; margin-top: 1rem; opacity: 0.6;">UTC+0</div>
+                </div>
+                
+                <!-- Time Zone Selector -->
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); margin-top: 2rem;">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem;">World Clock</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div class="world-clock" data-timezone="America/New_York">
+                            <div style="font-weight: 600;">New York</div>
+                            <div class="world-time" style="font-family: monospace; font-size: 1.2rem;"></div>
+                        </div>
+                        <div class="world-clock" data-timezone="Europe/London">
+                            <div style="font-weight: 600;">London</div>
+                            <div class="world-time" style="font-family: monospace; font-size: 1.2rem;"></div>
+                        </div>
+                        <div class="world-clock" data-timezone="Asia/Tokyo">
+                            <div style="font-weight: 600;">Tokyo</div>
+                            <div class="world-time" style="font-family: monospace; font-size: 1.2rem;"></div>
+                        </div>
+                        <div class="world-clock" data-timezone="Australia/Sydney">
+                            <div style="font-weight: 600;">Sydney</div>
+                            <div class="world-time" style="font-family: monospace; font-size: 1.2rem;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alarm -->
+            <div id="alarm-section" class="timer-section" style="display: none;">
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    
+                    <h3 style="text-align: center; margin-bottom: 2rem;">Set Alarm</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem; align-items: end; margin-bottom: 2rem;">
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Hour</label>
+                            <input type="number" id="alarm-hour" min="0" max="23" value="12" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1.1rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Minute</label>
+                            <input type="number" id="alarm-minute" min="0" max="59" value="0" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1.1rem;">
+                        </div>
+                        <div>
+                            <button onclick="setAlarm()" class="timer-btn btn-primary">Set Alarm</button>
+                        </div>
+                    </div>
+                    
+                    <div id="active-alarms" class="alarm-list">
+                        <h4 style="margin-bottom: 1rem;">Active Alarms</h4>
+                        <div id="alarm-items">
+                            <p style="color: #6b7280; text-align: center;">No active alarms</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="compound-interest-calculator-india.html">Compound Interest Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio for notifications -->
+    <audio id="timer-sound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRuoGAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YcAGAACBhYqFbF1fdJivrJBhNjVgVQUAAAAASUVORCBgAQABABAAAIhYAQACABAAZGF0YQIAA" type="audio/wav">
+    </audio>
+
+    <script>
+        // Timer State
+        let countdownInterval;
+        let stopwatchInterval;
+        let clockInterval;
+        let countdownTime = 0;
+        let stopwatchTime = 0;
+        let totalCountdownTime = 0;
+        let lapCount = 0;
+        let alarms = [];
+        let alarmCheckInterval;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCountdownDisplay();
+            startClock();
+            startAlarmChecker();
+        });
+
+        // Mode Switching
+        function switchMode(mode) {
+            // Hide all sections
+            document.querySelectorAll('.timer-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.timer-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section and activate tab
+            document.getElementById(mode + '-section').style.display = 'block';
+            event.target.classList.add('active');
+        }
+
+        // Countdown Timer Functions
+        function setPreset(hours, minutes, seconds) {
+            document.getElementById('hours-input').value = hours;
+            document.getElementById('minutes-input').value = minutes;
+            document.getElementById('seconds-input').value = seconds;
+            updateCountdownTime();
+        }
+
+        function updateCountdownTime() {
+            const hours = parseInt(document.getElementById('hours-input').value) || 0;
+            const minutes = parseInt(document.getElementById('minutes-input').value) || 0;
+            const seconds = parseInt(document.getElementById('seconds-input').value) || 0;
+            
+            countdownTime = (hours * 3600) + (minutes * 60) + seconds;
+            totalCountdownTime = countdownTime;
+            updateCountdownDisplay();
+            updateProgressBar();
+        }
+
+        function updateCountdownDisplay() {
+            const hours = Math.floor(countdownTime / 3600);
+            const minutes = Math.floor((countdownTime % 3600) / 60);
+            const seconds = countdownTime % 60;
+            
+            document.getElementById('countdown-display').textContent = 
+                String(hours).padStart(2, '0') + ':' + 
+                String(minutes).padStart(2, '0') + ':' + 
+                String(seconds).padStart(2, '0');
+        }
+
+        function updateProgressBar() {
+            const progress = totalCountdownTime > 0 ? ((totalCountdownTime - countdownTime) / totalCountdownTime) * 100 : 0;
+            document.getElementById('progress-bar').style.width = progress + '%';
+        }
+
+        function startCountdown() {
+            if (countdownTime <= 0) {
+                updateCountdownTime();
+            }
+            
+            if (countdownTime <= 0) {
+                alert('Please set a valid time!');
+                return;
+            }
+
+            countdownInterval = setInterval(() => {
+                countdownTime--;
+                updateCountdownDisplay();
+                updateProgressBar();
+                
+                if (countdownTime <= 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdown-display').classList.add('pulsing');
+                    playNotificationSound();
+                    alert('Time\'s up!');
+                    document.getElementById('countdown-display').classList.remove('pulsing');
+                    document.getElementById('start-btn').disabled = false;
+                    document.getElementById('pause-btn').disabled = true;
+                }
+            }, 1000);
+            
+            document.getElementById('start-btn').disabled = true;
+            document.getElementById('pause-btn').disabled = false;
+        }
+
+        function pauseCountdown() {
+            clearInterval(countdownInterval);
+            document.getElementById('start-btn').disabled = false;
+            document.getElementById('pause-btn').disabled = true;
+        }
+
+        function resetCountdown() {
+            clearInterval(countdownInterval);
+            updateCountdownTime();
+            document.getElementById('start-btn').disabled = false;
+            document.getElementById('pause-btn').disabled = true;
+        }
+
+        // Stopwatch Functions
+        function updateStopwatchDisplay() {
+            const hours = Math.floor(stopwatchTime / 3600);
+            const minutes = Math.floor((stopwatchTime % 3600) / 60);
+            const seconds = stopwatchTime % 60;
+            
+            document.getElementById('stopwatch-display').textContent = 
+                String(hours).padStart(2, '0') + ':' + 
+                String(minutes).padStart(2, '0') + ':' + 
+                String(seconds).padStart(2, '0');
+        }
+
+        function startStopwatch() {
+            stopwatchInterval = setInterval(() => {
+                stopwatchTime++;
+                updateStopwatchDisplay();
+            }, 1000);
+            
+            document.getElementById('stopwatch-start').disabled = true;
+            document.getElementById('stopwatch-pause').disabled = false;
+            document.getElementById('lap-btn').disabled = false;
+        }
+
+        function pauseStopwatch() {
+            clearInterval(stopwatchInterval);
+            document.getElementById('stopwatch-start').disabled = false;
+            document.getElementById('stopwatch-pause').disabled = true;
+            document.getElementById('lap-btn').disabled = true;
+        }
+
+        function resetStopwatch() {
+            clearInterval(stopwatchInterval);
+            stopwatchTime = 0;
+            lapCount = 0;
+            updateStopwatchDisplay();
+            document.getElementById('lap-times').innerHTML = '';
+            document.getElementById('stopwatch-start').disabled = false;
+            document.getElementById('stopwatch-pause').disabled = true;
+            document.getElementById('lap-btn').disabled = true;
+        }
+
+        function recordLap() {
+            lapCount++;
+            const hours = Math.floor(stopwatchTime / 3600);
+            const minutes = Math.floor((stopwatchTime % 3600) / 60);
+            const seconds = stopwatchTime % 60;
+            
+            const lapTime = String(hours).padStart(2, '0') + ':' + 
+                           String(minutes).padStart(2, '0') + ':' + 
+                           String(seconds).padStart(2, '0');
+            
+            const lapElement = document.createElement('div');
+            lapElement.style.cssText = 'padding: 0.5rem 1rem; background: #f1f5f9; margin-bottom: 0.5rem; border-radius: 6px; display: flex; justify-content: space-between;';
+            lapElement.innerHTML = `<span>Lap ${lapCount}</span><span>${lapTime}</span>`;
+            
+            document.getElementById('lap-times').insertBefore(lapElement, document.getElementById('lap-times').firstChild);
+        }
+
+        // Digital Clock Functions
+        function startClock() {
+            updateClock();
+            clockInterval = setInterval(updateClock, 1000);
+        }
+
+        function updateClock() {
+            const now = new Date();
+            
+            // Main clock
+            const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+            const dateStr = now.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
+            document.getElementById('digital-time').textContent = timeStr;
+            document.getElementById('digital-date').textContent = dateStr;
+            document.getElementById('timezone').textContent = timezone;
+            
+            // World clocks
+            document.querySelectorAll('.world-clock').forEach(clock => {
+                const timezone = clock.dataset.timezone;
+                const time = new Date().toLocaleTimeString('en-US', { 
+                    timeZone: timezone,
+                    hour12: false 
+                });
+                clock.querySelector('.world-time').textContent = time;
+            });
+        }
+
+        // Alarm Functions
+        function startAlarmChecker() {
+            alarmCheckInterval = setInterval(checkAlarms, 1000);
+        }
+
+        function setAlarm() {
+            const hour = parseInt(document.getElementById('alarm-hour').value);
+            const minute = parseInt(document.getElementById('alarm-minute').value);
+            
+            const alarmId = Date.now();
+            const alarm = {
+                id: alarmId,
+                hour: hour,
+                minute: minute,
+                active: true
+            };
+            
+            alarms.push(alarm);
+            updateAlarmList();
+            
+            alert(`Alarm set for ${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`);
+        }
+
+        function updateAlarmList() {
+            const container = document.getElementById('alarm-items');
+            
+            if (alarms.length === 0) {
+                container.innerHTML = '<p style="color: #6b7280; text-align: center;">No active alarms</p>';
+                return;
+            }
+            
+            container.innerHTML = alarms.map(alarm => `
+                <div class="alarm-item">
+                    <span style="font-family: monospace; font-size: 1.2rem; font-weight: 600;">
+                        ${String(alarm.hour).padStart(2, '0')}:${String(alarm.minute).padStart(2, '0')}
+                    </span>
+                    <button onclick="removeAlarm(${alarm.id})" style="padding: 0.5rem 1rem; background: #ef4444; color: white; border: none; border-radius: 6px; cursor: pointer;">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function removeAlarm(id) {
+            alarms = alarms.filter(alarm => alarm.id !== id);
+            updateAlarmList();
+        }
+
+        function checkAlarms() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            const currentSecond = now.getSeconds();
+            
+            alarms.forEach(alarm => {
+                if (alarm.active && alarm.hour === currentHour && alarm.minute === currentMinute && currentSecond === 0) {
+                    playNotificationSound();
+                    alert(`Alarm! ${String(alarm.hour).padStart(2, '0')}:${String(alarm.minute).padStart(2, '0')}`);
+                    // Remove alarm after it rings
+                    removeAlarm(alarm.id);
+                }
+            });
+        }
+
+        // Utility Functions
+        function playNotificationSound() {
+            // Create beep sound programmatically
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 800;
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
+            
+            oscillator.start();
+            oscillator.stop(audioContext.currentTime + 1);
+        }
+
+        // Event Listeners
+        document.getElementById('hours-input').addEventListener('input', updateCountdownTime);
+        document.getElementById('minutes-input').addEventListener('input', updateCountdownTime);
+        document.getElementById('seconds-input').addEventListener('input', updateCountdownTime);
+    </script>
+</body>
+</html>
