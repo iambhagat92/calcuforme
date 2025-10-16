@@ -55,7 +55,7 @@ No special prerequisites needed! This is a static website that runs entirely in 
 
 1. **Clone or download this repository**
    ```bash
-   git clone https://github.com/yourusername/calcuforme.git
+   git clone https://github.com/iambhagat92/calcuforme.git
    ```
 
 2. **Open the website**
@@ -176,8 +176,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Website: [yourwebsite.com](https://yourwebsite.com)
+- GitHub: [@iambhagat92](https://github.com/iambhagat92)
+- Website: [calculate forme.xyz](https://calculateforme.xyz)
 
 ## 🙏 Acknowledgments
 
@@ -189,8 +189,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Have questions or suggestions? Feel free to:
 - Open an issue on GitHub
-- Send an email to: your.email@example.com
-- Visit our website: [CalcuForMe.com](https://calcuforme.com)
+- Send an email to:bhagatpaaji@gmail.com
+- Visit our website: [Calculate forme.xyz](https://calculate forme.xyz)
 
 ## 🗺️ Roadmap
 
@@ -210,6 +210,6 @@ Have questions or suggestions? Feel free to:
 
 ---
 
-**Made with ❤️ by CalcuForMe Team**
+**Made with ❤️ by Calculateforme Team**
 
 *Last Updated: October 2025*
