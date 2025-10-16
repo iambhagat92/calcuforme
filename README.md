@@ -1,4 +1,4 @@
-# CalcuForMe - Your Complete Calculator Suite 🧮
+# CalculateForMe - Your Complete Calculator Suite 🧮
 
 A modern, responsive website featuring 100+ free online calculators for various needs including financial, health, home improvement, education, and creative purposes.
 
