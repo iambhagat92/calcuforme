@@ -177,7 +177,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Your Name**
 - GitHub: [@iambhagat92](https://github.com/iambhagat92)
-- Website: [calculate forme.xyz](https://calculateforme.xyz)
+- Website: [calculateforme.xyz](https://calculateform.xyz)
 
 ## 🙏 Acknowledgments
 
@@ -190,7 +190,7 @@ This project is open source and available under the [MIT License](LICENSE).
 Have questions or suggestions? Feel free to:
 - Open an issue on GitHub
 - Send an email to:bhagatpaaji@gmail.com
-- Visit our website: [Calculate forme.xyz](https://calculate forme.xyz)
+- Visit our website: [Calculateforme.xyz](https://calculateform.xyz)
 
 ## 🗺️ Roadmap
 
