@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Calculate Compound Interest in Excel for Days | CalcuForMe</title>
+    <meta name="description" content="Learn daily compound interest calculation in Excel with exact day counts and ready-to-use formulas.">
+    <meta name="keywords" content="compound interest excel days, daily compounding excel, excel interest formula">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo"><i class="fas fa-calculator"></i><span>CalcuForMe</span></a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html" class="active"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blog-post-header" style="background: linear-gradient(135deg,#0ea5e9 0%,#9333ea 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">
+                <a href="../index.html" style="color: inherit;">Home</a> >
+                <a href="../blog.html" style="color: inherit;">Blog</a> >
+                <span>Compound Interest in Excel (Days)</span>
+            </nav>
+            <h1 style="text-align:center; font-size:2.2rem;">Compound Interest in Excel for Days</h1>
+            <p style="text-align:center; opacity:.9; max-width:720px; margin:0 auto;">Exact daily compounding using dates and day-count.</p>
+        </div>
+    </section>
+
+    <section class="blog-content" style="padding: 3rem 0;">
+        <div class="container" style="max-width: 900px;">
+            <div class="infographic" style="background: linear-gradient(135deg,#38bdf8 0%,#a78bfa 100%); padding: 1.5rem; border-radius: 16px; color: white;">
+                <h2 style="text-align:center; margin-bottom:1rem;">Daily Compounding Formula</h2>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+                    <div style="background: rgba(255,255,255,.15); padding:1rem; border-radius:12px;">
+                        <h4>Fixed Days</h4>
+                        <div style="font-family:monospace;">=PV*(1+Rate/365)^Days</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,.15); padding:1rem; border-radius:12px;">
+                        <h4>Using Dates</h4>
+                        <div style="font-family:monospace;">=PV*(1+Rate/365)^(DATE2-DATE1)</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin:2rem 0 1rem;">Example Sheet</h2>
+            <ul style="color:#475569; line-height:1.9;">
+                <li>A1 PV, B1 AnnualRate, C1 StartDate, D1 EndDate</li>
+                <li>E1 Result → <strong>=A1*(1+B1/365)^(D1-C1)</strong></li>
+            </ul>
+
+            <div style="margin:2rem 0; background:#f8fafc; padding:1.25rem; border-radius:12px; border:1px solid #e5e7eb;">
+                <h3>Related Tools</h3>
+                <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
+                    <a href="../calculators/compound-interest-calculator.html" style="color:#2563eb;">Compound Interest</a>
+                    <a href="../calculators/date-calculator.html" style="color:#2563eb;">Date Calculator</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> CalcuForMe</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../calculators/compound-interest-calculator.html">Compound Interest Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CalcuForMe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
