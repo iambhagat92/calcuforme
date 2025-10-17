@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8f9fa"/>
+  
+  <!-- Header -->
+  <rect width="1200" height="100" fill="url(#gradient1)"/>
+  <text x="600" y="55" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">EPFO New Rules 2025</text>
+  <text x="600" y="85" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle" opacity="0.9">EPF & EPS Withdrawal Guidelines</text>
+  
+  <!-- Main Content Area -->
+  <g transform="translate(50, 140)">
+    <!-- 75% Withdrawal Box -->
+    <rect x="0" y="0" width="350" height="200" rx="10" fill="white" stroke="#10b981" stroke-width="2"/>
+    <circle cx="50" cy="50" r="25" fill="#10b981"/>
+    <text x="50" y="58" font-family="Arial" font-size="20" font-weight="bold" fill="white" text-anchor="middle">75%</text>
+    <text x="175" y="55" font-family="Arial" font-size="24" font-weight="bold" fill="#1f2937">Immediate Withdrawal</text>
+    <text x="20" y="90" font-family="Arial" font-size="14" fill="#4b5563">• Age 54-58 years eligible</text>
+    <text x="20" y="115" font-family="Arial" font-size="14" fill="#4b5563">• After 2 months unemployment</text>
+    <text x="20" y="140" font-family="Arial" font-size="14" fill="#4b5563">• Minimum 5 years service</text>
+    <text x="20" y="165" font-family="Arial" font-size="14" fill="#4b5563">• Instant cash relief available</text>
+    
+    <!-- 25% Retention Box -->
+    <rect x="400" y="0" width="350" height="200" rx="10" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="450" cy="50" r="25" fill="#f59e0b"/>
+    <text x="450" y="58" font-family="Arial" font-size="20" font-weight="bold" fill="white" text-anchor="middle">25%</text>
+    <text x="575" y="55" font-family="Arial" font-size="24" font-weight="bold" fill="#1f2937">Mandatory Balance</text>
+    <text x="420" y="90" font-family="Arial" font-size="14" fill="#4b5563">• Remains in account</text>
+    <text x="420" y="115" font-family="Arial" font-size="14" fill="#4b5563">• Earns regular interest</text>
+    <text x="420" y="140" font-family="Arial" font-size="14" fill="#4b5563">• Full withdrawal at 58</text>
+    <text x="420" y="165" font-family="Arial" font-size="14" fill="#4b5563">• Retirement security</text>
+    
+    <!-- EPS Box -->
+    <rect x="800" y="0" width="350" height="200" rx="10" fill="white" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="850" cy="50" r="25" fill="#3b82f6"/>
+    <text x="850" y="58" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">EPS</text>
+    <text x="975" y="55" font-family="Arial" font-size="24" font-weight="bold" fill="#1f2937">Pension Rules</text>
+    <text x="820" y="90" font-family="Arial" font-size="14" fill="#4b5563">• 36 months wait period</text>
+    <text x="820" y="115" font-family="Arial" font-size="14" fill="#4b5563">• Min 10 years service</text>
+    <text x="820" y="140" font-family="Arial" font-size="14" fill="#4b5563">• 4% penalty if early</text>
+    <text x="820" y="165" font-family="Arial" font-size="14" fill="#4b5563">• Certificate required</text>
+  </g>
+  
+  <!-- Process Flow -->
+  <g transform="translate(100, 380)">
+    <text x="500" y="0" font-family="Arial" font-size="28" font-weight="bold" fill="#1f2937" text-anchor="middle">Withdrawal Process Flow</text>
+    
+    <!-- Step 1 -->
+    <rect x="0" y="30" width="200" height="100" rx="10" fill="#e0e7ff"/>
+    <text x="100" y="65" font-family="Arial" font-size="16" font-weight="bold" fill="#4c1d95" text-anchor="middle">Step 1</text>
+    <text x="100" y="85" font-family="Arial" font-size="14" fill="#4c1d95" text-anchor="middle">Check Eligibility</text>
+    <text x="100" y="105" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">(Age, Service Period)</text>
+    
+    <!-- Arrow -->
+    <path d="M 210 80 L 240 80" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 2 -->
+    <rect x="250" y="30" width="200" height="100" rx="10" fill="#dcfce7"/>
+    <text x="350" y="65" font-family="Arial" font-size="16" font-weight="bold" fill="#14532d" text-anchor="middle">Step 2</text>
+    <text x="350" y="85" font-family="Arial" font-size="14" fill="#14532d" text-anchor="middle">Online Application</text>
+    <text x="350" y="105" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">(EPFO Portal)</text>
+    
+    <!-- Arrow -->
+    <path d="M 460 80 L 490 80" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 3 -->
+    <rect x="500" y="30" width="200" height="100" rx="10" fill="#fef3c7"/>
+    <text x="600" y="65" font-family="Arial" font-size="16" font-weight="bold" fill="#78350f" text-anchor="middle">Step 3</text>
+    <text x="600" y="85" font-family="Arial" font-size="14" fill="#78350f" text-anchor="middle">KYC Verification</text>
+    <text x="600" y="105" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">(Aadhaar OTP)</text>
+    
+    <!-- Arrow -->
+    <path d="M 710 80 L 740 80" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 4 -->
+    <rect x="750" y="30" width="200" height="100" rx="10" fill="#d1fae5"/>
+    <text x="850" y="65" font-family="Arial" font-size="16" font-weight="bold" fill="#064e3b" text-anchor="middle">Step 4</text>
+    <text x="850" y="85" font-family="Arial" font-size="14" fill="#064e3b" text-anchor="middle">Amount Transfer</text>
+    <text x="850" y="105" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">(3-7 Days)</text>
+  </g>
+  
+  <!-- Key Benefits -->
+  <g transform="translate(100, 550)">
+    <rect width="1000" height="180" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="500" y="35" font-family="Arial" font-size="24" font-weight="bold" fill="#1f2937" text-anchor="middle">Key Benefits for Employees</text>
+    
+    <g transform="translate(50, 60)">
+      <!-- Benefit 1 -->
+      <circle cx="30" cy="30" r="20" fill="#10b981" opacity="0.2"/>
+      <text x="30" y="37" font-family="Arial" font-size="24" fill="#10b981" text-anchor="middle">✓</text>
+      <text x="65" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#1f2937">Simplified Process</text>
+      <text x="65" y="45" font-family="Arial" font-size="12" fill="#6b7280">Online application, faster settlement</text>
+      
+      <!-- Benefit 2 -->
+      <circle cx="280" cy="30" r="20" fill="#10b981" opacity="0.2"/>
+      <text x="280" y="37" font-family="Arial" font-size="24" fill="#10b981" text-anchor="middle">✓</text>
+      <text x="315" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#1f2937">Financial Security</text>
+      <text x="315" y="45" font-family="Arial" font-size="12" fill="#6b7280">25% forced savings for retirement</text>
+      
+      <!-- Benefit 3 -->
+      <circle cx="530" cy="30" r="20" fill="#10b981" opacity="0.2"/>
+      <text x="530" y="37" font-family="Arial" font-size="24" fill="#10b981" text-anchor="middle">✓</text>
+      <text x="565" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#1f2937">Tax Benefits</text>
+      <text x="565" y="45" font-family="Arial" font-size="12" fill="#6b7280">Continue under Section 80C</text>
+      
+      <!-- Benefit 4 -->
+      <circle cx="750" cy="30" r="20" fill="#10b981" opacity="0.2"/>
+      <text x="750" y="37" font-family="Arial" font-size="24" fill="#10b981" text-anchor="middle">✓</text>
+      <text x="785" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#1f2937">Flexibility</text>
+      <text x="785" y="45" font-family="Arial" font-size="12" fill="#6b7280">75% immediate liquidity</text>
+    </g>
+    
+    <!-- Important Note -->
+    <rect x="20" y="120" width="960" height="40" rx="5" fill="#fef2f2"/>
+    <text x="30" y="145" font-family="Arial" font-size="14" fill="#991b1b">
+      ⚠️ Note: These are the latest EPFO guidelines as of January 2025. Always verify with official EPFO sources.
+    </text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="600" y="770" font-family="Arial" font-size="14" fill="#6b7280" text-anchor="middle">Source: CalcuForMe.com | EPFO Official Guidelines 2025</text>
+  
+  <!-- Define gradient -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+  </defs>
+</svg>
