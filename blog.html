@@ -274,15 +274,47 @@
         </div>
     </section>
 
+    <!-- Google AdSense - Before Visual Guides -->
+    <div class="container" style="text-align: center; margin: 2rem auto; max-width: 728px;">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-5149040612844336"
+             data-ad-slot="1234567893"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <!-- Visual Guides & Infographics -->
     <section class="infographics" style="padding: 2rem 0 4rem 0; background: #f8fafc;">
+        <style>
+        .visual-guides-grid .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .visual-guides-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .visual-guides-grid .blog-card div[style*="height: 140px"] {
+                height: 120px !important;
+            }
+            
+            .visual-guides-grid .blog-card div[style*="padding: 1.5rem"] {
+                padding: 1rem !important;
+            }
+        }
+        </style>
         <div class="container">
             <div class="section-header">
                 <h2>Visual Guides & Infographics</h2>
                 <p>Quick visuals to understand formulas and concepts at a glance.</p>
             </div>
 
-            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="visual-guides-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
                 <!-- EMI Formula Infographic -->
                 <a href="blog/home-loan-emi-calculation-guide.html" class="blog-card" style="text-decoration: none; color: inherit; display: block; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="height: 140px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
@@ -320,7 +352,7 @@
                 </a>
 
                 <!-- SIP Growth Infographic -->
-                <a href="blog/sip-retirement-planning-guide.html" class="blog-card" style="text-decoration: none; color: inherit; display: block; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <a href="blog/investment-calculator-complete-guide.html" class="blog-card" style="text-decoration: none; color: inherit; display: block; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="height: 140px; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); display: flex; align-items: center; justify-content: center;">
                         <i class="fas fa-chart-line" style="font-size: 2.5rem; color: white;"></i>
                     </div>
