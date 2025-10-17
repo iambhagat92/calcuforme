@@ -1,14 +1,1 @@
-# ads.txt for calculateforme.xyz
-# This file authorizes ad networks to sell ads on this website
-# Replace YOUR_ACTUAL_PUBLISHER_ID with your real AdSense Publisher ID
-# Example: google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0
-
-# Google AdSense
 google.com, pub-5149040612844336, DIRECT, f08c47fec0942fa0
-
-# Google Ad Manager (if using)
-# google.com, pub-YOUR_ACTUAL_PUBLISHER_ID, DIRECT, f08c47fec0942fa0
-
-# Format: domain, publisher_id, relationship, TAG_ID
-# Relationship: DIRECT (direct publisher) or RESELLER
-# TAG_ID: f08c47fec0942fa0 is Google's official TAG ID
