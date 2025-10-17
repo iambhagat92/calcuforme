@@ -288,6 +288,19 @@
     <!-- Visual Guides & Infographics -->
     <section class="infographics" style="padding: 2rem 0 4rem 0; background: #f8fafc;">
         <style>
+        .visual-guides-grid .blog-card {
+            display: flex !important;
+            flex-direction: column;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        .visual-guides-grid .blog-card > div:first-child {
+            flex: 0 0 auto;
+        }
+        .visual-guides-grid .blog-card > div:last-child {
+            flex: 1 1 auto;
+        }
         .visual-guides-grid .blog-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
