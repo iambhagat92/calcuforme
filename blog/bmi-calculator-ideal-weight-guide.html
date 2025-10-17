@@ -409,21 +409,22 @@
     </section>
 
     <!-- Footer -->
-    <!-- Comments -->
-    <section class="comments" style="padding: 2rem 0; border-top: 1px solid #e5e7eb;">
+    <!-- Comments (no login, device-only) -->
+    <section class="comments" id="comments-section" style="padding: 2rem 0; border-top: 1px solid #e5e7eb;">
         <div class="container" style="max-width: 900px;">
-            <h3 style="margin-bottom: 1rem; color: #2d3748;">Comments</h3>
-            <script src="https://utteranc.es/client.js"
-                    repo="iambhagat92/calcuforme"
-                    issue-term="pathname"
-                    label="comments"
-                    theme="github-light"
-                    crossorigin="anonymous"
-                    async>
-            </script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
+            <h3 style="margin-bottom: 0.5rem; color: #2d3748;">Comments</h3>
+            <p style="color:#64748b; font-size: 0.9rem; margin: 0 0 1rem;">No login. Stored on your device only.</p>
+            <div id="comments-list"></div>
+            <form id="comment-form" style="margin-top: 1rem;">
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <input type="text" id="comment-name" placeholder="Your name" required style="flex:1; min-width:180px; padding:0.6rem; border:1px solid #e5e7eb; border-radius:8px;">
+                </div>
+                <textarea id="comment-message" placeholder="Write a comment..." required rows="3" style="width:100%; margin-top:0.5rem; padding:0.6rem; border:1px solid #e5e7eb; border-radius:8px;"></textarea>
+                <button type="submit" style="margin-top:0.5rem; background:#667eea; color:white; padding:0.6rem 1rem; border:none; border-radius:8px; font-weight:600;">Post Comment</button>
+            </form>
         </div>
     </section>
+    <script src="../js/comments.js"></script>
 
     <footer class="footer">
         <div class="container">
