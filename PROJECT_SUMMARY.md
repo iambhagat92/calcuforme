@@ -1,10 +1,10 @@
-# CalcuForMe - Project Summary & Quick Guide
+# Calculate For Me - Project Summary & Quick Guide
 
 ## ✅ What's Been Created
 
 ### 📁 File Structure
 ```
-CalcuForMe/
+Calculate For Me/
 ├── index.html                              ✅ Homepage (Complete)
 ├── README.md                               ✅ Documentation
 ├── Calculator_Suite_Documentation.md       ✅ Full calculator list
@@ -283,13 +283,13 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/username/calcuforme.git
+git remote add origin https://github.com/username/Calculate For Me.git
 git push -u origin main
 ```
 Then enable GitHub Pages in repository settings.
 
 ### Option 2: Netlify (Free)
-1. Drag & drop the CalcuForMe folder to netlify.com
+1. Drag & drop the Calculate For Me folder to netlify.com
 2. Done! You get a free subdomain
 
 ### Option 3: Vercel (Free)

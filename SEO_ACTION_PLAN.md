@@ -70,7 +70,7 @@
 ### Share on Social Media:
 ```
 Post Template:
-"Just launched CalcuForMe 🧮 - A free online calculator suite with 19+ calculators!
+"Just launched Calculate For Me 🧮 - A free online calculator suite with 19+ calculators!
 ✓ BMI Calculator
 ✓ Loan Calculator  
 ✓ Scientific Calculator
@@ -128,4 +128,5 @@ Try it: https://calculateforme.xyz
 - User engagement
 
 You'll start seeing results in 2-3 weeks! 🚀
+
 

@@ -1,4 +1,4 @@
-// CalcuForMe - Main JavaScript File
+// Calculate For Me - Main JavaScript File
 
 // Calculator Database
 const calculators = [
@@ -358,6 +358,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 // Console welcome message
-console.log('%cCalcuForMe', 'color: #667eea; font-size: 24px; font-weight: bold;');
+console.log('%cCalculate For Me', 'color: #667eea; font-size: 24px; font-weight: bold;');
 console.log('%cYour complete calculator suite!', 'color: #764ba2; font-size: 14px;');
 console.log('Developed with ❤️ for everyone');
+

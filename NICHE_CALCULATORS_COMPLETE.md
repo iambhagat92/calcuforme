@@ -370,13 +370,13 @@ You now have:
 ## 📬 FILES LOCATION
 
 **Completed:**
-- `F:\CalcuForMe\calculators\freelancer-tax-calculator.html` ✅
+- `F:\Calculate For Me\calculators\freelancer-tax-calculator.html` ✅
 
 **Coming Soon:**
-- `F:\CalcuForMe\calculators\crypto-calculator.html`
-- `F:\CalcuForMe\calculators\side-hustle-calculator.html`
-- `F:\CalcuForMe\calculators\remote-work-salary-calculator.html`
-- `F:\CalcuForMe\calculators\social-media-engagement-calculator.html`
+- `F:\Calculate For Me\calculators\crypto-calculator.html`
+- `F:\Calculate For Me\calculators\side-hustle-calculator.html`
+- `F:\Calculate For Me\calculators\remote-work-salary-calculator.html`
+- `F:\Calculate For Me\calculators\social-media-engagement-calculator.html`
 
 ---
 
@@ -385,3 +385,4 @@ You now have:
 **This is your competitive edge!** 🚀
 
 *Add the remaining 4 this week and watch your traffic explode!*
+

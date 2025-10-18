@@ -2,7 +2,7 @@
 
 A modern, responsive website featuring 100+ free online calculators for various needs including financial, health, home improvement, education, and creative purposes.
 
-![CalcuForMe](https://img.shields.io/badge/Status-Active-success)
+![Calculate For Me](https://img.shields.io/badge/Status-Active-success)
 ![Version](https://img.shields.io/badge/Version-1.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -20,7 +20,7 @@ A modern, responsive website featuring 100+ free online calculators for various 
 ## 📁 Project Structure
 
 ```
-CalcuForMe/
+Calculate For Me/
 │
 ├── index.html                 # Homepage
 ├── README.md                  # Project documentation
@@ -55,7 +55,7 @@ No special prerequisites needed! This is a static website that runs entirely in 
 
 1. **Clone or download this repository**
    ```bash
-   git clone https://github.com/iambhagat92/calcuforme.git
+   git clone https://github.com/iambhagat92/Calculate For Me.git
    ```
 
 2. **Open the website**

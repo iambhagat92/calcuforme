@@ -1,6 +1,6 @@
-# CalcuForMe Deployment Guide
+# Calculate For Me Deployment Guide
 
-This guide provides step-by-step instructions for deploying the CalcuForMe calculator suite to various hosting platforms.
+This guide provides step-by-step instructions for deploying the Calculate For Me calculator suite to various hosting platforms.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -14,20 +14,20 @@ This guide provides step-by-step instructions for deploying the CalcuForMe calcu
 ## Prerequisites
 
 Before deploying, ensure you have:
-- All project files in the `F:\CalcuForMe` directory
+- All project files in the `F:\Calculate For Me` directory
 - A GitHub account (for GitHub Pages and integration with Netlify/Vercel)
 - Git installed on your computer
 - Basic knowledge of command line operations
 
 ## Deploying to GitHub Pages
 
-GitHub Pages is free and perfect for static websites like CalcuForMe.
+GitHub Pages is free and perfect for static websites like Calculate For Me.
 
 ### Step 1: Create a GitHub Repository
 
 1. Go to [GitHub.com](https://github.com) and sign in
 2. Click the "+" icon in the top right corner and select "New repository"
-3. Name your repository (e.g., `calcuforme`)
+3. Name your repository (e.g., `Calculate For Me`)
 4. Make it public (required for free GitHub Pages)
 5. Don't initialize with README, .gitignore, or license
 6. Click "Create repository"
@@ -37,10 +37,10 @@ GitHub Pages is free and perfect for static websites like CalcuForMe.
 Open PowerShell in your project directory and run:
 
 ```powershell
-cd F:\CalcuForMe
+cd F:\Calculate For Me
 git init
 git add .
-git commit -m "Initial commit - CalcuForMe calculator suite"
+git commit -m "Initial commit - Calculate For Me calculator suite"
 ```
 
 ### Step 3: Push to GitHub
@@ -48,7 +48,7 @@ git commit -m "Initial commit - CalcuForMe calculator suite"
 Replace `YOUR_USERNAME` with your GitHub username:
 
 ```powershell
-git remote add origin https://github.com/YOUR_USERNAME/calcuforme.git
+git remote add origin https://github.com/YOUR_USERNAME/Calculate For Me.git
 git branch -M main
 git push -u origin main
 ```
@@ -59,15 +59,15 @@ git push -u origin main
 2. Click "Settings" → "Pages" (in the sidebar)
 3. Under "Source", select "main" branch
 4. Click "Save"
-5. Your site will be published at: `https://YOUR_USERNAME.github.io/calcuforme/`
+5. Your site will be published at: `https://YOUR_USERNAME.github.io/Calculate For Me/`
 
 ### Step 5: Update Links (Important!)
 
-If your site is in a subdirectory (like `/calcuforme/`), update all links in your HTML files:
+If your site is in a subdirectory (like `/Calculate For Me/`), update all links in your HTML files:
 
 - Change `href="../css/style.css"` to `href="./css/style.css"`
 - Change `href="../index.html"` to `href="./index.html"`
-- Or use absolute URLs: `href="/calcuforme/css/style.css"`
+- Or use absolute URLs: `href="/Calculate For Me/css/style.css"`
 
 **Note**: You may want to keep the current relative paths and deploy to a custom domain instead.
 
@@ -79,7 +79,7 @@ Netlify offers continuous deployment, custom domains, and automatic HTTPS.
 
 1. Go to [Netlify.com](https://www.netlify.com) and sign up/sign in
 2. Click "Add new site" → "Deploy manually"
-3. Drag and drop your entire `F:\CalcuForMe` folder
+3. Drag and drop your entire `F:\Calculate For Me` folder
 4. Your site will be live at a random Netlify URL (e.g., `random-name-123.netlify.app`)
 5. You can change the site name in Site settings
 
@@ -120,7 +120,7 @@ If you don't have Node.js/npm installed:
 ### Step 2: Deploy
 
 ```powershell
-cd F:\CalcuForMe
+cd F:\Calculate For Me
 vercel
 ```
 
@@ -128,10 +128,10 @@ Follow the prompts:
 - Set up and deploy? **Y**
 - Which scope? Select your account
 - Link to existing project? **N**
-- Project name? `calcuforme` (or your preferred name)
+- Project name? `Calculate For Me` (or your preferred name)
 - In which directory is your code located? `./ ` (current directory)
 
-Your site will be deployed and you'll receive a URL like `calcuforme.vercel.app`
+Your site will be deployed and you'll receive a URL like `Calculate For Me.vercel.app`
 
 ### Method 2: Deploy via GitHub
 
@@ -326,4 +326,5 @@ For this project, **Netlify** is recommended because:
 ---
 
 **Good luck with your deployment! 🚀**
+
 

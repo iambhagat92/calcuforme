@@ -38,7 +38,7 @@ Open `calculators/bmi-calculator.html` and add BEFORE the `</body>` tag:
     <button class="share-btn share-btn-save" onclick="saveMyCalculation()">
         <i class="fas fa-save"></i> Save Result
     </button>
-    <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('I just calculated my BMI on CalcuForMe!')">
+    <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('I just calculated my BMI on Calculate For Me!')">
         <i class="fab fa-twitter"></i> Tweet
     </button>
     <button class="share-btn share-btn-facebook" onclick="shareOnFacebook()">
@@ -93,7 +93,7 @@ Add to `<head>` section of `index.html` (replace YOUR-GA-ID):
 Create `LAUNCH_ANNOUNCEMENT.md`:
 
 ```markdown
-# 🎉 Introducing CalcuForMe!
+# 🎉 Introducing Calculate For Me!
 
 Your new favorite calculator suite is here! 
 
@@ -122,7 +122,7 @@ Create posts for each platform:
 
 #### **Twitter/X:**
 ```
-🎉 Just launched CalcuForMe - 17 beautiful calculators that don't suck!
+🎉 Just launched Calculate For Me - 17 beautiful calculators that don't suck!
 
 ✨ Modern design
 📱 Mobile-first
@@ -136,7 +136,7 @@ Check it out: [URL]
 
 #### **Reddit** (r/InternetIsBeautiful):
 ```
-Title: I built CalcuForMe - Beautiful calculators that actually work on mobile
+Title: I built Calculate For Me - Beautiful calculators that actually work on mobile
 
 I got tired of ugly, ad-filled calculator sites, so I built my own!
 
@@ -155,7 +155,7 @@ Would love your feedback!
 
 #### **LinkedIn:**
 ```
-🚀 Excited to launch CalcuForMe!
+🚀 Excited to launch Calculate For Me!
 
 After using outdated calculator websites for years, I decided to build something better.
 
@@ -177,8 +177,8 @@ Check it out and let me know what you think! [URL]
 
 1. **Go to netlify.com**
 2. **Sign up** (free account)
-3. **Drag & Drop** your `F:\CalcuForMe` folder
-4. **Get your URL** (e.g., calcuforme.netlify.app)
+3. **Drag & Drop** your `F:\Calculate For Me` folder
+4. **Get your URL** (e.g., Calculate For Me.netlify.app)
 5. **Test** all calculators on live site
 6. **Update** social media posts with real URL
 
@@ -335,7 +335,7 @@ Everything is prepared. The strategy is clear. The code is written.
 
 **Now GO LAUNCH YOUR WEBSITE!** 🚀
 
-Your CalcuForMe site is already better than 90% of calculator websites out there.
+Your Calculate For Me site is already better than 90% of calculator websites out there.
 
 **You got this!** 💪
 
@@ -347,3 +347,4 @@ Your CalcuForMe site is already better than 90% of calculator websites out there
 - DEPLOYMENT_GUIDE.md - Hosting help
 
 **Now stop reading and START LAUNCHING!** 🔥
+

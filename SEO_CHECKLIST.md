@@ -1,4 +1,4 @@
-# CalcuForMe - SEO Optimization Checklist
+# Calculate For Me - SEO Optimization Checklist
 
 **Last Updated:** 2025-10-03  
 **Goal:** Rank #1 for calculator keywords and drive organic traffic
@@ -59,7 +59,7 @@
 ## 🔍 On-Page SEO Checklist
 
 ### Homepage (index.html)
-- [x] Title tag (< 60 chars): "CalcuForMe - Free Online Calculator Suite"
+- [x] Title tag (< 60 chars): "Calculate For Me - Free Online Calculator Suite"
 - [x] Meta description (< 160 chars)
 - [x] H1 tag: "Calculate Anything, Anytime"
 - [x] H2 tags for each section
@@ -115,9 +115,9 @@ For each calculator page, verify:
 #### Homepage Enhancements
 ```html
 <!-- Add after hero section -->
-<section class="why-calcuforme">
+<section class="why-Calculate For Me">
     <div class="container">
-        <h2>Why Choose CalcuForMe?</h2>
+        <h2>Why Choose Calculate For Me?</h2>
         <div class="benefits-grid">
             <div>
                 <i class="fas fa-check-circle"></i>
@@ -153,7 +153,7 @@ For each calculator page, verify:
 
 ### Site Structure
 ```
-calcuforme.com/
+Calculate For Me.com/
 ├── index.html (Homepage)
 ├── calculators/
 │   ├── bmi-calculator.html
@@ -194,7 +194,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /temp/
 
-Sitemap: https://www.calcuforme.com/sitemap.xml
+Sitemap: https://www.Calculate For Me.com/sitemap.xml
 ```
 
 ---
@@ -272,8 +272,8 @@ Sitemap: https://www.calcuforme.com/sitemap.xml
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "CalcuForMe",
-  "url": "https://www.calcuforme.com",
+  "name": "Calculate For Me",
+  "url": "https://www.Calculate For Me.com",
   "applicationCategory": "UtilitiesApplication",
   "offers": {
     "@type": "Offer",
@@ -522,3 +522,4 @@ Target "how to", "what is", and "why" queries:
 ---
 
 *Need help? Questions? Create an issue on GitHub or contact support.*
+

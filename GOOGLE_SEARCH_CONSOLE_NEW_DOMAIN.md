@@ -91,7 +91,7 @@ Make sure your DNS is properly configured:
 3. Vercel automatically handles SSL certificates
 
 ### Old Domain Redirect
-Consider setting up 301 redirects from calcuforme.vercel.app to calculateforme.xyz:
+Consider setting up 301 redirects from Calculate For Me.vercel.app to calculateforme.xyz:
 - Helps preserve SEO value
 - Transfers link equity
 - Updates search results faster
@@ -111,7 +111,7 @@ Don't forget to update:
 - [ ] Sitemap submitted
 - [ ] Homepage indexed
 - [ ] Key pages requested for indexing
-- [ ] Old property (calcuforme.vercel.app) still accessible for data
+- [ ] Old property (Calculate For Me.vercel.app) still accessible for data
 - [ ] 301 redirects set up (if possible)
 - [ ] Google Analytics updated
 - [ ] Monitor for any crawl errors
@@ -140,4 +140,4 @@ If you encounter issues:
 
 Last Updated: January 13, 2025
 Domain: calculateforme.xyz
-Previous Domain: calcuforme.vercel.app
+Previous Domain: Calculate For Me.vercel.app

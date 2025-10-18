@@ -55,7 +55,7 @@ After applying these tips = ₹29,270 EMI
 - **Background:** Gradient blue (#1976D2 to #1565C0)
 - **Title:** "Top 7 Tips to Reduce Your Home Loan EMI" (Bold, 36px, White)
 - **Subtitle:** "Smart Strategies for Indian Homeowners" (18px, White, 80% opacity)
-- **Logo:** CalcuForMe logo (top-right corner)
+- **Logo:** Calculate For Me logo (top-right corner)
 
 #### **TIP SECTIONS (7 sections, each 140px height)**
 
@@ -119,7 +119,7 @@ After applying these tips = ₹29,270 EMI
 
 #### **FOOTER SECTION (80px height)**
 - **Background:** White
-- **Logo:** CalcuForMe logo + website
+- **Logo:** Calculate For Me logo + website
 - **Social:** LinkedIn, Twitter icons
 - **Hashtags:** Key hashtags in small text (12px, Gray)
 
@@ -163,7 +163,7 @@ If using Figma, create a **1200x1500px frame** and use these design systems:
 
 **Assets Needed:**
 - Financial icons (money, bank, calculator, etc.)
-- CalcuForMe logo
+- Calculate For Me logo
 - Calculator illustration
 - Arrow graphics for savings/growth
 

@@ -1,4 +1,4 @@
-# Legal Pages Summary - CalcuForMe
+# Legal Pages Summary - Calculate For Me
 
 **Date Created:** January 3, 2025  
 **Status:** ✅ Complete
@@ -7,7 +7,7 @@
 
 ## 🎉 What's Been Added
 
-I've successfully created three professional legal/informational pages for your CalcuForMe website:
+I've successfully created three professional legal/informational pages for your Calculate For Me website:
 
 ### 1. **About Us Page** (`about.html`)
 - **Purpose:** Tell your story and mission
@@ -166,7 +166,7 @@ All three pages added to `sitemap.xml`:
 ## 📁 File Locations
 
 ```
-F:\CalcuForMe\
+F:\Calculate For Me\
 ├── about.html                     ⭐ NEW - About Us page
 ├── privacy-policy.html            ⭐ NEW - Privacy Policy
 ├── terms-of-service.html          ⭐ NEW - Terms of Service
@@ -195,11 +195,11 @@ All three pages feature:
 **Note:** You should update the email addresses in these pages:
 
 ### **Privacy Policy:**
-- Contact email: `privacy@calcuforme.com`
+- Contact email: `privacy@CalculateForMe.com`
 - Located in Section 11
 
 ### **Terms of Service:**
-- Contact email: `legal@calcuforme.com`
+- Contact email: `legal@CalculateForMe.com`
 - Located in Section 15
 
 **Action Required:** Replace these with your actual contact email or create these email addresses.
@@ -218,8 +218,8 @@ Replace `https://yourdomain.com` with your actual domain in:
 
 ### 2. **Email Addresses**
 Update contact emails:
-- `privacy@calcuforme.com` → your privacy contact
-- `legal@calcuforme.com` → your legal contact
+- `privacy@CalculateForMe.com` → your privacy contact
+- `legal@CalculateForMe.com` → your legal contact
 - Or use a single contact email for both
 
 ### 3. **Optional: Jurisdiction**
@@ -341,7 +341,7 @@ All pages are fully responsive with:
 
 ## 🎉 Summary
 
-Your CalcuForMe website now has complete legal pages:
+Your Calculate For Me website now has complete legal pages:
 
 ✅ **About Us** - Build trust and tell your story  
 ✅ **Privacy Policy** - Transparent data practices  
@@ -361,3 +361,5 @@ Your CalcuForMe website now has complete legal pages:
 - Test locally by opening `about.html` in your browser
 
 **Great job on building a complete, professional calculator suite!** 🎊
+
+

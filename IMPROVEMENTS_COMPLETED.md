@@ -1,4 +1,4 @@
-# 🚀 CalcuForMe - Improvements Completed
+# 🚀 Calculate For Me - Improvements Completed
 
 ## Date: January 4, 2025
 
@@ -118,7 +118,7 @@
 ## 📁 **File Structure After Improvements**
 
 ```
-CalcuForMe/
+Calculate For Me/
 ├── blog/
 │   └── bmi-calculator-guide.html (NEW)
 ├── blog.html (NEW)
@@ -232,3 +232,4 @@ To customize dark mode colors:
 *Last Updated: January 4, 2025*
 *Version: 2.0*
 *Developer: AI Assistant*
+

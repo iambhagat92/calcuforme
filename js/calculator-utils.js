@@ -1,5 +1,5 @@
 /**
- * CalcuForMe - Calculator Utilities
+ * Calculate For Me - Calculator Utilities
  * Reusable functions for save, share, and export features
  */
 
@@ -8,7 +8,7 @@
 /**
  * Share calculator results using Web Share API or fallback
  */
-function shareCalculator(title = 'Check out this calculator!', text = 'I just used CalcuForMe - great free calculator!') {
+function shareCalculator(title = 'Check out this calculator!', text = 'I just used Calculate For Me - great free calculator!') {
     const shareData = {
         title: title,
         text: text,
@@ -29,7 +29,7 @@ function shareCalculator(title = 'Check out this calculator!', text = 'I just us
 /**
  * Share on Twitter
  */
-function shareOnTwitter(text = 'Check out this awesome calculator on CalcuForMe!') {
+function shareOnTwitter(text = 'Check out this awesome calculator on Calculate For Me!') {
     const url = window.location.href;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
     window.open(twitterUrl, '_blank', 'width=600,height=400');
@@ -47,7 +47,7 @@ function shareOnFacebook() {
 /**
  * Share on LinkedIn
  */
-function shareOnLinkedIn(title = 'CalcuForMe Calculator') {
+function shareOnLinkedIn(title = 'Calculate For Me Calculator') {
     const url = window.location.href;
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
     window.open(linkedInUrl, '_blank', 'width=600,height=400');
@@ -118,7 +118,7 @@ function saveCalculation(calculatorName, inputs, results) {
     };
     
     try {
-        let saved = JSON.parse(localStorage.getItem('calcuforme_calculations') || '[]');
+        let saved = JSON.parse(localStorage.getItem('Calculate For Me_calculations') || '[]');
         saved.unshift(calculation); // Add to beginning
         
         // Keep only last 50 calculations
@@ -126,7 +126,7 @@ function saveCalculation(calculatorName, inputs, results) {
             saved = saved.slice(0, 50);
         }
         
-        localStorage.setItem('calcuforme_calculations', JSON.stringify(saved));
+        localStorage.setItem('Calculate For Me_calculations', JSON.stringify(saved));
         showNotification('Calculation saved!', 'success');
         return true;
     } catch (error) {
@@ -141,7 +141,7 @@ function saveCalculation(calculatorName, inputs, results) {
  */
 function getSavedCalculations() {
     try {
-        return JSON.parse(localStorage.getItem('calcuforme_calculations') || '[]');
+        return JSON.parse(localStorage.getItem('Calculate For Me_calculations') || '[]');
     } catch (error) {
         console.error('Error loading calculations:', error);
         return [];
@@ -155,7 +155,7 @@ function deleteCalculation(calculationId) {
     try {
         let saved = getSavedCalculations();
         saved = saved.filter(calc => calc.id !== calculationId);
-        localStorage.setItem('calcuforme_calculations', JSON.stringify(saved));
+        localStorage.setItem('Calculate For Me_calculations', JSON.stringify(saved));
         showNotification('Calculation deleted', 'success');
         return true;
     } catch (error) {
@@ -169,7 +169,7 @@ function deleteCalculation(calculationId) {
  */
 function clearAllCalculations() {
     if (confirm('Are you sure you want to clear all saved calculations?')) {
-        localStorage.removeItem('calcuforme_calculations');
+        localStorage.removeItem('Calculate For Me_calculations');
         showNotification('All calculations cleared', 'success');
         return true;
     }
@@ -492,4 +492,5 @@ window.CalcUtils = {
     parseNumber
 };
 
-console.log('✅ CalcuForMe Utilities Loaded');
+console.log('✅ Calculate For Me Utilities Loaded');
+

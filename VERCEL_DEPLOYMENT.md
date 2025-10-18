@@ -1,4 +1,4 @@
-# 🚀 Deploy CalcuForMe to Vercel
+# 🚀 Deploy Calculate For Me to Vercel
 
 ## ✅ Quick Deployment Steps
 
@@ -15,10 +15,10 @@ Since the Vercel CLI has network issues, use the **web-based deployment** method
    git add .
    
    # Commit
-   git commit -m "CalcuForMe - Complete Project Ready for Deployment"
+   git commit -m "Calculate For Me - Complete Project Ready for Deployment"
    
    # Create repo on GitHub and push
-   git remote add origin https://github.com/YOUR-USERNAME/calcuforme.git
+   git remote add origin https://github.com/YOUR-USERNAME/Calculate For Me.git
    git branch -M main
    git push -u origin main
    ```
@@ -39,7 +39,7 @@ Since the Vercel CLI has network issues, use the **web-based deployment** method
 2. **Import Project**
    - Click "Add New..." → "Project"
    - Choose "Import Git Repository" OR "Upload"
-   - If uploading: Drag & drop your `F:\CalcuForMe` folder
+   - If uploading: Drag & drop your `F:\Calculate For Me` folder
 
 3. **Configure (Auto-detected)**
    - Framework Preset: Other
@@ -59,7 +59,7 @@ Since the Vercel CLI has network issues, use the **web-based deployment** method
 If Vercel has issues, try Netlify:
 
 1. **Visit:** https://app.netlify.com/drop
-2. **Drag & Drop:** Your entire `F:\CalcuForMe` folder
+2. **Drag & Drop:** Your entire `F:\Calculate For Me` folder
 3. **Done!** Instant deployment, no signup required
 4. **URL:** `https://random-name.netlify.app` (can customize later)
 
@@ -139,7 +139,7 @@ vercel
 # - Set up and deploy? Yes
 # - Which scope? (choose your account)
 # - Link to existing project? No
-# - Project name: calcuforme
+# - Project name: Calculate For Me
 # - Directory: ./
 # - Override settings? No
 
@@ -176,4 +176,5 @@ Once deployed:
 - Or just drag & drop to Netlify Drop: https://app.netlify.com/drop
 
 **Status:** Ready to Deploy! 🚀
+
 

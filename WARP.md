@@ -66,7 +66,7 @@ Big-picture architecture
 - Page structure: Each calculator lives in calculators/*.html, typically with its own small inline script. All calculator pages include js/main.js (navigation/search behaviors) and js/calculator-utils.js for cross-cutting functionality (sharing, saving to localStorage, exporting, notifications, simple analytics wrappers).
 - Shared JS (js/calculator-utils.js):
   - Sharing: Web Share API + fallbacks (Twitter/Facebook/LinkedIn/WhatsApp, copy link helper).
-  - Persistence: saveCalculation/getSavedCalculations/deleteCalculation/clearAllCalculations using localStorage key calcuforme_calculations.
+  - Persistence: saveCalculation/getSavedCalculations/deleteCalculation/clearAllCalculations using localStorage key Calculate For Me_calculations.
   - Export: exportAsText/exportAsJSON/printResults and download helper.
   - Notifications: lightweight toast system injected into the page with CSS animations.
   - Formatting: currency/percent/number helpers and parseNumber.
@@ -94,3 +94,4 @@ Important docs in this repo
 
 Notes
 - .github/chatmodes/claude sonnet 4.5.chatmode.md exists but is empty; there are no additional agent-rules files (e.g., CLAUDE.md, Cursor, Copilot) to import.
+

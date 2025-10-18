@@ -1,4 +1,4 @@
-# 🎉 CalcuForMe - FINAL PROJECT STATUS
+# 🎉 Calculate For Me - FINAL PROJECT STATUS
 
 ## ✅ COMPLETE & READY TO USE!
 
@@ -30,7 +30,7 @@
 
 ### **Test It Now:**
 ```
-Open: F:\CalcuForMe\index.html
+Open: F:\Calculate For Me\index.html
 ```
 
 **Features Working:**
@@ -46,7 +46,7 @@ Open: F:\CalcuForMe\index.html
 ## 📁 **Complete File Structure:**
 
 ```
-CalcuForMe/ (~200KB total)
+Calculate For Me/ (~200KB total)
 │
 ├── index.html                              ✅ Homepage
 ├── README.md                               ✅ Documentation  
@@ -90,25 +90,25 @@ CalcuForMe/ (~200KB total)
 
 ### **Option 1: GitHub Pages (Free)**
 ```bash
-cd F:\CalcuForMe
+cd F:\Calculate For Me
 git init
 git add .
-git commit -m "CalcuForMe - Calculator Website"
+git commit -m "Calculate For Me - Calculator Website"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/calcuforme.git
+git remote add origin https://github.com/YOUR-USERNAME/Calculate For Me.git
 git push -u origin main
 ```
 Then: Settings → Pages → Enable
 
 ### **Option 2: Netlify (Easiest)**
 1. Go to netlify.com
-2. Drag & drop CalcuForMe folder
+2. Drag & drop Calculate For Me folder
 3. Get free subdomain instantly!
 
 ### **Option 3: Vercel**
 ```bash
 npm i -g vercel
-cd F:\CalcuForMe
+cd F:\Calculate For Me
 vercel
 ```
 
@@ -137,7 +137,7 @@ Copy-Item calculators/loan-calculator.html calculators/mortgage-calculator.html
 <!-- Change these 3 things: -->
 
 1. Title (line 7):
-   <title>Discount Calculator | CalcuForMe</title>
+   <title>Discount Calculator | Calculate For Me</title>
 
 2. Header (line 48):
    <h1><i class="fas fa-tag"></i> Discount Calculator</h1>
@@ -225,7 +225,7 @@ Tell AI: "Create a [calculator name] based on the structure of tip-calculator.ht
 ```
 
 ### **Change Brand Name:**
-Find/Replace "CalcuForMe" in all files
+Find/Replace "Calculate For Me" in all files
 
 ### **Add Logo:**
 ```html

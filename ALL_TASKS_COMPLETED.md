@@ -53,7 +53,7 @@ Ready to Deploy: YES ✅
 ## 📁 **Complete File Structure:**
 
 ```
-F:\CalcuForMe\ (26 Files Total)
+F:\Calculate For Me\ (26 Files Total)
 │
 ├── 📄 index.html                          ✅ Homepage
 ├── 📄 README.md                           ✅ Documentation
@@ -123,17 +123,17 @@ F:\CalcuForMe\ (26 Files Total)
 ### **Option 1: Netlify (Recommended)**
 ```
 1. Go to netlify.com
-2. Drag & drop CalcuForMe folder
+2. Drag & drop Calculate For Me folder
 3. Get instant free subdomain
 4. Website LIVE in 2 minutes!
 ```
 
 ### **Option 2: GitHub Pages**
 ```bash
-cd F:\CalcuForMe
+cd F:\Calculate For Me
 git init
 git add .
-git commit -m "CalcuForMe - Complete"
+git commit -m "Calculate For Me - Complete"
 git push
 # Enable GitHub Pages in settings
 ```
@@ -141,7 +141,7 @@ git push
 ### **Option 3: Vercel**
 ```bash
 npm i -g vercel
-cd F:\CalcuForMe
+cd F:\Calculate For Me
 vercel
 ```
 
@@ -154,7 +154,7 @@ Each template calculator needs 3 simple edits:
 
 1. **Title** (Line 7):
 ```html
-<title>Your Calculator Name | CalcuForMe</title>
+<title>Your Calculator Name | Calculate For Me</title>
 ```
 
 2. **Header** (Line 48):
@@ -348,7 +348,7 @@ Your website is ready for:
 ## 🚀 **WEBSITE STATUS:**
 
 ```
-PROJECT: CalcuForMe
+PROJECT: Calculate For Me
 VERSION: 1.0 - Foundation Complete
 STATUS: ✅ 100% COMPLETE
 QUALITY: ⭐⭐⭐⭐⭐ Professional Grade
@@ -368,7 +368,7 @@ READY TO LAUNCH: YES ✅
 
 **All 15 tasks have been successfully completed!**
 
-Your CalcuForMe website is now:
+Your Calculate For Me website is now:
 - ✅ Fully functional
 - ✅ Production ready
 - ✅ Well documented
@@ -378,7 +378,7 @@ Your CalcuForMe website is now:
 
 **Next Action:**
 ```
-1. Open F:\CalcuForMe\index.html
+1. Open F:\Calculate For Me\index.html
 2. Test all features
 3. Deploy to Netlify/GitHub Pages
 4. Start getting users!

@@ -1,4 +1,4 @@
-# 🎉 CalcuForMe - PROJECT COMPLETED! 🎉
+# 🎉 Calculate For Me - PROJECT COMPLETED! 🎉
 
 ## ✅ FULLY COMPLETE & PRODUCTION READY
 
@@ -48,7 +48,7 @@
 ## 📁 **Complete File Structure:**
 
 ```
-CalcuForMe/ (~250 KB total - Production Ready!)
+Calculate For Me/ (~250 KB total - Production Ready!)
 │
 ├── 📄 index.html (16KB)                    ✅ Homepage
 ├── 📄 README.md (6KB)                      ✅ Documentation
@@ -81,29 +81,29 @@ CalcuForMe/ (~250 KB total - Production Ready!)
 ```bash
 1. Go to netlify.com
 2. Sign up (free)
-3. Drag & drop CalcuForMe folder
+3. Drag & drop Calculate For Me folder
 4. Get free subdomain: yourname.netlify.app
 5. Done! Website live instantly!
 ```
 
 ### **Option 2: GitHub Pages (Free)**
 ```bash
-cd F:\CalcuForMe
+cd F:\Calculate For Me
 git init
 git add .
-git commit -m "CalcuForMe - Complete Calculator Website"
+git commit -m "Calculate For Me - Complete Calculator Website"
 git branch -M main
-git remote add origin https://github.com/USERNAME/calcuforme.git
+git remote add origin https://github.com/USERNAME/Calculate For Me.git
 git push -u origin main
 
 # Then: GitHub → Settings → Pages → Enable
-# URL: username.github.io/calcuforme
+# URL: username.github.io/Calculate For Me
 ```
 
 ### **Option 3: Vercel (Fast)**
 ```bash
 npm i -g vercel
-cd F:\CalcuForMe
+cd F:\Calculate For Me
 vercel
 # Follow prompts - get free subdomain
 ```
@@ -213,7 +213,7 @@ Edit `css/style.css` lines 7-23:
 ```
 
 ### **Change Brand Name:**
-Find/Replace "CalcuForMe" across all files
+Find/Replace "Calculate For Me" across all files
 
 ### **Add Logo:**
 ```html
@@ -454,7 +454,7 @@ Full details in: `Calculator_Suite_Documentation.md`
 ## 🏆 **Project Statistics:**
 
 ```
-Project Name: CalcuForMe
+Project Name: Calculate For Me
 Version: 1.0 - Foundation Complete
 Status: Production Ready ✅
 
@@ -500,7 +500,7 @@ Scalable: Yes
 ### **What You Can Do RIGHT NOW:**
 
 1. **✅ Test Website:**
-   - Open `F:\CalcuForMe\index.html`
+   - Open `F:\Calculate For Me\index.html`
    - Try all 5 calculators
    - Test search
    - Check mobile view
@@ -555,7 +555,7 @@ You now have a **professional, production-ready calculator website** that:
 ## 📬 **Next Action:**
 
 ```
-1. Open F:\CalcuForMe\index.html
+1. Open F:\Calculate For Me\index.html
 2. Test everything works
 3. Deploy to Netlify/GitHub
 4. Share your website!

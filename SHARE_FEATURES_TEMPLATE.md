@@ -1,6 +1,6 @@
 # Share/Save/Export Features Implementation Guide
 
-This document provides templates and instructions for adding social share, save, and export features to all CalcuForMe calculators.
+This document provides templates and instructions for adding social share, save, and export features to all Calculate For Me calculators.
 
 ## ✅ Already Implemented
 - **BMI Calculator** - Full functionality
@@ -126,7 +126,7 @@ Replace `{CalcName}` with calculator-specific names (e.g., "Percentage", "Tip", 
     <button class="share-btn share-btn-save" onclick="save{CalcName}Calculation()" title="Save to browser">
         <i class="fas fa-save"></i> Save Result
     </button>
-    <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('I just used the {CalcName} Calculator on CalcuForMe! 💯')" title="Share on Twitter">
+    <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('I just used the {CalcName} Calculator on Calculate For Me! 💯')" title="Share on Twitter">
         <i class="fab fa-twitter"></i> Tweet
     </button>
     <button class="share-btn share-btn-facebook" onclick="shareOnFacebook()" title="Share on Facebook">
@@ -188,7 +188,7 @@ function export{CalcName}Results() {
     const exportText = `{CALCULATOR NAME} RESULTS\\n` +
         `${'='.repeat(50)}\\n\\n` +
         `Generated: ${new Date().toLocaleString()}\\n` +
-        `Calculator: CalcuForMe {Calculator Name}\\n\\n` +
+        `Calculator: Calculate For Me {Calculator Name}\\n\\n` +
         `INPUT VALUES\\n` +
         `${'-'.repeat(50)}\\n` +
         `Input 1: ${input1}\\n\\n` +
@@ -197,7 +197,7 @@ function export{CalcName}Results() {
         `Result 1: ${result1}\\n\\n` +
         `${'='.repeat(50)}\\n` +
         `Calculate online: ${window.location.href}\\n` +
-        `© ${new Date().getFullYear()} CalcuForMe - Free Online Calculators`;
+        `© ${new Date().getFullYear()} Calculate For Me - Free Online Calculators`;
     
     downloadFile(exportText, '{CalcName}_Results_' + Date.now() + '.txt', 'text/plain');
 }
@@ -265,7 +265,7 @@ function exportTipResults() {
     const exportText = `TIP CALCULATOR RESULTS\\n` +
         `${'='.repeat(50)}\\n\\n` +
         `Generated: ${new Date().toLocaleString()}\\n` +
-        `Calculator: CalcuForMe Tip Calculator\\n\\n` +
+        `Calculator: Calculate For Me Tip Calculator\\n\\n` +
         `INPUT VALUES\\n` +
         `${'-'.repeat(50)}\\n` +
         `Bill Amount: $${billAmount}\\n` +
@@ -278,7 +278,7 @@ function exportTipResults() {
         `Per Person: ${perPerson}\\n\\n` +
         `${'='.repeat(50)}\\n` +
         `Calculate tips: ${window.location.href}\\n` +
-        `© ${new Date().getFullYear()} CalcuForMe - Free Online Calculators`;
+        `© ${new Date().getFullYear()} Calculate For Me - Free Online Calculators`;
     
     downloadFile(exportText, 'Tip_Calculator_' + Date.now() + '.txt', 'text/plain');
 }
@@ -291,7 +291,7 @@ function exportTipResults() {
 For each calculator, verify:
 
 - [ ] CSS styling is added and buttons look good
-- [ ] Calculator-utils.js is loaded (check browser console for "✅ CalcuForMe Utilities Loaded")
+- [ ] Calculator-utils.js is loaded (check browser console for "✅ Calculate For Me Utilities Loaded")
 - [ ] Share buttons appear after calculation
 - [ ] Save button stores data to localStorage
 - [ ] Twitter share opens with custom message
@@ -321,3 +321,4 @@ For each calculator, verify:
 ✅ **Professional UX** - Modern, feature-rich experience
 ✅ **Data Export** - Users can keep records
 ✅ **Competitive Advantage** - Most calculator sites don't have these features
+
