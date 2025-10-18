@@ -362,3 +362,40 @@ console.log('%cCalculate For Me', 'color: #667eea; font-size: 24px; font-weight:
 console.log('%cYour complete calculator suite!', 'color: #764ba2; font-size: 14px;');
 console.log('Developed with ❤️ for everyone');
 
+// Mega menu: toggle and filter
+(function(){
+  const toggle = document.getElementById('calcMenuToggle');
+  const menu = document.getElementById('calcMegaMenu');
+  const filterInput = document.getElementById('calcFilter');
+  if(!toggle || !menu) return;
+
+  const open = () => { menu.classList.add('open'); toggle.setAttribute('aria-expanded','true'); };
+  const close = () => { menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
+
+  toggle.addEventListener('click', (e)=>{ e.preventDefault(); menu.classList.toggle('open'); toggle.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false'); });
+  document.addEventListener('click', (e)=>{ if(!menu.contains(e.target) && !toggle.contains(e.target)) close(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
+  const navItem = toggle.closest('.nav-item');
+  if (navItem) navItem.addEventListener('mouseleave', close);
+
+  if(filterInput){
+    const noRes = document.getElementById('calcNoResults');
+    filterInput.addEventListener('input', function(){
+      const q = this.value.trim().toLowerCase();
+      let anyVisible = false;
+      menu.querySelectorAll('.dropdown-category').forEach(cat => {
+        let catVisible = false;
+        cat.querySelectorAll('a').forEach(a => {
+          const text = (a.textContent||'').toLowerCase();
+          const show = !q || text.includes(q);
+          a.style.display = show ? 'block' : 'none';
+          if(show) catVisible = true;
+        });
+        cat.style.display = catVisible ? '' : 'none';
+        if(catVisible) anyVisible = true;
+      });
+      if(noRes) noRes.style.display = (q && !anyVisible) ? 'block' : 'none';
+    });
+  }
+})();
+
