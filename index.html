@@ -815,69 +815,21 @@
         </div>
     </section>
 
-    <!-- How-To Guides Slider -->
-    <section id="guides" style="padding: 3rem 0; background: #ffffff;">
+    <!-- How-To Guides (text-only links) -->
+    <section id="guides" style="padding: 2.5rem 0; background: #ffffff;">
         <div class="container">
-            <div class="section-header" style="text-align:center; margin-bottom:1.5rem;">
+            <div class="section-header" style="text-align:center; margin-bottom:1rem;">
                 <h2>How-To Guides — Step-by-Step</h2>
-                <p style="color:#64748b">Why, How, Common mistakes — sab kuch simple language me.</p>
+                <p style="color:#64748b">Short guides: Why, How, Common mistakes.</p>
             </div>
-            <div style="display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:.5rem;">
-                <!-- Slide -->
-                <article style="min-width:300px; scroll-snap-align:start; background:#f8fafc; border:1px solid #e5e7eb; border-radius:14px; padding:1rem;">
-                    <h3 style="margin:.25rem 0  .5rem;">EMI Guide: Kaise sahi EMI banate hain?</h3>
-                    <ul style="margin:0 0 .75rem 1rem; color:#475569;">
-                        <li>Why: Interest savings & planning</li>
-                        <li>How: Formula + example</li>
-                        <li>Mistakes: Tenure vs Rate mixups</li>
-                    </ul>
-                    <a href="blog/home-loan-emi-calculation-guide.html" style="color:#0ea5e9; text-decoration:none; font-weight:600;">Read Full Guide | Watch Video Demo</a>
-                </article>
-                <article style="min-width:300px; scroll-snap-align:start; background:#f8fafc; border:1px solid #e5e7eb; border-radius:14px; padding:1rem;">
-                    <h3 style="margin:.25rem 0  .5rem;">BMI Guide: BMI sahi kaise nikalein?</h3>
-                    <ul style="margin:0 0 .75rem 1rem; color:#475569;">
-                        <li>Why: Health category clarity</li>
-                        <li>How: Height/Weight units</li>
-                        <li>Mistakes: Wrong units</li>
-                    </ul>
-                    <a href="blog/bmi-calculator-ideal-weight-guide.html" style="color:#0ea5e9; text-decoration:none; font-weight:600;">Read Full Guide | Watch Video Demo</a>
-                </article>
-                <article style="min-width:300px; scroll-snap-align:start; background:#f8fafc; border:1px solid #e5e7eb; border-radius:14px; padding:1rem;">
-                    <h3 style="margin:.25rem 0  .5rem;">Percentage Tricks: Jaldi % kaise nikaalein?</h3>
-                    <ul style="margin:0 0 .75rem 1rem; color:#475569;">
-                        <li>Why: Discounts & offers</li>
-                        <li>How: Increase/Decrease</li>
-                        <li>Mistakes: Base value error</li>
-                    </ul>
-                    <a href="blog/how-to-calculate-compound-interest-in-excel-for-days.html" style="color:#0ea5e9; text-decoration:none; font-weight:600;">Read Full Guide | Watch Video Demo</a>
-                </article>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem;">
+                <a href="blog/home-loan-emi-calculation-guide.html" style="text-decoration:none; color:#0f172a; background:#f8fafc; border:1px solid #e5e7eb; border-radius:12px; padding:1rem;">EMI Guide — Formula, Example, Pitfalls</a>
+                <a href="blog/bmi-calculator-ideal-weight-guide.html" style="text-decoration:none; color:#0f172a; background:#f8fafc; border:1px solid #e5e7eb; border-radius:12px; padding:1rem;">BMI Guide — Units, Ranges, Tips</a>
+                <a href="blog/how-to-calculate-compound-interest-in-excel-for-days.html" style="text-decoration:none; color:#0f172a; background:#f8fafc; border:1px solid #e5e7eb; border-radius:12px; padding:1rem;">Percentage Tricks — Increase/Decrease</a>
             </div>
         </div>
     </section>
 
-    <!-- Popular FAQs -->
-    <section id="faqs" style="padding: 3rem 0; background:#f8fafc;">
-        <div class="container">
-            <div class="section-header" style="text-align:center; margin-bottom:1.5rem;">
-                <h2>Popular FAQs</h2>
-                <p style="color:#64748b">Sabse zyada pooche gaye sawaal — short answers + guides.</p>
-            </div>
-            <div style="max-width:900px; margin:0 auto;">
-                <details style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding: .9rem 1rem; margin-bottom:.75rem;">
-                    <summary>📘 EMI ka formula kya hai?</summary>
-                    <p style="color:#475569; margin:.5rem 0 0;">EMI = P × r × (1+r)^n / ((1+r)^n − 1). <a href="blog/home-loan-emi-calculation-guide.html" style="color:#0ea5e9;">Detailed guide</a></p>
-                </details>
-                <details style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding: .9rem 1rem; margin-bottom:.75rem;">
-                    <summary>🏢 HRA kaise claim karein?</summary>
-                    <p style="color:#475569; margin:.5rem 0 0;">Rent receipts, PAN (landlord if > ₹1L/yr), salary breakup. <a href="blog/salary-calculator-income-planning-guide.html" style="color:#0ea5e9;">Read more</a></p>
-                </details>
-                <details style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding: .9rem 1rem;">
-                    <summary>🫀 BMI healthy range kya hota hai?</summary>
-                    <p style="color:#475569; margin:.5rem 0 0;">18.5–24.9 normal; 25–29.9 overweight; ≥30 obese. <a href="blog/bmi-calculator-ideal-weight-guide.html" style="color:#0ea5e9;">See chart</a></p>
-                </details>
-            </div>
-        </div>
-    </section>
 
     <!-- Trending Blogs / Resources -->
     <section id="trending-blogs" style="padding: 3rem 0; background:#ffffff;">
@@ -909,17 +861,6 @@
         </div>
     </section>
 
-    <!-- Interactive Quiz -->
-    <section id="quiz" style="padding: 3rem 0; background:#f8fafc;">
-        <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem; align-items:center;">
-            <div>
-                <h2>Find Your Perfect Calculator — Take Quiz!</h2>
-                <p style="color:#64748b;">2 min me pata chalega kaunsa tool aapke kaam ka.</p>
-                <a href="quiz.html" style="background:#667eea; color:#fff; padding:.7rem 1rem; border-radius:10px; text-decoration:none; font-weight:600;">Start Quiz</a>
-            </div>
-            <div style="background:#fff; border:1px dashed #cbd5e1; border-radius:12px; padding:1rem; text-align:center; color:#64748b;">Illustration: decision-tree / question icons</div>
-        </div>
-    </section>
 
     <!-- Programmatic SEO Widgets -->
     <section id="programmatic" style="padding: 3rem 0; background:#ffffff;">
@@ -937,20 +878,6 @@
         </div>
     </section>
 
-    <!-- Video Demo -->
-    <section id="video-demo" style="padding: 3rem 0; background:#f8fafc;">
-        <div class="container" style="max-width:960px;">
-            <div class="section-header" style="text-align:center; margin-bottom:1.5rem;">
-                <h2>Video Demo: EMI & BMI Explained (Hindi)</h2>
-            </div>
-            <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.1);">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Calculator Demo" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
-            </div>
-            <div style="text-align:center; margin-top:1rem;">
-                <a href="#guides" style="color:#0ea5e9; font-weight:600; text-decoration:none;">Watch Now | Read Full Guide</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Final CTA Banner -->
     <section id="final-cta" style="padding: 2.5rem 0; background: linear-gradient(135deg,#667eea 0%, #764ba2 100%); color:#fff;">
