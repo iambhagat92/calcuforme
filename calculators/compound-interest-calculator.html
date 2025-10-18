@@ -190,6 +190,14 @@
                         <h4 style="margin-bottom: 0.5rem;">Investment Insights</h4>
                         <p id="adviceText" style="color: #718096; margin: 0;">-</p>
                     </div>
+
+                    <!-- Downloads -->
+                    <div id="downloadSection" style="margin-top:1rem; display:none; gap:.5rem; flex-wrap:wrap;">
+                        <button id="downloadCsvBtn" class="btn" style="background:#667eea; color:white; padding:.6rem 1rem; border-radius:8px; border:none; cursor:pointer;">
+                            <i class="fas fa-file-csv"></i> Download CSV Template
+                        </button>
+                        <small style="display:block; color:#718096; margin-top:.35rem;">CSV opens in Excel/Google Sheets</small>
+                    </div>
                 </div>
 
                 <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
@@ -324,9 +332,90 @@
             
             document.getElementById('adviceText').textContent = advice;
 
+            // Show download section
+            document.getElementById('downloadSection').style.display = 'block';
+
             resultContainer.classList.add('active');
             resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
+
+        // Build yearly schedule using sub-period simulation and export CSV
+        function buildScheduleCSV() {
+            const currencyCode = document.getElementById('currency').value;
+            const currencySym = getCurrencySymbol();
+            const principal = parseFloat(document.getElementById('principal').value);
+            const contribution = parseFloat(document.getElementById('contribution').value) || 0;
+            const frequency = parseInt(document.getElementById('frequency').value);
+            const rate = parseFloat(document.getElementById('rate').value) / 100;
+            const years = parseFloat(document.getElementById('years').value);
+            const n = parseInt(document.getElementById('compoundFreq').value);
+
+            // Recompute summary numbers (to include in header)
+            const r_n = rate / n;
+            const nt = n * years;
+            const fvPrincipal = principal * Math.pow(1 + r_n, nt);
+            let fvContributions = 0;
+            if (contribution > 0 && frequency > 0) {
+                const pmt = contribution * (frequency / n);
+                fvContributions = pmt * ((Math.pow(1 + r_n, nt) - 1) / r_n);
+            }
+            const finalBalance = fvPrincipal + fvContributions;
+            const totalContributions = principal + (contribution * frequency * years);
+            const interestEarned = finalBalance - totalContributions;
+
+            let csv = '';
+            csv += 'Compound Interest Calculator Export\n';
+            csv += `Currency,${currencyCode} (${currencySym})\n`;
+            csv += `Initial Investment,${principal}\n`;
+            csv += `Regular Contribution,${contribution}\n`;
+            csv += `Contribution Frequency (per year),${frequency}\n`;
+            csv += `Annual Interest Rate (%),${(rate*100).toFixed(2)}\n`;
+            csv += `Years,${years}\n`;
+            csv += `Compounding Frequency (per year),${n}\n`;
+            csv += `Total Contributions,${totalContributions.toFixed(2)}\n`;
+            csv += `Interest Earned,${interestEarned.toFixed(2)}\n`;
+            csv += `Final Balance,${finalBalance.toFixed(2)}\n`;
+            csv += '\n';
+            csv += 'Year,Start Balance,Contribution (Year),Interest (Year),End Balance\n';
+
+            // Yearly schedule via subperiod simulation (m = max(n, frequency))
+            const m = Math.max(n, Math.max(1, frequency));
+            const r_sub = rate / m;
+            const contrib_sub = contribution * (frequency / m);
+            let balance = principal;
+
+            for (let y = 1; y <= years; y++) {
+                const start = balance;
+                for (let k = 0; k < m; k++) {
+                    balance = balance * (1 + r_sub) + contrib_sub;
+                }
+                const end = balance;
+                const contribYear = contribution * frequency;
+                const interestYear = end - start - contribYear;
+                csv += `${y},${start.toFixed(2)},${contribYear.toFixed(2)},${interestYear.toFixed(2)},${end.toFixed(2)}\n`;
+            }
+            return csv;
+        }
+
+        function downloadCSV() {
+            const csv = buildScheduleCSV();
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            const ts = new Date().toISOString().slice(0,10);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `compound-interest-schedule_${ts}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            const btn = document.getElementById('downloadCsvBtn');
+            if (btn) btn.addEventListener('click', downloadCSV);
+            updateCurrencySymbols();
+        });
     </script>
 </body>
 </html>
