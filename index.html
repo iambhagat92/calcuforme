@@ -240,6 +240,15 @@
         </div>
     </nav>
 
+    <!-- Explore Banner (dismissible) -->
+    <div id="exploreBanner" style="background:#eef2ff; color:#3730a3; padding:.6rem 0;">
+        <div class="container" style="display:flex; align-items:center; justify-content:center; gap:.75rem;">
+            <span style="font-weight:600;"><i class="fas fa-bolt"></i> New tools added</span>
+            <a href="#categories" style="background:#4f46e5; color:#fff; padding:.4rem .7rem; border-radius:8px; text-decoration:none; font-weight:600;">Explore All Calculators</a>
+            <button id="closeBanner" aria-label="Close" style="margin-left:.5rem; background:transparent; border:none; color:#3730a3; cursor:pointer;"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="close-btn" id="closeMenuBtn">
@@ -409,6 +418,7 @@
 
         // Initialize display
         updateDisplay();
+    </script>
 
     <!-- Google AdSense - After Calculator Widget -->
     <div class="container" style="text-align: center; margin: 2rem auto; max-width: 728px;">
@@ -424,7 +434,7 @@
 
 
     <!-- Categories Section -->
-    <section class="categories" id="categories">
+    <section class="categories" id="categories" style="padding: 2rem 0;">
         <div class="container">
             <div class="section-header">
                 <h2>Calculator Categories</h2>
@@ -501,7 +511,7 @@
     </section>
 
     <!-- Popular Calculators Section -->
-    <section class="popular-calculators" id="popular">
+    <section class="popular-calculators" id="popular" style="padding: 2rem 0;">
         <div class="container">
             <div class="section-header">
                 <h2>Most Popular Calculators</h2>
@@ -928,6 +938,25 @@
             </div>
         </div>
     </footer>
+
+    <style>
+      .sticky-cta{position:fixed; right:16px; bottom:16px; z-index:1000; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; padding:.7rem 1rem; border-radius:9999px; text-decoration:none; box-shadow:0 12px 30px rgba(0,0,0,.2); font-weight:700}
+      @media (max-width: 480px){ .sticky-cta{right:12px; bottom:12px; padding:.6rem .9rem; font-weight:600} }
+    </style>
+    <a href="#categories" class="sticky-cta" aria-label="Explore Calculators">Explore Calculators</a>
+
+    <script>
+      // Dismissible banner with persistence
+      (function(){
+        try{
+          if(localStorage.getItem('hideExploreBanner')==='1'){
+            var eb=document.getElementById('exploreBanner'); if(eb) eb.style.display='none';
+          }
+          var cb=document.getElementById('closeBanner');
+          if(cb){ cb.addEventListener('click', function(){ localStorage.setItem('hideExploreBanner','1'); var eb=document.getElementById('exploreBanner'); if(eb) eb.style.display='none'; }); }
+        }catch(e){}
+      })();
+    </script>
 
     <script src="js/main.js"></script>
     <script src="js/calculator-utils.js"></script>
