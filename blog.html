@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6YC3ZC6EBG');
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -75,7 +84,14 @@
                 <p>Expert articles on loan calculations, weight management, BMI calculation, calorie counting, and financial planning to help you achieve your goals.</p>
             </div>
             
-            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;" id="blog-posts-container">
+            <style>
+            @media (min-width: 992px) {
+                .blog-layout { grid-template-columns: 3fr 1.2fr; }
+            }
+            </style>
+
+            <div class="blog-layout" style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+              <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;" id="blog-posts-container">
                 
                 <!-- NEW: EPFO New Rules 2025 -->
                 <a href="blog/epfo-new-rules-2025-epf-eps-withdrawal-guidelines.html" class="blog-card" style="text-decoration: none; color: inherit; display: block; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative;">
@@ -271,6 +287,20 @@
                 </a>
 
             </div>
+              <aside class="sidebar" style="position: sticky; top: 100px; align-self: start; height: max-content;">
+                <div style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 6px 18px rgba(0,0,0,0.08);">
+                  <h3 style="margin: 0 0 0.75rem 0; color: #2d3748; font-size: 1.15rem;">Popular Guides</h3>
+                  <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem;">
+                    <li><a href="blog/home-loan-emi-calculation-guide.html" style="color:#4f46e5; text-decoration:none;">Home Loan EMI Calculation</a></li>
+                    <li><a href="blog/epfo-new-rules-2025-epf-eps-withdrawal-guidelines.html" style="color:#059669; text-decoration:none;">EPFO New Rules 2025</a></li>
+                    <li><a href="blog/reduce-home-loan-emi-tips.html" style="color:#7c3aed; text-decoration:none;">Reduce Home Loan EMI</a></li>
+                    <li><a href="blog/sip-retirement-planning-guide.html" style="color:#0ea5e9; text-decoration:none;">SIP Retirement Planning</a></li>
+                    <li><a href="blog/retirement-planning-guide.html" style="color:#2563eb; text-decoration:none;">Retirement Planning Guide</a></li>
+                    <li><a href="blog/tax-planning-guide-2025.html" style="color:#d97706; text-decoration:none;">Tax Planning 2025</a></li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
         </div>
     </section>
 
@@ -291,6 +321,13 @@
                 <a class="tag" href="blog/monthly-compound-interest-calculator-india.html" style="background:#fee2e2; color:#b91c1c; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">Monthly Compound Interest Calculator (India)</a>
                 <a class="tag" href="blog/how-to-calculate-compound-interest-in-excel-for-days.html" style="background:#e0f2fe; color:#0369a1; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">How to Calculate Compound Interest in Excel for Days</a>
                 <a class="tag" href="blog/compound-interest-formula-excel-with-monthly-contributions.html" style="background:#fae8ff; color:#7e22ce; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">Compound Interest Formula in Excel (Monthly Contributions)</a>
+                <a class="tag" href="blog/reduce-home-loan-emi-tips.html" style="background:#e0e7ff; color:#374151; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">Reduce Home Loan EMI</a>
+                <a class="tag" href="blog/epfo-new-rules-2025-epf-eps-withdrawal-guidelines.html" style="background:#ecfccb; color:#15803d; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">EPFO Rules 2025</a>
+                <a class="tag" href="blog/personal-loan-vs-credit-card-emi.html" style="background:#fee2e2; color:#b91c1c; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">Personal Loan vs Credit Card EMI</a>
+                <a class="tag" href="blog/sip-retirement-planning-guide.html" style="background:#cffafe; color:#0369a1; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">SIP Retirement Planning</a>
+                <a class="tag" href="blog/retirement-planning-guide.html" style="background:#fde68a; color:#92400e; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">Retirement Planning</a>
+                <a class="tag" href="blog/tax-planning-guide-2025.html" style="background:#fef3c7; color:#a16207; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">Tax Planning 2025</a>
+                <a class="tag" href="blog/compound-interest-excel-guides.html" style="background:#f1f5f9; color:#334155; padding:0.4rem 0.75rem; border-radius:999px; font-size:0.9rem; text-decoration:none;">Compound Interest in Excel (All)</a>
             </div>
         </div>
     </section>
@@ -328,6 +365,46 @@
             </div>
         </div>
     </footer>
+
+    <script>
+      // Track tag clicks in GA4
+      function initTagClickTracking(){
+        if (typeof gtag !== 'function') return;
+        document.querySelectorAll('.tag').forEach(function(a){
+          a.addEventListener('click', function(){
+            gtag('event','tag_click', {
+              event_category: 'engagement',
+              event_label: a.textContent.trim(),
+              destination: a.getAttribute('href')
+            });
+          });
+        });
+      }
+      // Auto-generate missing tags from blog cards
+      (function(){
+        var tagsContainer = document.querySelector('.topics .tags');
+        if (!tagsContainer) return;
+        var existing = new Set(Array.from(tagsContainer.querySelectorAll('a.tag')).map(function(a){return a.getAttribute('href');}));
+        document.querySelectorAll('#blog-posts-container > a.blog-card').forEach(function(card){
+          var href = card.getAttribute('href');
+          if (!href || existing.has(href)) return;
+          var titleEl = card.querySelector('h3');
+          var text = titleEl ? titleEl.textContent.trim() : href.split('/').pop().replace('.html','').replace(/-/g,' ');
+          var a = document.createElement('a');
+          a.className = 'tag';
+          a.href = href;
+          a.textContent = text;
+          a.style.background = '#f1f5f9';
+          a.style.color = '#334155';
+          a.style.padding = '0.4rem 0.75rem';
+          a.style.borderRadius = '999px';
+          a.style.fontSize = '0.9rem';
+          a.style.textDecoration = 'none';
+          tagsContainer.appendChild(a);
+        });
+        initTagClickTracking();
+      })();
+    </script>
 
     <script src="js/main.js"></script>
     <script src="js/calculator-utils.js"></script>
