@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AdSense Debug - Calculate For Me</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5149040612844336" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>AdSense Debug Test</h1>
+    
+    <!-- Test Ad -->
+    <div style="margin: 20px 0; border: 1px solid #ccc; padding: 10px;">
+        <h3>Test Ad Unit:</h3>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5149040612844336"
+             data-ad-slot="9876543210"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+    </div>
+
+    <script>
+        // Debug information
+        console.log('AdSense script loaded');
+        
+        // Initialize ads
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        
+        // Check if ads loaded
+        setTimeout(function() {
+            console.log('AdSense status:', adsbygoogle.loaded ? 'Loaded' : 'Not loaded');
+            console.log('Ad units on page:', document.querySelectorAll('.adsbygoogle').length);
+        }, 2000);
+    </script>
+</body>
+</html>
