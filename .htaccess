@@ -1,18 +1,28 @@
-# Calculate For Me - SEO & Duplicate Content Fixes
-# Redirect blog folder/index.html to direct .html files
+# Calculate For Me - SEO & Performance Optimization
+RewriteEngine On
 
+# Prevent redirect chains - Direct redirects to final destinations
 # Blog redirects - Remove duplicate content
 RedirectMatch 301 ^/blog/(.+)/index\.html$ /blog/$1.html
-RedirectMatch 301 ^/blog/(.+)/$  /blog/$1.html
+RedirectMatch 301 ^/blog/(.+)/$ /blog/$1.html
 
 # Calculator redirects - Ensure clean URLs
 RedirectMatch 301 ^/calculators/(.+)/index\.html$ /calculators/$1.html
-RedirectMatch 301 ^/calculators/(.+)/$  /calculators/$1.html
+RedirectMatch 301 ^/calculators/(.+)/$ /calculators/$1.html
 
-# Remove trailing slashes for SEO
-RewriteEngine On
+# Remove trailing slashes for SEO (except for directories)
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/$
 RewriteRule ^([^/]+)/$ /$1 [R=301,L]
+
+# Force HTTPS (if SSL is available)
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^localhost
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Prevent access to redirect directories that no longer exist
+RewriteRule ^blog/.+/$ /blog/ [R=301,L]
+RewriteRule ^calculators/.+/$ /calculators/ [R=301,L]
 
 # Security headers for better SEO performance
 <IfModule mod_headers.c>
