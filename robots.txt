@@ -32,6 +32,7 @@ Disallow: /blog/tax-planning-guide-2025/
 # Block search engine indexing of any future admin or private directories
 Disallow: /admin/
 Disallow: /private/
+Disallow: /debug-adsense.html
 
 # Allow specific calculator and blog HTML files (canonical versions)
 Allow: /calculators/*.html
