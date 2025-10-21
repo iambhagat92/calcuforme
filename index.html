@@ -77,20 +77,31 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Calculate For Me - Free Online Calculator",
-      "url": "https://calculateforme.xyz",
+      "alternateName": "Free Calculator Online",
+      "url": "https://calculateforme.xyz/",
       "description": "Free online calculator for all needs - BMI, loans, percentages, scientific equations, mortgage, ROI, GPA & more. 20+ calculators available including eCommerce Profit Calculator.",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://calculateforme.xyz/?s={search_term_string}",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://calculateforme.xyz/?s={search_term_string}"
+        },
         "query-input": "required name=search_term_string"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Calculate For Me",
+        "url": "https://calculateforme.xyz/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://calculateforme.xyz/favicon.svg"
+          "url": "https://calculateforme.xyz/favicon.svg",
+          "width": 512,
+          "height": 512
         }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://calculateforme.xyz/"
       }
     }
     </script>
@@ -101,20 +112,37 @@
       "@type": "WebApplication",
       "name": "Calculate For Me - Free Online Calculator Suite",
       "alternateName": "Free Calculator Online",
-      "url": "https://calculateforme.xyz",
+      "url": "https://calculateforme.xyz/",
+      "description": "Comprehensive suite of free online calculators including BMI, loan, mortgage, percentage, scientific, and financial calculators. No registration required.",
       "applicationCategory": "UtilitiesApplication",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "1250"
-      },
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
       },
-      "operatingSystem": "Any",
-      "browserRequirements": "Requires JavaScript. Requires HTML5."
+      "author": {
+        "@type": "Organization",
+        "name": "Calculate For Me",
+        "url": "https://calculateforme.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculate For Me",
+        "url": "https://calculateforme.xyz/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://calculateforme.xyz/favicon.svg",
+          "width": 512,
+          "height": 512
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://calculateforme.xyz/"
+      }
     }
     </script>
     
