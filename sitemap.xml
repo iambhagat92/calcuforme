@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://calculateforme.xyz/</loc>
-    <lastmod>2025-10-19</lastmod>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,15 +12,33 @@
   <!-- Main Pages -->
   <url>
     <loc>https://calculateforme.xyz/blog.html</loc>
-    <lastmod>2025-10-19</lastmod>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://calculateforme.xyz/about.html</loc>
-    <lastmod>2025-10-19</lastmod>
+    <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calculateforme.xyz/quiz.html</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculateforme.xyz/privacy-policy.html</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://calculateforme.xyz/terms-of-service.html</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   
   <!-- Blog Posts (Actual existing files) -->
@@ -197,6 +215,30 @@
     <loc>https://calculateforme.xyz/calculators/currency-converter.html</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calculateforme.xyz/calculators/percentage-calculator.html</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calculateforme.xyz/calculators/scientific-calculator.html</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://calculateforme.xyz/calculators/tax-calculator.html</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://calculateforme.xyz/calculators/roi-calculator.html</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
