@@ -377,7 +377,7 @@
             });
         });
 
-        // Form submission
+        // Form submission with real email functionality
         document.getElementById('newsletterForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -394,63 +394,96 @@
             
             // Validation
             if (!email || !name || !privacy) {
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('errorText').textContent = 'Please fill all required fields and accept the privacy policy.';
-                setTimeout(() => {
-                    document.getElementById('errorMessage').style.display = 'none';
-                }, 5000);
+                showErrorMessage('Please fill all required fields and accept the privacy policy.');
                 return;
             }
             
             if (topics.length === 0) {
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('errorText').textContent = 'Please select at least one topic of interest.';
-                setTimeout(() => {
-                    document.getElementById('errorMessage').style.display = 'none';
-                }, 5000);
+                showErrorMessage('Please select at least one topic of interest.');
                 return;
             }
             
-            // Store subscription data in localStorage (for demo purposes)
-            const subscriptionData = {
-                email,
-                name,
-                frequency,
-                topics,
-                subscribedAt: new Date().toISOString()
-            };
+            // Show loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+            submitBtn.disabled = true;
             
-            // Get existing subscriptions or initialize empty array
-            let subscriptions = JSON.parse(localStorage.getItem('newsletterSubscriptions')) || [];
+            // Prepare form data for Formspree
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('name', name);
+            formData.append('frequency', frequency);
+            formData.append('topics', topics.join(', '));
+            formData.append('_subject', 'New Newsletter Subscription - Calculate For Me');
+            formData.append('_replyto', email);
+            formData.append('_next', window.location.href + '?subscribed=true');
             
-            // Check if email already exists
-            if (subscriptions.some(sub => sub.email === email)) {
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('errorText').textContent = 'This email is already subscribed.';
-                setTimeout(() => {
-                    document.getElementById('errorMessage').style.display = 'none';
-                }, 5000);
-                return;
-            }
+            // Send to Formspree (Replace with your actual Formspree endpoint)
+            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqakdbzy'; // FREE TEMPORARY ENDPOINT - REPLACE THIS
             
-            // Add new subscription
-            subscriptions.push(subscriptionData);
-            localStorage.setItem('newsletterSubscriptions', JSON.stringify(subscriptions));
-            
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            document.querySelectorAll('.frequency-option').forEach(opt => opt.classList.remove('active'));
-            document.querySelector('.frequency-option[data-frequency="weekly"]').classList.add('active');
-            document.getElementById('frequency').value = 'weekly';
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 5000);
+            fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showSuccessMessage('🎉 Thank you for subscribing! You will receive a confirmation email shortly.');
+                    this.reset();
+                    document.querySelectorAll('.frequency-option').forEach(opt => opt.classList.remove('active'));
+                    document.querySelector('.frequency-option[data-frequency="weekly"]').classList.add('active');
+                    document.getElementById('frequency').value = 'weekly';
+                    
+                    // Also store locally for backup
+                    const subscriptionData = { email, name, frequency, topics, subscribedAt: new Date().toISOString() };
+                    let subscriptions = JSON.parse(localStorage.getItem('newsletterSubscriptions')) || [];
+                    subscriptions.push(subscriptionData);
+                    localStorage.setItem('newsletterSubscriptions', JSON.stringify(subscriptions));
+                } else {
+                    showErrorMessage('❌ Subscription failed. Please try again or contact support.');
+                }
+            })
+            .catch(error => {
+                showErrorMessage('❌ Network error. Please check your connection and try again.');
+                console.error('Newsletter subscription error:', error);
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
         });
+        
+        // Utility functions
+        function showSuccessMessage(message) {
+            const successDiv = document.getElementById('successMessage');
+            successDiv.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+            successDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                successDiv.style.display = 'none';
+            }, 8000);
+        }
+        
+        function showErrorMessage(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            document.getElementById('errorText').textContent = message;
+            errorDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 6000);
+        }
+        
+        // Check if user just subscribed (from URL parameter)
+        if (window.location.search.includes('subscribed=true')) {
+            showSuccessMessage('🎉 Successfully subscribed! Welcome to our newsletter.');
+            // Clean URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
     </script>
 </body>
 </html>
