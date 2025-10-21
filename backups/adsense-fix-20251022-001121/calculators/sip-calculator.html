@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator India - Systematic Investment Plan Calculator | Calculate For Me</title>
+    <meta name="description" content="Free SIP calculator for India. Calculate SIP returns, mutual fund investments, systematic investment plans with goal planning and tax benefits. Start your SIP journey today.">
+    <meta name="keywords" content="SIP calculator, systematic investment plan, mutual fund calculator, SIP returns India, investment calculator, financial planning India">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="calculator-header-content">
+                <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    <a href="../index.html" style="color: rgba(255,255,255,0.8);">Home</a> > 
+                    <a href="../index.html#categories" style="color: rgba(255,255,255,0.8);">Calculators</a> > 
+                    <span>SIP Calculator</span>
+                </nav>
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">SIP Calculator India</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Systematic Investment Plan calculator for mutual funds, goal planning & wealth building</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-content" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px;">
+            
+            <div class="calculator-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                
+                <!-- SIP Calculator Form -->
+                <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                        <i class="fas fa-chart-line" style="color: #667eea;"></i> SIP Calculator
+                    </h2>
+                    
+                    <form id="sip-form">
+                        <!-- Monthly Investment -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Monthly SIP Amount (₹)</label>
+                            <input type="number" id="monthly-sip" placeholder="Enter monthly SIP amount" value="5000"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="500" required>
+                        </div>
+
+                        <!-- Investment Period -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Investment Period (Years)</label>
+                            <input type="number" id="investment-years" placeholder="Enter investment period" value="15"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="1" max="50" required>
+                        </div>
+
+                        <!-- Expected Returns -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Expected Annual Return (%)</label>
+                            <input type="number" id="expected-return" placeholder="Expected return rate" value="12" step="0.1"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="1" max="30">
+                            <small style="color: #6b7280; font-size: 0.85rem;">Historical equity mutual fund returns: 10-15%</small>
+                        </div>
+
+                        <!-- Annual Step Up -->
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Annual SIP Increase (%)</label>
+                            <input type="number" id="sip-stepup" placeholder="Annual increase in SIP" value="10" step="0.1"
+                                   style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" min="0" max="50">
+                            <small style="color: #6b7280; font-size: 0.85rem;">Recommended: 10% to beat inflation</small>
+                        </div>
+
+                        <!-- Investment Type -->
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Investment Type</label>
+                            <select id="investment-type" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                <option value="equity">Equity Mutual Funds (12-15% returns)</option>
+                                <option value="hybrid">Hybrid Mutual Funds (10-12% returns)</option>
+                                <option value="debt">Debt Mutual Funds (7-9% returns)</option>
+                                <option value="elss">ELSS Tax Saving Funds (12-14% returns)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" 
+                                style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 1rem; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-calculator"></i> Calculate SIP Returns
+                        </button>
+                    </form>
+
+                    <!-- SIP Scenarios -->
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #f8fafc; border-radius: 12px;">
+                        <h4 style="color: #374151; margin-bottom: 1rem;">Popular SIP Plans</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+                            <button onclick="setScenario('starter')" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer;">₹1K for 10Y</button>
+                            <button onclick="setScenario('regular')" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer;">₹5K for 15Y</button>
+                            <button onclick="setScenario('aggressive')" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer;">₹10K for 20Y</button>
+                            <button onclick="setScenario('crorepati')" style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer;">Crorepati Goal</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <!-- SIP Results -->
+                    <div id="sip-results" class="results-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); margin-bottom: 2rem; display: none;">
+                        <h3 style="color: #2d3748; margin-bottom: 1.5rem;">
+                            <i class="fas fa-chart-pie" style="color: #667eea;"></i> SIP Investment Results
+                        </h3>
+                        
+                        <!-- Maturity Amount -->
+                        <div style="text-align: center; margin-bottom: 2rem; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                            <div style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0.5rem;">Total Maturity Value</div>
+                            <div id="maturity-value" style="font-size: 2.5rem; font-weight: bold;">₹0</div>
+                        </div>
+
+                        <!-- Investment Breakdown -->
+                        <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #22c55e;">
+                                <span style="font-weight: 600; color: #374151;">Total Investment:</span>
+                                <span id="total-invested" style="font-weight: bold; color: #22c55e;">₹0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <span style="font-weight: 600; color: #374151;">Capital Gains:</span>
+                                <span id="capital-gains" style="font-weight: bold; color: #f59e0b;">₹0</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #eff6ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <span style="font-weight: 600; color: #374151;">Wealth Multiplier:</span>
+                                <span id="wealth-multiplier" style="font-weight: bold; color: #3b82f6;">0x</span>
+                            </div>
+                        </div>
+
+                        <!-- Annual Breakdown -->
+                        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 12px;">
+                            <h4 style="color: #374151; margin-bottom: 1rem;">Year-wise Growth</h4>
+                            <div id="yearly-growth" style="max-height: 200px; overflow-y: auto;">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Goal Planning -->
+                    <div id="goal-planning" class="results-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1); margin-bottom: 2rem; display: none;">
+                        <h3 style="color: #2d3748; margin-bottom: 1.5rem;">
+                            <i class="fas fa-bullseye" style="color: #10b981;"></i> Goal-based Planning
+                        </h3>
+                        
+                        <div style="display: grid; gap: 1.5rem;">
+                            <div style="background: #f0fff4; padding: 1.5rem; border-radius: 12px; border: 2px solid #22c55e;">
+                                <h4 style="color: #047857; margin-bottom: 1rem;">Financial Independence</h4>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+                                    <div>
+                                        <span style="color: #065f46;">Target Corpus:</span>
+                                        <div style="font-weight: bold; color: #047857;">₹1 Crore</div>
+                                    </div>
+                                    <div>
+                                        <span style="color: #065f46;">Time Required:</span>
+                                        <div id="fi-time" style="font-weight: bold; color: #047857;">-- years</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: #fef7ff; padding: 1.5rem; border-radius: 12px; border: 2px solid #8b5cf6;">
+                                <h4 style="color: #7c3aed; margin-bottom: 1rem;">Child's Education</h4>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+                                    <div>
+                                        <span style="color: #6b21a8;">Target Corpus:</span>
+                                        <div style="font-weight: bold; color: #7c3aed;">₹50 Lakh</div>
+                                    </div>
+                                    <div>
+                                        <span style="color: #6b21a8;">Time Required:</span>
+                                        <div id="edu-time" style="font-weight: bold; color: #7c3aed;">-- years</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 12px; border: 2px solid #3b82f6;">
+                                <h4 style="color: #1d4ed8; margin-bottom: 1rem;">Retirement Planning</h4>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+                                    <div>
+                                        <span style="color: #1e3a8a;">Target Corpus:</span>
+                                        <div style="font-weight: bold; color: #1d4ed8;">₹5 Crore</div>
+                                    </div>
+                                    <div>
+                                        <span style="color: #1e3a8a;">Time Required:</span>
+                                        <div id="retire-time" style="font-weight: bold; color: #1d4ed8;">-- years</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SIP Tips -->
+                    <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                        <h3 style="color: #2d3748; margin-bottom: 1.5rem;">
+                            <i class="fas fa-lightbulb" style="color: #f59e0b;"></i> SIP Investment Tips
+                        </h3>
+                        
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="background: #f0fff4; padding: 1rem; border-radius: 8px; border-left: 4px solid #22c55e;">
+                                <h5 style="color: #16a34a; margin-bottom: 0.5rem;">Start Early, Benefit More</h5>
+                                <p style="color: #15803d; margin: 0; font-size: 0.9rem;">Power of compounding works best with time. Start your SIP journey today!</p>
+                            </div>
+                            
+                            <div style="background: #fef7ff; padding: 1rem; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                                <h5 style="color: #7c3aed; margin-bottom: 0.5rem;">Regular & Disciplined</h5>
+                                <p style="color: #6b21a8; margin: 0; font-size: 0.9rem;">Consistency is key. Never skip SIP installments for better returns</p>
+                            </div>
+                            
+                            <div style="background: #f0f9ff; padding: 1rem; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <h5 style="color: #1d4ed8; margin-bottom: 0.5rem;">Increase SIP Annually</h5>
+                                <p style="color: #1e3a8a; margin: 0; font-size: 0.9rem;">Step-up your SIP by 10-15% annually to beat inflation</p>
+                            </div>
+                            
+                            <div style="background: #fef3c7; padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <h5 style="color: #d97706; margin-bottom: 0.5rem;">Tax Benefits with ELSS</h5>
+                                <p style="color: #92400e; margin: 0; font-size: 0.9rem;">ELSS SIP offers tax deduction up to ₹1.5L under Section 80C</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="epf-calculator.html">EPF Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // SIP Calculator Logic
+        document.getElementById('sip-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateSIP();
+        });
+
+        function calculateSIP() {
+            // Get input values
+            const monthlySIP = parseFloat(document.getElementById('monthly-sip').value);
+            const investmentYears = parseInt(document.getElementById('investment-years').value);
+            const expectedReturn = parseFloat(document.getElementById('expected-return').value) / 100;
+            const sipStepup = parseFloat(document.getElementById('sip-stepup').value) / 100;
+
+            if (monthlySIP <= 0 || investmentYears <= 0) {
+                alert('Please enter valid investment amounts and time period');
+                return;
+            }
+
+            // Calculate SIP with step-up
+            const result = calculateSIPWithStepup(monthlySIP, investmentYears, expectedReturn, sipStepup);
+            
+            displayResults(result);
+            calculateGoalPlanning(monthlySIP, expectedReturn, sipStepup);
+        }
+
+        function calculateSIPWithStepup(monthlyAmount, years, annualReturn, stepupRate) {
+            const monthlyReturn = annualReturn / 12;
+            const totalMonths = years * 12;
+            
+            let totalInvestment = 0;
+            let maturityValue = 0;
+            let yearlyData = [];
+            let currentMonthlySIP = monthlyAmount;
+            
+            for (let year = 1; year <= years; year++) {
+                let yearlyInvestment = 0;
+                let yearStartValue = maturityValue;
+                
+                // Calculate for 12 months of current year
+                for (let month = 1; month <= 12; month++) {
+                    totalInvestment += currentMonthlySIP;
+                    yearlyInvestment += currentMonthlySIP;
+                    
+                    // Add monthly SIP and apply monthly return
+                    maturityValue = (maturityValue + currentMonthlySIP) * (1 + monthlyReturn);
+                }
+                
+                yearlyData.push({
+                    year: year,
+                    investment: yearlyInvestment,
+                    totalInvested: totalInvestment,
+                    value: maturityValue,
+                    gains: maturityValue - totalInvestment
+                });
+                
+                // Increase SIP for next year
+                currentMonthlySIP = currentMonthlySIP * (1 + stepupRate);
+            }
+            
+            const capitalGains = maturityValue - totalInvestment;
+            const wealthMultiplier = maturityValue / totalInvestment;
+            
+            return {
+                maturityValue: maturityValue,
+                totalInvestment: totalInvestment,
+                capitalGains: capitalGains,
+                wealthMultiplier: wealthMultiplier,
+                yearlyData: yearlyData
+            };
+        }
+
+        function displayResults(result) {
+            // Display main results
+            document.getElementById('maturity-value').textContent = formatCurrency(result.maturityValue);
+            document.getElementById('total-invested').textContent = formatCurrency(result.totalInvestment);
+            document.getElementById('capital-gains').textContent = formatCurrency(result.capitalGains);
+            document.getElementById('wealth-multiplier').textContent = result.wealthMultiplier.toFixed(1) + 'x';
+            
+            // Show yearly breakdown
+            const yearlyGrowthHTML = result.yearlyData.map(data => `
+                <div style="display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 0.5rem; padding: 0.5rem; border-bottom: 1px solid #e5e7eb; font-size: 0.9rem;">
+                    <div style="font-weight: 600;">Year ${data.year}</div>
+                    <div>Investment: ${formatCurrency(data.investment)}</div>
+                    <div style="color: #22c55e;">Value: ${formatCurrency(data.value)}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('yearly-growth').innerHTML = yearlyGrowthHTML;
+            
+            // Show results
+            document.getElementById('sip-results').style.display = 'block';
+        }
+
+        function calculateGoalPlanning(monthlySIP, annualReturn, stepupRate) {
+            // Calculate time required for different goals
+            const goals = [
+                { amount: 10000000, element: 'fi-time' },      // 1 Crore
+                { amount: 5000000, element: 'edu-time' },      // 50 Lakh  
+                { amount: 50000000, element: 'retire-time' }   // 5 Crore
+            ];
+            
+            goals.forEach(goal => {
+                const timeRequired = calculateTimeForGoal(monthlySIP, goal.amount, annualReturn, stepupRate);
+                document.getElementById(goal.element).textContent = timeRequired + ' years';
+            });
+            
+            document.getElementById('goal-planning').style.display = 'block';
+        }
+
+        function calculateTimeForGoal(monthlySIP, targetAmount, annualReturn, stepupRate) {
+            const monthlyReturn = annualReturn / 12;
+            let totalInvestment = 0;
+            let maturityValue = 0;
+            let currentMonthlySIP = monthlySIP;
+            let months = 0;
+            
+            while (maturityValue < targetAmount && months < 600) { // Max 50 years
+                months++;
+                totalInvestment += currentMonthlySIP;
+                maturityValue = (maturityValue + currentMonthlySIP) * (1 + monthlyReturn);
+                
+                // Increase SIP annually
+                if (months % 12 === 0) {
+                    currentMonthlySIP = currentMonthlySIP * (1 + stepupRate);
+                }
+            }
+            
+            return Math.ceil(months / 12);
+        }
+
+        function formatCurrency(amount) {
+            if (amount >= 10000000) { // 1 crore
+                return '₹' + (amount / 10000000).toFixed(2) + ' Cr';
+            } else if (amount >= 100000) { // 1 lakh
+                return '₹' + (amount / 100000).toFixed(2) + ' L';
+            } else {
+                return '₹' + amount.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+            }
+        }
+
+        function setScenario(type) {
+            const scenarios = {
+                starter: {
+                    monthly: 1000,
+                    years: 10,
+                    return: 12,
+                    stepup: 10
+                },
+                regular: {
+                    monthly: 5000,
+                    years: 15,
+                    return: 12,
+                    stepup: 10
+                },
+                aggressive: {
+                    monthly: 10000,
+                    years: 20,
+                    return: 14,
+                    stepup: 15
+                },
+                crorepati: {
+                    monthly: 8000,
+                    years: 15,
+                    return: 12,
+                    stepup: 10
+                }
+            };
+            
+            const scenario = scenarios[type];
+            document.getElementById('monthly-sip').value = scenario.monthly;
+            document.getElementById('investment-years').value = scenario.years;
+            document.getElementById('expected-return').value = scenario.return;
+            document.getElementById('sip-stepup').value = scenario.stepup;
+        }
+
+        // Auto-calculate on input change
+        const inputs = ['monthly-sip', 'investment-years', 'expected-return', 'sip-stepup'];
+        
+        inputs.forEach(inputId => {
+            document.getElementById(inputId).addEventListener('input', function() {
+                if (document.getElementById('sip-results').style.display === 'block') {
+                    calculateSIP();
+                }
+            });
+        });
+
+        // Update expected returns based on investment type
+        document.getElementById('investment-type').addEventListener('change', function() {
+            const returnRates = {
+                'equity': 12,
+                'hybrid': 10,
+                'debt': 8,
+                'elss': 13
+            };
+            
+            document.getElementById('expected-return').value = returnRates[this.value];
+            
+            if (document.getElementById('sip-results').style.display === 'block') {
+                calculateSIP();
+            }
+        });
+    </script>
+</body>
+</html>

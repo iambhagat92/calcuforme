@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Tip Calculator - Calculate tips and split bills easily among friends.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Calculate For Me">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalculateForMe">
+    <title>Tip Calculator - Split Bills | Calculate For Me</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    <style>
+        /* Share buttons styling */
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .share-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .share-btn i {
+            font-size: 1.1rem;
+        }
+        
+        .share-btn-save {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .share-btn-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .share-btn-facebook {
+            background: #4267B2;
+            color: white;
+        }
+        
+        .share-btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .share-btn-copy {
+            background: #718096;
+            color: white;
+        }
+        
+        .share-btn-export {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .share-buttons {
+                flex-direction: column;
+            }
+            
+            .share-btn {
+                width: 100%;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC3ZC6EBG');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-receipt"></i> Tip Calculator</h1>
+                    <p>Calculate tips and split bills easily among friends</p>
+                </div>
+
+                <form id="tipForm">
+                    <div class="form-group">
+                        <label>Bill Amount ($)</label>
+                        <input type="number" id="billAmount" min="0" step="0.01" value="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tip Percentage (%)</label>
+                        <input type="number" id="tipPercent" min="0" max="100" step="1" value="15" required>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <button type="button" onclick="setTip(10)" style="flex: 1; padding: 0.75rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.3s;">10%</button>
+                        <button type="button" onclick="setTip(15)" style="flex: 1; padding: 0.75rem; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 8px; cursor: pointer; transition: all 0.3s;">15%</button>
+                        <button type="button" onclick="setTip(18)" style="flex: 1; padding: 0.75rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.3s;">18%</button>
+                        <button type="button" onclick="setTip(20)" style="flex: 1; padding: 0.75rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.3s;">20%</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Number of People</label>
+                        <input type="number" id="numPeople" min="1" value="1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Tip
+                    </button>
+                </form>
+
+                <div id="resultContainer" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Bill Summary</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Tip Amount</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="tipAmount">$0.00</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">Total Amount</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #667eea;" id="totalAmount">$0.00</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">Per Person</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #43e97b;" id="perPerson">$0.00</div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Breakdown</h4>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;">
+                            <span style="color: #718096;">Bill per person:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="billPerPerson">$0.00</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;">
+                            <span style="color: #718096;">Tip per person:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="tipPerPerson">$0.00</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #718096; font-weight: 600;">Total per person:</span>
+                            <span style="font-weight: 700; color: #667eea; font-size: 1.2rem;" id="totalPerPerson">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Share, Save, Export Buttons -->
+                    <div class="share-buttons" id="shareButtons" style="display: none;">
+                        <button class="share-btn share-btn-twitter" onclick="shareOnTwitter('I just calculated tips with Calculate For Me! 💰')" title="Share on Twitter">
+                            <i class="fab fa-twitter"></i> Tweet
+                        </button>
+                        <button class="share-btn share-btn-facebook" onclick="shareOnFacebook()" title="Share on Facebook">
+                            <i class="fab fa-facebook"></i> Share
+                        </button>
+                        <button class="share-btn share-btn-whatsapp" onclick="shareOnWhatsApp('Check out this Tip Calculator!')" title="Share on WhatsApp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="share-btn share-btn-copy" onclick="copyToClipboard(window.location.href)" title="Copy link">
+                            <i class="fas fa-link"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">Tipping Guide</h3>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>10-15%:</strong> Average service</li>
+                        <li><strong>15-18%:</strong> Good service</li>
+                        <li><strong>18-20%:</strong> Great service</li>
+                        <li><strong>20%+:</strong> Exceptional service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        const tipForm = document.getElementById('tipForm');
+        const resultContainer = document.getElementById('resultContainer');
+
+        tipForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateTip();
+        });
+
+        function setTip(percent) {
+            document.getElementById('tipPercent').value = percent;
+            
+            // Update button styles
+            const buttons = document.querySelectorAll('button[onclick^="setTip"]');
+            buttons.forEach(btn => {
+                if (btn.textContent === percent + '%') {
+                    btn.style.background = '#667eea';
+                    btn.style.color = 'white';
+                    btn.style.borderColor = '#667eea';
+                } else {
+                    btn.style.background = 'white';
+                    btn.style.color = '#2d3748';
+                    btn.style.borderColor = '#e2e8f0';
+                }
+            });
+        }
+
+        function calculateTip() {
+            const billAmount = parseFloat(document.getElementById('billAmount').value);
+            const tipPercent = parseFloat(document.getElementById('tipPercent').value);
+            const numPeople = parseInt(document.getElementById('numPeople').value);
+
+            if (billAmount <= 0 || numPeople <= 0) {
+                alert('Please enter valid values');
+                return;
+            }
+
+            const tipAmount = billAmount * (tipPercent / 100);
+            const totalAmount = billAmount + tipAmount;
+            const perPerson = totalAmount / numPeople;
+            const billPerPerson = billAmount / numPeople;
+            const tipPerPerson = tipAmount / numPeople;
+
+            document.getElementById('tipAmount').textContent = '$' + tipAmount.toFixed(2);
+            document.getElementById('totalAmount').textContent = '$' + totalAmount.toFixed(2);
+            document.getElementById('perPerson').textContent = '$' + perPerson.toFixed(2);
+            document.getElementById('billPerPerson').textContent = '$' + billPerPerson.toFixed(2);
+            document.getElementById('tipPerPerson').textContent = '$' + tipPerPerson.toFixed(2);
+            document.getElementById('totalPerPerson').textContent = '$' + perPerson.toFixed(2);
+
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Show share buttons after calculation
+            document.getElementById('shareButtons').style.display = 'flex';
+        }
+        
+        // Save Tip calculation to localStorage
+        function saveTipCalculation() {
+            const inputs = {
+                billAmount: '$' + document.getElementById('billAmount').value,
+                tipPercent: document.getElementById('tipPercent').value + '%',
+                numPeople: document.getElementById('numPeople').value
+            };
+            
+            const results = {
+                tipAmount: document.getElementById('tipAmount').textContent,
+                totalAmount: document.getElementById('totalAmount').textContent,
+                perPerson: document.getElementById('perPerson').textContent,
+                billPerPerson: document.getElementById('billPerPerson').textContent,
+                tipPerPerson: document.getElementById('tipPerPerson').textContent
+            };
+            
+            saveCalculation('Tip Calculator', inputs, results);
+        }
+        
+        // Export Tip results as text
+        function exportTipResults() {
+            const billAmount = document.getElementById('billAmount').value;
+            const tipPercent = document.getElementById('tipPercent').value;
+            const numPeople = document.getElementById('numPeople').value;
+            const tipAmount = document.getElementById('tipAmount').textContent;
+            const totalAmount = document.getElementById('totalAmount').textContent;
+            const perPerson = document.getElementById('perPerson').textContent;
+            const billPerPerson = document.getElementById('billPerPerson').textContent;
+            const tipPerPerson = document.getElementById('tipPerPerson').textContent;
+            
+            const exportText = `TIP CALCULATOR RESULTS\n` +
+                `${'='.repeat(50)}\n\n` +
+                `Generated: ${new Date().toLocaleString()}\n` +
+                `Calculator: Calculate For Me Tip Calculator\n\n` +
+                `INPUT VALUES\n` +
+                `${'-'.repeat(50)}\n` +
+                `Bill Amount: $${billAmount}\n` +
+                `Tip Percentage: ${tipPercent}%\n` +
+                `Number of People: ${numPeople}\n\n` +
+                `RESULTS\n` +
+                `${'-'.repeat(50)}\n` +
+                `Tip Amount: ${tipAmount}\n` +
+                `Total Amount: ${totalAmount}\n` +
+                `Total Per Person: ${perPerson}\n\n` +
+                `DETAILED BREAKDOWN\n` +
+                `${'-'.repeat(50)}\n` +
+                `Bill Per Person: ${billPerPerson}\n` +
+                `Tip Per Person: ${tipPerPerson}\n` +
+                `Total Per Person: ${perPerson}\n\n` +
+                `${'='.repeat(50)}\n` +
+                `Calculate tips: ${window.location.href}\n` +
+                `© ${new Date().getFullYear()} Calculate For Me - Free Online Calculators`;
+            
+            downloadFile(exportText, 'Tip_Calculator_' + Date.now() + '.txt', 'text/plain');
+        }
+
+        // Calculate on input change
+        document.getElementById('tipPercent').addEventListener('input', () => {
+            if (document.getElementById('billAmount').value && document.getElementById('numPeople').value) {
+                calculateTip();
+            }
+        });
+    </script>
+</body>
+</html>
+
+

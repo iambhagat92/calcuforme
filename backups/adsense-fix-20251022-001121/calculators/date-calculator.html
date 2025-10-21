@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Date Calculator - Calculate date differences, add or subtract days, weeks, months, or years from any date.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Calculate For Me">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalculateForMe">
+    <title>Date Calculator - Days Between Dates | Calculate For Me</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC3ZC6EBG');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-calendar-alt"></i> Date Calculator</h1>
+                    <p>Calculate the difference between dates or add/subtract time from a date</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; margin-bottom: 1rem; color: #2d3748; font-weight: 600;">Choose Calculation Type:</label>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="btn btn-primary" id="btnDifference" onclick="showDifferenceForm()">
+                            <i class="fas fa-minus"></i> Date Difference
+                        </button>
+                        <button class="btn" id="btnAddSubtract" onclick="showAddSubtractForm()">
+                            <i class="fas fa-plus"></i> Add/Subtract Time
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Date Difference Form -->
+                <form id="differenceForm">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Calculate Date Difference</h3>
+                    
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>End Date</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Difference
+                    </button>
+                </form>
+
+                <!-- Add/Subtract Form -->
+                <form id="addSubtractForm" style="display: none;">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Add or Subtract Time</h3>
+                    
+                    <div class="form-group">
+                        <label>From Date</label>
+                        <input type="date" id="baseDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Operation</label>
+                        <select id="operation">
+                            <option value="add">Add</option>
+                            <option value="subtract">Subtract</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" id="amount" min="0" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Unit</label>
+                        <select id="unit">
+                            <option value="days">Days</option>
+                            <option value="weeks">Weeks</option>
+                            <option value="months">Months</option>
+                            <option value="years">Years</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Date
+                    </button>
+                </form>
+
+                <!-- Results for Difference -->
+                <div id="differenceResult" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Time Difference</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Total Days</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="totalDays">0</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Total Weeks</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="totalWeeks">0</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Total Months</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="totalMonths">0</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #fee140 0%, #fa709a 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Total Years</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="totalYears">0</div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Detailed Breakdown</h4>
+                        <div style="color: #718096; line-height: 2;" id="detailedBreakdown"></div>
+                    </div>
+                </div>
+
+                <!-- Results for Add/Subtract -->
+                <div id="addSubtractResult" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Result</h3>
+                    
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 12px; color: white; text-align: center; margin-bottom: 2rem;">
+                        <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">New Date</div>
+                        <div style="font-size: 2.5rem; font-weight: 700;" id="resultDate">-</div>
+                        <div style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;" id="resultDateFormatted">-</div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Calculation Summary</h4>
+                        <p id="calculationSummary" style="color: #718096; line-height: 1.8; margin: 0;"></p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">About Date Calculations</h3>
+                    <p style="color: #718096; line-height: 1.8; margin-bottom: 1rem;">
+                        This calculator helps you work with dates in various ways. You can calculate the exact time difference between two dates or add/subtract time from a specific date.
+                    </p>
+                    <h4 style="color: #2d3748; margin: 1.5rem 0 0.75rem 0;">Use Cases:</h4>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>Age Calculation:</strong> Calculate exact age by finding difference from birthdate to today</li>
+                        <li><strong>Project Planning:</strong> Calculate project duration or deadline dates</li>
+                        <li><strong>Event Countdown:</strong> Find days remaining until an important event</li>
+                        <li><strong>Historical Analysis:</strong> Calculate time spans between historical events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // Set default dates
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('startDate').value = today;
+        document.getElementById('endDate').value = today;
+        document.getElementById('baseDate').value = today;
+
+        // Form toggling
+        function showDifferenceForm() {
+            document.getElementById('differenceForm').style.display = 'block';
+            document.getElementById('addSubtractForm').style.display = 'none';
+            document.getElementById('differenceResult').classList.remove('active');
+            document.getElementById('addSubtractResult').classList.remove('active');
+            document.getElementById('btnDifference').classList.add('btn-primary');
+            document.getElementById('btnDifference').classList.remove('btn');
+            document.getElementById('btnAddSubtract').classList.remove('btn-primary');
+            document.getElementById('btnAddSubtract').classList.add('btn');
+        }
+
+        function showAddSubtractForm() {
+            document.getElementById('differenceForm').style.display = 'none';
+            document.getElementById('addSubtractForm').style.display = 'block';
+            document.getElementById('differenceResult').classList.remove('active');
+            document.getElementById('addSubtractResult').classList.remove('active');
+            document.getElementById('btnAddSubtract').classList.add('btn-primary');
+            document.getElementById('btnAddSubtract').classList.remove('btn');
+            document.getElementById('btnDifference').classList.remove('btn-primary');
+            document.getElementById('btnDifference').classList.add('btn');
+        }
+
+        // Difference calculation
+        document.getElementById('differenceForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const startDate = new Date(document.getElementById('startDate').value);
+            const endDate = new Date(document.getElementById('endDate').value);
+            
+            // Calculate difference in milliseconds
+            const diffTime = Math.abs(endDate - startDate);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const diffWeeks = Math.floor(diffDays / 7);
+            const diffMonths = Math.floor(diffDays / 30.44); // Average month length
+            const diffYears = Math.floor(diffDays / 365.25); // Account for leap years
+            
+            // Calculate detailed breakdown
+            const years = Math.floor(diffDays / 365.25);
+            const remainingAfterYears = diffDays - (years * 365.25);
+            const months = Math.floor(remainingAfterYears / 30.44);
+            const remainingAfterMonths = remainingAfterYears - (months * 30.44);
+            const days = Math.floor(remainingAfterMonths);
+            
+            // Display results
+            document.getElementById('totalDays').textContent = diffDays.toLocaleString();
+            document.getElementById('totalWeeks').textContent = diffWeeks.toLocaleString();
+            document.getElementById('totalMonths').textContent = diffMonths.toLocaleString();
+            document.getElementById('totalYears').textContent = diffYears.toLocaleString();
+            
+            // Detailed breakdown
+            let breakdown = `<strong>${years}</strong> years, <strong>${months}</strong> months, and <strong>${days}</strong> days<br><br>`;
+            breakdown += `Or equivalently:<br>`;
+            breakdown += `• ${diffDays.toLocaleString()} days<br>`;
+            breakdown += `• ${(diffDays * 24).toLocaleString()} hours<br>`;
+            breakdown += `• ${(diffDays * 24 * 60).toLocaleString()} minutes<br>`;
+            breakdown += `• ${(diffDays * 24 * 60 * 60).toLocaleString()} seconds`;
+            
+            document.getElementById('detailedBreakdown').innerHTML = breakdown;
+            
+            document.getElementById('differenceResult').classList.add('active');
+            document.getElementById('differenceResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        // Add/Subtract calculation
+        document.getElementById('addSubtractForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const baseDate = new Date(document.getElementById('baseDate').value);
+            const operation = document.getElementById('operation').value;
+            const amount = parseInt(document.getElementById('amount').value);
+            const unit = document.getElementById('unit').value;
+            
+            let resultDate = new Date(baseDate);
+            const multiplier = operation === 'add' ? 1 : -1;
+            
+            switch(unit) {
+                case 'days':
+                    resultDate.setDate(resultDate.getDate() + (amount * multiplier));
+                    break;
+                case 'weeks':
+                    resultDate.setDate(resultDate.getDate() + (amount * 7 * multiplier));
+                    break;
+                case 'months':
+                    resultDate.setMonth(resultDate.getMonth() + (amount * multiplier));
+                    break;
+                case 'years':
+                    resultDate.setFullYear(resultDate.getFullYear() + (amount * multiplier));
+                    break;
+            }
+            
+            // Format the result
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = resultDate.toLocaleDateString('en-US', options);
+            const shortDate = resultDate.toISOString().split('T')[0];
+            
+            document.getElementById('resultDate').textContent = shortDate;
+            document.getElementById('resultDateFormatted').textContent = formattedDate;
+            
+            // Summary
+            const summary = `Starting from ${baseDate.toLocaleDateString('en-US', options)}, ` +
+                          `${operation === 'add' ? 'adding' : 'subtracting'} ${amount} ${unit} ` +
+                          `results in ${formattedDate}.`;
+            document.getElementById('calculationSummary').textContent = summary;
+            
+            document.getElementById('addSubtractResult').classList.add('active');
+            document.getElementById('addSubtractResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>
+
+

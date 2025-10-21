@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter - Celsius to Fahrenheit | Calculate For Me</title>
+    <meta name="description" content="Free temperature converter. Convert between Celsius, Fahrenheit, Kelvin, and Rankine. Instant temperature conversion with formulas and examples.">
+    <meta name="keywords" content="temperature converter, celsius to fahrenheit, fahrenheit to celsius, kelvin converter, temperature conversion">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <div class="calculator-header-content">
+                <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                    <a href="../index.html" style="color: rgba(255,255,255,0.8);">Home</a> > 
+                    <a href="../index.html#categories" style="color: rgba(255,255,255,0.8);">Calculators</a> > 
+                    <span>Temperature Converter</span>
+                </nav>
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Temperature Converter</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Convert between Celsius, Fahrenheit, Kelvin, and Rankine scales</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-content" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px;">
+            
+            <div class="calculator-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                
+                <!-- Temperature Converter -->
+                <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                        <i class="fas fa-thermometer-half" style="color: #43e97b;"></i> Temperature Converter
+                    </h2>
+                    
+                    <!-- Input Temperature -->
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: #374151; font-weight: 600;">Enter Temperature</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="number" id="input-temp" placeholder="Enter temperature" 
+                                   style="flex: 1; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" step="0.01">
+                            <select id="input-unit" onchange="convertTemperature()" style="padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; background: white;">
+                                <option value="celsius">°C (Celsius)</option>
+                                <option value="fahrenheit">°F (Fahrenheit)</option>
+                                <option value="kelvin">K (Kelvin)</option>
+                                <option value="rankine">°R (Rankine)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Results Grid -->
+                    <div id="conversion-results">
+                        <h3 style="color: #374151; margin-bottom: 1.5rem; font-size: 1.2rem;">Converted Temperatures</h3>
+                        
+                        <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #ef4444;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-thermometer-empty"></i> Celsius (°C):</span>
+                                <span id="celsius-result" style="font-weight: bold; color: #ef4444; font-size: 1.2rem;">0.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-thermometer-half"></i> Fahrenheit (°F):</span>
+                                <span id="fahrenheit-result" style="font-weight: bold; color: #f59e0b; font-size: 1.2rem;">32.00</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-thermometer-full"></i> Kelvin (K):</span>
+                                <span id="kelvin-result" style="font-weight: bold; color: #3b82f6; font-size: 1.2rem;">273.15</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f8fafc; border-radius: 8px; border-left: 4px solid #10b981;">
+                                <span style="font-weight: 600; color: #374151;"><i class="fas fa-thermometer-quarter"></i> Rankine (°R):</span>
+                                <span id="rankine-result" style="font-weight: bold; color: #10b981; font-size: 1.2rem;">491.67</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Conversion Buttons -->
+                    <div style="border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+                        <h4 style="color: #374151; margin-bottom: 1rem;">Quick Conversions</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <button onclick="quickConvert(0, 'celsius')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">Water Freezing (0°C)</button>
+                            <button onclick="quickConvert(100, 'celsius')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">Water Boiling (100°C)</button>
+                            <button onclick="quickConvert(37, 'celsius')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">Body Temp (37°C)</button>
+                            <button onclick="quickConvert(25, 'celsius')" style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.9rem;">Room Temp (25°C)</button>
+                        </div>
+                    </div>
+
+                    <!-- Swap Button -->
+                    <button type="button" onclick="swapUnits()" 
+                            style="width: 100%; background: #43e97b; color: white; border: none; padding: 0.75rem; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 1rem;">
+                        <i class="fas fa-exchange-alt"></i> Swap Units
+                    </button>
+                </div>
+
+                <!-- Formulas and Reference -->
+                <div class="calculator-card" style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+                    <h2 style="color: #2d3748; margin-bottom: 2rem; font-size: 1.5rem;">
+                        <i class="fas fa-calculator" style="color: #43e97b;"></i> Conversion Formulas
+                    </h2>
+                    
+                    <!-- Celsius Conversions -->
+                    <div style="margin-bottom: 2rem; background: #fef2f2; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ef4444;">
+                        <h4 style="color: #991b1b; margin-bottom: 1rem;"><i class="fas fa-thermometer-empty"></i> From Celsius (°C)</h4>
+                        <div style="font-family: 'Courier New', monospace; color: #7f1d1d; line-height: 1.8;">
+                            <div>°F = (°C × 9/5) + 32</div>
+                            <div>K = °C + 273.15</div>
+                            <div>°R = (°C + 273.15) × 9/5</div>
+                        </div>
+                    </div>
+
+                    <!-- Fahrenheit Conversions -->
+                    <div style="margin-bottom: 2rem; background: #fefbeb; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h4 style="color: #92400e; margin-bottom: 1rem;"><i class="fas fa-thermometer-half"></i> From Fahrenheit (°F)</h4>
+                        <div style="font-family: 'Courier New', monospace; color: #78350f; line-height: 1.8;">
+                            <div>°C = (°F - 32) × 5/9</div>
+                            <div>K = (°F - 32) × 5/9 + 273.15</div>
+                            <div>°R = °F + 459.67</div>
+                        </div>
+                    </div>
+
+                    <!-- Kelvin Conversions -->
+                    <div style="margin-bottom: 2rem; background: #eff6ff; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                        <h4 style="color: #1e40af; margin-bottom: 1rem;"><i class="fas fa-thermometer-full"></i> From Kelvin (K)</h4>
+                        <div style="font-family: 'Courier New', monospace; color: #1e3a8a; line-height: 1.8;">
+                            <div>°C = K - 273.15</div>
+                            <div>°F = (K - 273.15) × 9/5 + 32</div>
+                            <div>°R = K × 9/5</div>
+                        </div>
+                    </div>
+
+                    <!-- Temperature Scale Reference -->
+                    <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #22c55e;">
+                        <h4 style="color: #047857; margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> Temperature Scale Reference</h4>
+                        <div style="color: #065f46; line-height: 1.8; font-size: 0.95rem;">
+                            <div><strong>Celsius:</strong> Water freezes at 0°C, boils at 100°C</div>
+                            <div><strong>Fahrenheit:</strong> Water freezes at 32°F, boils at 212°F</div>
+                            <div><strong>Kelvin:</strong> Absolute zero at 0K (-273.15°C)</div>
+                            <div><strong>Rankine:</strong> Absolute zero at 0°R (-459.67°F)</div>
+                        </div>
+                    </div>
+
+                    <!-- Common Temperatures -->
+                    <div style="margin-top: 2rem; background: #f8fafc; padding: 1.5rem; border-radius: 12px;">
+                        <h4 style="color: #374151; margin-bottom: 1rem;"><i class="fas fa-thermometer-quarter"></i> Common Temperatures</h4>
+                        <table style="width: 100%; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: #e5e7eb;">
+                                    <th style="padding: 0.5rem; text-align: left;">Reference</th>
+                                    <th style="padding: 0.5rem; text-align: center;">°C</th>
+                                    <th style="padding: 0.5rem; text-align: center;">°F</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.5rem;">Absolute Zero</td>
+                                    <td style="padding: 0.5rem; text-align: center;">-273.15</td>
+                                    <td style="padding: 0.5rem; text-align: center;">-459.67</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 0.5rem;">Water Freezes</td>
+                                    <td style="padding: 0.5rem; text-align: center;">0</td>
+                                    <td style="padding: 0.5rem; text-align: center;">32</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem;">Room Temperature</td>
+                                    <td style="padding: 0.5rem; text-align: center;">20-25</td>
+                                    <td style="padding: 0.5rem; text-align: center;">68-77</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 0.5rem;">Body Temperature</td>
+                                    <td style="padding: 0.5rem; text-align: center;">37</td>
+                                    <td style="padding: 0.5rem; text-align: center;">98.6</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem;">Water Boils</td>
+                                    <td style="padding: 0.5rem; text-align: center;">100</td>
+                                    <td style="padding: 0.5rem; text-align: center;">212</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="weight-calculator.html">Weight Calculator</a></li>
+                        <li><a href="ring-size-converter.html">Ring Size Converter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function convertTemperature() {
+            const inputTemp = parseFloat(document.getElementById('input-temp').value);
+            const inputUnit = document.getElementById('input-unit').value;
+            
+            if (isNaN(inputTemp)) {
+                // Reset to default values
+                document.getElementById('celsius-result').textContent = '0.00';
+                document.getElementById('fahrenheit-result').textContent = '32.00';
+                document.getElementById('kelvin-result').textContent = '273.15';
+                document.getElementById('rankine-result').textContent = '491.67';
+                return;
+            }
+            
+            let celsius, fahrenheit, kelvin, rankine;
+            
+            // Convert input to all scales
+            switch(inputUnit) {
+                case 'celsius':
+                    celsius = inputTemp;
+                    fahrenheit = (celsius * 9/5) + 32;
+                    kelvin = celsius + 273.15;
+                    rankine = (celsius + 273.15) * 9/5;
+                    break;
+                case 'fahrenheit':
+                    fahrenheit = inputTemp;
+                    celsius = (fahrenheit - 32) * 5/9;
+                    kelvin = celsius + 273.15;
+                    rankine = fahrenheit + 459.67;
+                    break;
+                case 'kelvin':
+                    kelvin = inputTemp;
+                    celsius = kelvin - 273.15;
+                    fahrenheit = celsius * 9/5 + 32;
+                    rankine = kelvin * 9/5;
+                    break;
+                case 'rankine':
+                    rankine = inputTemp;
+                    fahrenheit = rankine - 459.67;
+                    celsius = (fahrenheit - 32) * 5/9;
+                    kelvin = celsius + 273.15;
+                    break;
+            }
+            
+            // Display results
+            document.getElementById('celsius-result').textContent = celsius.toFixed(2);
+            document.getElementById('fahrenheit-result').textContent = fahrenheit.toFixed(2);
+            document.getElementById('kelvin-result').textContent = kelvin.toFixed(2);
+            document.getElementById('rankine-result').textContent = rankine.toFixed(2);
+        }
+
+        function quickConvert(temp, unit) {
+            document.getElementById('input-temp').value = temp;
+            document.getElementById('input-unit').value = unit;
+            convertTemperature();
+        }
+
+        function swapUnits() {
+            const select = document.getElementById('input-unit');
+            const currentIndex = select.selectedIndex;
+            const nextIndex = (currentIndex + 1) % select.options.length;
+            select.selectedIndex = nextIndex;
+            convertTemperature();
+        }
+
+        // Auto-convert on input change
+        document.getElementById('input-temp').addEventListener('input', convertTemperature);
+
+        // Initialize with default conversion
+        convertTemperature();
+    </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter - Subscribe for Updates | Calculate For Me</title>
+    <meta name="description" content="Subscribe to Calculate For Me newsletter for weekly updates on financial planning, tax saving tips, calculator tools, and investment strategies.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <style>
+        .newsletter-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .subscription-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-top: -4rem;
+            position: relative;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+            font-weight: 600;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f7fafc;
+            border-radius: 12px;
+        }
+        .benefit-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .frequency-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .frequency-option {
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .frequency-option:hover, .frequency-option.active {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        .success-message {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .error-message {
+            display: none;
+            background: #ef4444;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#categories">Calculators</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="saved-calculations.html">Saved</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#categories">Categories</a>
+            <a href="blog.html">Blog</a>
+            <a href="saved-calculations.html">Saved</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="newsletter-hero">
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">Stay Updated with Calculate For Me</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Get exclusive financial tips, calculator updates, and money-saving strategies delivered to your inbox</p>
+    </div>
+
+    <!-- Newsletter Container -->
+    <div class="newsletter-container">
+        <!-- Subscription Form -->
+        <div class="subscription-form">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #2d3748;">Subscribe to Our Newsletter</h2>
+            
+            <div id="successMessage" class="success-message">
+                <i class="fas fa-check-circle"></i> Thank you for subscribing! Check your email for confirmation.
+            </div>
+            
+            <div id="errorMessage" class="error-message">
+                <i class="fas fa-exclamation-circle"></i> <span id="errorText">Please fill all required fields correctly.</span>
+            </div>
+
+            <form id="newsletterForm">
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Newsletter Frequency</label>
+                    <div class="frequency-options">
+                        <div class="frequency-option active" data-frequency="weekly">
+                            <i class="fas fa-calendar-week"></i>
+                            <div>Weekly</div>
+                        </div>
+                        <div class="frequency-option" data-frequency="biweekly">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>Bi-Weekly</div>
+                        </div>
+                        <div class="frequency-option" data-frequency="monthly">
+                            <i class="fas fa-calendar"></i>
+                            <div>Monthly</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="frequency" name="frequency" value="weekly">
+                </div>
+
+                <div class="form-group">
+                    <label>Topics of Interest (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="topic1" name="topics" value="tax-planning" checked>
+                        <label for="topic1">Tax Planning & Savings</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="topic2" name="topics" value="investments" checked>
+                        <label for="topic2">Investment Strategies</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="topic3" name="topics" value="loans">
+                        <label for="topic3">Loan & EMI Management</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="topic4" name="topics" value="retirement">
+                        <label for="topic4">Retirement Planning</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="topic5" name="topics" value="health-fitness">
+                        <label for="topic5">Health & Fitness Calculators</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="topic6" name="topics" value="calculator-updates">
+                        <label for="topic6">New Calculator Tools</label>
+                    </div>
+                </div>
+
+                <div class="checkbox-group" style="margin-bottom: 2rem;">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">I agree to receive emails and accept the <a href="privacy.html" style="color: #667eea;">Privacy Policy</a></label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-envelope"></i> Subscribe Now
+                </button>
+            </form>
+        </div>
+
+        <!-- Benefits Section -->
+        <h2 style="text-align: center; margin-top: 4rem; color: #2d3748;">What You'll Get</h2>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Market Insights</h3>
+                <p>Latest updates on interest rates, tax changes, and market trends</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <h3>Money-Saving Tips</h3>
+                <p>Practical strategies to reduce taxes and optimize investments</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Calculator Guides</h3>
+                <p>How-to guides for using our calculators effectively</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Exclusive Content</h3>
+                <p>Subscriber-only articles and downloadable resources</p>
+            </div>
+        </div>
+
+        <!-- Sample Newsletter -->
+        <div style="background: #f7fafc; padding: 2rem; border-radius: 12px; margin: 3rem 0;">
+            <h3 style="color: #2d3748; margin-bottom: 1rem;">Recent Newsletter Topics</h3>
+            <ul style="color: #4a5568; line-height: 2;">
+                <li>📊 EPFO New Rules 2025: What Changes for Your PF?</li>
+                <li>💰 How to Save ₹50,000 in Taxes This Year</li>
+                <li>🏠 Home Loan Prepayment vs Investment: Which is Better?</li>
+                <li>📈 Best ELSS Funds for 2025 Tax Savings</li>
+                <li>🏥 Health Insurance: Coverage Checklist for 2025</li>
+                <li>🎯 Retirement Planning: Start with Just ₹5,000/month</li>
+            </ul>
+        </div>
+
+        <!-- Trust Badges -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <p style="color: #718096; margin-bottom: 1rem;">Join 50,000+ subscribers who trust Calculate For Me</p>
+            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+                <div>
+                    <i class="fas fa-lock" style="color: #10b981; font-size: 2rem;"></i>
+                    <p style="color: #4a5568; margin-top: 0.5rem;">100% Secure</p>
+                </div>
+                <div>
+                    <i class="fas fa-ban" style="color: #ef4444; font-size: 2rem;"></i>
+                    <p style="color: #4a5568; margin-top: 0.5rem;">No Spam</p>
+                </div>
+                <div>
+                    <i class="fas fa-times-circle" style="color: #f59e0b; font-size: 2rem;"></i>
+                    <p style="color: #4a5568; margin-top: 0.5rem;">Unsubscribe Anytime</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #1a202c; color: white; padding: 3rem 0; margin-top: 4rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h4>About Calculate For Me</h4>
+                    <p style="color: #cbd5e0; line-height: 1.6;">Your trusted companion for all financial calculations and planning needs.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="index.html" style="color: #cbd5e0; text-decoration: none;">Home</a></li>
+                        <li><a href="blog.html" style="color: #cbd5e0; text-decoration: none;">Blog</a></li>
+                        <li><a href="privacy.html" style="color: #cbd5e0; text-decoration: none;">Privacy Policy</a></li>
+                        <li><a href="terms.html" style="color: #cbd5e0; text-decoration: none;">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p style="color: #cbd5e0;">
+                        <i class="fas fa-envelope"></i> support@CalculateForMe.com<br>
+                        <i class="fas fa-phone"></i> +91 98765 43210
+                    </p>
+                </div>
+            </div>
+            <hr style="border-color: #4a5568; margin: 2rem 0;">
+            <p style="text-align: center; color: #cbd5e0;">© 2025 Calculate For Me. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('active');
+        });
+
+        document.getElementById('closeMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        });
+
+        // Frequency selection
+        document.querySelectorAll('.frequency-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.frequency-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('frequency').value = this.dataset.frequency;
+            });
+        });
+
+        // Form submission
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const frequency = document.getElementById('frequency').value;
+            const privacy = document.getElementById('privacy').checked;
+            
+            // Get selected topics
+            const topics = [];
+            document.querySelectorAll('input[name="topics"]:checked').forEach(checkbox => {
+                topics.push(checkbox.value);
+            });
+            
+            // Validation
+            if (!email || !name || !privacy) {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('errorText').textContent = 'Please fill all required fields and accept the privacy policy.';
+                setTimeout(() => {
+                    document.getElementById('errorMessage').style.display = 'none';
+                }, 5000);
+                return;
+            }
+            
+            if (topics.length === 0) {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('errorText').textContent = 'Please select at least one topic of interest.';
+                setTimeout(() => {
+                    document.getElementById('errorMessage').style.display = 'none';
+                }, 5000);
+                return;
+            }
+            
+            // Store subscription data in localStorage (for demo purposes)
+            const subscriptionData = {
+                email,
+                name,
+                frequency,
+                topics,
+                subscribedAt: new Date().toISOString()
+            };
+            
+            // Get existing subscriptions or initialize empty array
+            let subscriptions = JSON.parse(localStorage.getItem('newsletterSubscriptions')) || [];
+            
+            // Check if email already exists
+            if (subscriptions.some(sub => sub.email === email)) {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('errorText').textContent = 'This email is already subscribed.';
+                setTimeout(() => {
+                    document.getElementById('errorMessage').style.display = 'none';
+                }, 5000);
+                return;
+            }
+            
+            // Add new subscription
+            subscriptions.push(subscriptionData);
+            localStorage.setItem('newsletterSubscriptions', JSON.stringify(subscriptions));
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            document.querySelectorAll('.frequency-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelector('.frequency-option[data-frequency="weekly"]').classList.add('active');
+            document.getElementById('frequency').value = 'weekly';
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
+

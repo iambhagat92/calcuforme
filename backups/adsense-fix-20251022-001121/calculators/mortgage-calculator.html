@@ -1,0 +1,579 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Mortgage Calculator - Calculate monthly mortgage payments, total interest, and view complete amortization schedule with taxes and insurance.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Calculate For Me">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalculateForMe">
+    <title>Mortgage Calculator - Home Loan Payment | Calculate For Me</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC3ZC6EBG');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-home"></i> Mortgage Calculator</h1>
+                    <p>Calculate your monthly mortgage payments including property taxes, insurance, and HOA fees</p>
+                </div>
+
+                <form id="mortgageForm">
+                    <!-- Currency Selector -->
+                    <div class="form-group">
+                        <label for="currency">
+                            <i class="fas fa-coins"></i> Currency
+                        </label>
+                        <select id="currency" onchange="updateCurrencySymbols()">
+                            <option value="USD" data-symbol="$">USD - US Dollar ($)</option>
+                            <option value="EUR" data-symbol="€">EUR - Euro (€)</option>
+                            <option value="GBP" data-symbol="£">GBP - British Pound (£)</option>
+                            <option value="CAD" data-symbol="C$">CAD - Canadian Dollar (C$)</option>
+                            <option value="AUD" data-symbol="A$">AUD - Australian Dollar (A$)</option>
+                            <option value="JPY" data-symbol="¥">JPY - Japanese Yen (¥)</option>
+                            <option value="CHF" data-symbol="CHF">CHF - Swiss Franc (CHF)</option>
+                            <option value="INR" data-symbol="₹">INR - Indian Rupee (₹)</option>
+                            <option value="CNY" data-symbol="¥">CNY - Chinese Yuan (¥)</option>
+                            <option value="MXN" data-symbol="$">MXN - Mexican Peso ($)</option>
+                            <option value="BRL" data-symbol="R$">BRL - Brazilian Real (R$)</option>
+                            <option value="ZAR" data-symbol="R">ZAR - South African Rand (R)</option>
+                            <option value="SGD" data-symbol="S$">SGD - Singapore Dollar (S$)</option>
+                            <option value="NZD" data-symbol="NZ$">NZD - New Zealand Dollar (NZ$)</option>
+                            <option value="HKD" data-symbol="HK$">HKD - Hong Kong Dollar (HK$)</option>
+                        </select>
+                        <small>Select your preferred currency</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Home Price (<span class="currency-symbol">$</span>)</label>
+                        <input type="number" id="homePrice" min="1000" step="1000" value="300000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Down Payment (<span class="currency-symbol">$</span>)</label>
+                        <input type="number" id="downPayment" min="0" step="1000" value="60000" required>
+                        <small id="downPaymentPercent" style="display: block; margin-top: 0.5rem; color: #667eea;"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Term (years)</label>
+                        <select id="loanTerm">
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="30" selected>30 years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Interest Rate (% per year)</label>
+                        <input type="number" id="interestRate" min="0" max="20" step="0.01" value="6.5" required>
+                    </div>
+
+                    <div style="margin: 2rem 0; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Additional Costs (Optional)</h4>
+                        
+                        <div class="form-group">
+                            <label>Property Tax (<span class="currency-symbol">$</span> per year)</label>
+                            <input type="number" id="propertyTax" min="0" step="100" value="3600" placeholder="Annual property tax">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Home Insurance (<span class="currency-symbol">$</span> per year)</label>
+                            <input type="number" id="homeInsurance" min="0" step="50" value="1200" placeholder="Annual insurance premium">
+                        </div>
+
+                        <div class="form-group">
+                            <label>HOA Fees (<span class="currency-symbol">$</span> per month)</label>
+                            <input type="number" id="hoaFees" min="0" step="10" value="0" placeholder="Monthly HOA fees">
+                        </div>
+
+                        <div class="form-group">
+                            <label>PMI (<span class="currency-symbol">$</span> per month)</label>
+                            <input type="number" id="pmi" min="0" step="10" value="0" placeholder="Private Mortgage Insurance">
+                            <small>Usually required if down payment is less than 20%</small>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Mortgage
+                    </button>
+                </form>
+
+                <div id="resultContainer" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Mortgage Summary</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Monthly Payment</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="totalMonthlyPayment"><span class="currency-symbol">$</span>0</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.25rem;">Principal + Interest + Extras</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">Loan Amount</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #667eea;" id="loanAmount"><span class="currency-symbol">$</span>0</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">Total Interest</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #f5576c;" id="totalInterest"><span class="currency-symbol">$</span>0</div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Monthly Payment Breakdown</h4>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">Principal & Interest:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="monthlyPI"><span class="currency-symbol">$</span>0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">Property Tax:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="monthlyTax"><span class="currency-symbol">$</span>0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">Home Insurance:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="monthlyInsurance"><span class="currency-symbol">$</span>0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">HOA Fees:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="monthlyHOA"><span class="currency-symbol">$</span>0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">PMI:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="monthlyPMI"><span class="currency-symbol">$</span>0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding-top: 0.75rem; margin-top: 0.75rem; border-top: 2px solid #e2e8f0;">
+                            <span style="font-weight: 600;">Total Monthly Payment:</span>
+                            <span style="font-weight: 700; color: #667eea; font-size: 1.2rem;" id="totalMonthlyBreakdown"><span class="currency-symbol">$</span>0</span>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Loan Details</h4>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">Home Price:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="homePriceDisplay"><span class="currency-symbol">$</span>0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">Down Payment:</span>
+                            <span style="font-weight: 600; color: #43e97b;" id="downPaymentDisplay"><span class="currency-symbol">$</span>0 (0%)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="color: #718096;">Loan Term:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="termDisplay">0 years</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #718096;">Interest Rate:</span>
+                            <span style="font-weight: 600; color: #2d3748;" id="rateDisplay">0%</span>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleSchedule()" class="btn btn-primary" style="margin-bottom: 1rem;">
+                        <i class="fas fa-table"></i> <span id="scheduleToggle">Show Amortization Schedule</span>
+                    </button>
+
+                    <div id="amortizationSchedule" style="display: none; background: white; padding: 1.5rem; border-radius: 12px; overflow-x: auto;">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Amortization Schedule</h4>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: #f8f9fa;">
+                                    <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #e2e8f0;">Payment #</th>
+                                    <th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #e2e8f0;">Payment</th>
+                                    <th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #e2e8f0;">Principal</th>
+                                    <th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #e2e8f0;">Interest</th>
+                                    <th style="padding: 0.75rem; text-align: right; border-bottom: 2px solid #e2e8f0;">Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduleBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">How Mortgage Payments are Calculated</h3>
+                    <p style="color: #718096; line-height: 1.8; margin-bottom: 1rem;">
+                        Your monthly mortgage payment consists of several components:
+                    </p>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>Principal & Interest (P&I):</strong> Calculated using the standard amortization formula</li>
+                        <li><strong>Property Tax:</strong> Annual property tax divided by 12 months</li>
+                        <li><strong>Home Insurance:</strong> Annual insurance premium divided by 12 months</li>
+                        <li><strong>HOA Fees:</strong> Monthly homeowners association fees</li>
+                        <li><strong>PMI:</strong> Private Mortgage Insurance, typically required if down payment is less than 20%</li>
+                    </ul>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; margin: 1.5rem 0; font-family: monospace;">
+                        M = P × [r(1+r)^n] / [(1+r)^n-1]
+                    </div>
+                    <p style="color: #718096; line-height: 1.8;">
+                        Where: M = Monthly payment, P = Principal (loan amount), r = Monthly interest rate, n = Number of payments
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // Currency Helper Functions
+        function getCurrencySymbol() {
+            const currencySelect = document.getElementById('currency');
+            if (!currencySelect) return '$';
+            const selectedOption = currencySelect.options[currencySelect.selectedIndex];
+            return selectedOption.getAttribute('data-symbol');
+        }
+
+        function updateCurrencySymbols() {
+            const symbol = getCurrencySymbol();
+            document.querySelectorAll('.currency-symbol').forEach(el => {
+                el.textContent = symbol;
+            });
+        }
+
+        function formatCurrency(amount) {
+            const symbol = getCurrencySymbol();
+            return '<span class="currency-symbol">' + symbol + '</span>' + amount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+
+        const mortgageForm = document.getElementById('mortgageForm');
+        const resultContainer = document.getElementById('resultContainer');
+        const homePrice = document.getElementById('homePrice');
+        const downPayment = document.getElementById('downPayment');
+        const downPaymentPercent = document.getElementById('downPaymentPercent');
+
+        // Update down payment percentage display
+        function updateDownPaymentPercent() {
+            const price = parseFloat(homePrice.value) || 0;
+            const down = parseFloat(downPayment.value) || 0;
+            if (price > 0) {
+                const percent = (down / price) * 100;
+                downPaymentPercent.textContent = `${percent.toFixed(1)}% of home price`;
+                
+                // Update PMI suggestion
+                if (percent < 20) {
+                    downPaymentPercent.style.color = '#f5576c';
+                    downPaymentPercent.textContent += ' (PMI may be required)';
+                } else {
+                    downPaymentPercent.style.color = '#43e97b';
+                }
+            }
+        }
+
+        homePrice.addEventListener('input', updateDownPaymentPercent);
+        downPayment.addEventListener('input', updateDownPaymentPercent);
+        updateDownPaymentPercent();
+
+        mortgageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateMortgage();
+        });
+
+        function calculateMortgage() {
+            // Get form values
+            const price = parseFloat(homePrice.value);
+            const down = parseFloat(downPayment.value);
+            const principal = price - down;
+            const annualRate = parseFloat(document.getElementById('interestRate').value);
+            const termYears = parseInt(document.getElementById('loanTerm').value);
+            const propertyTax = parseFloat(document.getElementById('propertyTax').value) || 0;
+            const insurance = parseFloat(document.getElementById('homeInsurance').value) || 0;
+            const hoa = parseFloat(document.getElementById('hoaFees').value) || 0;
+            const pmi = parseFloat(document.getElementById('pmi').value) || 0;
+
+            // Validate
+            if (down >= price) {
+                alert('Down payment must be less than home price');
+                return;
+            }
+
+            if (principal <= 0) {
+                alert('Loan amount must be greater than zero');
+                return;
+            }
+
+            // Calculate monthly payment (P&I)
+            const months = termYears * 12;
+            const monthlyRate = annualRate / 100 / 12;
+
+            let monthlyPI;
+            if (monthlyRate === 0) {
+                monthlyPI = principal / months;
+            } else {
+                monthlyPI = principal * (monthlyRate * Math.pow(1 + monthlyRate, months)) / 
+                           (Math.pow(1 + monthlyRate, months) - 1);
+            }
+            
+            // Calculate additional monthly costs
+            const monthlyTax = propertyTax / 12;
+            const monthlyInsurance = insurance / 12;
+            
+            const totalMonthly = monthlyPI + monthlyTax + monthlyInsurance + hoa + pmi;
+            const totalPayment = monthlyPI * months;
+            const totalInterest = totalPayment - principal;
+            const downPaymentPercentage = (down / price) * 100;
+
+            // Display results
+            document.getElementById('totalMonthlyPayment').innerHTML = formatCurrency(totalMonthly);
+            document.getElementById('loanAmount').innerHTML = formatCurrency(principal);
+            document.getElementById('totalInterest').innerHTML = formatCurrency(totalInterest);
+            
+            document.getElementById('monthlyPI').innerHTML = formatCurrency(monthlyPI);
+            document.getElementById('monthlyTax').innerHTML = formatCurrency(monthlyTax);
+            document.getElementById('monthlyInsurance').innerHTML = formatCurrency(monthlyInsurance);
+            document.getElementById('monthlyHOA').innerHTML = formatCurrency(hoa);
+            document.getElementById('monthlyPMI').innerHTML = formatCurrency(pmi);
+            document.getElementById('totalMonthlyBreakdown').innerHTML = formatCurrency(totalMonthly);
+            
+            document.getElementById('homePriceDisplay').innerHTML = formatCurrency(price);
+            const symbol = getCurrencySymbol();
+            document.getElementById('downPaymentDisplay').innerHTML = `${formatCurrency(down)} (${downPaymentPercentage.toFixed(1)}%)`;
+            document.getElementById('termDisplay').textContent = `${termYears} years (${months} payments)`;
+            document.getElementById('rateDisplay').textContent = annualRate + '%';
+
+            generateAmortizationSchedule(principal, monthlyRate, months, monthlyPI);
+
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function generateAmortizationSchedule(principal, monthlyRate, months, payment) {
+            const tbody = document.getElementById('scheduleBody');
+            tbody.innerHTML = '';
+            
+            let balance = principal;
+            
+            for (let i = 1; i <= months; i++) {
+                const interestPayment = balance * monthlyRate;
+                const principalPayment = payment - interestPayment;
+                balance -= principalPayment;
+                
+                if (balance < 0.01) balance = 0;
+                
+                const symbol = getCurrencySymbol();
+                const row = `
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.75rem;">${i}</td>
+                        <td style="padding: 0.75rem; text-align: right;">${symbol}${payment.toFixed(2)}</td>
+                        <td style="padding: 0.75rem; text-align: right; color: #43e97b;">${symbol}${principalPayment.toFixed(2)}</td>
+                        <td style="padding: 0.75rem; text-align: right; color: #f5576c;">${symbol}${interestPayment.toFixed(2)}</td>
+                        <td style="padding: 0.75rem; text-align: right; font-weight: 600;">${symbol}${balance.toFixed(2)}</td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            }
+        }
+
+        function toggleSchedule() {
+            const schedule = document.getElementById('amortizationSchedule');
+            const toggle = document.getElementById('scheduleToggle');
+            
+            if (schedule.style.display === 'none') {
+                schedule.style.display = 'block';
+                toggle.textContent = 'Hide Amortization Schedule';
+            } else {
+                schedule.style.display = 'none';
+                toggle.textContent = 'Show Amortization Schedule';
+            }
+        }
+    </script>
+
+    <!-- Related Calculators Section -->
+    <section style="padding: 3rem 0; background: #f8fafc;">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; color: #1f2937; margin-bottom: 2rem;">
+                    <i class="fas fa-calculator"></i> Related Financial Calculators
+                </h2>
+                <p style="text-align: center; color: #6b7280; margin-bottom: 3rem;">Explore more tools for your home buying and financial planning journey</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-home" style="font-size: 2rem; color: #2563eb; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Michigan Mortgage</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">State-specific mortgage calculator with Michigan property tax rates and local market data.</p>
+                        <a href="michigan-mortgage-calculator.html" style="background: #2563eb; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Michigan Mortgage →</a>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-hand-holding-usd" style="font-size: 2rem; color: #10b981; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Loan Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Calculate monthly payments, interest, and total cost for personal loans, auto loans, and more.</p>
+                        <a href="loan-calculator.html" style="background: #10b981; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Loan Payments →</a>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-chart-line" style="font-size: 2rem; color: #f59e0b; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Investment Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Plan your down payment savings with compound interest and regular contribution calculations.</p>
+                        <a href="investment-calculator.html" style="background: #f59e0b; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Returns →</a>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-receipt" style="font-size: 2rem; color: #8b5cf6; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Tax Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Calculate mortgage interest deductions and property tax implications for tax planning.</p>
+                        <a href="tax-calculator.html" style="background: #8b5cf6; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Taxes →</a>
+                    </div>
+                </div>
+                
+                <!-- AI-Optimized Usage Guide -->
+                <div style="background: white; padding: 2rem; border-radius: 16px; margin-top: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <h3 style="color: #1f2937; margin-bottom: 1.5rem; text-align: center;">How to Use This Mortgage Calculator</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: #667eea; margin-bottom: 0.5rem;">Step 1: Enter Home Price</h4>
+                            <p style="color: #6b7280; margin: 0; font-size: 0.9rem;">Input the total purchase price of the home you're considering. This includes the base price plus any additional costs.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #10b981; margin-bottom: 0.5rem;">Step 2: Set Down Payment</h4>
+                            <p style="color: #6b7280; margin: 0; font-size: 0.9rem;">Enter your down payment amount or percentage. Minimum is typically 3% for conventional loans, 3.5% for FHA loans.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #f59e0b; margin-bottom: 0.5rem;">Step 3: Interest Rate</h4>
+                            <p style="color: #6b7280; margin: 0; font-size: 0.9rem;">Input the annual interest rate offered by your lender. Check current market rates for accuracy.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #8b5cf6; margin-bottom: 0.5rem;">Step 4: Review Results</h4>
+                            <p style="color: #6b7280; margin: 0; font-size: 0.9rem;">Get instant calculations for monthly payments, total interest, and complete amortization breakdown.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <p style="color: #6b7280; margin-bottom: 1rem;">Need help choosing the right calculator for your situation?</p>
+                    <a href="../quiz.html" style="background: #667eea; color: white; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; margin-right: 1rem;">🎯 Take Calculator Quiz</a>
+                    <a href="../blog/home-loan-emi-calculation-guide.html" style="background: #e5e7eb; color: #374151; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600;">📚 Read Home Loan Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your trusted source for free online calculators and financial tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Mortgage Tools</h4>
+                    <ul>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="michigan-mortgage-calculator.html">Michigan Mortgage</a></li>
+                        <li><a href="loan-calculator.html">Loan Calculator</a></li>
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Financial Planning</h4>
+                    <ul>
+                        <li><a href="investment-calculator.html">Investment Calculator</a></li>
+                        <li><a href="compound-interest-calculator.html">Interest Calculator</a></li>
+                        <li><a href="tax-calculator.html">Tax Calculator</a></li>
+                        <li><a href="roi-calculator.html">ROI Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../blog.html">Financial Blog</a></li>
+                        <li><a href="../blog/home-loan-emi-calculation-guide.html">Home Loan Guide</a></li>
+                        <li><a href="../quiz.html">Calculator Quiz</a></li>
+                        <li><a href="../index.html">All Calculators</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved. | <a href="../privacy-policy.html" style="color: #9ca3af;">Privacy</a> | <a href="../terms-of-service.html" style="color: #9ca3af;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

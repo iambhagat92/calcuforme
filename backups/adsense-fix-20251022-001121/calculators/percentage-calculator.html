@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Percentage Calculator - Calculate percentages, percentage increase/decrease, and more.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Calculate For Me">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalculateForMe">
+    <title>Percentage Calculator | Calculate For Me</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC3ZC6EBG');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-percent"></i> Percentage Calculator</h1>
+                    <p>Calculate percentages, increases, decreases, and more</p>
+                </div>
+
+                <!-- Calculator Mode Tabs -->
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                    <button onclick="showMode('basic')" id="btnBasic" style="flex: 1; min-width: 120px; padding: 0.75rem; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 8px; cursor: pointer; font-weight: 600;">What is X% of Y?</button>
+                    <button onclick="showMode('reverse')" id="btnReverse" style="flex: 1; min-width: 120px; padding: 0.75rem; border: 2px solid #e2e8f0; background: white; color: #2d3748; border-radius: 8px; cursor: pointer; font-weight: 600;">X is what % of Y?</button>
+                    <button onclick="showMode('change')" id="btnChange" style="flex: 1; min-width: 120px; padding: 0.75rem; border: 2px solid #e2e8f0; background: white; color: #2d3748; border-radius: 8px; cursor: pointer; font-weight: 600;">% Change</button>
+                </div>
+
+                <!-- Mode 1: What is X% of Y? -->
+                <div id="modeBasic">
+                    <form id="basicForm">
+                        <div class="form-group">
+                            <label>What is</label>
+                            <input type="number" id="percent1" step="0.01" value="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label>% of</label>
+                            <input type="number" id="number1" step="0.01" value="100" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                    </form>
+                    <div id="result1" class="result-container">
+                        <div class="result-item">
+                            <div class="result-label">Result</div>
+                            <div class="result-value" id="result1Value">0</div>
+                        </div>
+                        <div class="share-buttons" id="shareButtons1" style="display: flex;">
+                            <button onclick="shareOnTwitter('Check out this Percentage Calculator result!')" class="share-btn share-btn-twitter"><i class="fab fa-twitter"></i> Tweet</button>
+                            <button onclick="shareOnFacebook()" class="share-btn share-btn-facebook"><i class="fab fa-facebook-f"></i> Share</button>
+                            <button onclick="shareOnWhatsApp('Check out Calculate For Me Percentage Calculator!')" class="share-btn share-btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                            <button onclick="copyToClipboard(window.location.href)" class="share-btn share-btn-copy"><i class="fas fa-link"></i> Copy Link</button>
+                            <button onclick="savePercentageCalc()" class="share-btn share-btn-save"><i class="fas fa-save"></i> Save</button>
+                            <button onclick="exportPercentageCalc()" class="share-btn share-btn-export"><i class="fas fa-download"></i> Export</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode 2: X is what % of Y? -->
+                <div id="modeReverse" style="display: none;">
+                    <form id="reverseForm">
+                        <div class="form-group">
+                            <input type="number" id="number2" step="0.01" value="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label>is what % of</label>
+                            <input type="number" id="total2" step="0.01" value="100" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                    </form>
+                    <div id="result2" class="result-container">
+                        <div class="result-item">
+                            <div class="result-label">Result</div>
+                            <div class="result-value" id="result2Value">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode 3: Percentage Change -->
+                <div id="modeChange" style="display: none;">
+                    <form id="changeForm">
+                        <div class="form-group">
+                            <label>Original Value</label>
+                            <input type="number" id="original" step="0.01" value="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label>New Value</label>
+                            <input type="number" id="newValue" step="0.01" value="120" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-calculator"></i> Calculate Change
+                        </button>
+                    </form>
+                    <div id="result3" class="result-container">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                                <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">Change</div>
+                                <div style="font-size: 2rem; font-weight: 700;" id="changeAmount">0</div>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; text-align: center; color: white;">
+                                <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Percentage Change</div>
+                                <div style="font-size: 2rem; font-weight: 700;" id="changePercent">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Section -->
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">Common Uses</h3>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>Discounts:</strong> Calculate sale prices (e.g., 20% off $50)</li>
+                        <li><strong>Tips:</strong> Calculate gratuity (e.g., 15% of bill)</li>
+                        <li><strong>Taxes:</strong> Add tax to prices (e.g., 8% sales tax)</li>
+                        <li><strong>Growth:</strong> Calculate percentage increase or decrease</li>
+                        <li><strong>Grades:</strong> Convert scores to percentages</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // Mode switching
+        function showMode(mode) {
+            document.getElementById('modeBasic').style.display = 'none';
+            document.getElementById('modeReverse').style.display = 'none';
+            document.getElementById('modeChange').style.display = 'none';
+            
+            document.getElementById('btnBasic').style.background = 'white';
+            document.getElementById('btnBasic').style.color = '#2d3748';
+            document.getElementById('btnReverse').style.background = 'white';
+            document.getElementById('btnReverse').style.color = '#2d3748';
+            document.getElementById('btnChange').style.background = 'white';
+            document.getElementById('btnChange').style.color = '#2d3748';
+            
+            if (mode === 'basic') {
+                document.getElementById('modeBasic').style.display = 'block';
+                document.getElementById('btnBasic').style.background = '#667eea';
+                document.getElementById('btnBasic').style.color = 'white';
+            } else if (mode === 'reverse') {
+                document.getElementById('modeReverse').style.display = 'block';
+                document.getElementById('btnReverse').style.background = '#667eea';
+                document.getElementById('btnReverse').style.color = 'white';
+            } else if (mode === 'change') {
+                document.getElementById('modeChange').style.display = 'block';
+                document.getElementById('btnChange').style.background = '#667eea';
+                document.getElementById('btnChange').style.color = 'white';
+            }
+        }
+
+        // Mode 1: What is X% of Y?
+        document.getElementById('basicForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const percent = parseFloat(document.getElementById('percent1').value);
+            const number = parseFloat(document.getElementById('number1').value);
+            const result = (percent / 100) * number;
+            
+            document.getElementById('result1Value').textContent = result.toFixed(2);
+            document.getElementById('result1').classList.add('active');
+            document.getElementById('shareButtons1').style.display = 'flex';
+        });
+
+        // Mode 2: X is what % of Y?
+        document.getElementById('reverseForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const number = parseFloat(document.getElementById('number2').value);
+            const total = parseFloat(document.getElementById('total2').value);
+            const result = (number / total) * 100;
+            
+            document.getElementById('result2Value').textContent = result.toFixed(2) + '%';
+            document.getElementById('result2').classList.add('active');
+        });
+
+        // Mode 3: Percentage Change
+        document.getElementById('changeForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const original = parseFloat(document.getElementById('original').value);
+            const newVal = parseFloat(document.getElementById('newValue').value);
+            const change = newVal - original;
+            const percentChange = (change / original) * 100;
+            
+            document.getElementById('changeAmount').textContent = change.toFixed(2);
+            document.getElementById('changePercent').textContent = percentChange.toFixed(2) + '%';
+            
+            // Color based on increase/decrease
+            const changeColor = change >= 0 ? '#43e97b' : '#f5576c';
+            document.getElementById('changeAmount').style.color = changeColor;
+            
+            document.getElementById('result3').classList.add('active');
+        });
+
+        // Save calculation
+        function savePercentageCalc() {
+            const percent = document.getElementById('percent1').value;
+            const number = document.getElementById('number1').value;
+            const result = document.getElementById('result1Value').textContent;
+            
+            const calculation = {
+                type: 'Percentage Calculator',
+                inputs: { percent, number },
+                result: { value: result },
+                timestamp: new Date().toISOString()
+            };
+            
+            saveCalculation('percentage-calculator', calculation);
+        }
+
+        // Export calculation
+        function exportPercentageCalc() {
+            const percent = document.getElementById('percent1').value;
+            const number = document.getElementById('number1').value;
+            const result = document.getElementById('result1Value').textContent;
+            
+            const text = `Percentage Calculator Results\n` +
+                        `============================\n\n` +
+                        `${percent}% of ${number} = ${result}\n\n` +
+                        `Calculated on: ${new Date().toLocaleString()}\n` +
+                        `Generated by calculateforme.xyz`;
+            
+            exportAsTextFile(text, 'percentage-calculation');
+        }
+    </script>
+</body>
+</html>
+

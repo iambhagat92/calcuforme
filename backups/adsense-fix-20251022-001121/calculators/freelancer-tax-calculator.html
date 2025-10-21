@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Freelancer Tax Calculator 2025 - Calculate quarterly taxes, self-employment tax, and deductions for freelancers and gig workers.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Calculate For Me">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalculateForMe">
+    <title>Freelancer Tax Calculator 2025 | Calculate For Me</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC3ZC6EBG');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-file-invoice-dollar"></i> Freelancer Tax Calculator 2025</h1>
+                    <p>Calculate your quarterly taxes, self-employment tax, and estimated tax payments</p>
+                    <div style="padding: 0.75rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; margin-top: 1rem;">
+                        <strong style="color: #856404;">💡 Tax Year 2025:</strong>
+                        <span style="color: #856404;"> Updated with latest tax rates and brackets</span>
+                    </div>
+                </div>
+
+                <form id="freelancerTaxForm">
+                    <!-- Currency Selector -->
+                    <div class="form-group">
+                        <label for="currency">
+                            <i class="fas fa-coins"></i> Currency
+                        </label>
+                        <select id="currency" onchange="updateCurrencyLabels()">
+                            <option value="USD" data-symbol="$">USD - US Dollar ($)</option>
+                            <option value="EUR" data-symbol="€">EUR - Euro (€)</option>
+                            <option value="GBP" data-symbol="£">GBP - British Pound (£)</option>
+                            <option value="CAD" data-symbol="C$">CAD - Canadian Dollar (C$)</option>
+                            <option value="AUD" data-symbol="A$">AUD - Australian Dollar (A$)</option>
+                            <option value="JPY" data-symbol="¥">JPY - Japanese Yen (¥)</option>
+                            <option value="CHF" data-symbol="CHF">CHF - Swiss Franc (CHF)</option>
+                            <option value="INR" data-symbol="₹">INR - Indian Rupee (₹)</option>
+                            <option value="CNY" data-symbol="¥">CNY - Chinese Yuan (¥)</option>
+                            <option value="MXN" data-symbol="$">MXN - Mexican Peso ($)</option>
+                            <option value="BRL" data-symbol="R$">BRL - Brazilian Real (R$)</option>
+                            <option value="ZAR" data-symbol="R">ZAR - South African Rand (R)</option>
+                            <option value="SGD" data-symbol="S$">SGD - Singapore Dollar (S$)</option>
+                            <option value="NZD" data-symbol="NZ$">NZD - New Zealand Dollar (NZ$)</option>
+                            <option value="HKD" data-symbol="HK$">HKD - Hong Kong Dollar (HK$)</option>
+                        </select>
+                        <small>Select your local currency for calculations</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="annualIncome">
+                            <i class="fas fa-dollar-sign"></i> Annual Freelance Income (Gross)
+                        </label>
+                        <input type="number" id="annualIncome" step="0.01" min="0" value="75000" required>
+                        <small>Total income before expenses</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessExpenses">
+                            <i class="fas fa-receipt"></i> Business Expenses (Annual)
+                        </label>
+                        <input type="number" id="businessExpenses" step="0.01" min="0" value="15000" required>
+                        <small>Equipment, software, subscriptions, home office, etc.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filingStatus">
+                            <i class="fas fa-user"></i> Filing Status
+                        </label>
+                        <select id="filingStatus">
+                            <option value="single">Single</option>
+                            <option value="married">Married Filing Jointly</option>
+                            <option value="head">Head of Household</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deductions">
+                            <i class="fas fa-hand-holding-usd"></i> Additional Deductions
+                        </label>
+                        <input type="number" id="deductions" step="0.01" min="0" value="0">
+                        <small>Health insurance, retirement contributions, etc.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">
+                            <i class="fas fa-map-marker-alt"></i> State
+                        </label>
+                        <select id="state">
+                            <option value="0">No State Tax (FL, TX, WY, etc.)</option>
+                            <option value="5">5% Average State Tax</option>
+                            <option value="7">7% High Tax State</option>
+                            <option value="10">10% Very High Tax State (CA, NY)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate My Taxes
+                    </button>
+                </form>
+
+                <div id="result" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Your 2025 Tax Breakdown</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; text-align: center; color: white;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Net Income</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="netIncome"><span class="currency-symbol">$</span>0</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">After expenses</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%); padding: 1.5rem; border-radius: 12px; text-align: center; color: white;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Total Tax</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="totalTax"><span class="currency-symbol">$</span>0</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">Federal + State + SE</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 1.5rem; border-radius: 12px; text-align: center; color: white;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Take Home</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="takeHome"><span class="currency-symbol">$</span>0</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">After all taxes</div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;">Tax Breakdown</h4>
+                        <div style="display: grid; gap: 0.75rem; color: #718096;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Self-Employment Tax (15.3%):</span>
+                                <strong id="seTax"><span class="currency-symbol">$</span>0</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Federal Income Tax:</span>
+                                <strong id="federalTax"><span class="currency-symbol">$</span>0</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>State Income Tax:</span>
+                                <strong id="stateTax"><span class="currency-symbol">$</span>0</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding-top: 0.75rem; border-top: 2px solid #e2e8f0;">
+                                <span style="font-weight: 600;">Effective Tax Rate:</span>
+                                <strong style="color: #667eea;" id="effectiveRate">0%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #fee140 0%, #fa709a 100%); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; color: white;">
+                        <h4 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-calendar-alt"></i> Quarterly Estimated Payments
+                        </h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; text-align: center;">
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.9;">Q1 (Apr 15)</div>
+                                <div style="font-size: 1.5rem; font-weight: 700;" id="q1"><span class="currency-symbol">$</span>0</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.9;">Q2 (Jun 15)</div>
+                                <div style="font-size: 1.5rem; font-weight: 700;" id="q2"><span class="currency-symbol">$</span>0</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.9;">Q3 (Sep 15)</div>
+                                <div style="font-size: 1.5rem; font-weight: 700;" id="q3"><span class="currency-symbol">$</span>0</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.9;">Q4 (Jan 15)</div>
+                                <div style="font-size: 1.5rem; font-weight: 700;" id="q4"><span class="currency-symbol">$</span>0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> Tax Tips for Freelancers</h3>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>Track Everything:</strong> Keep detailed records of all income and expenses</li>
+                        <li><strong>Quarterly Payments:</strong> Pay estimated taxes quarterly to avoid penalties</li>
+                        <li><strong>Deductible Expenses:</strong> Home office, equipment, software, internet, phone</li>
+                        <li><strong>Retirement:</strong> Solo 401(k) or SEP IRA can reduce taxable income significantly</li>
+                        <li><strong>Health Insurance:</strong> Self-employed health insurance is fully deductible</li>
+                        <li><strong>Professional Help:</strong> Consider hiring a CPA for complex situations</li>
+                    </ul>
+                    <div style="margin-top: 1rem; padding: 1rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+                        <strong style="color: #856404;">⚠️ Disclaimer:</strong>
+                        <span style="color: #856404;"> This calculator provides estimates only. Consult with a tax professional for accurate tax planning.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // Update currency symbols dynamically
+        function updateCurrencyLabels() {
+            const currencySelect = document.getElementById('currency');
+            const selectedOption = currencySelect.options[currencySelect.selectedIndex];
+            const symbol = selectedOption.getAttribute('data-symbol');
+            
+            // Update all currency symbols
+            document.querySelectorAll('.currency-symbol').forEach(el => {
+                el.textContent = symbol;
+            });
+        }
+        
+        // Get current currency symbol
+        function getCurrencySymbol() {
+            const currencySelect = document.getElementById('currency');
+            const selectedOption = currencySelect.options[currencySelect.selectedIndex];
+            return selectedOption.getAttribute('data-symbol');
+        }
+        
+        document.getElementById('freelancerTaxForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const income = parseFloat(document.getElementById('annualIncome').value);
+            const expenses = parseFloat(document.getElementById('businessExpenses').value);
+            const filingStatus = document.getElementById('filingStatus').value;
+            const additionalDeductions = parseFloat(document.getElementById('deductions').value);
+            const stateRate = parseFloat(document.getElementById('state').value) / 100;
+            
+            // Calculate net income
+            const netIncome = income - expenses;
+            
+            // Self-Employment Tax (15.3% on 92.35% of net income)
+            const seTaxableIncome = netIncome * 0.9235;
+            const seTax = seTaxableIncome * 0.153;
+            
+            // Adjusted Gross Income (deduct half of SE tax)
+            const seDeduction = seTax / 2;
+            const agi = netIncome - seDeduction - additionalDeductions;
+            
+            // Standard deduction 2025 (estimated)
+            let standardDeduction;
+            switch(filingStatus) {
+                case 'single':
+                    standardDeduction = 14600;
+                    break;
+                case 'married':
+                    standardDeduction = 29200;
+                    break;
+                case 'head':
+                    standardDeduction = 21900;
+                    break;
+            }
+            
+            // Taxable income
+            const taxableIncome = Math.max(0, agi - standardDeduction);
+            
+            // Federal income tax (2025 brackets - estimated)
+            let federalTax = 0;
+            if (filingStatus === 'single') {
+                if (taxableIncome > 609350) {
+                    federalTax += (taxableIncome - 609350) * 0.37;
+                    taxableIncome = 609350;
+                }
+                if (taxableIncome > 231250) {
+                    federalTax += (taxableIncome - 231250) * 0.35;
+                    taxableIncome = 231250;
+                }
+                if (taxableIncome > 182100) {
+                    federalTax += (taxableIncome - 182100) * 0.32;
+                    taxableIncome = 182100;
+                }
+                if (taxableIncome > 95375) {
+                    federalTax += (taxableIncome - 95375) * 0.24;
+                    taxableIncome = 95375;
+                }
+                if (taxableIncome > 47150) {
+                    federalTax += (taxableIncome - 47150) * 0.22;
+                    taxableIncome = 47150;
+                }
+                if (taxableIncome > 11600) {
+                    federalTax += (taxableIncome - 11600) * 0.12;
+                    taxableIncome = 11600;
+                }
+                if (taxableIncome > 0) {
+                    federalTax += taxableIncome * 0.10;
+                }
+            } else {
+                // Simplified for married/head
+                federalTax = taxableIncome * 0.22; // Average rate
+            }
+            
+            // State tax (simplified)
+            const stateTax = netIncome * stateRate;
+            
+            // Total tax
+            const totalTax = seTax + federalTax + stateTax;
+            const takeHome = netIncome - totalTax;
+            const effectiveRate = (totalTax / netIncome) * 100;
+            
+            // Quarterly payments
+            const quarterly = totalTax / 4;
+            
+            // Format and display with currency symbol
+            const currencySymbol = getCurrencySymbol();
+            const fmt = (num) => currencySymbol + num.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+            
+            document.getElementById('netIncome').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(netIncome).toLocaleString();
+            document.getElementById('totalTax').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(totalTax).toLocaleString();
+            document.getElementById('takeHome').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(takeHome).toLocaleString();
+            document.getElementById('seTax').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(seTax).toLocaleString();
+            document.getElementById('federalTax').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(federalTax).toLocaleString();
+            document.getElementById('stateTax').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(stateTax).toLocaleString();
+            document.getElementById('effectiveRate').textContent = effectiveRate.toFixed(1) + '%';
+            
+            document.getElementById('q1').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(quarterly).toLocaleString();
+            document.getElementById('q2').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(quarterly).toLocaleString();
+            document.getElementById('q3').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(quarterly).toLocaleString();
+            document.getElementById('q4').innerHTML = '<span class="currency-symbol">' + currencySymbol + '</span>' + Math.round(quarterly).toLocaleString();
+            
+            document.getElementById('result').classList.add('active');
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRA Calculator - House Rent Allowance Tax Exemption Calculator India | Calculate For Me</title>
+    <meta name="description" content="Calculate HRA exemption for income tax in India. HRA calculator to find tax exemption on house rent allowance as per Section 10(13A) of Income Tax Act.">
+    <meta name="keywords" content="hra calculator, hra exemption calculator, house rent allowance calculator, hra tax exemption calculator, hra calculator india">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            min-height: 100vh; 
+            padding: 20px; 
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .calculator-card { 
+            background: white; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3); 
+            padding: 40px; 
+        }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #333; font-size: 2.5em; margin-bottom: 10px; }
+        .header p { color: #666; font-size: 1.1em; }
+        .nav-link { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            color: #667eea; 
+            text-decoration: none; 
+            font-weight: 500; 
+        }
+        .calculator-section { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px; 
+            margin-bottom: 30px; 
+        }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { 
+            display: block; 
+            color: #333; 
+            font-weight: 600; 
+            margin-bottom: 8px; 
+        }
+        .input-group input, .input-group select { 
+            width: 100%; 
+            padding: 12px 15px; 
+            border: 2px solid #e0e0e0; 
+            border-radius: 10px; 
+            font-size: 1em; 
+        }
+        .input-group input:focus, .input-group select:focus { 
+            outline: none; 
+            border-color: #667eea; 
+        }
+        .input-group small { 
+            color: #666; 
+            font-size: 0.85em; 
+            display: block; 
+            margin-top: 5px; 
+        }
+        button { 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 10px; 
+            font-size: 1.1em; 
+            font-weight: 600; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 10px; 
+        }
+        .calculate-btn { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+        }
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        .result-box { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            border-radius: 15px; 
+            padding: 25px; 
+            color: white; 
+        }
+        .result-item { 
+            margin-bottom: 20px; 
+            padding-bottom: 20px; 
+            border-bottom: 1px solid rgba(255,255,255,0.2); 
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { 
+            font-size: 0.9em; 
+            opacity: 0.9; 
+            margin-bottom: 5px; 
+        }
+        .result-value { 
+            font-size: 1.8em; 
+            font-weight: 700; 
+        }
+        .calculation-breakdown { 
+            background: #f8f9fa; 
+            border-radius: 10px; 
+            padding: 20px; 
+            margin-top: 20px; 
+        }
+        .breakdown-item { 
+            padding: 10px; 
+            border-bottom: 1px solid #e0e0e0; 
+        }
+        .breakdown-item:last-child { border-bottom: none; }
+        .info-box { 
+            background: #e3f2fd; 
+            border-left: 4px solid #2196f3; 
+            padding: 15px; 
+            margin: 20px 0; 
+            border-radius: 5px; 
+        }
+        .tips-box { 
+            background: #fff3cd; 
+            border-left: 4px solid #ffc107; 
+            padding: 15px; 
+            margin: 20px 0; 
+            border-radius: 5px; 
+        }
+        @media (max-width: 768px) { 
+            .calculator-section { grid-template-columns: 1fr; } 
+            .header h1 { font-size: 1.8em; }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <a href="../index.html" class="nav-link">← Back to Home</a>
+            
+            <div class="header">
+                <h1>HRA Calculator</h1>
+                <p>Calculate House Rent Allowance Tax Exemption under Section 10(13A)</p>
+            </div>
+
+            <div class="calculator-section">
+                <div>
+                    <h3>Salary & HRA Details</h3>
+                    
+                    <div class="input-group">
+                        <label for="basicSalary">Basic Salary (₹/month)</label>
+                        <input type="number" id="basicSalary" value="50000" min="0">
+                        <small>Monthly basic salary</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="da">Dearness Allowance (₹/month)</label>
+                        <input type="number" id="da" value="5000" min="0">
+                        <small>DA forming part of salary (if applicable)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="hra">HRA Received (₹/month)</label>
+                        <input type="number" id="hra" value="20000" min="0">
+                        <small>House Rent Allowance from employer</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="rentPaid">Actual Rent Paid (₹/month)</label>
+                        <input type="number" id="rentPaid" value="25000" min="0">
+                        <small>Monthly rent you pay for accommodation</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cityType">City Type</label>
+                        <select id="cityType">
+                            <option value="metro">Metro City (Delhi, Mumbai, Kolkata, Chennai)</option>
+                            <option value="nonmetro">Non-Metro City</option>
+                        </select>
+                        <small>Select based on your residence location</small>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateHRA()">Calculate HRA Exemption</button>
+                </div>
+
+                <div>
+                    <div class="result-box">
+                        <div class="result-item">
+                            <div class="result-label">HRA Exemption (Monthly)</div>
+                            <div class="result-value" id="monthlyExemption">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Annual HRA Exemption</div>
+                            <div class="result-value" id="annualExemption">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Taxable HRA (Monthly)</div>
+                            <div class="result-value" id="taxableHRA">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Tax Saved (Approx)</div>
+                            <div class="result-value" id="taxSaved">₹0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculation-breakdown" id="breakdownSection" style="display: none;">
+                <h3>HRA Exemption Calculation Breakdown</h3>
+                <p style="margin-bottom: 15px;">The least of the following three amounts is exempt from tax:</p>
+                
+                <div class="breakdown-item">
+                    <strong>1. Actual HRA Received:</strong>
+                    <span style="float: right;" id="actualHRAReceived">₹0</span>
+                </div>
+                <div class="breakdown-item">
+                    <strong>2. Rent Paid - 10% of (Basic + DA):</strong>
+                    <span style="float: right;" id="rentMinus10">₹0</span>
+                    <small style="display: block; color: #666; margin-top: 5px;">
+                        = ₹<span id="rentPaidCalc">0</span> - 10% of ₹<span id="basicPlusDA">0</span>
+                    </small>
+                </div>
+                <div class="breakdown-item">
+                    <strong>3. <span id="percentageText">50%</span> of (Basic + DA):</strong>
+                    <span style="float: right;" id="percentOfSalary">₹0</span>
+                    <small style="display: block; color: #666; margin-top: 5px;">
+                        <span id="cityPercentage">50%</span> for <span id="cityTypeText">non-metro</span> cities
+                    </small>
+                </div>
+                <div class="breakdown-item" style="background: #e8f5e9; margin-top: 10px; border-radius: 5px;">
+                    <strong>Minimum Amount (Exemption):</strong>
+                    <span style="float: right; color: #2e7d32; font-weight: bold;" id="finalExemption">₹0</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📋 HRA Tax Exemption Rules:</h4>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Section 10(13A):</strong> Provides tax exemption on HRA received from employer</li>
+                    <li><strong>Metro Cities:</strong> 50% of (Basic + DA) is considered</li>
+                    <li><strong>Non-Metro Cities:</strong> 40% of (Basic + DA) is considered</li>
+                    <li><strong>No HRA Receipt:</strong> Can claim deduction under Section 80GG (if eligible)</li>
+                    <li><strong>Own House:</strong> Cannot claim HRA exemption if living in own house</li>
+                </ul>
+            </div>
+
+            <div class="tips-box">
+                <h4>💡 Tips to Maximize HRA Benefits:</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Keep rent receipts and rental agreement handy</li>
+                    <li>If rent exceeds ₹1 lakh/year, provide landlord's PAN</li>
+                    <li>HRA exemption reduces as salary increases</li>
+                    <li>Consider restructuring salary for optimal tax benefits</li>
+                    <li>Can claim both HRA and home loan benefits if houses are in different cities</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateHRA() {
+            // Get input values
+            const basicSalary = parseFloat(document.getElementById('basicSalary').value) || 0;
+            const da = parseFloat(document.getElementById('da').value) || 0;
+            const hraReceived = parseFloat(document.getElementById('hra').value) || 0;
+            const rentPaid = parseFloat(document.getElementById('rentPaid').value) || 0;
+            const cityType = document.getElementById('cityType').value;
+            
+            // Calculate salary components
+            const salaryForHRA = basicSalary + da;
+            
+            // HRA exemption is minimum of three conditions:
+            // 1. Actual HRA received
+            const condition1 = hraReceived;
+            
+            // 2. Rent paid - 10% of (Basic + DA)
+            const condition2 = Math.max(0, rentPaid - (salaryForHRA * 0.10));
+            
+            // 3. 50% (metro) or 40% (non-metro) of (Basic + DA)
+            const percentage = cityType === 'metro' ? 0.50 : 0.40;
+            const condition3 = salaryForHRA * percentage;
+            
+            // HRA exemption is minimum of the three
+            const monthlyExemption = Math.min(condition1, condition2, condition3);
+            
+            // Calculate annual values
+            const annualExemption = monthlyExemption * 12;
+            const taxableHRA = Math.max(0, hraReceived - monthlyExemption);
+            
+            // Approximate tax saved (assuming 30% tax bracket)
+            const taxSaved = annualExemption * 0.30;
+            
+            // Format currency
+            const formatINR = (num) => '₹' + Math.round(num).toLocaleString('en-IN');
+            
+            // Display results
+            document.getElementById('monthlyExemption').textContent = formatINR(monthlyExemption);
+            document.getElementById('annualExemption').textContent = formatINR(annualExemption);
+            document.getElementById('taxableHRA').textContent = formatINR(taxableHRA);
+            document.getElementById('taxSaved').textContent = formatINR(taxSaved);
+            
+            // Display breakdown
+            document.getElementById('actualHRAReceived').textContent = formatINR(condition1);
+            document.getElementById('rentMinus10').textContent = formatINR(condition2);
+            document.getElementById('rentPaidCalc').textContent = rentPaid.toLocaleString('en-IN');
+            document.getElementById('basicPlusDA').textContent = salaryForHRA.toLocaleString('en-IN');
+            document.getElementById('percentOfSalary').textContent = formatINR(condition3);
+            document.getElementById('percentageText').textContent = cityType === 'metro' ? '50%' : '40%';
+            document.getElementById('cityPercentage').textContent = cityType === 'metro' ? '50%' : '40%';
+            document.getElementById('cityTypeText').textContent = cityType === 'metro' ? 'metro' : 'non-metro';
+            document.getElementById('finalExemption').textContent = formatINR(monthlyExemption);
+            
+            document.getElementById('breakdownSection').style.display = 'block';
+        }
+
+        // Calculate on page load
+        window.onload = function() {
+            calculateHRA();
+        };
+    </script>
+</body>
+</html>

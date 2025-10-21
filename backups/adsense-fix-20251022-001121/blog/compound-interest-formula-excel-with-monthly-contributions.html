@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Formula in Excel (Monthly Contributions) | Calculate For Me</title>
+    <meta name="description" content="Use Excel FV/PMT formulas to calculate compound interest with monthly contributions. Ready-made examples included.">
+    <meta name="keywords" content="compound interest excel monthly contributions, FV PMT Excel formula, SIP in Excel">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo"><i class="fas fa-calculator"></i><span>Calculate For Me</span></a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html" class="active"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blog-post-header" style="background: linear-gradient(135deg,#2563eb 0%,#06b6d4 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">
+                <a href="../index.html" style="color: inherit;">Home</a> >
+                <a href="../blog.html" style="color: inherit;">Blog</a> >
+                <span>Excel Monthly Contributions</span>
+            </nav>
+            <h1 style="text-align:center; font-size:2.2rem;">Compound Interest in Excel (Monthly Contributions)</h1>
+            <p style="text-align:center; opacity:.9; max-width:720px; margin:0 auto;">FV/PMT formulas to model SIP-style growth.</p>
+        </div>
+    </section>
+
+    <section class="blog-content" style="padding: 3rem 0;">
+        <div class="container" style="max-width: 900px;">
+            <div class="infographic" style="background: linear-gradient(135deg,#60a5fa 0%,#22d3ee 100%); padding: 1.5rem; border-radius: 16px; color: white;">
+                <h2 style="text-align:center; margin-bottom:1rem;">Excel FV/PMT Setup</h2>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem;">
+                    <div style="background: rgba(255,255,255,.15); padding:1rem; border-radius:12px;">
+                        <h4>Final Value (with PMT)</h4>
+                        <div style="font-family:monospace;">=FV(rate/12, years*12, -pmt, -pv, 0)</div>
+                        <small>End-of-period payments (type 0)</small>
+                    </div>
+                    <div style="background: rgba(255,255,255,.15); padding:1rem; border-radius:12px;">
+                        <h4>Required PMT</h4>
+                        <div style="font-family:monospace;">=PMT(rate/12, years*12, -pv, fv, 0)</div>
+                        <small>Find monthly amount to reach fv</small>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin:2rem 0 1rem;">Example</h2>
+            <ul style="color:#475569; line-height:1.9;">
+                <li>A1 PV, A2 MonthlyPMT, B1 AnnualRate, B2 Years</li>
+                <li>C1 FV → <strong>=FV(B1/12,B2*12,-A2,-A1,0)</strong></li>
+            </ul>
+
+            <div style="margin:2rem 0; background:#f8fafc; padding:1.25rem; border-radius:12px; border:1px solid #e5e7eb;">
+                <h3>Related Tools</h3>
+                <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
+                    <a href="../calculators/sip-calculator.html" style="color:#2563eb;">SIP Calculator</a>
+                    <a href="../calculators/compound-interest-calculator.html" style="color:#2563eb;">Compound Interest</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments (no login, device-only) -->
+    <section class="comments" id="comments-section" style="padding: 2rem 0; border-top: 1px solid #e5e7eb;">
+        <div class="container" style="max-width: 900px;">
+            <h3 style="margin-bottom: 0.5rem; color: #2d3748;">Comments</h3>
+            <p style="color:#64748b; font-size: 0.9rem; margin: 0 0 1rem;">No login. Stored on your device only.</p>
+            <div id="comments-list"></div>
+            <form id="comment-form" style="margin-top: 1rem;">
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <input type="text" id="comment-name" placeholder="Your name" required style="flex:1; min-width:180px; padding:0.6rem; border:1px solid #e5e7eb; border-radius:8px;">
+                </div>
+                <textarea id="comment-message" placeholder="Write a comment..." required rows="3" style="width:100%; margin-top:0.5rem; padding:0.6rem; border:1px solid #e5e7eb; border-radius:8px;"></textarea>
+                <button type="submit" style="margin-top:0.5rem; background:#667eea; color:white; padding:0.6rem 1rem; border:none; border-radius:8px; font-weight:600;">Post Comment</button>
+            </form>
+        </div>
+    </section>
+    <script src="../js/comments.js"></script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../calculators/sip-calculator.html">SIP Calculator</a></li>
+                        <li><a href="../calculators/compound-interest-calculator.html">Compound Interest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

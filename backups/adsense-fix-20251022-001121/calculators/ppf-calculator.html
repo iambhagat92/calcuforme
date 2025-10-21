@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPF Calculator - Public Provident Fund Calculator India | Calculate For Me</title>
+    <meta name="description" content="Calculate PPF maturity amount, interest earned for 15 years. PPF calculator with yearly deposit up to ₹1.5 lakh, tax-free returns at current interest rate.">
+    <meta name="keywords" content="ppf calculator, public provident fund calculator, ppf interest calculator, ppf maturity calculator, ppf calculator india">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .calculator-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 40px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #333; font-size: 2.5em; margin-bottom: 10px; }
+        .nav-link { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; font-weight: 500; }
+        .calculator-section { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; color: #333; font-weight: 600; margin-bottom: 8px; }
+        .input-group input { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; }
+        .input-group input:focus { outline: none; border-color: #667eea; }
+        button { padding: 15px 30px; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; width: 100%; margin-top: 10px; }
+        .calculate-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .result-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; color: white; }
+        .result-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { font-size: 0.9em; opacity: 0.9; margin-bottom: 5px; }
+        .result-value { font-size: 1.8em; font-weight: 700; }
+        .benefits-box { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f8f9fa; font-weight: 600; }
+        @media (max-width: 768px) { .calculator-section { grid-template-columns: 1fr; } }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <a href="../index.html" class="nav-link">← Back to Home</a>
+            
+            <div class="header">
+                <h1>PPF Calculator</h1>
+                <p>Calculate Public Provident Fund returns (Tax-Free)</p>
+            </div>
+
+            <div class="calculator-section">
+                <div>
+                    <h3>Investment Details</h3>
+                    
+                    <div class="input-group">
+                        <label for="yearlyDeposit">Yearly Deposit (₹)</label>
+                        <input type="number" id="yearlyDeposit" value="150000" min="500" max="150000">
+                        <small style="color: #666;">Min: ₹500 | Max: ₹1,50,000</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="interestRate">Current Interest Rate (%)</label>
+                        <input type="number" id="interestRate" value="7.1" min="1" max="15" step="0.1" readonly>
+                        <small style="color: #666;">Government declared rate (Tax-Free)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="tenure">Investment Period (Years)</label>
+                        <input type="number" id="tenure" value="15" min="15" max="50" readonly>
+                        <small style="color: #666;">Minimum lock-in: 15 years</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="extensionYears">Extension After 15 Years</label>
+                        <input type="number" id="extensionYears" value="0" min="0" max="35" step="5">
+                        <small style="color: #666;">Extend in blocks of 5 years</small>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculatePPF()">Calculate Maturity</button>
+                </div>
+
+                <div>
+                    <div class="result-box">
+                        <div class="result-item">
+                            <div class="result-label">Maturity Amount</div>
+                            <div class="result-value" id="maturityAmount">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Investment</div>
+                            <div class="result-value" id="totalInvestment">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Interest (Tax-Free)</div>
+                            <div class="result-value" id="totalInterest">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Effective Returns</div>
+                            <div class="result-value" id="effectiveReturns">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="yearwise-table" id="yearwiseTable" style="display: none;">
+                <h3>Year-wise PPF Account Balance</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Opening Balance</th>
+                            <th>Deposit</th>
+                            <th>Interest</th>
+                            <th>Closing Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="yearwiseBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="benefits-box">
+                <h4>✅ PPF Benefits:</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Tax-free interest income</li>
+                    <li>Tax deduction under Section 80C up to ₹1.5 lakh</li>
+                    <li>No tax on maturity amount (EEE category)</li>
+                    <li>Loan facility from 3rd year onwards</li>
+                    <li>Partial withdrawal from 7th year</li>
+                    <li>Government backed - 100% safe</li>
+                    <li>Can extend in blocks of 5 years after 15 years</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculatePPF() {
+            const yearlyDeposit = parseFloat(document.getElementById('yearlyDeposit').value) || 0;
+            const interestRate = parseFloat(document.getElementById('interestRate').value) || 7.1;
+            const baseTenure = 15;
+            const extensionYears = parseFloat(document.getElementById('extensionYears').value) || 0;
+            const totalYears = baseTenure + extensionYears;
+            
+            let balance = 0;
+            let totalInvestment = 0;
+            const yearlyData = [];
+            
+            for (let year = 1; year <= totalYears; year++) {
+                const openingBalance = balance;
+                const deposit = yearlyDeposit;
+                totalInvestment += deposit;
+                
+                // PPF interest is calculated on minimum balance between 5th and last day of month
+                // For simplicity, we calculate yearly
+                balance = openingBalance + deposit;
+                const interest = balance * (interestRate / 100);
+                balance += interest;
+                
+                yearlyData.push({
+                    year: year,
+                    opening: openingBalance,
+                    deposit: deposit,
+                    interest: interest,
+                    closing: balance
+                });
+            }
+            
+            const totalInterest = balance - totalInvestment;
+            const effectiveReturns = ((balance / totalInvestment - 1) * 100 / totalYears);
+            
+            // Format currency
+            const formatINR = (num) => '₹' + Math.round(num).toLocaleString('en-IN');
+            
+            // Display results
+            document.getElementById('maturityAmount').textContent = formatINR(balance);
+            document.getElementById('totalInvestment').textContent = formatINR(totalInvestment);
+            document.getElementById('totalInterest').textContent = formatINR(totalInterest);
+            document.getElementById('effectiveReturns').textContent = effectiveReturns.toFixed(2) + '% p.a.';
+            
+            // Display year-wise breakdown (first 15 years)
+            const tbody = document.getElementById('yearwiseBody');
+            tbody.innerHTML = '';
+            
+            const yearsToShow = Math.min(15, totalYears);
+            for (let i = 0; i < yearsToShow; i++) {
+                const data = yearlyData[i];
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${data.year}</td>
+                    <td>${formatINR(data.opening)}</td>
+                    <td>${formatINR(data.deposit)}</td>
+                    <td>${formatINR(data.interest)}</td>
+                    <td>${formatINR(data.closing)}</td>
+                `;
+            }
+            
+            document.getElementById('yearwiseTable').style.display = 'block';
+        }
+
+        // Update tenure when extension changes
+        document.getElementById('extensionYears').addEventListener('input', function() {
+            const tenure = 15 + parseInt(this.value || 0);
+            document.getElementById('tenure').value = tenure;
+        });
+
+        window.onload = function() { calculatePPF(); };
+    </script>
+</body>
+</html>

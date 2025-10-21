@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator - Gross to Net, Hourly to Annual | Calculate For Me</title>
+    <meta name="description" content="Free salary calculator to convert between hourly, weekly, monthly, and annual pay. Calculate net income after taxes and deductions.">
+    <meta name="keywords" content="salary calculator, paycheck calculator, hourly to salary, gross to net calculator, income calculator">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Salary Calculator - Complete Income Calculator">
+    <meta property="og:description" content="Calculate your take-home pay, convert hourly to annual salary, and understand tax deductions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculateforme.xyz/calculators/salary-calculator.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .calculator-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .calculator-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 20px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: #10b981;
+            background: white;
+            border-bottom-color: #10b981;
+        }
+
+        .tab-btn:hover {
+            background: white;
+        }
+
+        .calculator-content {
+            padding: 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+
+        .input-group small {
+            display: block;
+            color: #718096;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        .input-addon {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-addon span {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .input-addon input {
+            border-radius: 0 10px 10px 0 !important;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: transform 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .results-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .results-container.active {
+            display: block;
+        }
+
+        .salary-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .breakdown-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .breakdown-card h4 {
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .breakdown-card .amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .breakdown-card.highlight {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border: none;
+        }
+
+        .breakdown-card.highlight h4,
+        .breakdown-card.highlight .amount,
+        .breakdown-card.highlight .period {
+            color: white;
+        }
+
+        .period {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .deductions-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .deductions-table h3 {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            color: #2d3748;
+            font-size: 18px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .deductions-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .deductions-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .deductions-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .deductions-table .label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .deductions-table .value {
+            text-align: right;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .deductions-table .total {
+            background: #f8f9fa;
+            font-weight: 700;
+        }
+
+        .conversion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .conversion-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+
+        .conversion-item label {
+            display: block;
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .conversion-item .value {
+            color: #10b981;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .info-box {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: #047857;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: #065f46;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .calculator-tabs {
+                flex-direction: column;
+            }
+
+            .input-row {
+                grid-template-columns: 1fr;
+            }
+
+            .salary-breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="nav-link">← Back to Home</a>
+        
+        <div class="calculator-card">
+            <div class="header">
+                <h1>💵 Salary Calculator</h1>
+                <p>Calculate take-home pay and convert between pay periods</p>
+            </div>
+
+            <div class="calculator-tabs">
+                <button class="tab-btn active" onclick="switchTab('gross-net')">Gross to Net</button>
+                <button class="tab-btn" onclick="switchTab('hourly-salary')">Hourly ↔ Salary</button>
+                <button class="tab-btn" onclick="switchTab('paycheck')">Paycheck Calculator</button>
+            </div>
+
+            <div class="calculator-content">
+                <!-- Gross to Net Calculator -->
+                <div id="gross-net" class="tab-content active">
+                    <h2 style="color: #2d3748; margin-bottom: 20px;">Calculate Net Income from Gross Salary</h2>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Gross Annual Salary</label>
+                            <div class="input-addon">
+                                <span>$</span>
+                                <input type="number" id="grossSalary" placeholder="75000" value="75000">
+                            </div>
+                            <small>Your yearly salary before taxes</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Pay Frequency</label>
+                            <select id="payFrequency">
+                                <option value="weekly">Weekly (52 paychecks)</option>
+                                <option value="biweekly" selected>Bi-weekly (26 paychecks)</option>
+                                <option value="semimonthly">Semi-monthly (24 paychecks)</option>
+                                <option value="monthly">Monthly (12 paychecks)</option>
+                                <option value="annually">Annually (1 paycheck)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Federal Tax Rate (%)</label>
+                            <input type="number" id="federalTax" placeholder="22" value="22" min="0" max="100" step="0.1">
+                            <small>Estimated federal income tax rate</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>State Tax Rate (%)</label>
+                            <input type="number" id="stateTax" placeholder="5" value="5" min="0" max="100" step="0.1">
+                            <small>Your state income tax rate</small>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Social Security (%)</label>
+                            <input type="number" id="socialSecurity" value="6.2" readonly>
+                            <small>Standard SS rate (6.2% up to cap)</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Medicare (%)</label>
+                            <input type="number" id="medicare" value="1.45" readonly>
+                            <small>Standard Medicare rate (1.45%)</small>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>401(k) Contribution (%)</label>
+                            <input type="number" id="retirement401k" placeholder="6" value="6" min="0" max="100">
+                            <small>Pre-tax retirement contribution</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Health Insurance ($/month)</label>
+                            <input type="number" id="healthInsurance" placeholder="200" value="200" min="0">
+                            <small>Monthly health insurance premium</small>
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateGrossToNet()">Calculate Take-Home Pay</button>
+
+                    <div class="results-container" id="grossNetResults">
+                        <div class="salary-breakdown">
+                            <div class="breakdown-card">
+                                <h4>Gross Income</h4>
+                                <div class="amount" id="grossAmount">$0</div>
+                                <div class="period" id="grossPeriod">per year</div>
+                            </div>
+                            <div class="breakdown-card">
+                                <h4>Total Deductions</h4>
+                                <div class="amount" id="totalDeductions">$0</div>
+                                <div class="period" id="deductionsPeriod">per year</div>
+                            </div>
+                            <div class="breakdown-card highlight">
+                                <h4>Net Income</h4>
+                                <div class="amount" id="netIncome">$0</div>
+                                <div class="period" id="netPeriod">per year</div>
+                            </div>
+                        </div>
+
+                        <div class="deductions-table">
+                            <h3>Deduction Breakdown</h3>
+                            <table>
+                                <tr>
+                                    <td class="label">Federal Tax</td>
+                                    <td class="value" id="fedTaxAmount">$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">State Tax</td>
+                                    <td class="value" id="stateTaxAmount">$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Social Security</td>
+                                    <td class="value" id="ssAmount">$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Medicare</td>
+                                    <td class="value" id="medicareAmount">$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">401(k) Contribution</td>
+                                    <td class="value" id="retirementAmount">$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Health Insurance</td>
+                                    <td class="value" id="healthAmount">$0</td>
+                                </tr>
+                                <tr class="total">
+                                    <td class="label"><strong>Total Deductions</strong></td>
+                                    <td class="value" id="totalDedAmount"><strong>$0</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="conversion-grid">
+                            <div class="conversion-item">
+                                <label>Hourly</label>
+                                <div class="value" id="hourlyRate">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Daily</label>
+                                <div class="value" id="dailyRate">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Weekly</label>
+                                <div class="value" id="weeklyRate">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Bi-weekly</label>
+                                <div class="value" id="biweeklyRate">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Monthly</label>
+                                <div class="value" id="monthlyRate">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Quarterly</label>
+                                <div class="value" id="quarterlyRate">$0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hourly to Salary Converter -->
+                <div id="hourly-salary" class="tab-content">
+                    <h2 style="color: #2d3748; margin-bottom: 20px;">Convert Between Hourly and Annual Salary</h2>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Hourly Rate</label>
+                            <div class="input-addon">
+                                <span>$</span>
+                                <input type="number" id="hourlyInput" placeholder="35" oninput="convertHourlyToSalary()">
+                            </div>
+                            <small>Your hourly wage</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Hours per Week</label>
+                            <input type="number" id="hoursPerWeek" placeholder="40" value="40" oninput="convertHourlyToSalary()">
+                            <small>Average hours worked weekly</small>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Weeks per Year</label>
+                            <input type="number" id="weeksPerYear" placeholder="52" value="52" oninput="convertHourlyToSalary()">
+                            <small>Working weeks per year (subtract vacation)</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Annual Salary</label>
+                            <div class="input-addon">
+                                <span>$</span>
+                                <input type="number" id="salaryInput" placeholder="72800" oninput="convertSalaryToHourly()">
+                            </div>
+                            <small>Equivalent annual salary</small>
+                        </div>
+                    </div>
+
+                    <div class="results-container active" style="margin-top: 30px;">
+                        <h3 style="color: #2d3748; margin-bottom: 20px;">Conversion Results</h3>
+                        <div class="conversion-grid">
+                            <div class="conversion-item">
+                                <label>Hourly</label>
+                                <div class="value" id="convHourly">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Daily (8 hrs)</label>
+                                <div class="value" id="convDaily">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Weekly</label>
+                                <div class="value" id="convWeekly">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Bi-weekly</label>
+                                <div class="value" id="convBiweekly">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Monthly</label>
+                                <div class="value" id="convMonthly">$0</div>
+                            </div>
+                            <div class="conversion-item">
+                                <label>Annual</label>
+                                <div class="value" id="convAnnual">$0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>💡 Conversion Tips</h4>
+                        <p>• Quick estimate: Hourly rate × 2,000 = Annual salary (assuming 40 hrs/week, 50 weeks/year)</p>
+                        <p>• Remember to account for vacation time, holidays, and sick days when calculating weeks per year</p>
+                        <p>• Standard full-time is 2,080 hours per year (40 hrs × 52 weeks)</p>
+                    </div>
+                </div>
+
+                <!-- Paycheck Calculator -->
+                <div id="paycheck" class="tab-content">
+                    <h2 style="color: #2d3748; margin-bottom: 20px;">Calculate Your Paycheck</h2>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Calculation Type</label>
+                            <select id="calcType" onchange="togglePaycheckInputs()">
+                                <option value="salary">Annual Salary</option>
+                                <option value="hourly">Hourly Wage</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group" id="salaryInputGroup">
+                            <label>Annual Salary</label>
+                            <div class="input-addon">
+                                <span>$</span>
+                                <input type="number" id="paycheckSalary" placeholder="60000" value="60000">
+                            </div>
+                        </div>
+
+                        <div class="input-group" id="hourlyInputGroup" style="display: none;">
+                            <label>Hourly Rate</label>
+                            <div class="input-addon">
+                                <span>$</span>
+                                <input type="number" id="paycheckHourly" placeholder="25">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-row" id="hoursRow" style="display: none;">
+                        <div class="input-group">
+                            <label>Regular Hours</label>
+                            <input type="number" id="regularHours" placeholder="80" value="80">
+                            <small>Regular hours this pay period</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Overtime Hours</label>
+                            <input type="number" id="overtimeHours" placeholder="0" value="0">
+                            <small>Overtime hours (1.5x pay)</small>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Pay Period</label>
+                            <select id="paycheckPeriod">
+                                <option value="weekly">Weekly</option>
+                                <option value="biweekly" selected>Bi-weekly</option>
+                                <option value="semimonthly">Semi-monthly</option>
+                                <option value="monthly">Monthly</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Filing Status</label>
+                            <select id="filingStatus">
+                                <option value="single" selected>Single</option>
+                                <option value="married">Married Filing Jointly</option>
+                                <option value="marriedSeparate">Married Filing Separately</option>
+                                <option value="headOfHousehold">Head of Household</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Federal Allowances</label>
+                            <input type="number" id="allowances" placeholder="1" value="1" min="0">
+                            <small>W-4 allowances claimed</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>State</label>
+                            <select id="state">
+                                <option value="CA">California</option>
+                                <option value="TX">Texas (No State Tax)</option>
+                                <option value="NY" selected>New York</option>
+                                <option value="FL">Florida (No State Tax)</option>
+                                <option value="IL">Illinois</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculatePaycheck()">Calculate Paycheck</button>
+
+                    <div class="results-container" id="paycheckResults">
+                        <div class="salary-breakdown">
+                            <div class="breakdown-card">
+                                <h4>Gross Pay</h4>
+                                <div class="amount" id="pcGrossPay">$0</div>
+                                <div class="period" id="pcGrossPeriod">this period</div>
+                            </div>
+                            <div class="breakdown-card">
+                                <h4>Total Taxes</h4>
+                                <div class="amount" id="pcTotalTaxes">$0</div>
+                                <div class="period">this period</div>
+                            </div>
+                            <div class="breakdown-card highlight">
+                                <h4>Net Pay</h4>
+                                <div class="amount" id="pcNetPay">$0</div>
+                                <div class="period">take home</div>
+                            </div>
+                        </div>
+
+                        <div class="deductions-table">
+                            <h3>Paycheck Breakdown</h3>
+                            <table>
+                                <tr>
+                                    <td class="label">Regular Pay</td>
+                                    <td class="value" id="pcRegularPay">$0</td>
+                                </tr>
+                                <tr id="pcOvertimeRow" style="display: none;">
+                                    <td class="label">Overtime Pay</td>
+                                    <td class="value" id="pcOvertimePay">$0</td>
+                                </tr>
+                                <tr class="total">
+                                    <td class="label"><strong>Gross Pay</strong></td>
+                                    <td class="value" id="pcGross"><strong>$0</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Federal Withholding</td>
+                                    <td class="value" id="pcFederal">-$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">State Withholding</td>
+                                    <td class="value" id="pcState">-$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Social Security</td>
+                                    <td class="value" id="pcSS">-$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Medicare</td>
+                                    <td class="value" id="pcMedicare">-$0</td>
+                                </tr>
+                                <tr class="total">
+                                    <td class="label"><strong>Net Pay</strong></td>
+                                    <td class="value" id="pcNet"><strong>$0</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function calculateGrossToNet() {
+            const gross = parseFloat(document.getElementById('grossSalary').value) || 0;
+            const federalRate = parseFloat(document.getElementById('federalTax').value) / 100 || 0;
+            const stateRate = parseFloat(document.getElementById('stateTax').value) / 100 || 0;
+            const ssRate = parseFloat(document.getElementById('socialSecurity').value) / 100 || 0;
+            const medicareRate = parseFloat(document.getElementById('medicare').value) / 100 || 0;
+            const retirementRate = parseFloat(document.getElementById('retirement401k').value) / 100 || 0;
+            const healthMonthly = parseFloat(document.getElementById('healthInsurance').value) || 0;
+            
+            // Calculate deductions
+            const federalTax = gross * federalRate;
+            const stateTax = gross * stateRate;
+            const socialSecurity = Math.min(gross * ssRate, 160200 * 0.062); // 2023 SS wage cap
+            const medicare = gross * medicareRate;
+            const retirement = gross * retirementRate;
+            const health = healthMonthly * 12;
+            
+            const totalDeductions = federalTax + stateTax + socialSecurity + medicare + retirement + health;
+            const netIncome = gross - totalDeductions;
+            
+            // Update results
+            document.getElementById('grossAmount').textContent = formatCurrency(gross);
+            document.getElementById('totalDeductions').textContent = formatCurrency(totalDeductions);
+            document.getElementById('netIncome').textContent = formatCurrency(netIncome);
+            
+            // Update deductions table
+            document.getElementById('fedTaxAmount').textContent = formatCurrency(federalTax);
+            document.getElementById('stateTaxAmount').textContent = formatCurrency(stateTax);
+            document.getElementById('ssAmount').textContent = formatCurrency(socialSecurity);
+            document.getElementById('medicareAmount').textContent = formatCurrency(medicare);
+            document.getElementById('retirementAmount').textContent = formatCurrency(retirement);
+            document.getElementById('healthAmount').textContent = formatCurrency(health);
+            document.getElementById('totalDedAmount').innerHTML = `<strong>${formatCurrency(totalDeductions)}</strong>`;
+            
+            // Calculate different periods (based on net income)
+            const hourly = netIncome / 2080; // 40 hours * 52 weeks
+            const daily = hourly * 8;
+            const weekly = netIncome / 52;
+            const biweekly = netIncome / 26;
+            const monthly = netIncome / 12;
+            const quarterly = netIncome / 4;
+            
+            document.getElementById('hourlyRate').textContent = formatCurrency(hourly);
+            document.getElementById('dailyRate').textContent = formatCurrency(daily);
+            document.getElementById('weeklyRate').textContent = formatCurrency(weekly);
+            document.getElementById('biweeklyRate').textContent = formatCurrency(biweekly);
+            document.getElementById('monthlyRate').textContent = formatCurrency(monthly);
+            document.getElementById('quarterlyRate').textContent = formatCurrency(quarterly);
+            
+            // Show results
+            document.getElementById('grossNetResults').classList.add('active');
+        }
+
+        function convertHourlyToSalary() {
+            const hourly = parseFloat(document.getElementById('hourlyInput').value) || 0;
+            const hoursPerWeek = parseFloat(document.getElementById('hoursPerWeek').value) || 40;
+            const weeksPerYear = parseFloat(document.getElementById('weeksPerYear').value) || 52;
+            
+            const annual = hourly * hoursPerWeek * weeksPerYear;
+            document.getElementById('salaryInput').value = annual.toFixed(2);
+            
+            updateConversionResults(hourly, annual, hoursPerWeek);
+        }
+
+        function convertSalaryToHourly() {
+            const salary = parseFloat(document.getElementById('salaryInput').value) || 0;
+            const hoursPerWeek = parseFloat(document.getElementById('hoursPerWeek').value) || 40;
+            const weeksPerYear = parseFloat(document.getElementById('weeksPerYear').value) || 52;
+            
+            const hourly = salary / (hoursPerWeek * weeksPerYear);
+            document.getElementById('hourlyInput').value = hourly.toFixed(2);
+            
+            updateConversionResults(hourly, salary, hoursPerWeek);
+        }
+
+        function updateConversionResults(hourly, annual, hoursPerWeek) {
+            document.getElementById('convHourly').textContent = formatCurrency(hourly);
+            document.getElementById('convDaily').textContent = formatCurrency(hourly * 8);
+            document.getElementById('convWeekly').textContent = formatCurrency(hourly * hoursPerWeek);
+            document.getElementById('convBiweekly').textContent = formatCurrency(hourly * hoursPerWeek * 2);
+            document.getElementById('convMonthly').textContent = formatCurrency(annual / 12);
+            document.getElementById('convAnnual').textContent = formatCurrency(annual);
+        }
+
+        function togglePaycheckInputs() {
+            const calcType = document.getElementById('calcType').value;
+            const salaryGroup = document.getElementById('salaryInputGroup');
+            const hourlyGroup = document.getElementById('hourlyInputGroup');
+            const hoursRow = document.getElementById('hoursRow');
+            
+            if (calcType === 'salary') {
+                salaryGroup.style.display = 'block';
+                hourlyGroup.style.display = 'none';
+                hoursRow.style.display = 'none';
+            } else {
+                salaryGroup.style.display = 'none';
+                hourlyGroup.style.display = 'block';
+                hoursRow.style.display = 'flex';
+            }
+        }
+
+        function calculatePaycheck() {
+            const calcType = document.getElementById('calcType').value;
+            const period = document.getElementById('paycheckPeriod').value;
+            let grossPay = 0;
+            
+            if (calcType === 'salary') {
+                const salary = parseFloat(document.getElementById('paycheckSalary').value) || 0;
+                const periods = {
+                    'weekly': 52,
+                    'biweekly': 26,
+                    'semimonthly': 24,
+                    'monthly': 12
+                };
+                grossPay = salary / periods[period];
+            } else {
+                const hourly = parseFloat(document.getElementById('paycheckHourly').value) || 0;
+                const regular = parseFloat(document.getElementById('regularHours').value) || 0;
+                const overtime = parseFloat(document.getElementById('overtimeHours').value) || 0;
+                
+                grossPay = (hourly * regular) + (hourly * 1.5 * overtime);
+                
+                document.getElementById('pcRegularPay').textContent = formatCurrency(hourly * regular);
+                document.getElementById('pcOvertimePay').textContent = formatCurrency(hourly * 1.5 * overtime);
+                document.getElementById('pcOvertimeRow').style.display = overtime > 0 ? 'table-row' : 'none';
+            }
+            
+            // Simple tax calculations (these are approximations)
+            const federalTax = grossPay * 0.15; // Simplified
+            const stateTax = document.getElementById('state').value === 'TX' || document.getElementById('state').value === 'FL' ? 0 : grossPay * 0.05;
+            const socialSecurity = grossPay * 0.062;
+            const medicare = grossPay * 0.0145;
+            
+            const totalTaxes = federalTax + stateTax + socialSecurity + medicare;
+            const netPay = grossPay - totalTaxes;
+            
+            // Update results
+            document.getElementById('pcGrossPay').textContent = formatCurrency(grossPay);
+            document.getElementById('pcTotalTaxes').textContent = formatCurrency(totalTaxes);
+            document.getElementById('pcNetPay').textContent = formatCurrency(netPay);
+            
+            document.getElementById('pcGross').innerHTML = `<strong>${formatCurrency(grossPay)}</strong>`;
+            document.getElementById('pcFederal').textContent = '-' + formatCurrency(federalTax);
+            document.getElementById('pcState').textContent = '-' + formatCurrency(stateTax);
+            document.getElementById('pcSS').textContent = '-' + formatCurrency(socialSecurity);
+            document.getElementById('pcMedicare').textContent = '-' + formatCurrency(medicare);
+            document.getElementById('pcNet').innerHTML = `<strong>${formatCurrency(netPay)}</strong>`;
+            
+            document.getElementById('paycheckResults').classList.add('active');
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(amount);
+        }
+    </script>
+</body>
+</html>

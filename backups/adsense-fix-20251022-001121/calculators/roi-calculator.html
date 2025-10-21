@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free ROI Calculator - Calculate Return on Investment with gain, cost, and percentage returns.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Calculate For Me">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalculateForMe">
+    <title>ROI Calculator | Calculate For Me</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC3ZC6EBG');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-chart-line"></i> ROI Calculator</h1>
+                    <p>Calculate Return on Investment for your investments and projects</p>
+                </div>
+
+                <form id="roiForm">
+                    <!-- Currency Selector -->
+                    <div class="form-group">
+                        <label for="currency">
+                            <i class="fas fa-coins"></i> Currency
+                        </label>
+                        <select id="currency" onchange="updateCurrencySymbols()">
+                            <option value="USD" data-symbol="$">USD - US Dollar ($)</option>
+                            <option value="EUR" data-symbol="€">EUR - Euro (€)</option>
+                            <option value="GBP" data-symbol="£">GBP - British Pound (£)</option>
+                            <option value="CAD" data-symbol="C$">CAD - Canadian Dollar (C$)</option>
+                            <option value="AUD" data-symbol="A$">AUD - Australian Dollar (A$)</option>
+                            <option value="JPY" data-symbol="¥">JPY - Japanese Yen (¥)</option>
+                            <option value="CHF" data-symbol="CHF">CHF - Swiss Franc (CHF)</option>
+                            <option value="INR" data-symbol="₹">INR - Indian Rupee (₹)</option>
+                            <option value="CNY" data-symbol="¥">CNY - Chinese Yuan (¥)</option>
+                            <option value="MXN" data-symbol="$">MXN - Mexican Peso ($)</option>
+                            <option value="BRL" data-symbol="R$">BRL - Brazilian Real (R$)</option>
+                            <option value="ZAR" data-symbol="R">ZAR - South African Rand (R)</option>
+                            <option value="SGD" data-symbol="S$">SGD - Singapore Dollar (S$)</option>
+                            <option value="NZD" data-symbol="NZ$">NZD - New Zealand Dollar (NZ$)</option>
+                            <option value="HKD" data-symbol="HK$">HKD - Hong Kong Dollar (HK$)</option>
+                        </select>
+                        <small>Select your preferred currency</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="initialInvestment">
+                            <i class="fas fa-dollar-sign"></i> Initial Investment
+                        </label>
+                        <input type="number" id="initialInvestment" step="0.01" min="0" value="10000" required>
+                        <small>The amount you invested initially</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="finalValue">
+                            <i class="fas fa-money-bill-wave"></i> Final Value / Current Value
+                        </label>
+                        <input type="number" id="finalValue" step="0.01" min="0" value="15000" required>
+                        <small>The current or final value of your investment</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalCosts">
+                            <i class="fas fa-receipt"></i> Additional Costs (Optional)
+                        </label>
+                        <input type="number" id="additionalCosts" step="0.01" min="0" value="0">
+                        <small>Any fees, taxes, or additional costs</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate ROI
+                    </button>
+                </form>
+
+                <div id="result" class="result-container">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;"><i class="fas fa-coins"></i> Net Profit</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #667eea;" id="netProfit"><span class="currency-symbol">$</span>0.00</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; text-align: center; color: white;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;"><i class="fas fa-percentage"></i> ROI Percentage</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="roiPercent">0.00%</div>
+                        </div>
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;"><i class="fas fa-chart-line"></i> Total Return</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #43e97b;" id="totalReturn"><span class="currency-symbol">$</span>0.00</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding: 1.5rem; background: #f8f9fa; border-radius: 12px;">
+                        <h4 style="color: #2d3748; margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> Investment Summary</h4>
+                        <div style="display: grid; gap: 0.75rem; color: #718096;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Initial Investment:</span>
+                                <strong id="summaryInitial"><span class="currency-symbol">$</span>0.00</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Final Value:</span>
+                                <strong id="summaryFinal"><span class="currency-symbol">$</span>0.00</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Additional Costs:</span>
+                                <strong id="summaryCosts"><span class="currency-symbol">$</span>0.00</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding-top: 0.75rem; border-top: 2px solid #e2e8f0;">
+                                <span style="font-weight: 600;">Total Cost:</span>
+                                <strong id="summaryTotal" style="color: #667eea;"><span class="currency-symbol">$</span>0.00</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Section -->
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> Understanding ROI</h3>
+                    <p style="color: #718096; line-height: 1.8; margin-bottom: 1.5rem;">Return on Investment (ROI) is a performance measure used to evaluate the efficiency of an investment. The formula is:</p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center; margin-bottom: 1.5rem;">
+                        <code style="font-size: 1.1rem; color: #667eea; font-weight: 600;">ROI = [(Final Value - Total Cost) / Total Cost] × 100</code>
+                    </div>
+                    <h4 style="color: #2d3748; margin-bottom: 1rem;">Common Use Cases:</h4>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>Stock Investments:</strong> Calculate returns on stock market investments</li>
+                        <li><strong>Real Estate:</strong> Measure profitability of property investments</li>
+                        <li><strong>Business Projects:</strong> Evaluate project success and profitability</li>
+                        <li><strong>Marketing Campaigns:</strong> Measure advertising campaign effectiveness</li>
+                        <li><strong>Education:</strong> Assess the return on educational investments</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+                        <strong style="color: #856404;">💡 Tip:</strong>
+                        <span style="color: #856404;"> A positive ROI means profit, while a negative ROI indicates a loss. Generally, an ROI above 15-20% annually is considered good for most investments.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        // Currency Helper Functions
+        function getCurrencySymbol() {
+            const currencySelect = document.getElementById('currency');
+            if (!currencySelect) return '$';
+            const selectedOption = currencySelect.options[currencySelect.selectedIndex];
+            return selectedOption.getAttribute('data-symbol');
+        }
+
+        function updateCurrencySymbols() {
+            const symbol = getCurrencySymbol();
+            document.querySelectorAll('.currency-symbol').forEach(el => {
+                el.textContent = symbol;
+            });
+        }
+
+        function formatCurrency(amount) {
+            const symbol = getCurrencySymbol();
+            return '<span class="currency-symbol">' + symbol + '</span>' + amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        document.getElementById('roiForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get input values
+            const initialInvestment = parseFloat(document.getElementById('initialInvestment').value);
+            const finalValue = parseFloat(document.getElementById('finalValue').value);
+            const additionalCosts = parseFloat(document.getElementById('additionalCosts').value) || 0;
+            
+            // Validation
+            if (initialInvestment <= 0) {
+                alert('Initial investment must be greater than 0');
+                return;
+            }
+            
+            // Calculate ROI
+            const totalCost = initialInvestment + additionalCosts;
+            const netProfit = finalValue - totalCost;
+            const roiPercentage = (netProfit / totalCost) * 100;
+            
+            // Display results
+            document.getElementById('netProfit').innerHTML = formatCurrency(netProfit);
+            document.getElementById('netProfit').style.color = netProfit >= 0 ? '#43e97b' : '#f5576c';
+            
+            document.getElementById('roiPercent').textContent = roiPercentage.toFixed(2) + '%';
+            document.getElementById('totalReturn').innerHTML = formatCurrency(finalValue);
+            
+            // Summary
+            document.getElementById('summaryInitial').innerHTML = formatCurrency(initialInvestment);
+            document.getElementById('summaryFinal').innerHTML = formatCurrency(finalValue);
+            document.getElementById('summaryCosts').innerHTML = formatCurrency(additionalCosts);
+            document.getElementById('summaryTotal').innerHTML = formatCurrency(totalCost);
+            
+            // Show results with animation
+            const resultContainer = document.getElementById('result');
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>
+

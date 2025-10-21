@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator Functions Guide: Trig, Log, Power, Memory | Calculate For Me</title>
+    <meta name="description" content="Scientific calculator functions guide: trigonometry, logarithms, powers, factorial, memory, and mode settings explained with examples.">
+    <meta name="keywords" content="scientific calculator, trig functions, logarithm, factorial, memory, degrees vs radians">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo"><i class="fas fa-calculator"></i><span>Calculate For Me</span></a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Calculators</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../blog.html" class="active"><i class="fas fa-book"></i> Blog</a>
+                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blog-post-header" style="background: linear-gradient(135deg,#8b5cf6 0%,#ec4899 100%); padding: 6rem 0 4rem; color: white;">
+        <div class="container">
+            <nav class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">
+                <a href="../index.html" style="color: inherit;">Home</a> >
+                <a href="../blog.html" style="color: inherit;">Blog</a> >
+                <span>Scientific Calculator Guide</span>
+            </nav>
+            <h1 style="text-align:center; font-size:2.2rem;">Scientific Calculator: Functions Guide</h1>
+            <p style="text-align:center; opacity:.9; max-width:720px; margin:0 auto;">Trig, logs, powers, factorials, memory keys, and modes with quick examples.</p>
+        </div>
+    </section>
+
+    <section class="blog-content" style="padding: 3rem 0;">
+        <div class="container" style="max-width: 900px;">
+            <div class="infographic" style="background: linear-gradient(135deg,#a78bfa 0%,#f472b6 100%); padding: 1.5rem; border-radius: 16px; color: white;">
+                <h2 style="text-align:center; margin-bottom:1rem;">Modes & Basics</h2>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
+                    <div style="background: rgba(255,255,255,.15); padding:1rem; border-radius:12px;">
+                        <h4>Angle Mode</h4>
+                        <div>DEG vs RAD</div>
+                        <small>Use DEG for geometry; RAD for calculus</small>
+                    </div>
+                    <div style="background: rgba(255,255,255,.15); padding:1rem; border-radius:12px;">
+                        <h4>Notations</h4>
+                        <div>EXP / SCI</div>
+                        <small>Scientific notation entry/view</small>
+                    </div>
+                    <div style="background: rgba(255,255,255,.15); padding:1rem; border-radius:12px;">
+                        <h4>Memory</h4>
+                        <div>MC MR M+ M-</div>
+                        <small>Store and reuse results</small>
+                    </div>
+                </div>
+                <div style="margin-top:1rem; text-align:center;">
+                    <a href="../calculators/scientific-calculator.html" style="background:white; color:#8b5cf6; padding:.6rem 1rem; border-radius:8px; text-decoration:none; font-weight:600;">Open Scientific Calculator</a>
+                </div>
+            </div>
+
+            <h2 style="margin:2rem 0 1rem;">Common Functions</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem;">
+                <div style="border:1px solid #e5e7eb; border-radius:12px; padding:1rem;">
+                    <h3>Trigonometry</h3>
+                    <ul style="color:#475569; line-height:1.7;">
+                        <li>sin, cos, tan, and inverses</li>
+                        <li>Example: sin(30°) = 0.5 (DEG)</li>
+                    </ul>
+                </div>
+                <div style="border:1px solid #e5e7eb; border-radius:12px; padding:1rem;">
+                    <h3>Logarithms</h3>
+                    <ul style="color:#475569; line-height:1.7;">
+                        <li>ln(x), log10(x)</li>
+                        <li>Example: log10(1000) = 3</li>
+                    </ul>
+                </div>
+                <div style="border:1px solid #e5e7eb; border-radius:12px; padding:1rem;">
+                    <h3>Powers & Roots</h3>
+                    <ul style="color:#475569; line-height:1.7;">
+                        <li>x^y, √, ⁿ√x</li>
+                        <li>Example: 2^10 = 1024</li>
+                    </ul>
+                </div>
+                <div style="border:1px solid #e5e7eb; border-radius:12px; padding:1rem;">
+                    <h3>Factorial & nCr/nPr</h3>
+                    <ul style="color:#475569; line-height:1.7;">
+                        <li>n! for permutations/combinations</li>
+                        <li>Example: 5! = 120</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments (no login, device-only) -->
+    <section class="comments" id="comments-section" style="padding: 2rem 0; border-top: 1px solid #e5e7eb;">
+        <div class="container" style="max-width: 900px;">
+            <h3 style="margin-bottom: 0.5rem; color: #2d3748;">Comments</h3>
+            <p style="color:#64748b; font-size: 0.9rem; margin: 0 0 1rem;">No login. Stored on your device only.</p>
+            <div id="comments-list"></div>
+            <form id="comment-form" style="margin-top: 1rem;">
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <input type="text" id="comment-name" placeholder="Your name" required style="flex:1; min-width:180px; padding:0.6rem; border:1px solid #e5e7eb; border-radius:8px;">
+                </div>
+                <textarea id="comment-message" placeholder="Write a comment..." required rows="3" style="width:100%; margin-top:0.5rem; padding:0.6rem; border:1px solid #e5e7eb; border-radius:8px;"></textarea>
+                <button type="submit" style="margin-top:0.5rem; background:#667eea; color:white; padding:0.6rem 1rem; border:none; border-radius:8px; font-weight:600;">Post Comment</button>
+            </form>
+        </div>
+    </section>
+    <script src="../js/comments.js"></script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../calculators/scientific-calculator.html">Scientific Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

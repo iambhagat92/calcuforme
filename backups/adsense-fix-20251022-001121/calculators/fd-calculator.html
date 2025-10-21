@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Calculator - Fixed Deposit Interest Calculator India | Calculate For Me</title>
+    <meta name="description" content="Calculate Fixed Deposit maturity amount and interest earned. FD calculator with quarterly, monthly, and cumulative interest options for Indian banks.">
+    <meta name="keywords" content="fd calculator, fixed deposit calculator, fd interest calculator, fd maturity calculator india, bank fd calculator">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .calculator-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 40px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #333; font-size: 2.5em; margin-bottom: 10px; }
+        .nav-link { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; font-weight: 500; }
+        .calculator-section { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; color: #333; font-weight: 600; margin-bottom: 8px; }
+        .input-group input, .input-group select { width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1em; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: #667eea; }
+        button { padding: 15px 30px; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; width: 100%; margin-top: 10px; }
+        .calculate-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .result-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; color: white; }
+        .result-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { font-size: 0.9em; opacity: 0.9; margin-bottom: 5px; }
+        .result-value { font-size: 1.8em; font-weight: 700; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f8f9fa; font-weight: 600; }
+        @media (max-width: 768px) { .calculator-section { grid-template-columns: 1fr; } }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <a href="../index.html" class="nav-link">← Back to Home</a>
+            
+            <div class="header">
+                <h1>FD Calculator</h1>
+                <p>Calculate Fixed Deposit Maturity Amount</p>
+            </div>
+
+            <div class="calculator-section">
+                <div>
+                    <h3>Deposit Details</h3>
+                    
+                    <div class="input-group">
+                        <label for="principal">Deposit Amount (₹)</label>
+                        <input type="number" id="principal" value="100000" min="1000" max="10000000">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="rate">Interest Rate (% per annum)</label>
+                        <input type="number" id="rate" value="6.5" min="1" max="15" step="0.1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="tenure">Tenure</label>
+                        <input type="number" id="tenure" value="1" min="1" max="10">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="tenureType">Tenure Type</label>
+                        <select id="tenureType">
+                            <option value="years">Years</option>
+                            <option value="months">Months</option>
+                            <option value="days">Days</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="compounding">Compounding Frequency</label>
+                        <select id="compounding">
+                            <option value="monthly">Monthly</option>
+                            <option value="quarterly" selected>Quarterly</option>
+                            <option value="half-yearly">Half-Yearly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateFD()">Calculate Maturity</button>
+                </div>
+
+                <div>
+                    <div class="result-box">
+                        <div class="result-item">
+                            <div class="result-label">Maturity Amount</div>
+                            <div class="result-value" id="maturityAmount">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Interest</div>
+                            <div class="result-value" id="totalInterest">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Effective Yield</div>
+                            <div class="result-value" id="effectiveYield">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table id="bankRates" style="display: none;">
+                <h3>Popular Bank FD Rates</h3>
+                <thead>
+                    <tr>
+                        <th>Bank</th>
+                        <th>1 Year</th>
+                        <th>3 Years</th>
+                        <th>5 Years</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>SBI</td><td>6.8%</td><td>7.0%</td><td>6.5%</td></tr>
+                    <tr><td>HDFC</td><td>7.1%</td><td>7.0%</td><td>7.0%</td></tr>
+                    <tr><td>ICICI</td><td>7.0%</td><td>7.0%</td><td>7.0%</td></tr>
+                    <tr><td>Axis</td><td>7.1%</td><td>7.25%</td><td>7.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function calculateFD() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            let tenure = parseFloat(document.getElementById('tenure').value);
+            const tenureType = document.getElementById('tenureType').value;
+            const compounding = document.getElementById('compounding').value;
+            
+            // Convert tenure to years
+            if (tenureType === 'months') tenure = tenure / 12;
+            else if (tenureType === 'days') tenure = tenure / 365;
+            
+            // Compounding frequency
+            let n = 4; // quarterly default
+            if (compounding === 'monthly') n = 12;
+            else if (compounding === 'half-yearly') n = 2;
+            else if (compounding === 'yearly') n = 1;
+            
+            // Calculate maturity amount
+            const maturityAmount = principal * Math.pow((1 + rate / 100 / n), n * tenure);
+            const totalInterest = maturityAmount - principal;
+            const effectiveYield = ((maturityAmount - principal) / principal) * 100 / tenure;
+            
+            // Format and display
+            const formatINR = (num) => '₹' + Math.round(num).toLocaleString('en-IN');
+            
+            document.getElementById('maturityAmount').textContent = formatINR(maturityAmount);
+            document.getElementById('totalInterest').textContent = formatINR(totalInterest);
+            document.getElementById('effectiveYield').textContent = effectiveYield.toFixed(2) + '%';
+            
+            document.getElementById('bankRates').style.display = 'block';
+        }
+        
+        window.onload = function() { calculateFD(); };
+    </script>
+</body>
+</html>

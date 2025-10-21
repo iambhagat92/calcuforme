@@ -1,0 +1,4866 @@
+{
+  "Timestamp": "2025-10-22 00:11:43",
+  "Summary": {
+    "ViolationCount": 531,
+    "MediumPriorityIssues": 404,
+    "WarningCount": 0,
+    "TotalFiles": 176,
+    "HighPriorityIssues": 127
+  },
+  "Violations": [
+    {
+      "File": "index.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "index.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'calculators/emi-calculator.html?city=Delhi' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "index.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'calculators/roi-calculator.html?profession=Freelancer' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "index.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'calculators/gpa-calculator.html?role=Student' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "index.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'calculators/tax-calculator.html?type=Salaried' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "newsletter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "saved-calculations.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\index.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\index.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'calculators/emi-calculator.html?city=Delhi' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\index.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'calculators/roi-calculator.html?profession=Freelancer' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\index.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'calculators/gpa-calculator.html?role=Student' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\index.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'calculators/tax-calculator.html?type=Salaried' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\newsletter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\newsletter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\newsletter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\newsletter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\newsletter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\newsletter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\newsletter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\privacy-policy.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\quiz.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms-of-service.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms-of-service.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms-of-service.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms-of-service.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms-of-service.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms-of-service.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms-of-service.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 145 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'pregnancy-due-date-calculator-guide.html' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\calorie-calculator-weight-loss-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\calorie-calculator-weight-loss-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\calorie-calculator-weight-loss-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\calorie-calculator-weight-loss-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\calorie-calculator-weight-loss-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-excel-guides.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 162 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-excel-guides.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-excel-guides.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-excel-guides.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-excel-guides.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-excel-guides.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 122 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\email-newsletter-emi-tips.html",
+      "Issue": "Poor Meta Description",
+      "Description": "Missing or too short meta description (need 50+ characters)",
+      "Severity": "Medium",
+      "Category": "SEO/Content"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\email-newsletter-emi-tips.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\epfo-new-rules-2025-epf-eps-withdrawal-guidelines.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\home-loan-emi-calculation-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\home-loan-emi-calculation-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\home-loan-emi-calculation-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\home-loan-emi-calculation-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\home-loan-emi-calculation-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-body-fat-percentage-methods-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 94 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-body-fat-percentage-methods-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'coming soon'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 107 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\investment-calculator-complete-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 197 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\investment-calculator-complete-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\investment-calculator-complete-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\investment-calculator-complete-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\investment-calculator-complete-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\investment-calculator-complete-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\michigan-mortgage-calculator-home-buying-guide-2025.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\michigan-mortgage-calculator-home-buying-guide-2025.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\michigan-mortgage-calculator-home-buying-guide-2025.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\michigan-mortgage-calculator-home-buying-guide-2025.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 105 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\personal-loan-vs-credit-card-emi.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\personal-loan-vs-credit-card-emi.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\personal-loan-vs-credit-card-emi.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\personal-loan-vs-credit-card-emi.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\personal-loan-vs-credit-card-emi.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\quarterly-tax-calculator-freelancers-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 92 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\quarterly-tax-calculator-freelancers-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'coming soon'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'home-loan-emi-calculator-guide.html' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'bmi-weight-loss-calculator-guide.html' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\retirement-planning-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 143 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 142 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\sip-retirement-planning-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\sip-retirement-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\sip-retirement-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\sip-retirement-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\sip-retirement-planning-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\tax-planning-guide-2025.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\body-fat-percentage-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\body-fat-percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\body-fat-percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator-india.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator-india.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\countdown-timer.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\countdown-timer.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\countdown-timer.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\countdown-timer.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\countdown-timer.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\currency-converter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\currency-converter.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\detroit-property-tax-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'coming soon'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\emi-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\emi-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\epf-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\epf-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\epf-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\epf-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\epf-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\epf-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\fd-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\grade-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\grade-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gratuity-calculator-india.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gst-calculator-india.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gst-calculator-india.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\hra-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\income-tax-calculator-india.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\interest-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\interest-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\investment-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\investment-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\michigan-income-tax-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'coming soon'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\michigan-mortgage-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\michigan-mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\michigan-mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\michigan-mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\michigan-mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ohms-law-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ohms-law-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ohms-law-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\online-clock.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\online-clock.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\online-clock.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\online-clock.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\online-clock.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\online-clock.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\pf-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\pf-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\pf-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\pf-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ppf-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\quarterly-tax-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\quarterly-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\quarterly-tax-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\retirement-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\retirement-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ring-size-converter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ring-size-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ring-size-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ring-size-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ring-size-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ring-size-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\salary-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\salary-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\savings-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\savings-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\self-employment-tax-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'coming soon'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\sip-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\sip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\sip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\sip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\sip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\sip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tax-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tax-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\temperature-converter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\temperature-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\temperature-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\temperature-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\temperature-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\temperature-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-converter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-converter.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\weight-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\weight-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\weight-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\weight-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\weight-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\weight-calculator.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 110 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 117 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#popular' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#about' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#contact' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to '../index.html#categories' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 145 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'pregnancy-due-date-calculator-guide.html' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "blog\\calorie-calculator-weight-loss-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\compound-interest-excel-guides.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 162 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\compound-interest-excel-guides.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 122 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\email-newsletter-emi-tips.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "blog\\epfo-new-rules-2025-epf-eps-withdrawal-guidelines.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\home-loan-emi-calculation-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\how-to-calculate-body-fat-percentage-methods-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 94 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 107 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\investment-calculator-complete-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 197 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\investment-calculator-complete-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 105 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\personal-loan-vs-credit-card-emi.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\quarterly-tax-calculator-freelancers-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 92 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'home-loan-emi-calculator-guide.html' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "blog\\reduce-home-loan-emi-tips.html",
+      "Issue": "Broken Internal Link",
+      "Description": "Link to 'bmi-weight-loss-calculator-guide.html' points to non-existent file",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "blog\\retirement-planning-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 143 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 142 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\sip-retirement-planning-guide.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "blog\\tax-planning-guide-2025.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\bmi-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\body-fat-percentage-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\compound-interest-calculator-india.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\compound-interest-calculator-india.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\currency-converter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\currency-converter.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\emi-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\emi-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\epf-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\fd-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\gpa-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\grade-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\grade-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\gratuity-calculator-india.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\gst-calculator-india.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\gst-calculator-india.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\hra-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\income-tax-calculator-india.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\interest-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\interest-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\investment-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\investment-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\michigan-mortgage-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\mortgage-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\ohms-law-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\online-clock.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\paint-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\pf-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\ppf-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\quarterly-tax-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\retirement-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\retirement-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\ring-size-converter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\salary-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\salary-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\savings-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\savings-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\sip-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\tax-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\tax-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\temperature-converter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\time-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\time-calculator.html",
+      "Issue": "Missing Navigation",
+      "Description": "Page lacks proper navigation structure",
+      "Severity": "Medium",
+      "Category": "User Experience"
+    },
+    {
+      "File": "calculators\\time-converter.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "calculators\\weight-calculator.html",
+      "Issue": "Placeholder Content",
+      "Description": "Contains placeholder/dummy content: 'placeholder'",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "categories\\creative.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 110 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    },
+    {
+      "File": "categories\\everyday.html",
+      "Issue": "Insufficient Content",
+      "Description": "Page has only 117 words (minimum 200+ recommended)",
+      "Severity": "High",
+      "Category": "Content Quality"
+    }
+  ],
+  "Warnings": [],
+  "Recommendations": [
+    {
+      "File": "about.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "contact.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "newsletter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "privacy-policy.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "privacy.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "quiz.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "saved-calculations.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "terms-of-service.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "terms.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\about.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\contact.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\newsletter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\privacy-policy.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\privacy.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\quiz.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\saved-calculations.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms-of-service.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\terms.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\calorie-calculator-weight-loss-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-excel-guides.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\email-newsletter-emi-tips.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\home-loan-emi-calculation-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-body-fat-percentage-methods-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\investment-calculator-complete-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\personal-loan-vs-credit-card-emi.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\quarterly-tax-calculator-freelancers-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\retirement-planning-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\sip-retirement-planning-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\blog\\tax-planning-guide-2025.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\age-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\bmi-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\calorie-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\compound-interest-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\countdown-timer.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\currency-converter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\date-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\detroit-property-tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\discount-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\emi-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\epf-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\fd-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\freelancer-tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gpa-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\grade-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gratuity-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\gst-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\hra-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\income-tax-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\interest-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\investment-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\loan-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\michigan-income-tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\mortgage-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ohms-law-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\online-clock.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\paint-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\percentage-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\pf-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ppf-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\retirement-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\ring-size-converter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\roi-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\salary-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\savings-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\scientific-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\self-employment-tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\sip-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\temperature-converter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\time-converter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\tip-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\calculators\\weight-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\creative.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\education.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\everyday.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\financial.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\health.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "backups\\adsense-fix-20251022-001121\\categories\\home.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\age-calculator-life-planning-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\bmi-calculator-ideal-weight-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\calorie-calculator-weight-loss-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\compound-interest-excel-guides.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\compound-interest-formula-excel-with-monthly-contributions.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\email-newsletter-emi-tips.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\home-loan-emi-calculation-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\how-to-calculate-body-fat-percentage-methods-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\how-to-calculate-compound-interest-in-excel-for-days.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\investment-calculator-complete-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\monthly-compound-interest-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\personal-loan-vs-credit-card-emi.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\quarterly-tax-calculator-freelancers-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\retirement-planning-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\salary-calculator-income-planning-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\scientific-calculator-functions-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\sip-retirement-planning-guide.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "blog\\tax-planning-guide-2025.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\age-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\bmi-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\calorie-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\compound-interest-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\compound-interest-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\countdown-timer.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\currency-converter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\date-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\detroit-property-tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\discount-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\ecommerce-profit-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\emi-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\epf-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\fd-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\freelancer-tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\gpa-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\grade-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\gratuity-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\gst-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\hra-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\income-tax-calculator-india.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\interest-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\investment-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\loan-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\michigan-income-tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\mortgage-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\ohms-law-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\online-clock.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\paint-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\percentage-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\pf-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\ppf-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\retirement-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\ring-size-converter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\roi-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\salary-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\savings-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\scientific-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\self-employment-tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\sip-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\tax-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\temperature-converter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\time-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\time-converter.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\tip-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "calculators\\weight-calculator.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "categories\\creative.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "categories\\education.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "categories\\everyday.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "categories\\financial.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "categories\\health.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    },
+    {
+      "File": "categories\\home.html",
+      "Issue": "Missing Structured Data",
+      "Description": "No JSON-LD structured data found (recommended for better SEO)",
+      "Severity": "Low",
+      "Category": "SEO Enhancement"
+    }
+  ]
+}

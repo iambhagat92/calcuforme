@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Discount Calculator - Calculate discounts, final prices, and savings instantly.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Calculate For Me">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CalculateForMe">
+    <meta name="keywords" content="discount calculator, sale price, percentage off, savings calculator">
+    <title>Discount Calculator | Calculate For Me</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <!-- Google Analytics (Add your GA4 Measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC3ZC6EBG');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html#categories">Categories</a>
+                    <a href="../index.html#popular">Popular</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../index.html#categories">Categories</a>
+            <a href="../index.html#popular">Popular</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-tags"></i> Discount Calculator</h1>
+                    <p>Calculate discounts, sale prices, and your savings</p>
+                </div>
+
+                <form id="discountForm">
+                    <div class="form-group">
+                        <label for="originalPrice">
+                            <i class="fas fa-dollar-sign"></i> Original Price
+                        </label>
+                        <input type="number" id="originalPrice" step="0.01" min="0" value="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discountType">Discount Type</label>
+                        <select id="discountType">
+                            <option value="percentage">Percentage Off (%)</option>
+                            <option value="fixed">Fixed Amount Off ($)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="discountValue">
+                            <i class="fas fa-percent"></i> <span id="discountLabel">Discount Percentage</span>
+                        </label>
+                        <input type="number" id="discountValue" step="0.01" min="0" value="20" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taxRate">
+                            <i class="fas fa-receipt"></i> Sales Tax (%) - Optional
+                        </label>
+                        <input type="number" id="taxRate" step="0.01" min="0" max="100" value="0">
+                        <small>Enter sales tax rate if applicable</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Discount
+                    </button>
+                </form>
+
+                <div id="result" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Discount Breakdown</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">Original Price</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: #718096;" id="originalPriceDisplay">$0.00</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%); padding: 1.5rem; border-radius: 12px; text-align: center; color: white;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">You Save</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="savings">$0.00</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 12px; text-align: center; color: white;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Final Price</div>
+                            <div style="font-size: 2rem; font-weight: 700;" id="finalPrice">$0.00</div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                        <h4 style="margin-bottom: 1rem; color: #2d3748;"><i class="fas fa-info-circle"></i> Price Breakdown</h4>
+                        <div style="display: grid; gap: 0.75rem; color: #718096;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Original Price:</span>
+                                <strong id="breakdownOriginal">$0.00</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Discount:</span>
+                                <strong style="color: #f5576c;" id="breakdownDiscount">-$0.00</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Price After Discount:</span>
+                                <strong id="breakdownAfterDiscount">$0.00</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;" id="taxRow">
+                                <span>Sales Tax:</span>
+                                <strong id="breakdownTax">$0.00</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding-top: 0.75rem; border-top: 2px solid #e2e8f0;">
+                                <span style="font-weight: 600;">Final Total:</span>
+                                <strong style="color: #667eea; font-size: 1.2rem;" id="breakdownFinal">$0.00</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding-top: 0.5rem;">
+                                <span style="font-weight: 600;">Savings Percentage:</span>
+                                <strong style="color: #43e97b; font-size: 1.1rem;" id="savingsPercent">0%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> Tips for Shopping</h3>
+                    <ul style="color: #718096; line-height: 2;">
+                        <li><strong>Compare Discounts:</strong> A 30% discount on a $100 item saves $30, while $25 off saves only $25</li>
+                        <li><strong>Stack Coupons:</strong> Some stores allow combining percentage and fixed discounts</li>
+                        <li><strong>Watch for Tax:</strong> Remember to factor in sales tax for your final cost</li>
+                        <li><strong>Black Friday/Cyber Monday:</strong> Typically offer 40-70% discounts on select items</li>
+                        <li><strong>Clearance Sales:</strong> Can offer up to 90% off original prices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        const discountType = document.getElementById('discountType');
+        const discountLabel = document.getElementById('discountLabel');
+        const discountValue = document.getElementById('discountValue');
+
+        // Update label based on discount type
+        discountType.addEventListener('change', (e) => {
+            if (e.target.value === 'percentage') {
+                discountLabel.textContent = 'Discount Percentage';
+                discountValue.max = '100';
+            } else {
+                discountLabel.textContent = 'Discount Amount ($)';
+                discountValue.max = '';
+            }
+        });
+
+        document.getElementById('discountForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const originalPrice = parseFloat(document.getElementById('originalPrice').value);
+            const type = document.getElementById('discountType').value;
+            const value = parseFloat(document.getElementById('discountValue').value);
+            const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+
+            // Calculate discount amount
+            let discountAmount;
+            if (type === 'percentage') {
+                if (value > 100) {
+                    alert('Discount percentage cannot exceed 100%');
+                    return;
+                }
+                discountAmount = (originalPrice * value) / 100;
+            } else {
+                if (value > originalPrice) {
+                    alert('Discount amount cannot exceed original price');
+                    return;
+                }
+                discountAmount = value;
+            }
+
+            const priceAfterDiscount = originalPrice - discountAmount;
+            const taxAmount = (priceAfterDiscount * taxRate) / 100;
+            const finalTotal = priceAfterDiscount + taxAmount;
+            const savingsPercentage = (discountAmount / originalPrice) * 100;
+
+            // Format currency
+            const formatCurrency = (num) => {
+                return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            };
+
+            // Display results
+            document.getElementById('originalPriceDisplay').textContent = formatCurrency(originalPrice);
+            document.getElementById('savings').textContent = formatCurrency(discountAmount);
+            document.getElementById('finalPrice').textContent = formatCurrency(finalTotal);
+
+            // Breakdown
+            document.getElementById('breakdownOriginal').textContent = formatCurrency(originalPrice);
+            document.getElementById('breakdownDiscount').textContent = '-' + formatCurrency(discountAmount);
+            document.getElementById('breakdownAfterDiscount').textContent = formatCurrency(priceAfterDiscount);
+            document.getElementById('breakdownTax').textContent = formatCurrency(taxAmount);
+            document.getElementById('breakdownFinal').textContent = formatCurrency(finalTotal);
+            document.getElementById('savingsPercent').textContent = savingsPercentage.toFixed(1) + '%';
+
+            // Show/hide tax row
+            document.getElementById('taxRow').style.display = taxRate > 0 ? 'flex' : 'none';
+
+            // Show results
+            const resultContainer = document.getElementById('result');
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>
+
+

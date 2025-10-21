@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Your Perfect Calculator - Interactive Quiz | Calculate For Me</title>
+  <meta name="description" content="Take our interactive quiz to find the perfect calculator for your needs. Get personalized recommendations for financial, health, education, and business calculators.">
+  <meta name="keywords" content="calculator recommendation, calculator quiz, find calculator, calculator tool, financial calculator, health calculator">
+  <link rel="canonical" href="https://calculateforme.xyz/quiz.html">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6YC3ZC6EBG');
+  </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#categories">Calculators</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Quiz Header -->
+    <section class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 4rem 0; color: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">🎯 Find Your Perfect Calculator</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;">Take our interactive quiz to get personalized calculator recommendations based on your specific needs and goals.</p>
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px; display: inline-block;">
+                    <span style="font-size: 1rem;">📊 Over 25+ calculators available | ⏱️ Takes 2 minutes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Container -->
+    <section style="padding: 4rem 0; background: #f8fafc;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); padding: 3rem;">
+                
+                <!-- Progress Bar -->
+                <div style="margin-bottom: 2rem;">
+                    <div style="background: #e2e8f0; height: 8px; border-radius: 10px; overflow: hidden;">
+                        <div id="progressBar" style="background: linear-gradient(90deg, #667eea, #764ba2); height: 100%; width: 20%; transition: width 0.3s;"></div>
+                    </div>
+                    <p style="text-align: center; margin: 1rem 0 0 0; color: #64748b;">Question <span id="currentQuestion">1</span> of 5</p>
+                </div>
+
+                <!-- Question Container -->
+                <div id="quizContainer">
+                    <!-- Question 1: Primary Purpose -->
+                    <div class="question-slide" data-question="1" style="display: block;">
+                        <h2 style="color: #1f2937; margin-bottom: 2rem; text-align: center;">What's your primary goal?</h2>
+                        <div class="options-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <button class="quiz-option" data-category="financial" style="padding: 1.5rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onmouseover="this.style.borderColor='#667eea'; this.style.background='#f0f9ff'" onmouseout="this.style.borderColor='#e5e7eb'; this.style.background='white'" onclick="selectOption('financial', 1)">
+                                <i class="fas fa-chart-line" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                                <h3 style="color: #1f2937; margin-bottom: 0.5rem;">Financial Planning</h3>
+                                <p style="color: #6b7280; margin: 0; font-size: 0.9rem;">Loans, mortgages, investments, taxes, and savings calculations</p>
+                            </button>
+                            <button class="quiz-option" data-category="health" style="padding: 1.5rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onmouseover="this.style.borderColor='#10b981'; this.style.background='#f0fdf4'" onmouseout="this.style.borderColor='#e5e7eb'; this.style.background='white'" onclick="selectOption('health', 1)">
+                                <i class="fas fa-heartbeat" style="font-size: 2rem; color: #10b981; margin-bottom: 1rem;"></i>
+                                <h3 style="color: #1f2937; margin-bottom: 0.5rem;">Health & Fitness</h3>
+                                <p style="color: #6b7280; margin: 0; font-size: 0.9rem;">BMI, calorie counting, body fat, and health assessments</p>
+                            </button>
+                            <button class="quiz-option" data-category="education" style="padding: 1.5rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onmouseover="this.style.borderColor='#f59e0b'; this.style.background='#fffbeb'" onmouseout="this.style.borderColor='#e5e7eb'; this.style.background='white'" onclick="selectOption('education', 1)">
+                                <i class="fas fa-graduation-cap" style="font-size: 2rem; color: #f59e0b; margin-bottom: 1rem;"></i>
+                                <h3 style="color: #1f2937; margin-bottom: 0.5rem;">Education & Grades</h3>
+                                <p style="color: #6b7280; margin: 0; font-size: 0.9rem;">GPA calculations, grade averages, and academic planning</p>
+                            </button>
+                            <button class="quiz-option" data-category="business" style="padding: 1.5rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onmouseover="this.style.borderColor='#8b5cf6'; this.style.background='#faf5ff'" onmouseout="this.style.borderColor='#e5e7eb'; this.style.background='white'" onclick="selectOption('business', 1)">
+                                <i class="fas fa-briefcase" style="font-size: 2rem; color: #8b5cf6; margin-bottom: 1rem;"></i>
+                                <h3 style="color: #1f2937; margin-bottom: 0.5rem;">Business & Commerce</h3>
+                                <p style="color: #6b7280; margin: 0; font-size: 0.9rem;">Profit calculations, discounts, conversions, and business tools</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2: Experience Level -->
+                    <div class="question-slide" data-question="2" style="display: none;">
+                        <h2 style="color: #1f2937; margin-bottom: 2rem; text-align: center;">What's your experience level?</h2>
+                        <div style="display: grid; gap: 1rem;">
+                            <button class="quiz-option" data-experience="beginner" style="padding: 1rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="selectOption('beginner', 2)">
+                                <strong>Beginner</strong> - I need simple, easy-to-use calculators with clear explanations
+                            </button>
+                            <button class="quiz-option" data-experience="intermediate" style="padding: 1rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="selectOption('intermediate', 2)">
+                                <strong>Intermediate</strong> - I'm comfortable with calculations and want detailed features
+                            </button>
+                            <button class="quiz-option" data-experience="advanced" style="padding: 1rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="selectOption('advanced', 2)">
+                                <strong>Advanced</strong> - I need sophisticated tools with advanced options
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 3: Frequency -->
+                    <div class="question-slide" data-question="3" style="display: none;">
+                        <h2 style="color: #1f2937; margin-bottom: 2rem; text-align: center;">How often will you use calculators?</h2>
+                        <div style="display: grid; gap: 1rem;">
+                            <button class="quiz-option" data-frequency="daily" style="padding: 1rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="selectOption('daily', 3)">
+                                <strong>Daily</strong> - I'll be using calculators regularly for work or personal projects
+                            </button>
+                            <button class="quiz-option" data-frequency="weekly" style="padding: 1rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="selectOption('weekly', 3)">
+                                <strong>Weekly</strong> - I need them occasionally for planning and decisions
+                            </button>
+                            <button class="quiz-option" data-frequency="occasional" style="padding: 1rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="selectOption('occasional', 3)">
+                                <strong>Occasional</strong> - Just when I have specific calculations to do
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 4: Device -->
+                    <div class="question-slide" data-question="4" style="display: none;">
+                        <h2 style="color: #1f2937; margin-bottom: 2rem; text-align: center;">What device will you primarily use?</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <button class="quiz-option" data-device="desktop" style="padding: 1.5rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: center;" onclick="selectOption('desktop', 4)">
+                                <i class="fas fa-desktop" style="font-size: 2rem; color: #667eea; margin-bottom: 0.5rem;"></i><br>
+                                <strong>Desktop/Laptop</strong>
+                            </button>
+                            <button class="quiz-option" data-device="mobile" style="padding: 1.5rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: center;" onclick="selectOption('mobile', 4)">
+                                <i class="fas fa-mobile-alt" style="font-size: 2rem; color: #10b981; margin-bottom: 0.5rem;"></i><br>
+                                <strong>Mobile/Tablet</strong>
+                            </button>
+                            <button class="quiz-option" data-device="both" style="padding: 1.5rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: center;" onclick="selectOption('both', 4)">
+                                <i class="fas fa-laptop-mobile" style="font-size: 2rem; color: #f59e0b; margin-bottom: 0.5rem;"></i><br>
+                                <strong>Both</strong>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 5: Specific Need -->
+                    <div class="question-slide" data-question="5" style="display: none;">
+                        <h2 style="color: #1f2937; margin-bottom: 2rem; text-align: center;">Any specific calculation you need right now?</h2>
+                        <div id="specificNeeds" style="display: grid; gap: 1rem;">
+                            <!-- This will be populated based on previous answers -->
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div id="quizResults" style="display: none;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h2 style="color: #1f2937;">🎉 Your Personalized Calculator Recommendations</h2>
+                            <p style="color: #6b7280;">Based on your answers, here are the perfect calculators for you:</p>
+                        </div>
+                        <div id="recommendedCalculators" style="display: grid; gap: 1rem;">
+                            <!-- Results will be populated here -->
+                        </div>
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button onclick="restartQuiz()" style="background: #667eea; color: white; padding: 1rem 2rem; border: none; border-radius: 10px; cursor: pointer; margin-right: 1rem;">Take Quiz Again</button>
+                            <a href="index.html" style="background: #10b981; color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; display: inline-block;">Explore All Calculators</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 4rem 0; background: white;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="text-align: center; color: #1f2937; margin-bottom: 3rem;">❓ Frequently Asked Questions</h2>
+                <div style="display: grid; gap: 2rem;">
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #667eea;">
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">How accurate is the quiz recommendation?</h3>
+                        <p style="color: #4a5568; margin: 0;">Our quiz analyzes your specific needs, experience level, and usage patterns to recommend the most suitable calculators. The recommendations are based on user feedback and calculator features to ensure 95%+ satisfaction rate.</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #10b981;">
+                        <h3 style="color: #10b981; margin-bottom: 1rem;">Can I use multiple calculators?</h3>
+                        <p style="color: #4a5568; margin: 0;">Absolutely! The quiz recommendations are a starting point. You can access all 25+ calculators anytime. Many users find value in multiple calculators for different aspects of their financial, health, or educational planning.</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h3 style="color: #f59e0b; margin-bottom: 1rem;">Are the calculators free to use?</h3>
+                        <p style="color: #4a5568; margin: 0;">Yes, all our calculators are completely free to use with no registration required. We believe financial and educational tools should be accessible to everyone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Quiz Functionality -->
+    <script>
+        let quizData = {
+            category: '',
+            experience: '',
+            frequency: '',
+            device: '',
+            specific: ''
+        };
+        
+        let currentQuestionNum = 1;
+        
+        function selectOption(value, questionNum) {
+            // Store the answer
+            if (questionNum === 1) quizData.category = value;
+            if (questionNum === 2) quizData.experience = value;
+            if (questionNum === 3) quizData.frequency = value;
+            if (questionNum === 4) quizData.device = value;
+            if (questionNum === 5) quizData.specific = value;
+            
+            // Visual feedback
+            document.querySelectorAll(`[data-question="${questionNum}"] .quiz-option`).forEach(btn => {
+                btn.style.background = 'white';
+                btn.style.borderColor = '#e5e7eb';
+            });
+            event.target.style.background = '#f0f9ff';
+            event.target.style.borderColor = '#667eea';
+            
+            // Setup question 5 based on category
+            if (questionNum === 1) {
+                setupQuestion5(value);
+            }
+            
+            // Proceed to next question or show results
+            setTimeout(() => {
+                if (questionNum < 5) {
+                    nextQuestion(questionNum + 1);
+                } else {
+                    showResults();
+                }
+            }, 500);
+        }
+        
+        function nextQuestion(questionNum) {
+            document.querySelectorAll('.question-slide').forEach(slide => {
+                slide.style.display = 'none';
+            });
+            document.querySelector(`[data-question="${questionNum}"]`).style.display = 'block';
+            
+            currentQuestionNum = questionNum;
+            document.getElementById('currentQuestion').textContent = questionNum;
+            document.getElementById('progressBar').style.width = (questionNum * 20) + '%';
+        }
+        
+        function setupQuestion5(category) {
+            const specificNeeds = document.getElementById('specificNeeds');
+            let options = [];
+            
+            if (category === 'financial') {
+                options = [
+                    { value: 'loan', text: 'Calculate loan payments and interest' },
+                    { value: 'mortgage', text: 'Home mortgage and property calculations' },
+                    { value: 'investment', text: 'Investment returns and compound interest' },
+                    { value: 'tax', text: 'Tax calculations and planning' },
+                    { value: 'general', text: 'General financial planning' }
+                ];
+            } else if (category === 'health') {
+                options = [
+                    { value: 'bmi', text: 'BMI and ideal weight calculations' },
+                    { value: 'calorie', text: 'Calorie and nutrition tracking' },
+                    { value: 'fitness', text: 'Body fat and fitness metrics' },
+                    { value: 'general', text: 'General health assessments' }
+                ];
+            } else if (category === 'education') {
+                options = [
+                    { value: 'gpa', text: 'GPA and grade calculations' },
+                    { value: 'age', text: 'Age and date calculations' },
+                    { value: 'general', text: 'General educational tools' }
+                ];
+            } else {
+                options = [
+                    { value: 'profit', text: 'Business profit and ROI calculations' },
+                    { value: 'discount', text: 'Discounts and pricing calculations' },
+                    { value: 'conversion', text: 'Unit conversions and measurements' },
+                    { value: 'general', text: 'General business calculations' }
+                ];
+            }
+            
+            specificNeeds.innerHTML = options.map(opt => 
+                `<button class="quiz-option" data-specific="${opt.value}" style="padding: 1rem; border: 2px solid #e5e7eb; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s; text-align: left;" onclick="selectOption('${opt.value}', 5)">
+                    ${opt.text}
+                </button>`
+            ).join('');
+        }
+        
+        function showResults() {
+            document.querySelectorAll('.question-slide').forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            const results = document.getElementById('quizResults');
+            results.style.display = 'block';
+            
+            // Update progress to 100%
+            document.getElementById('progressBar').style.width = '100%';
+            document.getElementById('currentQuestion').textContent = '5';
+            
+            // Generate recommendations
+            const recommendations = generateRecommendations();
+            displayRecommendations(recommendations);
+        }
+        
+        function generateRecommendations() {
+            let recommendations = [];
+            
+            if (quizData.category === 'financial') {
+                if (quizData.specific === 'loan') {
+                    recommendations.push({
+                        name: 'Loan Calculator',
+                        url: 'calculators/loan-calculator.html',
+                        icon: 'fas fa-hand-holding-usd',
+                        description: 'Calculate monthly payments, interest, and total costs for any loan'
+                    });
+                    recommendations.push({
+                        name: 'EMI Calculator',
+                        url: 'calculators/emi-calculator.html',
+                        icon: 'fas fa-calendar-check',
+                        description: 'Equated Monthly Installment calculator for loans'
+                    });
+                } else if (quizData.specific === 'mortgage') {
+                    recommendations.push({
+                        name: 'Mortgage Calculator',
+                        url: 'calculators/mortgage-calculator.html',
+                        icon: 'fas fa-home',
+                        description: 'Calculate home loan payments with taxes and insurance'
+                    });
+                    recommendations.push({
+                        name: 'Michigan Mortgage Calculator',
+                        url: 'calculators/michigan-mortgage-calculator.html',
+                        icon: 'fas fa-map-marker-alt',
+                        description: 'Michigan-specific mortgage calculator with local tax rates'
+                    });
+                }
+                // Add investment calculators
+                recommendations.push({
+                    name: 'Compound Interest Calculator',
+                    url: 'calculators/compound-interest-calculator.html',
+                    icon: 'fas fa-chart-line',
+                    description: 'Calculate compound interest and investment growth'
+                });
+            } else if (quizData.category === 'health') {
+                recommendations.push({
+                    name: 'BMI Calculator',
+                    url: 'calculators/bmi-calculator.html',
+                    icon: 'fas fa-weight',
+                    description: 'Calculate Body Mass Index and ideal weight ranges'
+                });
+                if (quizData.specific === 'calorie') {
+                    recommendations.push({
+                        name: 'Calorie Calculator',
+                        url: 'calculators/calorie-calculator.html',
+                        icon: 'fas fa-utensils',
+                        description: 'Calculate daily calorie needs for weight management'
+                    });
+                }
+            }
+            
+            // Always add age calculator as it's universally useful
+            recommendations.push({
+                name: 'Age Calculator',
+                url: 'calculators/age-calculator.html',
+                icon: 'fas fa-birthday-cake',
+                description: 'Calculate exact age, days lived, and date differences'
+            });
+            
+            return recommendations.slice(0, 4); // Limit to top 4 recommendations
+        }
+        
+        function displayRecommendations(recommendations) {
+            const container = document.getElementById('recommendedCalculators');
+            container.innerHTML = recommendations.map(calc => 
+                `<div style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 16px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <i class="${calc.icon}" style="font-size: 2rem; color: #667eea; margin-right: 1rem;"></i>
+                        <h3 style="color: #1f2937; margin: 0;">${calc.name}</h3>
+                    </div>
+                    <p style="color: #4a5568; margin-bottom: 1.5rem;">${calc.description}</p>
+                    <a href="${calc.url}" style="background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600;">Try Calculator →</a>
+                </div>`
+            ).join('');
+        }
+        
+        function restartQuiz() {
+            quizData = { category: '', experience: '', frequency: '', device: '', specific: '' };
+            currentQuestionNum = 1;
+            document.querySelectorAll('.question-slide').forEach(slide => slide.style.display = 'none');
+            document.querySelector('[data-question="1"]').style.display = 'block';
+            document.getElementById('quizResults').style.display = 'none';
+            document.getElementById('progressBar').style.width = '20%';
+            document.getElementById('currentQuestion').textContent = '1';
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your trusted source for free online calculators and financial tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Tools</h4>
+                    <ul>
+                        <li><a href="calculators/mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="calculators/bmi-calculator.html">BMI Calculator</a></li>
+                        <li><a href="calculators/loan-calculator.html">Loan Calculator</a></li>
+                        <li><a href="calculators/compound-interest-calculator.html">Interest Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="quiz.html">Calculator Quiz</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved. | Free online calculators for everyone.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
