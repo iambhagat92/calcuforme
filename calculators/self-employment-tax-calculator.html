@@ -34,20 +34,79 @@
             <p>Calculate your self-employment tax obligations for 2025. For freelancers, contractors, and business owners.</p>
         </div>
 
-        <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 2rem 0;">
-            <h2>Coming Soon</h2>
-            <p>This calculator is currently under development. Please check back soon!</p>
+        <div class="card">
+            <div class="alert alert-info">
+                <h2><i class="fas fa-info-circle"></i> Self-Employment Tax Calculator - Coming Soon</h2>
+                <p>We're currently developing this specialized calculator to help you accurately calculate your self-employment tax obligations. While the calculator is being built, here's everything you need to know about self-employment taxes.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Understanding Self-Employment Tax</h2>
+            <p>Self-employment tax is a federal tax that consists of Social Security and Medicare taxes for individuals who work for themselves. Unlike traditional employees who split these taxes with their employer, self-employed individuals must pay the full amount themselves.</p>
             
-            <h3>In the meantime, try these related calculators:</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                <a href="quarterly-tax-calculator.html" style="padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #e2e8f0;">
-                    <i class="fas fa-calendar" style="color: #667eea;"></i> Quarterly Tax Calculator
+            <h3>Current Self-Employment Tax Rates (2025)</h3>
+            <ul>
+                <li><strong>Social Security Tax:</strong> 12.4% on income up to $168,600</li>
+                <li><strong>Medicare Tax:</strong> 2.9% on all income</li>
+                <li><strong>Additional Medicare Tax:</strong> 0.9% on income over $200,000 (single) or $250,000 (married filing jointly)</li>
+                <li><strong>Total Rate:</strong> 15.3% for most self-employed individuals</li>
+            </ul>
+
+            <h3>Who Must Pay Self-Employment Tax?</h3>
+            <p>You must pay self-employment tax if you had net earnings from self-employment of $400 or more. This includes:</p>
+            <ul>
+                <li>Freelancers and independent contractors</li>
+                <li>Business owners (sole proprietors, partners in partnerships)</li>
+                <li>Gig economy workers (Uber, Lyft, DoorDash drivers)</li>
+                <li>Consultants and professional service providers</li>
+                <li>Online sellers and e-commerce entrepreneurs</li>
+            </ul>
+
+            <h3>How to Calculate Self-Employment Tax</h3>
+            <p>The calculation involves several steps:</p>
+            <ol>
+                <li><strong>Calculate Net Self-Employment Income:</strong> Total income minus business expenses</li>
+                <li><strong>Apply the 92.35% Factor:</strong> Multiply by 0.9235 to account for the employer-equivalent portion</li>
+                <li><strong>Calculate Social Security Tax:</strong> Apply 12.4% to income up to the wage base limit</li>
+                <li><strong>Calculate Medicare Tax:</strong> Apply 2.9% to all adjusted income</li>
+                <li><strong>Add Additional Medicare Tax:</strong> 0.9% on income exceeding thresholds</li>
+            </ol>
+
+            <h3>Self-Employment Tax Deductions</h3>
+            <p>The good news is that you can deduct the employer-equivalent portion (50%) of your self-employment tax when calculating your adjusted gross income. This effectively reduces your overall tax burden.</p>
+
+            <h3>Quarterly Estimated Tax Payments</h3>
+            <p>Since no employer withholds taxes from your self-employment income, you're responsible for making quarterly estimated tax payments to avoid penalties. These payments should include both income tax and self-employment tax.</p>
+
+            <div class="alert alert-warning">
+                <h4><i class="fas fa-exclamation-triangle"></i> Important Reminder</h4>
+                <p>Self-employment tax is separate from income tax. Even if you don't owe income tax, you may still owe self-employment tax if your net self-employment earnings are $400 or more.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Related Tax Calculators</h3>
+            <div class="calculator-grid">
+                <a href="quarterly-tax-calculator.html" class="calculator-card">
+                    <i class="fas fa-calendar"></i>
+                    <h4>Quarterly Tax Calculator</h4>
+                    <p>Calculate estimated quarterly tax payments</p>
                 </a>
-                <a href="freelancer-tax-calculator.html" style="padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #e2e8f0;">
-                    <i class="fas fa-user" style="color: #667eea;"></i> Freelancer Tax Calculator
+                <a href="freelancer-tax-calculator.html" class="calculator-card">
+                    <i class="fas fa-user"></i>
+                    <h4>Freelancer Tax Calculator</h4>
+                    <p>Specialized calculator for freelance income</p>
                 </a>
-                <a href="tax-calculator.html" style="padding: 1rem; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #e2e8f0;">
-                    <i class="fas fa-receipt" style="color: #667eea;"></i> Tax Calculator
+                <a href="tax-calculator.html" class="calculator-card">
+                    <i class="fas fa-receipt"></i>
+                    <h4>Income Tax Calculator</h4>
+                    <p>Calculate federal and state income taxes</p>
+                </a>
+                <a href="../calculators.html" class="calculator-card">
+                    <i class="fas fa-calculator"></i>
+                    <h4>All Calculators</h4>
+                    <p>Browse our complete collection of calculators</p>
                 </a>
             </div>
         </div>
