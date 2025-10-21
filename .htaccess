@@ -24,6 +24,17 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^blog/.+/$ /blog/ [R=301,L]
 RewriteRule ^calculators/.+/$ /calculators/ [R=301,L]
 
+# Prevent duplicate content issues
+# Remove www prefix if present (choose one version)
+RewriteCond %{HTTP_HOST} ^www\.calculateforme\.xyz$ [NC]
+RewriteRule ^(.*)$ https://calculateforme.xyz/$1 [R=301,L]
+
+# Prevent URL parameters from creating duplicate content
+RewriteCond %{QUERY_STRING} !^$
+RewriteCond %{QUERY_STRING} !^utm_
+RewriteCond %{REQUEST_URI} \.(html|php)$
+RewriteRule ^(.*)$ /$1? [R=301,L]
+
 # Security headers for better SEO performance
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options nosniff
