@@ -4,12 +4,18 @@ Allow: /
 # Sitemap location
 Sitemap: https://calculateforme.xyz/sitemap.xml
 
+# Block duplicate content - prevent indexing of folder/index.html patterns
+Disallow: */index.html
+Disallow: /blog/*/
+Disallow: /calculators/*/
+
 # Block search engine indexing of any future admin or private directories
 Disallow: /admin/
 Disallow: /private/
 
-# Allow all calculators
-Allow: /calculators/
+# Allow specific calculator and blog HTML files (canonical versions)
+Allow: /calculators/*.html
+Allow: /blog/*.html
 
 # Crawl-delay (optional, adjust if needed)
 # Crawl-delay: 10
