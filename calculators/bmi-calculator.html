@@ -193,11 +193,7 @@
 
                     <!-- Height (Imperial) -->
                     <div id="heightImperialGroup" style="display: none;">
-                        <div class="form-group">
-                            <label>Height (feet)</label>
-                            <input type="number" id="heightFt" min="1" max="9" step="1" placeholder="e.g., 5">
-                        </div>
-                        <div class="form-group">
+                            <div class="form-group">
                             <label>Height (inches)</label>
                             <input type="number" id="heightIn" min="0" max="11" step="1" placeholder="e.g., 9">
                         </div>
@@ -463,6 +459,95 @@
             downloadFile(exportText, 'BMI_Results_' + Date.now() + '.txt', 'text/plain');
         }
     </script>
+
+    <!-- Related Health Calculators Section -->
+    <section style="padding: 3rem 0; background: #f8fafc;">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; color: #1f2937; margin-bottom: 2rem;">
+                    <i class="fas fa-heartbeat"></i> Related Health & Fitness Calculators
+                </h2>
+                <p style="text-align: center; color: #6b7280; margin-bottom: 3rem;">Complete your health assessment with these related tools</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-utensils" style="font-size: 2rem; color: #10b981; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Calorie Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Calculate your daily calorie needs for weight maintenance, loss, or gain based on your BMI results.</p>
+                        <a href="calorie-calculator.html" style="background: #10b981; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Calories →</a>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-user-check" style="font-size: 2rem; color: #f59e0b; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Body Fat Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Get a more detailed body composition analysis beyond just BMI calculations.</p>
+                        <a href="body-fat-percentage-calculator.html" style="background: #f59e0b; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Body Fat →</a>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-birthday-cake" style="font-size: 2rem; color: #8b5cf6; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Age Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Calculate your exact age and track important health milestones.</p>
+                        <a href="age-calculator.html" style="background: #8b5cf6; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Age →</a>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <p style="color: #6b7280; margin-bottom: 1rem;">Want personalized calculator recommendations?</p>
+                    <a href="../quiz.html" style="background: #667eea; color: white; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; margin-right: 1rem;">🎯 Take Calculator Quiz</a>
+                    <a href="../blog/bmi-calculator-ideal-weight-guide.html" style="background: #e5e7eb; color: #374151; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600;">📚 Read BMI Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your trusted source for free online calculators and health tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Health Calculators</h4>
+                    <ul>
+                        <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                        <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+                        <li><a href="body-fat-percentage-calculator.html">Body Fat Calculator</a></li>
+                        <li><a href="age-calculator.html">Age Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Financial Tools</h4>
+                    <ul>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="loan-calculator.html">Loan Calculator</a></li>
+                        <li><a href="investment-calculator.html">Investment Calculator</a></li>
+                        <li><a href="compound-interest-calculator.html">Interest Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../blog.html">Health Blog</a></li>
+                        <li><a href="../blog/bmi-calculator-ideal-weight-guide.html">BMI Guide</a></li>
+                        <li><a href="../quiz.html">Calculator Quiz</a></li>
+                        <li><a href="../index.html">All Calculators</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved. | <a href="../privacy-policy.html" style="color: #9ca3af;">Privacy</a> | <a href="../terms-of-service.html" style="color: #9ca3af;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 

@@ -38,5 +38,8 @@ Disallow: /debug-adsense.html
 Allow: /calculators/*.html
 Allow: /blog/*.html
 
+# Allow llms.txt for AI search engines
+Allow: /llms.txt
+
 # Crawl-delay (optional, adjust if needed)
 # Crawl-delay: 10
