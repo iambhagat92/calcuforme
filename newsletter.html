@@ -189,11 +189,7 @@
                 <i class="fas fa-exclamation-circle"></i> <span id="errorText">Please fill all required fields correctly.</span>
             </div>
 
-            <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="newsletterForm">
-                <!-- Netlify bot detection -->
-                <div style="display: none;">
-                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                </div>
+            <form action="https://formspree.io/f/xqakdbzy" method="POST" id="newsletterForm">
                 <div class="form-group">
                     <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
@@ -412,12 +408,13 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
             submitBtn.disabled = true;
             
-            // Prepare form data for Netlify Forms
+            // Prepare form data for Formspree
             const formData = new FormData(this);
             formData.set('topics', topics.join(', '));  // Override topics with joined string
+            formData.append('_subject', 'New Newsletter Subscription - Calculate For Me');
             
-            // Send to Netlify Forms
-            fetch('/', {
+            // Send to Formspree
+            fetch('https://formspree.io/f/xqakdbzy', {
                 method: 'POST',
                 body: formData,
                 headers: {
