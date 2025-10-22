@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Loan Calculator India 2025 - Auto Loan EMI & Interest Rate | Calculate For Me</title>
+    <meta name="description" content="Calculate car loan EMI, interest rates, and total cost for new & used cars in India 2025. Compare auto loan offers from top banks with instant eligibility check.">
+    <meta name="keywords" content="car loan calculator, auto loan emi calculator, car loan india, vehicle loan calculator, car loan interest rate calculator, auto loan india">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Car Loan Calculator India 2025 - Auto Loan EMI Calculator">
+    <meta property="og:description" content="Free car loan calculator for India. Calculate EMI, compare rates, check eligibility for new & used car loans.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculateforme.xyz/calculators/car-loan-calculator.html">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Car Loan Calculator India",
+        "url": "https://calculateforme.xyz/calculators/car-loan-calculator.html",
+        "description": "Calculate car loan EMI, interest rates, and eligibility for auto loans in India",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        }
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../calculators.html">Calculators</a>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-car"></i> Car Loan Calculator India 2025</h1>
+                    <p>Calculate car loan EMI, compare interest rates, and find the best auto loan deals in India</p>
+                </div>
+
+                <!-- Car Type Selection -->
+                <div class="car-type-selection">
+                    <h3>Select Car Type</h3>
+                    <div class="car-types">
+                        <div class="car-type-card active" onclick="selectCarType('new')">
+                            <i class="fas fa-car"></i>
+                            <h4>New Car</h4>
+                            <p>Interest: 7.5% - 12%</p>
+                            <span class="loan-amount">Up to 100% funding</span>
+                        </div>
+                        <div class="car-type-card" onclick="selectCarType('used')">
+                            <i class="fas fa-car-side"></i>
+                            <h4>Used Car</h4>
+                            <p>Interest: 9% - 15%</p>
+                            <span class="loan-amount">Up to 85% funding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="carLoanForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <div class="form-group">
+                                <label>Car Price (₹)</label>
+                                <input type="number" id="carPrice" min="100000" max="10000000" step="10000" value="800000" required>
+                                <small id="carPriceRange">Typical range: ₹3 lakhs - ₹50 lakhs</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Down Payment (₹)</label>
+                                <input type="number" id="downPayment" min="0" step="5000" value="160000" required>
+                                <div class="down-payment-slider">
+                                    <input type="range" id="downPaymentSlider" min="10" max="50" value="20" onchange="updateDownPayment()">
+                                    <div class="slider-labels">
+                                        <span>10%</span>
+                                        <span id="downPaymentPercent">20%</span>
+                                        <span>50%</span>
+                                    </div>
+                                </div>
+                                <small>Recommended: 15-20% of car price</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Interest Rate (% per annum)</label>
+                                <input type="number" id="interestRate" min="6" max="20" step="0.1" value="9.5" required>
+                                <small id="rateRange">New car: 7.5-12% | Used car: 9-15%</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Loan Tenure</label>
+                                <select id="loanTenure" required>
+                                    <option value="12">1 Year</option>
+                                    <option value="24">2 Years</option>
+                                    <option value="36">3 Years</option>
+                                    <option value="48">4 Years</option>
+                                    <option value="60" selected>5 Years</option>
+                                    <option value="72">6 Years</option>
+                                    <option value="84">7 Years</option>
+                                </select>
+                                <small>Maximum tenure: 7 years for new cars, 5 years for used cars</small>
+                            </div>
+                        </div>
+
+                        <div id="resultContainer" class="result-container">
+                            <h3>Loan Summary</h3>
+                            
+                            <div class="result-card primary">
+                                <div class="result-label">Monthly EMI</div>
+                                <div class="result-value" id="monthlyEMI">₹0</div>
+                            </div>
+
+                            <div class="result-grid">
+                                <div class="result-card">
+                                    <div class="result-label">Loan Amount</div>
+                                    <div class="result-value" id="loanAmount">₹0</div>
+                                </div>
+                                <div class="result-card">
+                                    <div class="result-label">Total Interest</div>
+                                    <div class="result-value" id="totalInterest">₹0</div>
+                                </div>
+                            </div>
+
+                            <div class="result-breakdown">
+                                <h4>Cost Breakdown</h4>
+                                <div class="breakdown-item">
+                                    <span>Car Price:</span>
+                                    <span id="displayCarPrice">₹0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>Down Payment:</span>
+                                    <span id="displayDownPayment">₹0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>Total Amount Payable:</span>
+                                    <span id="totalAmount">₹0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Car Loan EMI
+                    </button>
+                </form>
+
+                <!-- Bank Comparison -->
+                <div class="bank-comparison-section">
+                    <h2>🏦 Best Car Loan Banks in India 2025</h2>
+                    <div class="banks-grid">
+                        <div class="bank-card">
+                            <h3>HDFC Bank Car Loan</h3>
+                            <div class="bank-details">
+                                <p><strong>New Car:</strong> 7.75% - 11.25% p.a.</p>
+                                <p><strong>Used Car:</strong> 11% - 16% p.a.</p>
+                                <p><strong>Processing Fee:</strong> Up to 2.5%</p>
+                                <p><strong>Funding:</strong> Up to 100% (new), 80% (used)</p>
+                            </div>
+                        </div>
+                        <div class="bank-card">
+                            <h3>ICICI Bank Car Loan</h3>
+                            <div class="bank-details">
+                                <p><strong>New Car:</strong> 8.25% - 11.75% p.a.</p>
+                                <p><strong>Used Car:</strong> 11.5% - 16.5% p.a.</p>
+                                <p><strong>Processing Fee:</strong> Up to 2%</p>
+                                <p><strong>Funding:</strong> Up to 100% (new), 85% (used)</p>
+                            </div>
+                        </div>
+                        <div class="bank-card">
+                            <h3>SBI Car Loan</h3>
+                            <div class="bank-details">
+                                <p><strong>New Car:</strong> 8.5% - 10.9% p.a.</p>
+                                <p><strong>Used Car:</strong> 10% - 14% p.a.</p>
+                                <p><strong>Processing Fee:</strong> 0.35%</p>
+                                <p><strong>Funding:</strong> Up to 90% (new), 70% (used)</p>
+                            </div>
+                        </div>
+                        <div class="bank-card">
+                            <h3>Mahindra Finance</h3>
+                            <div class="bank-details">
+                                <p><strong>New Car:</strong> 9% - 15% p.a.</p>
+                                <p><strong>Used Car:</strong> 12% - 18% p.a.</p>
+                                <p><strong>Processing Fee:</strong> Up to 3%</p>
+                                <p><strong>Funding:</strong> Up to 95% (new), 75% (used)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Loan Tips -->
+                <div class="tips-section">
+                    <h2>💡 Car Loan Tips & Guide</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h3><i class="fas fa-percentage"></i> Get Best Interest Rates</h3>
+                            <ul>
+                                <li>Compare rates from multiple banks</li>
+                                <li>Maintain credit score above 750</li>
+                                <li>Consider dealer financing offers</li>
+                                <li>Negotiate with existing bank relationship</li>
+                            </ul>
+                        </div>
+                        <div class="tip-card">
+                            <h3><i class="fas fa-rupee-sign"></i> Down Payment Strategy</h3>
+                            <ul>
+                                <li>Pay 15-20% down payment minimum</li>
+                                <li>Higher down payment = lower EMI</li>
+                                <li>Reduces total interest cost</li>
+                                <li>Improves loan approval chances</li>
+                            </ul>
+                        </div>
+                        <div class="tip-card">
+                            <h3><i class="fas fa-calendar-alt"></i> Choose Right Tenure</h3>
+                            <ul>
+                                <li>Shorter tenure = lower total interest</li>
+                                <li>Longer tenure = lower EMI</li>
+                                <li>Max: 7 years new, 5 years used</li>
+                                <li>Balance EMI with total cost</li>
+                            </ul>
+                        </div>
+                        <div class="tip-card">
+                            <h3><i class="fas fa-file-alt"></i> Required Documents</h3>
+                            <ul>
+                                <li>Identity & Address proof</li>
+                                <li>Income proof (3 months salary)</li>
+                                <li>Bank statements (6 months)</li>
+                                <li>Car quotation/invoice</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>❓ Car Loan FAQs</h2>
+                    <div class="faq-item">
+                        <h3>What is the maximum car loan amount I can get?</h3>
+                        <p>Most banks offer car loans up to ₹50 lakhs. The exact amount depends on your income, typically 4-5 times your monthly salary. For luxury cars, some banks offer higher amounts.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What's the difference between new and used car loan rates?</h3>
+                        <p>New car loans have lower interest rates (7.5-12%) compared to used car loans (9-15%). New cars also qualify for higher funding percentage and longer repayment tenure.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I prepay my car loan without penalty?</h3>
+                        <p>Most banks allow prepayment after 6-12 EMI payments. Some charge 2-5% prepayment penalty, while others offer free prepayment. Check with your lender before taking the loan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>India's most trusted financial calculator platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Loan Calculators</h4>
+                    <a href="car-loan-calculator.html">Car Loan Calculator</a>
+                    <a href="personal-loan-calculator.html">Personal Loan</a>
+                    <a href="emi-calculator.html">EMI Calculator</a>
+                    <a href="loan-calculator.html">Loan Calculator</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentCarType = 'new';
+
+        function selectCarType(type) {
+            currentCarType = type;
+            document.querySelectorAll('.car-type-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.target.closest('.car-type-card').classList.add('active');
+            
+            // Update interest rate and loan amount based on car type
+            const interestInput = document.getElementById('interestRate');
+            const carPriceInput = document.getElementById('carPrice');
+            const downPaymentInput = document.getElementById('downPayment');
+            
+            if (type === 'new') {
+                interestInput.value = 9.5;
+                document.getElementById('rateRange').textContent = 'New car: 7.5-12% p.a.';
+                document.getElementById('carPriceRange').textContent = 'Typical range: ₹3 lakhs - ₹50 lakhs';
+                // Update down payment to 20%
+                const downPayment = Math.round(carPriceInput.value * 0.20);
+                downPaymentInput.value = downPayment;
+            } else {
+                interestInput.value = 12;
+                document.getElementById('rateRange').textContent = 'Used car: 9-15% p.a.';
+                document.getElementById('carPriceRange').textContent = 'Typical range: ₹1 lakh - ₹20 lakhs';
+                // Update down payment to 25% for used cars
+                const downPayment = Math.round(carPriceInput.value * 0.25);
+                downPaymentInput.value = downPayment;
+            }
+            
+            calculateLoan();
+        }
+
+        function updateDownPayment() {
+            const carPrice = parseFloat(document.getElementById('carPrice').value) || 0;
+            const percentage = parseInt(document.getElementById('downPaymentSlider').value);
+            const downPayment = Math.round(carPrice * percentage / 100);
+            
+            document.getElementById('downPayment').value = downPayment;
+            document.getElementById('downPaymentPercent').textContent = percentage + '%';
+            calculateLoan();
+        }
+
+        function calculateLoan() {
+            const carPrice = parseFloat(document.getElementById('carPrice').value) || 0;
+            const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+            const principal = carPrice - downPayment;
+            const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+            const tenureMonths = parseInt(document.getElementById('loanTenure').value) || 0;
+
+            if (principal > 0 && annualRate > 0 && tenureMonths > 0) {
+                const monthlyRate = annualRate / (12 * 100);
+                const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) / 
+                           (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+                
+                const totalAmount = emi * tenureMonths;
+                const totalInterest = totalAmount - principal;
+                const totalCost = carPrice + totalInterest;
+
+                // Update display
+                document.getElementById('monthlyEMI').textContent = 
+                    '₹' + Math.round(emi).toLocaleString('en-IN');
+                document.getElementById('loanAmount').textContent = 
+                    '₹' + Math.round(principal).toLocaleString('en-IN');
+                document.getElementById('totalInterest').textContent = 
+                    '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+                document.getElementById('totalAmount').textContent = 
+                    '₹' + Math.round(totalAmount).toLocaleString('en-IN');
+                
+                // Update breakdown
+                document.getElementById('displayCarPrice').textContent = 
+                    '₹' + Math.round(carPrice).toLocaleString('en-IN');
+                document.getElementById('displayDownPayment').textContent = 
+                    '₹' + Math.round(downPayment).toLocaleString('en-IN');
+
+                // Update down payment percentage
+                if (carPrice > 0) {
+                    const percentage = Math.round((downPayment / carPrice) * 100);
+                    document.getElementById('downPaymentSlider').value = percentage;
+                    document.getElementById('downPaymentPercent').textContent = percentage + '%';
+                }
+            }
+        }
+
+        // Event listeners
+        document.getElementById('carLoanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateLoan();
+        });
+
+        ['carPrice', 'downPayment', 'interestRate', 'loanTenure'].forEach(id => {
+            document.getElementById(id).addEventListener('input', calculateLoan);
+        });
+
+        // Update down payment when car price changes
+        document.getElementById('carPrice').addEventListener('input', function() {
+            const carPrice = parseFloat(this.value) || 0;
+            const percentage = parseInt(document.getElementById('downPaymentSlider').value);
+            const downPayment = Math.round(carPrice * percentage / 100);
+            document.getElementById('downPayment').value = downPayment;
+            calculateLoan();
+        });
+
+        // Initial calculation
+        calculateLoan();
+    </script>
+
+    <style>
+        .car-type-selection {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .car-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .car-type-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .car-type-card.active {
+            border-color: #667eea;
+            background: #f0f4ff;
+            transform: translateY(-2px);
+        }
+
+        .car-type-card i {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .car-type-card h4 {
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        .car-type-card .loan-amount {
+            display: block;
+            font-size: 0.9rem;
+            color: #10b981;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .down-payment-slider {
+            margin: 1rem 0;
+        }
+
+        .down-payment-slider input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 6px;
+            background: #e2e8f0;
+            outline: none;
+            border-radius: 3px;
+        }
+
+        .down-payment-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .slider-labels #downPaymentPercent {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .result-card.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .result-card.primary .result-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .result-breakdown {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .result-breakdown h4 {
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .breakdown-item:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .bank-comparison-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .banks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .bank-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .bank-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .bank-details p {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        .tips-section {
+            margin-top: 3rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .tip-card h3 i {
+            color: #667eea;
+            margin-right: 0.5rem;
+        }
+
+        .tip-card ul {
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+
+        .tip-card li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .faq-item h3 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .car-types {
+                grid-template-columns: 1fr;
+            }
+            
+            .banks-grid,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
