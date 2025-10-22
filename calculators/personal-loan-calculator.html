@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Loan Calculator India 2025 - EMI, Interest Rate | Calculate For Me</title>
+    <meta name="description" content="Calculate personal loan EMI, interest rates, and total cost. Compare best personal loan offers in India 2025. Instant personal loan calculator with eligibility check.">
+    <meta name="keywords" content="personal loan calculator, personal loan emi calculator, personal loan interest rate calculator, personal loan india, instant personal loan calculator">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Personal Loan Calculator India 2025 - Best EMI Calculator">
+    <meta property="og:description" content="Free personal loan calculator for India. Calculate EMI, compare rates, check eligibility. Get instant personal loan calculations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculateforme.xyz/calculators/personal-loan-calculator.html">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Personal Loan Calculator",
+        "url": "https://calculateforme.xyz/calculators/personal-loan-calculator.html",
+        "description": "Calculate personal loan EMI, interest rates, and total cost for loans in India",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "featureList": [
+            "Personal Loan EMI Calculation",
+            "Interest Rate Comparison", 
+            "Loan Eligibility Check",
+            "Amortization Schedule"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../calculators.html">Categories</a>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-hand-holding-usd"></i> Personal Loan Calculator India</h1>
+                    <p>Calculate personal loan EMI, compare interest rates, and find the best loan offers in India 2025</p>
+                </div>
+
+                <div class="loan-types-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                    <div class="loan-type-card active" onclick="selectLoanType('personal')">
+                        <i class="fas fa-user"></i>
+                        <h3>Personal Loan</h3>
+                        <p>Unsecured loans for any purpose</p>
+                        <span class="rate">10.5% - 24% p.a.</span>
+                    </div>
+                    <div class="loan-type-card" onclick="selectLoanType('business')">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Business Loan</h3>
+                        <p>Funding for business needs</p>
+                        <span class="rate">11% - 20% p.a.</span>
+                    </div>
+                    <div class="loan-type-card" onclick="selectLoanType('education')">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Education Loan</h3>
+                        <p>Loans for studies</p>
+                        <span class="rate">8.5% - 15% p.a.</span>
+                    </div>
+                </div>
+
+                <form id="personalLoanForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <div class="form-group">
+                                <label>Loan Amount (₹)</label>
+                                <input type="number" id="loanAmount" min="10000" max="5000000" step="1000" value="200000" required>
+                                <small>Minimum: ₹10,000 | Maximum: ₹50,00,000</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Interest Rate (% per annum)</label>
+                                <input type="number" id="interestRate" min="8" max="30" step="0.1" value="12.5" required>
+                                <small>Typical range: 10.5% - 24% per annum</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Loan Tenure</label>
+                                <select id="loanTenure" required>
+                                    <option value="12">1 Year</option>
+                                    <option value="24" selected>2 Years</option>
+                                    <option value="36">3 Years</option>
+                                    <option value="48">4 Years</option>
+                                    <option value="60">5 Years</option>
+                                    <option value="84">7 Years</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Monthly Income (₹)</label>
+                                <input type="number" id="monthlyIncome" min="15000" step="1000" value="50000">
+                                <small>For eligibility calculation</small>
+                            </div>
+                        </div>
+
+                        <div id="resultContainer" class="result-container">
+                            <h3>Loan Details</h3>
+                            
+                            <div class="result-card primary">
+                                <div class="result-label">Monthly EMI</div>
+                                <div class="result-value" id="monthlyEMI">₹0</div>
+                            </div>
+
+                            <div class="result-grid">
+                                <div class="result-card">
+                                    <div class="result-label">Total Amount Payable</div>
+                                    <div class="result-value" id="totalAmount">₹0</div>
+                                </div>
+                                <div class="result-card">
+                                    <div class="result-label">Total Interest</div>
+                                    <div class="result-value" id="totalInterest">₹0</div>
+                                </div>
+                            </div>
+
+                            <div id="eligibilityCheck" style="margin-top: 1rem; padding: 1rem; border-radius: 8px;">
+                                <h4>Eligibility Status</h4>
+                                <div id="eligibilityResult">Enter your income to check eligibility</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Personal Loan EMI
+                    </button>
+                </form>
+
+                <!-- Personal Loan Information -->
+                <div class="info-section">
+                    <h2>Personal Loan in India - Complete Guide 2025</h2>
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3><i class="fas fa-percent"></i> Interest Rates</h3>
+                            <ul>
+                                <li><strong>HDFC Bank:</strong> 10.5% - 24% p.a.</li>
+                                <li><strong>ICICI Bank:</strong> 10.5% - 19% p.a.</li>
+                                <li><strong>SBI:</strong> 11.1% - 15.6% p.a.</li>
+                                <li><strong>Bajaj Finserv:</strong> 13% - 30% p.a.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3><i class="fas fa-clock"></i> Processing Time</h3>
+                            <ul>
+                                <li>Online approval: 24-48 hours</li>
+                                <li>Documentation: 1-2 days</li>
+                                <li>Disbursal: 2-7 working days</li>
+                                <li>Instant loans: Same day</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3><i class="fas fa-file-alt"></i> Required Documents</h3>
+                            <ul>
+                                <li>Identity proof (Aadhaar/PAN)</li>
+                                <li>Address proof</li>
+                                <li>Income proof (Salary slips)</li>
+                                <li>Bank statements (3-6 months)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3><i class="fas fa-check-circle"></i> Eligibility Criteria</h3>
+                            <ul>
+                                <li>Age: 23-60 years</li>
+                                <li>Minimum salary: ₹15,000/month</li>
+                                <li>Work experience: 1+ years</li>
+                                <li>Credit score: 700+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2>Personal Loan FAQs</h2>
+                    <div class="faq-item">
+                        <h3>What is the maximum personal loan amount I can get?</h3>
+                        <p>Most banks in India offer personal loans up to ₹40-50 lakhs, depending on your income and credit profile. Typically, the loan amount is 10-15 times your monthly salary.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How is personal loan EMI calculated?</h3>
+                        <p>EMI is calculated using the formula: EMI = [P x R x (1+R)^N] / [(1+R)^N-1], where P is principal, R is monthly interest rate, and N is tenure in months.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I prepay my personal loan?</h3>
+                        <p>Yes, most banks allow prepayment after 6-12 EMIs. Some banks charge 2-4% prepayment penalty, while others offer free prepayment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>India's most trusted financial calculator platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Loan Calculators</h4>
+                    <a href="personal-loan-calculator.html">Personal Loan</a>
+                    <a href="emi-calculator.html">EMI Calculator</a>
+                    <a href="loan-calculator.html">Loan Calculator</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectLoanType(type) {
+            document.querySelectorAll('.loan-type-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.target.closest('.loan-type-card').classList.add('active');
+            
+            // Update interest rate based on loan type
+            const rates = {
+                'personal': 12.5,
+                'business': 14.0,
+                'education': 9.5
+            };
+            document.getElementById('interestRate').value = rates[type];
+            calculateLoan();
+        }
+
+        function calculateLoan() {
+            const principal = parseFloat(document.getElementById('loanAmount').value) || 0;
+            const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+            const tenureMonths = parseInt(document.getElementById('loanTenure').value) || 0;
+            const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value) || 0;
+
+            if (principal && annualRate && tenureMonths) {
+                const monthlyRate = annualRate / (12 * 100);
+                const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths)) / 
+                           (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+                
+                const totalAmount = emi * tenureMonths;
+                const totalInterest = totalAmount - principal;
+
+                document.getElementById('monthlyEMI').textContent = 
+                    '₹' + Math.round(emi).toLocaleString('en-IN');
+                document.getElementById('totalAmount').textContent = 
+                    '₹' + Math.round(totalAmount).toLocaleString('en-IN');
+                document.getElementById('totalInterest').textContent = 
+                    '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+
+                // Check eligibility
+                if (monthlyIncome > 0) {
+                    const emiToIncomeRatio = (emi / monthlyIncome) * 100;
+                    const eligibilityDiv = document.getElementById('eligibilityResult');
+                    
+                    if (emiToIncomeRatio <= 40) {
+                        eligibilityDiv.innerHTML = '<span style="color: green;"><i class="fas fa-check-circle"></i> Eligible - EMI is ' + 
+                                                 emiToIncomeRatio.toFixed(1) + '% of income</span>';
+                        eligibilityDiv.parentElement.style.background = '#f0fff0';
+                    } else {
+                        eligibilityDiv.innerHTML = '<span style="color: red;"><i class="fas fa-times-circle"></i> High EMI - ' + 
+                                                 emiToIncomeRatio.toFixed(1) + '% of income (Recommended: <40%)</span>';
+                        eligibilityDiv.parentElement.style.background = '#fff0f0';
+                    }
+                }
+            }
+        }
+
+        document.getElementById('personalLoanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateLoan();
+        });
+
+        // Auto calculate on input change
+        ['loanAmount', 'interestRate', 'loanTenure', 'monthlyIncome'].forEach(id => {
+            document.getElementById(id).addEventListener('input', calculateLoan);
+        });
+
+        // Initial calculation
+        calculateLoan();
+    </script>
+
+    <style>
+        .loan-types-grid .loan-type-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .loan-type-card.active {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .loan-type-card i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .loan-type-card .rate {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .result-card.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .result-card.primary .result-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .info-section, .faq-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .info-card h3 i {
+            color: #667eea;
+            margin-right: 0.5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .faq-item h3 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</body>
+</html>
