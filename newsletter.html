@@ -189,7 +189,11 @@
                 <i class="fas fa-exclamation-circle"></i> <span id="errorText">Please fill all required fields correctly.</span>
             </div>
 
-            <form id="newsletterForm">
+            <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="newsletterForm">
+                <!-- Netlify bot detection -->
+                <div style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </div>
                 <div class="form-group">
                     <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
@@ -408,20 +412,12 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
             submitBtn.disabled = true;
             
-            // Prepare form data for Formspree
-            const formData = new FormData();
-            formData.append('email', email);
-            formData.append('name', name);
-            formData.append('frequency', frequency);
-            formData.append('topics', topics.join(', '));
-            formData.append('_subject', 'New Newsletter Subscription - Calculate For Me');
-            formData.append('_replyto', email);
-            formData.append('_next', window.location.href + '?subscribed=true');
+            // Prepare form data for Netlify Forms
+            const formData = new FormData(this);
+            formData.set('topics', topics.join(', '));  // Override topics with joined string
             
-            // Send to Formspree (Replace with your actual Formspree endpoint)
-            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqakdbzy'; // FREE TEMPORARY ENDPOINT - REPLACE THIS
-            
-            fetch(FORMSPREE_ENDPOINT, {
+            // Send to Netlify Forms
+            fetch('/', {
                 method: 'POST',
                 body: formData,
                 headers: {
