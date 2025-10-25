@@ -640,6 +640,134 @@ a {
     align-self: flex-start;
 }
 
+/* Calculator Cards on Calculators Page */
+.calc-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(102, 126, 234, 0.08);
+}
+
+.calc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.calc-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.calc-card:hover::before {
+    transform: scaleX(1);
+}
+
+.calc-card i {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.calc-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+.calc-card h3 {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.calc-card:hover h3 {
+    color: var(--primary-color);
+}
+
+.calc-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Different gradient colors for different categories */
+#financial .calc-card i {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+#health .calc-card i {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+}
+
+#everyday .calc-card i {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
+}
+
+#scientific .calc-card i {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    box-shadow: 0 4px 15px rgba(250, 112, 154, 0.3);
+}
+
+/* Hover effects for category-specific colors */
+#financial .calc-card:hover {
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
+}
+
+#health .calc-card:hover {
+    box-shadow: 0 12px 40px rgba(240, 147, 251, 0.2);
+}
+
+#everyday .calc-card:hover {
+    box-shadow: 0 12px 40px rgba(67, 233, 123, 0.2);
+}
+
+#scientific .calc-card:hover {
+    box-shadow: 0 12px 40px rgba(250, 112, 154, 0.2);
+}
+
+/* Calculator Grid Layout */
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Category Section Spacing */
+.calc-category {
+    margin-bottom: 4rem;
+}
+
 /* About Section */
 .about {
     padding: 5rem 0;
