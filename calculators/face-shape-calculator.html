@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Face Shape Calculator - Determine your face shape by measuring forehead, cheekbones, jawline and face length. Get personalized hairstyle and glasses recommendations.">
+    <meta property="og:site_name" content="Calculate For Me">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Face Shape Calculator - Find Your Perfect Face Shape">
+    <meta property="og:description" content="Discover your face shape and get personalized style recommendations for hairstyles, glasses, and makeup.">
+    <meta property="og:image" content="https://calculateforme.xyz/favicon.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Face Shape Calculator - Determine Your Face Shape | Calculate For Me</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    
+    <style>
+        .face-shapes-guide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .face-shape-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .face-shape-item:hover {
+            transform: translateY(-4px);
+        }
+        
+        .face-shape-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .measurement-guide {
+            background: #fff7ed;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #f59e0b;
+            margin: 2rem 0;
+        }
+        
+        .measurement-step {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .recommendations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .recommendation-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .recommendation-card h4 {
+            color: #667eea;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .recommendation-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .recommendation-card li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+        }
+        
+        .recommendation-card li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YC3ZC6EBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YC3ZC6EBG');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../calculators.html">Categories</a>
+                    <a href="../calculators.html">Popular</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenuBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="../calculators.html">Categories</a>
+            <a href="../calculators.html">Popular</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- Calculator Page -->
+    <section class="calculator-page">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-user-circle"></i> Face Shape Calculator</h1>
+                    <p>Discover your face shape by measuring key facial features and get personalized style recommendations</p>
+                </div>
+
+                <!-- Measurement Guide -->
+                <div class="measurement-guide">
+                    <h3 style="color: #f59e0b; margin-bottom: 1rem;"><i class="fas fa-ruler"></i> How to Measure Your Face</h3>
+                    <div class="measurement-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <strong>Forehead Width:</strong> Measure across your forehead at the widest point, typically from hairline to hairline above your eyebrows.
+                        </div>
+                    </div>
+                    <div class="measurement-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <strong>Cheekbone Width:</strong> Measure from the outer edge of one cheekbone to the other at the widest point (usually just below your eyes).
+                        </div>
+                    </div>
+                    <div class="measurement-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <strong>Jawline Width:</strong> Measure from the tip of your chin straight up to below your ear, then multiply by 2.
+                        </div>
+                    </div>
+                    <div class="measurement-step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <strong>Face Length:</strong> Measure from the center of your hairline straight down to the tip of your chin.
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #78716c;">
+                        <i class="fas fa-lightbulb"></i> <strong>Pro Tip:</strong> Use a flexible measuring tape or string, and measure in centimeters or inches. Take a selfie with your hair pulled back for easier measurement.
+                    </p>
+                </div>
+
+                <!-- Calculator Form -->
+                <form id="faceShapeForm">
+                    <div class="form-group">
+                        <label>Unit System</label>
+                        <select id="unitSystem" class="form-control">
+                            <option value="cm">Centimeters (cm)</option>
+                            <option value="inches">Inches (in)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Forehead Width <span id="foreheadUnit">(cm)</span></label>
+                        <input type="number" id="forehead" min="1" max="50" step="0.1" placeholder="e.g., 14.5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cheekbone Width <span id="cheekboneUnit">(cm)</span></label>
+                        <input type="number" id="cheekbone" min="1" max="50" step="0.1" placeholder="e.g., 15" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Jawline Width <span id="jawlineUnit">(cm)</span></label>
+                        <input type="number" id="jawline" min="1" max="50" step="0.1" placeholder="e.g., 12" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Face Length <span id="faceLengthUnit">(cm)</span></label>
+                        <input type="number" id="faceLength" min="1" max="50" step="0.1" placeholder="e.g., 18.5" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-calculator"></i> Calculate Face Shape
+                    </button>
+                </form>
+
+                <!-- Results -->
+                <div id="resultContainer" class="result-container">
+                    <h3 style="margin-bottom: 1.5rem; color: #2d3748;">Your Face Shape Results</h3>
+                    
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <div id="faceShapeIcon" style="font-size: 5rem; margin-bottom: 1rem;">👤</div>
+                        <div class="result-item">
+                            <div class="result-label">Your Face Shape</div>
+                            <div class="result-value" id="faceShapeResult" style="font-size: 2rem; color: #667eea;">-</div>
+                        </div>
+                    </div>
+
+                    <div id="faceShapeDescription" style="background: #f0f9ff; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h4 style="color: #0369a1; margin-bottom: 0.75rem;">About Your Face Shape</h4>
+                        <p id="descriptionText" style="color: #0c4a6e; line-height: 1.6; margin: 0;">-</p>
+                    </div>
+
+                    <!-- Measurements Summary -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h4 style="color: #2d3748; margin-bottom: 1rem;">Your Measurements</h4>
+                        <div style="display: grid; gap: 0.75rem; color: #718096;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Forehead Width:</span>
+                                <strong id="foreheadDisplay">-</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Cheekbone Width:</span>
+                                <strong id="cheekboneDisplay">-</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Jawline Width:</span>
+                                <strong id="jawlineDisplay">-</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Face Length:</span>
+                                <strong id="faceLengthDisplay">-</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Style Recommendations -->
+                    <div id="recommendations" class="recommendations">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Face Shapes Reference Guide -->
+                <div style="margin-top: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3 style="color: #2d3748; margin-bottom: 1.5rem; text-align: center;">Face Shape Reference Guide</h3>
+                    
+                    <div class="face-shapes-guide">
+                        <div class="face-shape-item">
+                            <div class="face-shape-icon">⬭</div>
+                            <strong style="color: #2d3748;">Oval</strong>
+                            <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem;">Balanced proportions, slightly longer than wide</p>
+                        </div>
+                        <div class="face-shape-item">
+                            <div class="face-shape-icon">⬜</div>
+                            <strong style="color: #2d3748;">Round</strong>
+                            <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem;">Equal width and length, soft curves</p>
+                        </div>
+                        <div class="face-shape-item">
+                            <div class="face-shape-icon">▭</div>
+                            <strong style="color: #2d3748;">Square</strong>
+                            <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem;">Strong jawline, equal proportions</p>
+                        </div>
+                        <div class="face-shape-item">
+                            <div class="face-shape-icon">▯</div>
+                            <strong style="color: #2d3748;">Rectangle</strong>
+                            <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem;">Long face with strong jaw</p>
+                        </div>
+                        <div class="face-shape-item">
+                            <div class="face-shape-icon">♦</div>
+                            <strong style="color: #2d3748;">Diamond</strong>
+                            <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem;">Narrow forehead, wide cheeks</p>
+                        </div>
+                        <div class="face-shape-item">
+                            <div class="face-shape-icon">💚</div>
+                            <strong style="color: #2d3748;">Heart</strong>
+                            <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem;">Wide forehead, narrow chin</p>
+                        </div>
+                        <div class="face-shape-item">
+                            <div class="face-shape-icon">▼</div>
+                            <strong style="color: #2d3748;">Triangle</strong>
+                            <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem;">Narrow forehead, wide jaw</p>
+                        </div>
+                    </div>
+
+                    <p style="color: #718096; line-height: 1.8; margin-top: 2rem; font-size: 0.9rem; font-style: italic;">
+                        <strong>Note:</strong> Face shape is just a guide for styling. Everyone's face is unique, and these are general recommendations. Feel free to experiment with different styles to find what makes you feel most confident!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Your comprehensive suite of free online calculators for every need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../calculators.html">Categories</a></li>
+                        <li><a href="../about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Beauty & Style</h4>
+                    <ul>
+                        <li><a href="face-shape-calculator.html">Face Shape Calculator</a></li>
+                        <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                        <li><a href="age-calculator.html">Age Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved. | <a href="../privacy-policy.html" style="color: #9ca3af;">Privacy</a> | <a href="../terms-of-service.html" style="color: #9ca3af;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator-utils.js"></script>
+    <script>
+        const unitSystem = document.getElementById('unitSystem');
+        const faceShapeForm = document.getElementById('faceShapeForm');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // Update unit labels
+        unitSystem.addEventListener('change', (e) => {
+            const unit = e.target.value === 'cm' ? '(cm)' : '(in)';
+            document.getElementById('foreheadUnit').textContent = unit;
+            document.getElementById('cheekboneUnit').textContent = unit;
+            document.getElementById('jawlineUnit').textContent = unit;
+            document.getElementById('faceLengthUnit').textContent = unit;
+        });
+
+        // Form submission
+        faceShapeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculateFaceShape();
+        });
+
+        function calculateFaceShape() {
+            const unit = unitSystem.value;
+            const forehead = parseFloat(document.getElementById('forehead').value);
+            const cheekbone = parseFloat(document.getElementById('cheekbone').value);
+            const jawline = parseFloat(document.getElementById('jawline').value);
+            const faceLength = parseFloat(document.getElementById('faceLength').value);
+
+            // Validate inputs
+            if (!forehead || !cheekbone || !jawline || !faceLength) {
+                alert('Please enter all measurements.');
+                return;
+            }
+
+            // Determine face shape based on measurements
+            const faceShape = determineFaceShape(forehead, cheekbone, jawline, faceLength);
+
+            // Display measurements
+            const unitLabel = unit === 'cm' ? ' cm' : ' in';
+            document.getElementById('foreheadDisplay').textContent = forehead.toFixed(1) + unitLabel;
+            document.getElementById('cheekboneDisplay').textContent = cheekbone.toFixed(1) + unitLabel;
+            document.getElementById('jawlineDisplay').textContent = jawline.toFixed(1) + unitLabel;
+            document.getElementById('faceLengthDisplay').textContent = faceLength.toFixed(1) + unitLabel;
+
+            // Display results
+            document.getElementById('faceShapeResult').textContent = faceShape.name;
+            document.getElementById('faceShapeIcon').textContent = faceShape.icon;
+            document.getElementById('descriptionText').textContent = faceShape.description;
+
+            // Generate recommendations
+            generateRecommendations(faceShape.name);
+
+            // Show results
+            resultContainer.classList.add('active');
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function determineFaceShape(forehead, cheekbone, jawline, faceLength) {
+            const maxWidth = Math.max(forehead, cheekbone, jawline);
+            const faceRatio = faceLength / maxWidth;
+
+            // Calculate differences
+            const foreheadCheekDiff = Math.abs(forehead - cheekbone);
+            const cheekJawDiff = Math.abs(cheekbone - jawline);
+            const foreheadJawDiff = Math.abs(forehead - jawline);
+
+            // Oval: balanced proportions, length slightly longer than width
+            if (faceRatio >= 1.4 && faceRatio <= 1.6 && cheekbone > forehead && cheekbone > jawline && foreheadCheekDiff < 2 && cheekJawDiff < 2) {
+                return {
+                    name: 'Oval',
+                    icon: '⬭',
+                    description: 'You have an oval face shape! This is considered the most versatile face shape with balanced proportions. Your face is slightly longer than wide with gently rounded edges. Oval faces can pull off almost any hairstyle and glasses frame.'
+                };
+            }
+
+            // Round: width and length nearly equal, soft curves
+            if (faceRatio >= 0.9 && faceRatio <= 1.2 && foreheadCheekDiff < 2 && cheekJawDiff < 2) {
+                return {
+                    name: 'Round',
+                    icon: '⬜',
+                    description: 'You have a round face shape! Your face has soft, curved lines with nearly equal width and length. Round faces have full cheeks and a rounded chin. This face shape is youthful and friendly-looking.'
+                };
+            }
+
+            // Square: strong jaw, equal width and length
+            if (faceRatio >= 0.9 && faceRatio <= 1.15 && Math.abs(forehead - jawline) < 2 && forehead >= cheekbone * 0.95) {
+                return {
+                    name: 'Square',
+                    icon: '▭',
+                    description: 'You have a square face shape! Your face has a strong, defined jawline with nearly equal forehead, cheek, and jaw widths. The face length and width are also similar. This face shape conveys strength and confidence.'
+                };
+            }
+
+            // Rectangle/Oblong: long face with similar width measurements
+            if (faceRatio > 1.6 && foreheadCheekDiff < 2 && cheekJawDiff < 2) {
+                return {
+                    name: 'Rectangle',
+                    icon: '▯',
+                    description: 'You have a rectangle (oblong) face shape! Your face is noticeably longer than it is wide, with a strong, straight jawline. The forehead, cheeks, and jaw have similar widths. This elegant face shape is often seen in models.'
+                };
+            }
+
+            // Diamond: wide cheekbones, narrow forehead and jaw
+            if (cheekbone > forehead && cheekbone > jawline && forehead < jawline * 1.1 && forehead > jawline * 0.9) {
+                return {
+                    name: 'Diamond',
+                    icon: '♦',
+                    description: 'You have a diamond face shape! Your cheekbones are the widest part of your face, with a narrow forehead and jawline. This is the rarest face shape and is considered highly desirable. Diamond faces have striking, angular features.'
+                };
+            }
+
+            // Heart: wide forehead, narrow chin
+            if (forehead > cheekbone && cheekbone > jawline && forehead - jawline > 2) {
+                return {
+                    name: 'Heart',
+                    icon: '💚',
+                    description: 'You have a heart-shaped face! Your forehead is the widest part of your face, with high cheekbones and a narrow, pointed chin. This face shape is characterized by its feminine, delicate features and is very photogenic.'
+                };
+            }
+
+            // Triangle/Pear: narrow forehead, wide jaw
+            if (jawline > cheekbone && cheekbone > forehead && jawline - forehead > 2) {
+                return {
+                    name: 'Triangle',
+                    icon: '▼',
+                    description: 'You have a triangle (pear) face shape! Your jawline is wider than your cheekbones and forehead. This face shape has a narrow forehead that gradually widens to a strong jaw. It\'s a unique and striking face shape.'
+                };
+            }
+
+            // Default to Oval if unclear
+            return {
+                name: 'Oval',
+                icon: '⬭',
+                description: 'Based on your measurements, you appear to have an oval face shape! This versatile face shape has balanced proportions and can work with many different styles.'
+            };
+        }
+
+        function generateRecommendations(faceShape) {
+            const recommendations = {
+                'Oval': {
+                    hairstyles: [
+                        'Nearly any hairstyle works great',
+                        'Short pixie cuts',
+                        'Long flowing locks',
+                        'Textured layers',
+                        'Side-swept bangs'
+                    ],
+                    glasses: [
+                        'Most frame styles work well',
+                        'Oversized frames',
+                        'Cat-eye frames',
+                        'Aviator styles',
+                        'Square or rectangular frames'
+                    ],
+                    makeup: [
+                        'Highlight cheekbones naturally',
+                        'Soft contouring on sides',
+                        'Balanced blush application',
+                        'Any lipstick shade',
+                        'Natural brow shape'
+                    ]
+                },
+                'Round': {
+                    hairstyles: [
+                        'Long layers to add length',
+                        'Side-parted styles',
+                        'Asymmetrical cuts',
+                        'Volume at crown',
+                        'Avoid blunt bangs'
+                    ],
+                    glasses: [
+                        'Angular, rectangular frames',
+                        'Cat-eye styles',
+                        'Geometric shapes',
+                        'Frames wider than face',
+                        'Avoid round frames'
+                    ],
+                    makeup: [
+                        'Contour temples and jawline',
+                        'Blush on upper cheeks',
+                        'Highlight bridge of nose',
+                        'Defined brows add angles',
+                        'Nude or neutral lip colors'
+                    ]
+                },
+                'Square': {
+                    hairstyles: [
+                        'Soft, layered cuts',
+                        'Waves and curls',
+                        'Long hair past shoulders',
+                        'Side-swept styles',
+                        'Wispy bangs'
+                    ],
+                    glasses: [
+                        'Round or oval frames',
+                        'Rimless styles',
+                        'Narrow frames',
+                        'Cat-eye shapes',
+                        'Avoid square frames'
+                    ],
+                    makeup: [
+                        'Soften jawline with blush',
+                        'Rounded blush application',
+                        'Soft, curved brows',
+                        'Highlight cheekbones',
+                        'Glossy lip products'
+                    ]
+                },
+                'Rectangle': {
+                    hairstyles: [
+                        'Chin-length bobs',
+                        'Layered styles with volume',
+                        'Side bangs',
+                        'Wavy texture',
+                        'Avoid very long hair'
+                    ],
+                    glasses: [
+                        'Wide, decorative frames',
+                        'Low bridge styles',
+                        'Oversized frames',
+                        'Bold colors and patterns',
+                        'Avoid narrow frames'
+                    ],
+                    makeup: [
+                        'Horizontal blush placement',
+                        'Contour hairline and chin',
+                        'Highlight center of face',
+                        'Full, arched brows',
+                        'Bold lip colors'
+                    ]
+                },
+                'Diamond': {
+                    hairstyles: [
+                        'Chin-length styles',
+                        'Deep side parts',
+                        'Textured layers',
+                        'Pulled-back updos',
+                        'Full bangs or side-swept'
+                    ],
+                    glasses: [
+                        'Cat-eye frames',
+                        'Oval shapes',
+                        'Rimless or browline styles',
+                        'Frames with detail on top',
+                        'Avoid narrow styles'
+                    ],
+                    makeup: [
+                        'Contour wide cheekbones',
+                        'Highlight forehead and chin',
+                        'Balance with blush',
+                        'Softly defined brows',
+                        'Neutral to pink lip shades'
+                    ]
+                },
+                'Heart': {
+                    hairstyles: [
+                        'Chin-length bobs',
+                        'Side-parted styles',
+                        'Layers around jaw',
+                        'Textured ends',
+                        'Avoid volume on top'
+                    ],
+                    glasses: [
+                        'Bottom-heavy frames',
+                        'Aviator styles',
+                        'Round or oval shapes',
+                        'Light-colored lower rims',
+                        'Avoid cat-eye styles'
+                    ],
+                    makeup: [
+                        'Contour temples',
+                        'Blush toward ears',
+                        'Highlight chin',
+                        'Fuller bottom lip emphasis',
+                        'Soft, rounded brows'
+                    ]
+                },
+                'Triangle': {
+                    hairstyles: [
+                        'Volume at crown and top',
+                        'Short layers',
+                        'Side-swept bangs',
+                        'Chin-length or shorter',
+                        'Avoid jaw-length cuts'
+                    ],
+                    glasses: [
+                        'Cat-eye frames',
+                        'Top-heavy styles',
+                        'Bold upper rims',
+                        'Decorative temples',
+                        'Avoid bottom-heavy frames'
+                    ],
+                    makeup: [
+                        'Highlight forehead',
+                        'Contour jawline',
+                        'Blush on apple of cheeks',
+                        'Defined, arched brows',
+                        'Bold lip colors'
+                    ]
+                }
+            };
+
+            const recs = recommendations[faceShape] || recommendations['Oval'];
+            const recommendationsContainer = document.getElementById('recommendations');
+            
+            recommendationsContainer.innerHTML = `
+                <div class="recommendation-card">
+                    <h4><i class="fas fa-cut"></i> Hairstyle Recommendations</h4>
+                    <ul>
+                        ${recs.hairstyles.map(style => `<li>${style}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="recommendation-card">
+                    <h4><i class="fas fa-glasses"></i> Glasses & Frames</h4>
+                    <ul>
+                        ${recs.glasses.map(frame => `<li>${frame}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="recommendation-card">
+                    <h4><i class="fas fa-palette"></i> Makeup Tips</h4>
+                    <ul>
+                        ${recs.makeup.map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+    </script>
+
+    <!-- Related Calculators Section -->
+    <section style="padding: 3rem 0; background: #f8fafc;">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; color: #1f2937; margin-bottom: 2rem;">
+                    <i class="fas fa-sparkles"></i> Related Beauty & Health Calculators
+                </h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-weight" style="font-size: 2rem; color: #8b5cf6; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">BMI Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Calculate your Body Mass Index and ideal weight range.</p>
+                        <a href="bmi-calculator.html" style="background: #8b5cf6; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate BMI →</a>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-utensils" style="font-size: 2rem; color: #10b981; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Calorie Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Find your daily calorie needs for your health goals.</p>
+                        <a href="calorie-calculator.html" style="background: #10b981; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Calories →</a>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <i class="fas fa-birthday-cake" style="font-size: 2rem; color: #f59e0b; margin-right: 1rem;"></i>
+                            <h3 style="color: #1f2937; margin: 0;">Age Calculator</h3>
+                        </div>
+                        <p style="color: #4a5568; margin-bottom: 1.5rem;">Calculate your exact age and important milestones.</p>
+                        <a href="age-calculator.html" style="background: #f59e0b; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Calculate Age →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
