@@ -46,53 +46,64 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="container">
-        <div class="page-header">
-            <h1>All Calculators</h1>
-            <p>Browse our complete collection of 35+ free online calculators designed to solve everyday problems, make informed financial decisions, track health metrics, and support academic success.</p>
-        </div>
-
-        <section class="card" style="margin-bottom: 3rem;">
-            <h2>Your Complete Calculator Collection</h2>
-            <p>Calculate For Me offers the most comprehensive collection of free, accurate, and easy-to-use online calculators. Whether you're a student, professional, or just need quick calculations for daily life, our tools are designed to provide instant, reliable results without any registration or fees.</p>
-            
-            <h3>Why Choose Our Calculators?</h3>
-            <ul>
-                <li><strong>100% Free:</strong> All calculators are completely free with no hidden costs or premium features</li>
-                <li><strong>No Registration Required:</strong> Start calculating immediately without creating accounts</li>
-                <li><strong>Mobile-Friendly:</strong> Works perfectly on all devices - desktop, tablet, and smartphone</li>
-                <li><strong>Instant Results:</strong> Get accurate calculations in real-time as you type</li>
-                <li><strong>Privacy-Focused:</strong> Your data stays in your browser - we don't store personal information</li>
-                <li><strong>Regular Updates:</strong> Our formulas and rates are regularly updated for accuracy</li>
-            </ul>
-            
-            <h3>Calculator Categories Overview</h3>
-            <p>Our calculators are organized into four main categories to help you find exactly what you need:</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
-                    <h4><i class="fas fa-chart-line" style="color: #667eea;"></i> Financial Calculators</h4>
-                    <p>Loans, mortgages, investments, retirement planning, and tax calculations</p>
-                </div>
-                <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #f093fb;">
-                    <h4><i class="fas fa-heartbeat" style="color: #f093fb;"></i> Health Calculators</h4>
-                    <p>BMI, calorie needs, body fat percentage, and wellness tracking</p>
-                </div>
-                <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #43e97b;">
-                    <h4><i class="fas fa-clock" style="color: #43e97b;"></i> Everyday Calculators</h4>
-                    <p>Percentages, tips, discounts, age, dates, and daily life calculations</p>
-                </div>
-                <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #fa709a;">
-                    <h4><i class="fas fa-atom" style="color: #fa709a;"></i> Scientific & Education</h4>
-                    <p>Scientific functions, GPA calculations, and academic tools</p>
+    <!-- Hero Section -->
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 4rem 0; color: white;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">🧮 Free Online Calculators</h1>
+                <p style="font-size: 1.2rem; opacity: 0.95; margin-bottom: 2rem;">35+ Powerful calculators for finance, health, everyday math, and academics - 100% free, no registration required</p>
+                
+                <!-- Search Box -->
+                <div style="position: relative; max-width: 600px; margin: 0 auto;">
+                    <input type="text" id="calculatorSearch" placeholder="Search calculators... (e.g., BMI, Loan, Percentage)" style="width: 100%; padding: 1rem 1rem 1rem 3rem; border-radius: 50px; border: none; font-size: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+                    <i class="fas fa-search" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: #667eea; font-size: 1.2rem;"></i>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section style="background: white; padding: 2rem 0; border-bottom: 1px solid #e5e7eb;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #667eea; margin-bottom: 0.5rem;">35+</div>
+                    <div style="color: #6b7280; font-size: 0.95rem;">Free Calculators</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #10b981; margin-bottom: 0.5rem;">100%</div>
+                    <div style="color: #6b7280; font-size: 0.95rem;">Free & No Ads</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #f59e0b; margin-bottom: 0.5rem;">⚡</div>
+                    <div style="color: #6b7280; font-size: 0.95rem;">Instant Results</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #ec4899; margin-bottom: 0.5rem;">🔒</div>
+                    <div style="color: #6b7280; font-size: 0.95rem;">Privacy First</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container" style="padding: 3rem 0;">
 
         <!-- Financial Calculators -->
-        <section class="calc-category">
-            <h2><i class="fas fa-chart-line"></i> Financial Calculators</h2>
-            <div class="calc-grid">
+        <section class="calc-category" id="financial" style="scroll-margin-top: 100px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid #667eea;">
+                <div>
+                    <h2 style="margin: 0; color: #1f2937; font-size: 2rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-chart-line" style="color: white; font-size: 1.5rem;"></i>
+                        </span>
+                        Financial Calculators
+                    </h2>
+                    <p style="margin: 0.5rem 0 0 0; color: #6b7280;">Loans, investments, taxes, and retirement planning tools</p>
+                </div>
+                <div style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.9rem;">14 Calculators</div>
+            </div>
+            <div class="calc-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
                 <a href="calculators/loan-calculator.html" class="calc-card">
                     <i class="fas fa-money-bill"></i>
                     <h3>Loan Calculator</h3>
@@ -167,9 +178,20 @@
         </section>
 
         <!-- Health Calculators -->
-        <section class="calc-category">
-            <h2><i class="fas fa-heartbeat"></i> Health Calculators</h2>
-            <div class="calc-grid">
+        <section class="calc-category" id="health" style="scroll-margin-top: 100px; margin-top: 4rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid #ec4899;">
+                <div>
+                    <h2 style="margin: 0; color: #1f2937; font-size: 2rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="width: 50px; height: 50px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-heartbeat" style="color: white; font-size: 1.5rem;"></i>
+                        </span>
+                        Health & Fitness
+                    </h2>
+                    <p style="margin: 0.5rem 0 0 0; color: #6b7280;">BMI, calories, body fat, and wellness tracking</p>
+                </div>
+                <div style="background: #fce7f3; color: #db2777; padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.9rem;">3 Calculators</div>
+            </div>
+            <div class="calc-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
                 <a href="calculators/bmi-calculator.html" class="calc-card">
                     <i class="fas fa-weight"></i>
                     <h3>BMI Calculator</h3>
@@ -189,9 +211,20 @@
         </section>
 
         <!-- Everyday Calculators -->
-        <section class="calc-category">
-            <h2><i class="fas fa-clock"></i> Everyday Calculators</h2>
-            <div class="calc-grid">
+        <section class="calc-category" id="everyday" style="scroll-margin-top: 100px; margin-top: 4rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid #10b981;">
+                <div>
+                    <h2 style="margin: 0; color: #1f2937; font-size: 2rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="width: 50px; height: 50px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-clock" style="color: white; font-size: 1.5rem;"></i>
+                        </span>
+                        Everyday Calculators
+                    </h2>
+                    <p style="margin: 0.5rem 0 0 0; color: #6b7280;">Percentages, tips, dates, and daily life calculations</p>
+                </div>
+                <div style="background: #d1fae5; color: #059669; padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.9rem;">8 Calculators</div>
+            </div>
+            <div class="calc-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
                 <a href="calculators/percentage-calculator.html" class="calc-card">
                     <i class="fas fa-percent"></i>
                     <h3>Percentage Calculator</h3>
@@ -236,9 +269,20 @@
         </section>
 
         <!-- Scientific Calculators -->
-        <section class="calc-category">
-            <h2><i class="fas fa-atom"></i> Scientific Calculators</h2>
-            <div class="calc-grid">
+        <section class="calc-category" id="scientific" style="scroll-margin-top: 100px; margin-top: 4rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid #f59e0b;">
+                <div>
+                    <h2 style="margin: 0; color: #1f2937; font-size: 2rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="width: 50px; height: 50px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-atom" style="color: white; font-size: 1.5rem;"></i>
+                        </span>
+                        Scientific & Education
+                    </h2>
+                    <p style="margin: 0.5rem 0 0 0; color: #6b7280;">Advanced math, GPA, and academic tools</p>
+                </div>
+                <div style="background: #fef3c7; color: #d97706; padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.9rem;">4 Calculators</div>
+            </div>
+            <div class="calc-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
                 <a href="calculators/scientific-calculator.html" class="calc-card">
                     <i class="fas fa-calculator"></i>
                     <h3>Scientific Calculator</h3>
@@ -262,7 +306,45 @@
                 </a>
             </div>
         </section>
+
+        <!-- CTA Section -->
+        <section style="margin-top: 4rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 3rem; text-align: center; color: white;">
+            <h2 style="color: white; margin-bottom: 1rem; font-size: 2rem;">Can't Find What You Need?</h2>
+            <p style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">We're constantly adding new calculators. Let us know what you'd like to see!</p>
+            <a href="contact.html" style="display: inline-block; background: white; color: #667eea; padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: transform 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Request a Calculator →</a>
+        </section>
     </main>
+
+    <!-- Search Script -->
+    <script>
+        // Search functionality
+        document.getElementById('calculatorSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const calcCards = document.querySelectorAll('.calc-card');
+            
+            calcCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Show/hide category sections based on results
+            const categories = document.querySelectorAll('.calc-category');
+            categories.forEach(category => {
+                const visibleCards = category.querySelectorAll('.calc-card[style*="display: block"], .calc-card:not([style*="display: none"])');
+                if (visibleCards.length === 0 && searchTerm !== '') {
+                    category.style.display = 'none';
+                } else {
+                    category.style.display = 'block';
+                }
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="footer">
