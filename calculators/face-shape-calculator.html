@@ -201,6 +201,63 @@
                     </p>
                 </div>
 
+                <!-- Method Selection -->
+                <div style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;"><i class="fas fa-sliders-h"></i> Choose Your Method</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <button type="button" id="methodManual" class="method-btn active" style="padding: 1rem; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            <i class="fas fa-ruler"></i> Manual Measurements
+                        </button>
+                        <button type="button" id="methodImage" class="method-btn" style="padding: 1rem; border: 2px solid #e5e7eb; background: white; color: #4a5568; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            <i class="fas fa-image"></i> Upload Photo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Image Upload Section -->
+                <div id="imageUploadSection" style="display: none; background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 2px dashed #cbd5e0;">
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;"><i class="fas fa-camera"></i> Upload Your Face Photo</h3>
+                    <p style="color: #718096; margin-bottom: 1.5rem;">Upload a clear front-facing photo with hair pulled back for best results.</p>
+                    
+                    <div style="text-align: center;">
+                        <input type="file" id="faceImageInput" accept="image/*" style="display: none;">
+                        <button type="button" id="uploadBtn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600;">
+                            <i class="fas fa-upload"></i> Choose Photo
+                        </button>
+                        <p style="color: #9ca3af; font-size: 0.875rem; margin-top: 0.5rem;">Supported: JPG, PNG (Max 5MB)</p>
+                    </div>
+
+                    <!-- Image Preview & Canvas -->
+                    <div id="imagePreviewContainer" style="display: none; margin-top: 2rem;">
+                        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 12px;">
+                            <div style="position: relative; max-width: 500px; margin: 0 auto;">
+                                <canvas id="faceCanvas" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></canvas>
+                            </div>
+                            
+                            <div style="margin-top: 1.5rem; text-align: center;">
+                                <p style="color: #4a5568; margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> Click on your photo to mark the measurement points</p>
+                                <button type="button" id="clearImageBtn" style="background: #ef4444; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; margin-right: 0.5rem;">
+                                    <i class="fas fa-trash"></i> Clear Photo
+                                </button>
+                                <button type="button" id="analyzeImageBtn" style="background: #10b981; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; cursor: pointer;" disabled>
+                                    <i class="fas fa-magic"></i> Analyze Face Shape
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Instructions for marking points -->
+                        <div style="background: #fff7ed; padding: 1rem; border-radius: 8px; margin-top: 1rem; border-left: 4px solid #f59e0b;">
+                            <h4 style="color: #f59e0b; margin-bottom: 0.5rem; font-size: 0.95rem;"><i class="fas fa-hand-pointer"></i> How to Mark Points:</h4>
+                            <ol style="color: #78716c; font-size: 0.875rem; line-height: 1.6; margin: 0; padding-left: 1.25rem;">
+                                <li>Click at the <strong>center of your hairline</strong> (top)</li>
+                                <li>Click at the <strong>tip of your chin</strong> (bottom)</li>
+                                <li>Click at the <strong>widest part of left cheekbone</strong></li>
+                                <li>Click at the <strong>widest part of right cheekbone</strong></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Calculator Form -->
                 <form id="faceShapeForm">
                     <div class="form-group">
@@ -366,9 +423,162 @@
     <script src="../js/main.js"></script>
     <script src="../js/calculator-utils.js"></script>
     <script>
+        // Global variables
         const unitSystem = document.getElementById('unitSystem');
         const faceShapeForm = document.getElementById('faceShapeForm');
         const resultContainer = document.getElementById('resultContainer');
+        
+        // Image upload variables
+        const methodManual = document.getElementById('methodManual');
+        const methodImage = document.getElementById('methodImage');
+        const imageUploadSection = document.getElementById('imageUploadSection');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const faceImageInput = document.getElementById('faceImageInput');
+        const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+        const faceCanvas = document.getElementById('faceCanvas');
+        const clearImageBtn = document.getElementById('clearImageBtn');
+        const analyzeImageBtn = document.getElementById('analyzeImageBtn');
+        
+        let ctx = null;
+        let uploadedImage = null;
+        let markedPoints = [];
+        
+        // Method switching
+        methodManual.addEventListener('click', () => {
+            methodManual.classList.add('active');
+            methodManual.style.background = '#667eea';
+            methodManual.style.color = 'white';
+            methodImage.classList.remove('active');
+            methodImage.style.background = 'white';
+            methodImage.style.color = '#4a5568';
+            imageUploadSection.style.display = 'none';
+            faceShapeForm.style.display = 'block';
+        });
+        
+        methodImage.addEventListener('click', () => {
+            methodImage.classList.add('active');
+            methodImage.style.background = '#667eea';
+            methodImage.style.color = 'white';
+            methodManual.classList.remove('active');
+            methodManual.style.background = 'white';
+            methodManual.style.color = '#4a5568';
+            imageUploadSection.style.display = 'block';
+            faceShapeForm.style.display = 'none';
+        });
+        
+        // Upload button click
+        uploadBtn.addEventListener('click', () => {
+            faceImageInput.click();
+        });
+        
+        // Image upload handler
+        faceImageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file && file.size <= 5 * 1024 * 1024) { // 5MB limit
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        uploadedImage = img;
+                        displayImageOnCanvas(img);
+                        imagePreviewContainer.style.display = 'block';
+                        markedPoints = [];
+                        analyzeImageBtn.disabled = true;
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image file smaller than 5MB');
+            }
+        });
+        
+        // Display image on canvas
+        function displayImageOnCanvas(img) {
+            const maxWidth = 500;
+            const scale = Math.min(maxWidth / img.width, 1);
+            const width = img.width * scale;
+            const height = img.height * scale;
+            
+            faceCanvas.width = width;
+            faceCanvas.height = height;
+            ctx = faceCanvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+        }
+        
+        // Canvas click handler for marking points
+        faceCanvas.addEventListener('click', (e) => {
+            if (!uploadedImage) return;
+            
+            const rect = faceCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            if (markedPoints.length < 4) {
+                markedPoints.push({ x, y });
+                drawPoint(x, y, markedPoints.length);
+                
+                if (markedPoints.length === 4) {
+                    analyzeImageBtn.disabled = false;
+                }
+            }
+        });
+        
+        // Draw point on canvas
+        function drawPoint(x, y, number) {
+            ctx.fillStyle = '#667eea';
+            ctx.beginPath();
+            ctx.arc(x, y, 8, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 12px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(number, x, y);
+        }
+        
+        // Clear image
+        clearImageBtn.addEventListener('click', () => {
+            uploadedImage = null;
+            markedPoints = [];
+            imagePreviewContainer.style.display = 'none';
+            faceImageInput.value = '';
+            analyzeImageBtn.disabled = true;
+        });
+        
+        // Analyze image
+        analyzeImageBtn.addEventListener('click', () => {
+            if (markedPoints.length !== 4) {
+                alert('Please mark all 4 points on your face');
+                return;
+            }
+            
+            // Calculate measurements from marked points
+            const faceLength = Math.abs(markedPoints[1].y - markedPoints[0].y);
+            const cheekboneWidth = Math.abs(markedPoints[3].x - markedPoints[2].x);
+            
+            // Estimate forehead and jawline (simplified)
+            const foreheadWidth = cheekboneWidth * 0.95;
+            const jawlineWidth = cheekboneWidth * 0.85;
+            
+            // Convert to cm (approximate)
+            const pixelToCm = 15 / faceLength; // Assuming average face length of 15cm
+            
+            // Auto-fill the form
+            document.getElementById('forehead').value = (foreheadWidth * pixelToCm).toFixed(1);
+            document.getElementById('cheekbone').value = (cheekboneWidth * pixelToCm).toFixed(1);
+            document.getElementById('jawline').value = (jawlineWidth * pixelToCm).toFixed(1);
+            document.getElementById('faceLength').value = (faceLength * pixelToCm).toFixed(1);
+            
+            // Switch to manual mode to show filled values
+            methodManual.click();
+            
+            // Auto-calculate
+            setTimeout(() => {
+                calculateFaceShape();
+            }, 500);
+        });
 
         // Update unit labels
         unitSystem.addEventListener('change', (e) => {
