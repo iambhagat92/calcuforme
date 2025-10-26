@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Due Date Calculator – EDD from LMP or Conception</title>
+  <meta name="description" content="Due date calculator: calculate your estimated due date (EDD) from last menstrual period (LMP) or conception date. Also shows current week and trimester.">
+  <meta name="keywords" content="due date calculator, edd calculator, due date from lmp, pregnancy weeks, trimester">
+  <meta property="og:title" content="Due Date Calculator – EDD from LMP">
+  <meta property="og:description" content="Calculate EDD from LMP or conception and see weeks & trimester.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calculateforme.xyz/calculators/due-date-calculator.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .calculator-page{padding:2rem 0}
+    .card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.1);padding:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media(max-width:860px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="calculator-page">
+    <div class="container">
+      <div class="card">
+        <a class="nav-link" href="../calculators.html" style="color:#667eea;display:inline-block;margin-bottom:10px">← All Calculators</a>
+        <div class="calculator-header">
+          <h1>Due Date Calculator (EDD)</h1>
+          <p>Calculate estimated due date from LMP or conception date</p>
+        </div>
+        <div class="grid">
+          <section>
+            <div class="form-group">
+              <label>Method</label>
+              <select id="method"><option value="lmp" selected>Use LMP</option><option value="conception">Use Conception Date</option></select>
+            </div>
+            <div class="form-group" id="lmpRow">
+              <label for="lmp">LMP</label>
+              <input id="lmp" type="date">
+            </div>
+            <div class="form-group" id="conRow" style="display:none">
+              <label for="con">Conception Date</label>
+              <input id="con" type="date">
+            </div>
+            <button class="btn btn-primary btn-block" onclick="calcEDD()">Calculate</button>
+          </section>
+          <section>
+            <div id="results" class="result-container">
+              <div class="result-item"><div class="result-label">Estimated Due Date (EDD)</div><div id="edd" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">Current Week</div><div id="week" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">Trimester</div><div id="tri" class="result-value">–</div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../js/calculator-utils.js"></script>
+  <script>
+    function addDays(d,days){const x=new Date(d); x.setDate(x.getDate()+days); return x}
+    function fmt(d){return d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'})}
+    function weeksDays(from,to){const ms=to-from; const days=Math.floor(ms/86400000); const w=Math.floor(days/7); const r=days%7; return {w,r,days}}
+    function trimester(weeks){ if(weeks<13) return '1st Trimester'; if(weeks<28) return '2nd Trimester'; return '3rd Trimester' }
+    function toggle(){ const m=document.getElementById('method').value; document.getElementById('lmpRow').style.display=m==='lmp'?'block':'none'; document.getElementById('conRow').style.display=m==='conception'?'block':'none'; }
+    document.addEventListener('change', (e)=>{ if(e.target.id==='method') toggle(); });
+    function calcEDD(){
+      const m=document.getElementById('method').value; let edd,lmp;
+      if(m==='lmp'){ const v=document.getElementById('lmp').value; if(!v) return; lmp=new Date(v); edd=addDays(lmp,280); }
+      else { const v=document.getElementById('con').value; if(!v) return; const con=new Date(v); lmp=addDays(con,-14); edd=addDays(lmp,280); }
+      const now=new Date(); const ga=weeksDays(lmp,now);
+      document.getElementById('edd').textContent=fmt(edd);
+      document.getElementById('week').textContent=`${ga.w} weeks ${ga.r} days`;
+      document.getElementById('tri').textContent=trimester(ga.w);
+      CalcUtils.saveCalculation('Due Date Calculator',{method:m},{EDD:fmt(edd), Week:`${ga.w}w ${ga.r}d`});
+      document.getElementById('results').classList.add('active');
+      CalcUtils.trackCalculatorUse('Due Date Calculator');
+    }
+    window.addEventListener('load', ()=>{
+      const today=new Date(); const defaultLMP=new Date(today.getTime()-100*24*3600*1000); document.getElementById('lmp').value=defaultLMP.toISOString().slice(0,10); calcEDD();
+    });
+  </script>
+</body>
+</html>

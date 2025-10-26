@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregnancy Calculator – Due Date, Gestational Age, Trimester</title>
+  <meta name="description" content="Pregnancy calculator: estimate due date (EDD), gestational age in weeks and days, and trimester from your last menstrual period (LMP).">
+  <meta name="keywords" content="pregnancy calculator, gestational age, trimester, due date from LMP, pregnancy weeks">
+  <meta property="og:title" content="Pregnancy Calculator – Due Date & Weeks">
+  <meta property="og:description" content="Calculate EDD, weeks pregnant, and trimester based on LMP.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calculateforme.xyz/calculators/pregnancy-calculator.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .calculator-page{padding:2rem 0}
+    .card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.1);padding:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media(max-width:860px){.grid{grid-template-columns:1fr}}
+    .note{background:#f8fafc;border-left:4px solid #667eea;padding:12px;border-radius:10px}
+  </style>
+</head>
+<body>
+  <main class="calculator-page">
+    <div class="container">
+      <div class="card">
+        <a class="nav-link" href="../calculators.html" style="color:#667eea;display:inline-block;margin-bottom:10px">← All Calculators</a>
+        <div class="calculator-header">
+          <h1>Pregnancy Calculator</h1>
+          <p>Due date (EDD), weeks pregnant, and trimester from LMP</p>
+        </div>
+        <div class="grid">
+          <section>
+            <div class="form-group">
+              <label for="lmp">Last Menstrual Period (LMP)</label>
+              <input id="lmp" type="date">
+            </div>
+            <button class="btn btn-primary btn-block" onclick="calcPreg()">Calculate</button>
+          </section>
+          <section>
+            <div id="results" class="result-container">
+              <div class="result-item"><div class="result-label">Estimated Due Date (EDD)</div><div id="edd" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">Gestational Age</div><div id="ga" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">Trimester</div><div id="tri" class="result-value">–</div></div>
+            </div>
+            <div class="note mt-2">
+              Rule: Naegele’s rule assumes 280 days (40 weeks) from LMP. Actual due date may vary.
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../js/calculator-utils.js"></script>
+  <script>
+    function addDays(d,days){const x=new Date(d); x.setDate(x.getDate()+days); return x}
+    function fmt(d){return d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'})}
+    function weeksDays(from,to){const ms=to-from; const days=Math.floor(ms/86400000); const w=Math.floor(days/7); const r=days%7; return {w,r,days}}
+    function trimester(weeks){ if(weeks<13) return '1st Trimester'; if(weeks<28) return '2nd Trimester'; return '3rd Trimester' }
+    function calcPreg(){
+      const val=document.getElementById('lmp').value; if(!val) return;
+      const lmp=new Date(val);
+      const edd=addDays(lmp,280);
+      const now=new Date();
+      const ga=weeksDays(lmp, now);
+      document.getElementById('edd').textContent = fmt(edd);
+      document.getElementById('ga').textContent = `${ga.w} weeks ${ga.r} days`;
+      document.getElementById('tri').textContent = trimester(ga.w);
+      CalcUtils.saveCalculation('Pregnancy Calculator',{LMP: val},{EDD: fmt(edd), Gestational:`${ga.w}w ${ga.r}d`, Trimester: trimester(ga.w)});
+      document.getElementById('results').classList.add('active');
+      CalcUtils.trackCalculatorUse('Pregnancy Calculator');
+    }
+    window.addEventListener('load', ()=>{
+      const today=new Date();
+      const defaultLMP=new Date(today.getTime()-100*24*3600*1000); // ~14 weeks ago
+      document.getElementById('lmp').value = defaultLMP.toISOString().slice(0,10);
+      calcPreg();
+    });
+  </script>
+</body>
+</html>

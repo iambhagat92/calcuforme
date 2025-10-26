@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregnancy Conception Calculator – Estimated Conception Date</title>
+  <meta name="description" content="Estimate your conception date from LMP or due date. See fertile window and key pregnancy milestones.">
+  <meta name="keywords" content="conception calculator, conception date from due date, conceive date LMP, fertile window">
+  <meta property="og:title" content="Pregnancy Conception Calculator">
+  <meta property="og:description" content="Estimate conception date using LMP or due date (EDD).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calculateforme.xyz/calculators/pregnancy-conception-calculator.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .calculator-page{padding:2rem 0}
+    .card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.1);padding:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media(max-width:860px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="calculator-page">
+    <div class="container">
+      <div class="card">
+        <a class="nav-link" href="../calculators.html" style="color:#667eea;display:inline-block;margin-bottom:10px">← All Calculators</a>
+        <div class="calculator-header">
+          <h1>Pregnancy Conception Calculator</h1>
+          <p>Estimate conception date from LMP or due date (EDD)</p>
+        </div>
+        <div class="grid">
+          <section>
+            <div class="form-group">
+              <label>Method</label>
+              <select id="method"><option value="lmp" selected>Use LMP</option><option value="edd">Use Due Date (EDD)</option></select>
+            </div>
+            <div class="form-group" id="lmpRow">
+              <label for="lmp">LMP (Last Menstrual Period)</label>
+              <input id="lmp" type="date">
+            </div>
+            <div class="form-group" id="eddRow" style="display:none">
+              <label for="edd">Due Date (EDD)</label>
+              <input id="edd" type="date">
+            </div>
+            <button class="btn btn-primary btn-block" onclick="calcConc()">Calculate</button>
+          </section>
+          <section>
+            <div id="results" class="result-container">
+              <div class="result-item"><div class="result-label">Estimated Conception Date</div><div id="conception" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">Fertile Window (approx.)</div><div id="window" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">LMP (derived)</div><div id="lmpOut" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">EDD (derived)</div><div id="eddOut" class="result-value">–</div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../js/calculator-utils.js"></script>
+  <script>
+    function addDays(d,days){const x=new Date(d); x.setDate(x.getDate()+days); return x}
+    function fmt(d){return d.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'})}
+    function changeMethod(){
+      const m=document.getElementById('method').value;
+      document.getElementById('lmpRow').style.display = (m==='lmp')?'block':'none';
+      document.getElementById('eddRow').style.display = (m==='edd')?'block':'none';
+    }
+    document.addEventListener('change', (e)=>{ if(e.target.id==='method') changeMethod(); });
+
+    function calcConc(){
+      const m=document.getElementById('method').value;
+      let lmp, edd;
+      if(m==='lmp'){
+        const v=document.getElementById('lmp').value; if(!v) return;
+        lmp=new Date(v); edd=addDays(lmp,280);
+      }else{
+        const v=document.getElementById('edd').value; if(!v) return;
+        edd=new Date(v); lmp=addDays(edd,-280);
+      }
+      // Conception ~ ovulation ~ LMP + 14 days (for a 28-day cycle assumption)
+      const conception = addDays(lmp,14);
+      const fertileStart = addDays(lmp,10), fertileEnd = addDays(lmp,15);
+      document.getElementById('conception').textContent = fmt(conception);
+      document.getElementById('window').textContent = `${fmt(fertileStart)} – ${fmt(fertileEnd)}`;
+      document.getElementById('lmpOut').textContent = fmt(lmp);
+      document.getElementById('eddOut').textContent = fmt(edd);
+      CalcUtils.saveCalculation('Pregnancy Conception Calculator',{method:m,LMP:lmp.toISOString(),EDD:edd.toISOString()},{conception:fmt(conception), window:`${fmt(fertileStart)} – ${fmt(fertileEnd)}`});
+      document.getElementById('results').classList.add('active');
+      CalcUtils.trackCalculatorUse('Pregnancy Conception Calculator');
+    }
+    window.addEventListener('load', ()=>{
+      const today=new Date();
+      const defaultLMP=new Date(today.getTime()-100*24*3600*1000);
+      document.getElementById('lmp').value = defaultLMP.toISOString().slice(0,10);
+      calcConc();
+    });
+  </script>
+</body>
+</html>

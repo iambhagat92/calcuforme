@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pace Calculator – Pace per km & mile, Speed and Time</title>
+  <meta name="description" content="Free running pace calculator. Enter distance and time to get pace per km and per mile, speed (km/h & mph), and projected finish times.">
+  <meta name="keywords" content="pace calculator, running pace, min per km, min per mile, speed calculator, running time">
+  <meta property="og:title" content="Pace Calculator – Running Pace & Speed">
+  <meta property="og:description" content="Instant pace per km/mile and speed from distance and time.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calculateforme.xyz/calculators/pace-calculator.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .calculator-page{padding:2rem 0}
+    .card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.1);padding:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media(max-width:860px){.grid{grid-template-columns:1fr}}
+    .inline{display:flex;gap:10px;align-items:center}
+  </style>
+</head>
+<body>
+  <main class="calculator-page">
+    <div class="container">
+      <div class="card">
+        <a class="nav-link" href="../calculators.html" style="color:#667eea;display:inline-block;margin-bottom:10px">← All Calculators</a>
+        <div class="calculator-header">
+          <h1>Pace Calculator</h1>
+          <p>Get pace per km & mile, speed, and estimates</p>
+        </div>
+        <div class="grid">
+          <section>
+            <div class="form-group">
+              <label for="distance">Distance</label>
+              <div class="inline">
+                <input id="distance" type="number" min="0.1" step="0.01" value="5">
+                <select id="unit"><option value="km" selected>km</option><option value="mi">miles</option></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="hh">Time (hh:mm:ss)</label>
+              <div class="inline">
+                <input id="hh" type="number" min="0" value="0" style="width:80px">:
+                <input id="mm" type="number" min="0" max="59" value="25" style="width:80px">:
+                <input id="ss" type="number" min="0" max="59" value="00" style="width:80px">
+              </div>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="calcPace()">Calculate</button>
+          </section>
+          <section>
+            <div id="results" class="result-container">
+              <div class="result-item"><div class="result-label">Pace per km</div><div id="paceKm" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">Pace per mile</div><div id="paceMi" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">Speed</div><div id="speed" class="result-value">–</div></div>
+              <div class="result-item"><div class="result-label">10k / Half / Full</div><div id="projections" class="result-value">–</div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../js/calculator-utils.js"></script>
+  <script>
+    function toSeconds(h,m,s){return (+h)*3600+(+m)*60+(+s)}
+    function fmtPace(sec){const m=Math.floor(sec/60), s=Math.round(sec%60);return `${m}:${s.toString().padStart(2,'0')} /km`}
+    function fmtPaceMi(sec){const m=Math.floor(sec/60), s=Math.round(sec%60);return `${m}:${s.toString().padStart(2,'0')} /mile`}
+    function calcPace(){
+      const d=+document.getElementById('distance').value; if(!(d>0)) return;
+      const unit=document.getElementById('unit').value;
+      const t=toSeconds(document.getElementById('hh').value,document.getElementById('mm').value,document.getElementById('ss').value);
+      if(!(t>0)) return;
+      const distKm = unit==='km'? d : d*1.609344;
+      const pacePerKm = t / distKm;
+      const pacePerMi = t / (distKm/1.609344);
+      const speedKmh = (distKm) / (t/3600);
+      document.getElementById('paceKm').textContent = fmtPace(pacePerKm);
+      document.getElementById('paceMi').textContent = fmtPaceMi(pacePerMi);
+      document.getElementById('speed').textContent = `${speedKmh.toFixed(2)} km/h | ${(speedKmh/1.609344).toFixed(2)} mph`;
+      function estimate(secPerKm, km){const total=secPerKm*km; const h=Math.floor(total/3600), m=Math.floor((total%3600)/60), s=Math.round(total%60); return `${h}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`}
+      document.getElementById('projections').textContent = `10k: ${estimate(pacePerKm,10)} | HM: ${estimate(pacePerKm,21.097)} | FM: ${estimate(pacePerKm,42.195)}`;
+      CalcUtils.saveCalculation('Pace Calculator',{distance:d,unit,time_sec:t},{pace_km:fmtPace(pacePerKm), pace_mile:fmtPaceMi(pacePerMi)});
+      document.getElementById('results').classList.add('active');
+      CalcUtils.trackCalculatorUse('Pace Calculator');
+    }
+    window.addEventListener('load', calcPace);
+  </script>
+</body>
+</html>

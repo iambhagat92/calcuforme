@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMR Calculator (Mifflin-St Jeor) – TDEE & Calories</title>
+  <meta name="description" content="Free BMR calculator using Mifflin–St Jeor formula. Estimate Basal Metabolic Rate (BMR) and TDEE with activity levels to plan calories for weight loss or gain.">
+  <meta name="keywords" content="bmr calculator, mifflin st jeor, tdee calculator, basal metabolic rate, calorie needs, ideal calories">
+  <meta property="og:title" content="BMR Calculator – Mifflin–St Jeor & TDEE">
+  <meta property="og:description" content="Calculate your BMR and TDEE instantly with activity multipliers. Plan calories for weight goals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calculateforme.xyz/calculators/bmr-calculator.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .calculator-page{padding:2rem 0}
+    .card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.1);padding:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .result-box{background:#f8fafc;border-left:4px solid #667eea;border-radius:12px;padding:16px}
+    @media(max-width: 860px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="calculator-page">
+    <div class="container">
+      <div class="card">
+        <a class="nav-link" href="../calculators.html" style="color:#667eea;display:inline-block;margin-bottom:10px">← All Calculators</a>
+        <div class="calculator-header">
+          <h1>BMR Calculator (Mifflin–St Jeor)</h1>
+          <p>Estimate Basal Metabolic Rate and Total Daily Energy Expenditure (TDEE)</p>
+        </div>
+        <div class="grid">
+          <section>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="male" selected>Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="age">Age (years)</label>
+              <input id="age" type="number" min="10" max="100" value="30">
+            </div>
+            <div class="form-group">
+              <label for="height">Height (cm)</label>
+              <input id="height" type="number" min="100" max="220" value="175">
+            </div>
+            <div class="form-group">
+              <label for="weight">Weight (kg)</label>
+              <input id="weight" type="number" min="30" max="200" step="0.1" value="70">
+            </div>
+            <div class="form-group">
+              <label for="activity">Activity Level</label>
+              <select id="activity">
+                <option value="1.2">Sedentary (little or no exercise)</option>
+                <option value="1.375" selected>Light (1–3 days/week)</option>
+                <option value="1.55">Moderate (3–5 days/week)</option>
+                <option value="1.725">Active (6–7 days/week)</option>
+                <option value="1.9">Very Active (physical job + training)</option>
+              </select>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="calcBMR()">Calculate</button>
+          </section>
+          <section>
+            <div id="results" class="result-container">
+              <div class="result-item">
+                <div class="result-label">Basal Metabolic Rate (BMR)</div>
+                <div id="bmr" class="result-value">–</div>
+              </div>
+              <div class="result-item">
+                <div class="result-label">Total Daily Energy Expenditure (TDEE)</div>
+                <div id="tdee" class="result-value">–</div>
+              </div>
+              <div class="result-item">
+                <div class="result-label">Suggested Calories</div>
+                <div id="suggest" style="color:#374151"></div>
+              </div>
+              <div class="share-buttons">
+                <button class="share-btn share-btn-copy" onclick="CalcUtils.copyToClipboard(location.href)">Copy Link</button>
+                <button class="share-btn share-btn-export" onclick="exportBMR()">Export</button>
+              </div>
+            </div>
+            <div class="result-box" style="margin-top:16px">
+              <strong>Formula:</strong> Male = 10×kg + 6.25×cm − 5×age + 5; Female = 10×kg + 6.25×cm − 5×age − 161
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../js/calculator-utils.js"></script>
+  <script>
+    function fmt(n){return Number(n).toFixed(0)}
+    function calcBMR(){
+      const g=document.getElementById('gender').value;
+      const age=+document.getElementById('age').value;
+      const cm=+document.getElementById('height').value;
+      const kg=+document.getElementById('weight').value;
+      const act=+document.getElementById('activity').value;
+      if(!(age>0&&cm>0&&kg>0)) return;
+      let bmr=10*kg + 6.25*cm - 5*age + (g==='male'?5:-161);
+      const tdee=bmr*act;
+      document.getElementById('bmr').textContent = fmt(bmr)+' kcal/day';
+      document.getElementById('tdee').textContent = fmt(tdee)+' kcal/day';
+      const lose = Math.max(1200, tdee-500), gain = tdee+500;
+      document.getElementById('suggest').textContent = `Lose: ${fmt(lose)} | Maintain: ${fmt(tdee)} | Gain: ${fmt(gain)} kcal/day`;
+      const res={BMR:fmt(bmr)+' kcal', TDEE:fmt(tdee)+' kcal', Lose:fmt(lose), Maintain:fmt(tdee), Gain:fmt(gain)};
+      CalcUtils.saveCalculation('BMR Calculator',{gender:g,age,cm,kg,activity:act},res);
+      document.getElementById('results').classList.add('active');
+      CalcUtils.trackCalculatorUse('BMR Calculator');
+    }
+    function exportBMR(){
+      const data={
+        BMR: document.getElementById('bmr').textContent,
+        TDEE: document.getElementById('tdee').textContent,
+        Suggestions: document.getElementById('suggest').textContent
+      };
+      CalcUtils.exportAsJSON('BMR_Calculator', data);
+    }
+    window.addEventListener('load', calcBMR);
+  </script>
+</body>
+</html>

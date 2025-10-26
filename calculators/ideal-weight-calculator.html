@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ideal Weight Calculator – Devine, Robinson, Miller, Hamwi</title>
+  <meta name="description" content="Ideal weight calculator using Devine, Robinson, Miller, and Hamwi formulas. Enter height and gender to get healthy weight ranges in kg & lbs.">
+  <meta name="keywords" content="ideal weight calculator, devine formula, hamwi, robinson, miller, healthy weight, height weight chart">
+  <meta property="og:title" content="Ideal Weight Calculator – Multiple Formulas">
+  <meta property="og:description" content="Calculate ideal body weight with Devine, Robinson, Miller, Hamwi methods.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calculateforme.xyz/calculators/ideal-weight-calculator.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .calculator-page{padding:2rem 0}
+    .card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.1);padding:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    table{width:100%;border-collapse:collapse;background:#fff}
+    th,td{padding:10px;border:1px solid #e5e7eb;text-align:left}
+    th{background:#667eea;color:#fff}
+    @media(max-width:860px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="calculator-page">
+    <div class="container">
+      <div class="card">
+        <a class="nav-link" href="../calculators.html" style="color:#667eea;display:inline-block;margin-bottom:10px">← All Calculators</a>
+        <div class="calculator-header">
+          <h1>Ideal Weight Calculator</h1>
+          <p>Devine, Robinson, Miller, and Hamwi formulas (kg & lbs)</p>
+        </div>
+        <div class="grid">
+          <section>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender"><option value="male">Male</option><option value="female" selected>Female</option></select>
+            </div>
+            <div class="form-group">
+              <label for="heightCm">Height (cm)</label>
+              <input id="heightCm" type="number" min="130" max="220" value="165">
+            </div>
+            <button class="btn btn-primary btn-block" onclick="calcIW()">Calculate</button>
+          </section>
+          <section>
+            <div id="results" class="result-container">
+              <table>
+                <thead><tr><th>Formula</th><th>Ideal Weight (kg)</th><th>(lbs)</th></tr></thead>
+                <tbody id="tb"></tbody>
+              </table>
+              <div class="mt-2">Average: <span id="avg" class="result-value">–</span></div>
+            </div>
+            <div class="result-box" style="margin-top:16px;background:#f8fafc;border-left:4px solid #667eea;border-radius:12px;padding:16px">
+              <strong>Note:</strong> Formulas provide reference ranges. Consider body composition and consult a professional for personalized advice.
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../js/calculator-utils.js"></script>
+  <script>
+    function kgToLbs(kg){return (kg*2.2046226218)}
+    function cmToIn(cm){return cm/2.54}
+    function over60(inches){return Math.max(0, inches-60)}
+    function round(n){return Math.round(n*10)/10}
+    function formulas(g,inches){
+      const x=over60(inches);
+      if(g==='male'){
+        return {
+          Devine: 50 + 2.3*x,
+          Robinson: 52 + 1.9*x,
+          Miller: 56.2 + 1.41*x,
+          Hamwi: 48 + 2.7*x
+        }
+      } else {
+        return {
+          Devine: 45.5 + 2.3*x,
+          Robinson: 49 + 1.7*x,
+          Miller: 53.1 + 1.36*x,
+          Hamwi: 45.5 + 2.2*x
+        }
+      }
+    }
+    function calcIW(){
+      const g=document.getElementById('gender').value;
+      const cm=+document.getElementById('heightCm').value; if(!(cm>0)) return;
+      const inch=cmToIn(cm);
+      const f=formulas(g, inch);
+      const rows=Object.entries(f).map(([name,kg])=>{
+        const k=round(kg), l=round(kgToLbs(kg));
+        return `<tr><td>${name}</td><td>${k}</td><td>${l}</td></tr>`
+      }).join('');
+      document.getElementById('tb').innerHTML=rows;
+      const avg = Object.values(f).reduce((a,b)=>a+b,0)/Object.values(f).length;
+      document.getElementById('avg').textContent = round(avg)+' kg';
+      CalcUtils.saveCalculation('Ideal Weight Calculator',{gender:g, height_cm:cm},{average_kg:round(avg)});
+      document.getElementById('results').classList.add('active');
+      CalcUtils.trackCalculatorUse('Ideal Weight Calculator');
+    }
+    window.addEventListener('load', calcIW);
+  </script>
+</body>
+</html>
