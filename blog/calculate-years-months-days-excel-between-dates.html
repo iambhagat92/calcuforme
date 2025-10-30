@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Calculate Years, Months and Days in Excel Between Two Dates - Complete Guide</title>
+    <meta name="description" content="Learn how to calculate years, months, and days between two dates in Excel using DATEDIF, YEARFRAC, and other formulas. Step-by-step guide with examples.">
+    <meta name="keywords" content="excel date calculation, DATEDIF function, calculate years months days excel, date difference excel, excel date formulas, age calculation excel">
+    <link rel="canonical" href="https://calculateforme.xyz/blog/calculate-years-months-days-excel-between-dates.html">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculate For Me</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <article style="max-width: 900px; margin: 0 auto; padding: 4rem 1rem;">
+        <header style="margin-bottom: 3rem;">
+            <h1 style="font-size: 2.5rem; color: #1f2937; margin-bottom: 1rem;">How to Calculate Years, Months and Days in Excel Between Two Dates</h1>
+            <p style="color: #6b7280; font-size: 1.1rem;">Master Excel date calculations with DATEDIF and other powerful formulas - Complete step-by-step guide</p>
+            <div style="margin-top: 1.5rem; color: #9ca3af; font-size: 0.95rem;">
+                <i class="fas fa-calendar"></i> Published: January 2025 | 
+                <i class="fas fa-clock"></i> 12 min read |
+                <i class="fas fa-user"></i> Excel Tutorial
+            </div>
+        </header>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Why Calculate Date Differences in Excel?</h2>
+            <p style="line-height: 1.8; color: #4b5563; margin-bottom: 1rem;">
+                Calculating the difference between two dates in years, months, and days is one of the most common tasks in Excel. Whether you're tracking employee tenure, calculating age, measuring project duration, or managing subscription periods, knowing how to accurately calculate date differences is essential.
+            </p>
+            <div style="background: #dbeafe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                <strong>💡 Quick Fact:</strong> Excel stores dates as sequential numbers starting from January 1, 1900. This makes date calculations possible using simple arithmetic and specialized functions.
+            </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Method 1: Using the DATEDIF Function (Most Popular)</h2>
+            <p style="line-height: 1.8; color: #4b5563; margin-bottom: 1rem;">
+                The DATEDIF function is the most powerful tool for calculating date differences in Excel. Although it's not documented in Excel's help system, it's been available since Excel 97 and works perfectly.
+            </p>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">DATEDIF Syntax:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1.5rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1.5rem;">
+                =DATEDIF(start_date, end_date, unit)
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">DATEDIF Unit Parameters:</h3>
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: #f3f4f6;">
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #e5e7eb;">Unit</th>
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #e5e7eb;">What It Returns</th>
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #e5e7eb;">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">"Y"</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Complete years</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">2 years</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">"M"</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Complete months</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">25 months</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">"D"</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Total days</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">762 days</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">"YM"</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Months ignoring years</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">1 month (remainder)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">"YD"</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Days ignoring years</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">45 days (remainder)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; font-family: monospace;">"MD"</td>
+                            <td style="padding: 0.75rem;">Days ignoring months & years</td>
+                            <td style="padding: 0.75rem;">15 days (remainder)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Complete Formula to Calculate Years, Months, and Days</h2>
+            
+            <div style="background: #fef3c7; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid #f59e0b;">
+                <h3 style="margin-top: 0; color: #92400e;">Example Scenario:</h3>
+                <p style="color: #78350f; margin: 0;">
+                    <strong>Start Date (Cell A2):</strong> January 15, 2020<br>
+                    <strong>End Date (Cell B2):</strong> October 30, 2025<br>
+                    <strong>We want:</strong> 5 Years, 9 Months, and 15 Days
+                </p>
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Step-by-Step Formula Breakdown:</h3>
+
+            <div style="margin-bottom: 2rem;">
+                <h4 style="color: #4b5563; margin-bottom: 0.75rem;">1. Calculate Complete Years:</h4>
+                <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 0.5rem;">
+                    =DATEDIF(A2, B2, "Y")
+                </div>
+                <p style="color: #6b7280; margin: 0;">Returns: <strong>5</strong> (complete years)</p>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h4 style="color: #4b5563; margin-bottom: 0.75rem;">2. Calculate Remaining Months (after years):</h4>
+                <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 0.5rem;">
+                    =DATEDIF(A2, B2, "YM")
+                </div>
+                <p style="color: #6b7280; margin: 0;">Returns: <strong>9</strong> (months remaining after complete years)</p>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h4 style="color: #4b5563; margin-bottom: 0.75rem;">3. Calculate Remaining Days (after months):</h4>
+                <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 0.5rem;">
+                    =DATEDIF(A2, B2, "MD")
+                </div>
+                <p style="color: #6b7280; margin: 0;">Returns: <strong>15</strong> (days remaining after complete months)</p>
+            </div>
+
+            <h3 style="color: #374151; margin: 2rem 0 1rem;">Combined Formula with Text:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1.5rem; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.9rem; overflow-x: auto; margin-bottom: 1rem;">
+=DATEDIF(A2,B2,"Y") & " Years, " & DATEDIF(A2,B2,"YM") & " Months, " & DATEDIF(A2,B2,"MD") & " Days"
+            </div>
+            <p style="color: #6b7280;">Result: <strong>"5 Years, 9 Months, 15 Days"</strong></p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Method 2: Manual Calculation Using YEAR, MONTH, and DAY Functions</h2>
+            <p style="line-height: 1.8; color: #4b5563; margin-bottom: 1rem;">
+                If you prefer not to use DATEDIF (or if you need more control), you can manually calculate the difference:
+            </p>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Calculate Years:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1rem;">
+=YEAR(B2) - YEAR(A2)
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Calculate Months (more complex):</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1rem;">
+=IF(DAY(B2)>=DAY(A2), MONTH(B2)-MONTH(A2), MONTH(B2)-MONTH(A2)-1)
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Calculate Days (most complex):</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1rem;">
+=IF(DAY(B2)>=DAY(A2), DAY(B2)-DAY(A2), DAY(EOMONTH(A2,0))-DAY(A2)+DAY(B2))
+            </div>
+
+            <div style="background: #fee2e2; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                <strong>⚠️ Note:</strong> Manual calculation is more error-prone and doesn't handle leap years and varying month lengths as accurately as DATEDIF. We recommend using DATEDIF whenever possible.
+            </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Method 3: Calculate Total Duration in Single Units</h2>
+            
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Total Days Between Two Dates:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 0.5rem;">
+=B2 - A2
+            </div>
+            <p style="color: #6b7280; margin-bottom: 1.5rem;">Or use: <code>=DATEDIF(A2, B2, "D")</code></p>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Total Complete Months:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1.5rem;">
+=DATEDIF(A2, B2, "M")
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Total Weeks:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1.5rem;">
+=(B2 - A2) / 7
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Decimal Years (for interest calculations):</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1.5rem;">
+=YEARFRAC(A2, B2)
+            </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Real-World Examples</h2>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Example 1: Calculate Employee Tenure</h3>
+            <div style="background: #f0fdf4; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="margin: 0 0 1rem 0; color: #166534;">
+                    <strong>Scenario:</strong> Employee joined on March 15, 2018. Today is October 30, 2025.
+                </p>
+                <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 0.5rem;">
+=DATEDIF(A2,TODAY(),"Y") & " Years, " & DATEDIF(A2,TODAY(),"YM") & " Months"
+                </div>
+                <p style="margin: 0; color: #166534;">Result: <strong>"7 Years, 7 Months"</strong></p>
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Example 2: Calculate Age from Date of Birth</h3>
+            <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="margin: 0 0 1rem 0; color: #1e3a8a;">
+                    <strong>Scenario:</strong> Date of birth: June 10, 1995
+                </p>
+                <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 0.5rem;">
+=DATEDIF(A2,TODAY(),"Y") & " Years Old"
+                </div>
+                <p style="margin: 0; color: #1e3a8a;">Result: <strong>"30 Years Old"</strong></p>
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">Example 3: Project Duration</h3>
+            <div style="background: #fef3c7; padding: 1.5rem; border-radius: 8px;">
+                <p style="margin: 0 0 1rem 0; color: #78350f;">
+                    <strong>Scenario:</strong> Project start: Jan 1, 2024 | Project end: Sep 30, 2025
+                </p>
+                <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 0.5rem;">
+=DATEDIF(A2,B2,"M") & " Months, " & DATEDIF(A2,B2,"MD") & " Days"
+                </div>
+                <p style="margin: 0; color: #78350f;">Result: <strong>"21 Months, 0 Days"</strong></p>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Common Errors and Troubleshooting</h2>
+            
+            <div style="display: grid; gap: 1.5rem;">
+                <div style="background: #fee2e2; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                    <h3 style="color: #991b1b; margin-top: 0;"><i class="fas fa-exclamation-triangle"></i> Error: #NUM!</h3>
+                    <p style="color: #7f1d1d; margin: 0;"><strong>Cause:</strong> End date is earlier than start date.<br>
+                    <strong>Solution:</strong> Make sure your start date comes before your end date. Use: <code>=IF(B2>A2, DATEDIF(A2,B2,"Y"), "Invalid dates")</code></p>
+                </div>
+
+                <div style="background: #fee2e2; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                    <h3 style="color: #991b1b; margin-top: 0;"><i class="fas fa-exclamation-triangle"></i> Error: #NAME?</h3>
+                    <p style="color: #7f1d1d; margin: 0;"><strong>Cause:</strong> DATEDIF function not recognized (usually a typo).<br>
+                    <strong>Solution:</strong> Double-check spelling. It's <code>DATEDIF</code>, not <code>DATEDIFF</code>.</p>
+                </div>
+
+                <div style="background: #fef3c7; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                    <h3 style="color: #92400e; margin-top: 0;"><i class="fas fa-info-circle"></i> MD Unit Issues</h3>
+                    <p style="color: #78350f; margin: 0;"><strong>Known Bug:</strong> The "MD" unit in DATEDIF can produce incorrect results in some cases when the start day is greater than the end day.<br>
+                    <strong>Workaround:</strong> Use: <code>=DAY(B2-DAY(A2)+1)</code> if you encounter issues.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Advanced Tips and Tricks</h2>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">1. Handle Negative Dates Gracefully:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.85rem; overflow-x: auto; margin-bottom: 1.5rem;">
+=IF(B2>A2, DATEDIF(A2,B2,"Y")&" Years, "&DATEDIF(A2,B2,"YM")&" Months", "End date before start")
+            </div>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">2. Custom Date Format Display:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.85rem; overflow-x: auto; margin-bottom: 1.5rem;">
+=TEXT(DATEDIF(A2,B2,"Y"),"0")&"y "&TEXT(DATEDIF(A2,B2,"YM"),"0")&"m "&TEXT(DATEDIF(A2,B2,"MD"),"0")&"d"
+            </div>
+            <p style="color: #6b7280; margin-top: 0.5rem;">Result: <strong>"5y 9m 15d"</strong></p>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">3. Exclude Weekends (Business Days Only):</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1.5rem;">
+=NETWORKDAYS(A2, B2)
+            </div>
+            <p style="color: #6b7280;">Returns only working days (Monday-Friday)</p>
+
+            <h3 style="color: #374151; margin: 1.5rem 0 1rem;">4. Include Custom Holidays:</h3>
+            <div style="background: #1f2937; color: #10b981; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-bottom: 1.5rem;">
+=NETWORKDAYS(A2, B2, HolidayRange)
+            </div>
+            <p style="color: #6b7280;">Where HolidayRange contains a list of holiday dates</p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Quick Reference Cheat Sheet</h2>
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="background: #f9fafb;">
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #e5e7eb;">What You Want</th>
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #e5e7eb;">Formula</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Years only</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">=DATEDIF(A2,B2,"Y")</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Months only</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">=DATEDIF(A2,B2,"M")</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Days only</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">=B2-A2</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Years + Months + Days</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace; font-size: 0.8rem;">=DATEDIF(A2,B2,"Y")&"y "&DATEDIF(A2,B2,"YM")&"m "&DATEDIF(A2,B2,"MD")&"d"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Age from DOB</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">=DATEDIF(A2,TODAY(),"Y")</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb;">Decimal years</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: monospace;">=YEARFRAC(A2,B2)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem;">Business days only</td>
+                            <td style="padding: 0.75rem; font-family: monospace;">=NETWORKDAYS(A2,B2)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); padding: 2rem; border-radius: 12px; color: white; text-align: center; margin-bottom: 3rem;">
+            <h2 style="color: white; margin-bottom: 1rem;">Need Quick Date Calculations?</h2>
+            <p style="margin-bottom: 1.5rem; opacity: 0.95;">Use our free online calculators - no Excel needed!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../calculators/age-calculator.html" style="display: inline-block; background: white; color: #0891b2; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-birthday-cake"></i> Age Calculator
+                </a>
+                <a href="../calculators/date-calculator.html" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-calendar"></i> Date Calculator
+                </a>
+                <a href="../calculators/time-calculator.html" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-clock"></i> Time Calculator
+                </a>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Frequently Asked Questions</h2>
+            
+            <div style="display: grid; gap: 1.5rem;">
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="color: #374151; margin-top: 0;">Why doesn't DATEDIF appear in Excel's function list?</h3>
+                    <p style="color: #6b7280; margin: 0;">DATEDIF is an undocumented function inherited from Lotus 1-2-3 for compatibility. Despite not being in the official documentation, it works reliably in all modern Excel versions.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="color: #374151; margin-top: 0;">Can I use DATEDIF in Google Sheets?</h3>
+                    <p style="color: #6b7280; margin: 0;">Yes! DATEDIF works exactly the same way in Google Sheets with the same syntax and parameters.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="color: #374151; margin-top: 0;">How do I calculate age as of a specific date (not today)?</h3>
+                    <p style="color: #6b7280; margin: 0;">Replace TODAY() with your specific date: <code>=DATEDIF(A2,DATE(2025,12,31),"Y")</code> calculates age as of December 31, 2025.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="color: #374151; margin-top: 0;">What if I only want months and days (no years)?</h3>
+                    <p style="color: #6b7280; margin: 0;">Use: <code>=DATEDIF(A2,B2,"M") & " Months, " & DATEDIF(A2,B2,"MD") & " Days"</code></p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="color: #374151; margin-top: 0;">Does DATEDIF account for leap years?</h3>
+                    <p style="color: #6b7280; margin: 0;">Yes, DATEDIF automatically handles leap years, varying month lengths, and all calendar complexities correctly.</p>
+                </div>
+
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h3 style="color: #374151; margin-top: 0;">Can I calculate backwards (future date to past date)?</h3>
+                    <p style="color: #6b7280; margin: 0;">No, start_date must be earlier than end_date. If not, you'll get a #NUM! error. Use IF to handle this: <code>=IF(B2>A2, DATEDIF(A2,B2,"Y"), DATEDIF(B2,A2,"Y"))</code></p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #f9fafb; padding: 2rem; border-radius: 12px;">
+            <h2 style="color: #1f2937; margin-bottom: 1rem;">Final Tips for Success</h2>
+            <ul style="line-height: 2; color: #4b5563;">
+                <li>✅ Always verify your date formats are consistent (use YYYY-MM-DD for clarity)</li>
+                <li>✅ Test your formulas with known date ranges before applying to large datasets</li>
+                <li>✅ Use cell references (A2, B2) rather than hardcoding dates for flexibility</li>
+                <li>✅ Add error handling with IF statements for more robust formulas</li>
+                <li>✅ Document your formulas with comments so others understand your calculations</li>
+                <li>✅ Consider using named ranges for better readability (e.g., StartDate, EndDate)</li>
+            </ul>
+        </section>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
+                    <p>Free online calculators and Excel guides for everyone</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Popular Tools</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="../calculators/age-calculator.html" style="color: inherit;">Age Calculator</a></li>
+                        <li><a href="../calculators/date-calculator.html" style="color: inherit;">Date Calculator</a></li>
+                        <li><a href="../index.html" style="color: inherit;">All Calculators</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../cookie-consent.js"></script>
+</body>
+</html>
