@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Calorie Calculator (India 2025) | BMR, TDEE & Macros Guide | CalculateForMe</title>
+  <meta name="description" content="Free Calorie Calculator for India (2025). Find your BMR, TDEE, daily calories and macros using Mifflin–St Jeor or Katch–McArdle. Goal presets for weight loss, maintenance, and muscle gain.">
+  <link rel="canonical" href="https://calculateforme.xyz/blog/calorie-calculator-guide">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="calorie calculator india, BMR calculator, TDEE calculator, macros calculator, weight loss calories india, mifflin st jeor, katch mcardle">
+  
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calorie Calculator (India 2025) | BMR, TDEE & Macros Guide | CalculateForMe">
+  <meta property="og:description" content="Free Calorie Calculator for India (2025). Find your BMR, TDEE, daily calories and macros using Mifflin–St Jeor or Katch–McArdle.">
+  <meta property="og:url" content="https://calculateforme.xyz/blog/calorie-calculator-guide">
+  <meta property="og:image" content="https://calculateforme.xyz/images/calorie-calculator-2025.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calorie Calculator (India 2025) | BMR, TDEE & Macros Guide | CalculateForMe">
+  <meta name="twitter:description" content="Free Calorie Calculator for India (2025). Find your BMR, TDEE, daily calories and macros using Mifflin–St Jeor or Katch–McArdle.">
+  <meta name="twitter:image" content="https://calculateforme.xyz/images/calorie-calculator-2025.jpg">
+
+  <!-- JSON-LD: WebPage + BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Calorie Calculator (India 2025) | BMR, TDEE & Macros Guide | CalculateForMe",
+        "url": "https://calculateforme.xyz/blog/calorie-calculator-guide",
+        "description": "Free Calorie Calculator for India (2025). Find your BMR, TDEE, daily calories and macros using Mifflin–St Jeor or Katch–McArdle.",
+        "publisher": {"@type": "Organization", "name": "CalculateForMe", "url": "https://calculateforme.xyz"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calculateforme.xyz"},
+          {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://calculateforme.xyz/calculators.html"},
+          {"@type": "ListItem", "position": 3, "name": "Calorie Calculator", "item": "https://calculateforme.xyz/blog/calorie-calculator-guide"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What is BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR is your Basal Metabolic Rate—the calories your body needs at rest. TDEE is your Total Daily Energy Expenditure—BMR multiplied by your activity level."}},
+          {"@type":"Question","name":"Which formula is best: Mifflin–St Jeor or Katch–McArdle?","acceptedAnswer":{"@type":"Answer","text":"Mifflin–St Jeor is reliable for most people. If you know body fat %, Katch–McArdle can be more precise because it uses lean body mass."}},
+          {"@type":"Question","name":"How many calories should I eat to lose weight?","acceptedAnswer":{"@type":"Answer","text":"A 10–20% deficit from your TDEE is a safe starting point. Adjust every 4–6 weeks based on progress."}},
+          {"@type":"Question","name":"How much protein do I need daily?","acceptedAnswer":{"@type":"Answer","text":"A practical range is 1.6–2.2 g per kg body weight. Higher intakes can support muscle retention during a deficit."}},
+          {"@type":"Question","name":"What are healthy macro ratios?","acceptedAnswer":{"@type":"Answer","text":"Balanced (Protein 30%, Carbs 45%, Fat 25) works for many. Lower carb (P 35, C 30, F 35) or higher carb (P 25, C 55, F 20) can be used based on preference and training."}},
+          {"@type":"Question","name":"How fast should I lose or gain weight?","acceptedAnswer":{"@type":"Answer","text":"Loss: about 0.25–0.75 kg/week. Gain: about 0.1–0.3 kg/week to minimize fat gain. Reassess every 4–6 weeks."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap nav-row">
+      <a class="brand" href="#" aria-label="CalculateForMe">CalculateForMe</a>
+      <nav aria-label="Primary">
+        <a href="#calculator">Calculator</a>
+        <a href="#results">Results</a>
+        <a href="#guide">Guide</a>
+        <a href="#faqs">FAQs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" role="region" aria-label="Hero">
+    <div class="wrap">
+      <h1>Calorie Calculator (India 2025)</h1>
+      <p>Calculate your BMR, TDEE, goal calories and macros. Built for Indian diets.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" id="cta-start" href="#calculator">Start a Plan</a>
+        <a class="btn btn-secondary" id="cta-macros" href="#results">See Macros</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calculator" class="wrap card" role="form" aria-label="Calorie calculator">
+    <h2 class="card-title">Your Inputs</h2>
+
+    <!-- Toggles / Options -->
+    <div class="grid grid-3 options">
+      <div>
+        <label class="lbl">Units</label>
+        <div class="seg" id="unitToggle" role="tablist" aria-label="Units">
+          <input type="radio" name="units" id="u-metric" class="seg-input" value="metric" checked>
+          <label for="u-metric" class="seg-btn" role="tab" aria-selected="true">Metric</label>
+          <input type="radio" name="units" id="u-imperial" class="seg-input" value="imperial">
+          <label for="u-imperial" class="seg-btn" role="tab" aria-selected="false">Imperial</label>
+        </div>
+      </div>
+      <div>
+        <label class="lbl">Formula</label>
+        <div class="seg" role="tablist" aria-label="Formula">
+          <input type="radio" name="formula" id="f-mifflin" class="seg-input" value="mifflin" checked>
+          <label for="f-mifflin" class="seg-btn" role="tab" aria-selected="true">Mifflin–St Jeor</label>
+          <input type="radio" name="formula" id="f-katch" class="seg-input" value="katch" disabled>
+          <label for="f-katch" class="seg-btn" role="tab" aria-selected="false" title="Enable by entering Body Fat %">Katch–McArdle</label>
+        </div>
+        <p class="hint">Katch enables automatically when Body Fat % (5–60) is provided.</p>
+      </div>
+      <div>
+        <label class="lbl">₹ Grocery Estimate</label>
+        <div class="seg" role="tablist" aria-label="Rupee estimate">
+          <input type="radio" name="rupee" id="rupee-off" class="seg-input" value="off" checked>
+          <label for="rupee-off" class="seg-btn">Off</label>
+          <input type="radio" name="rupee" id="rupee-on" class="seg-input" value="on">
+          <label for="rupee-on" class="seg-btn">On</label>
+        </div>
+        <p class="hint">Adds a rough monthly food spend estimate in ₹.</p>
+      </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="grid grid-2 inputs">
+      <div>
+        <div class="field">
+          <label for="age">Age (years)</label>
+          <input id="age" type="number" inputmode="numeric" min="18" max="80" value="28" aria-describedby="ageHelp">
+          <div id="ageHelp" class="hint">Range: 18–80</div>
+          <div class="err" id="err-age" role="alert"></div>
+        </div>
+        <div class="field">
+          <label>Sex</label>
+          <div class="seg">
+            <input type="radio" name="sex" id="sex-m" class="seg-input" value="male" checked>
+            <label for="sex-m" class="seg-btn">Male</label>
+            <input type="radio" name="sex" id="sex-f" class="seg-input" value="female">
+            <label for="sex-f" class="seg-btn">Female</label>
+          </div>
+        </div>
+        <div class="field metric-only">
+          <label for="heightCm">Height (cm)</label>
+          <input id="heightCm" type="number" inputmode="decimal" min="121" max="250" value="170" aria-describedby="hHelp">
+          <div id="hHelp" class="hint">Min recommended: 121 cm</div>
+          <div class="err" id="err-height" role="alert"></div>
+        </div>
+        <div class="field imperial-only" hidden>
+          <label>Height (ft / in)</label>
+          <div class="row">
+            <input id="heightFt" type="number" inputmode="numeric" min="4" max="8" placeholder="ft" class="half">
+            <input id="heightIn" type="number" inputmode="numeric" min="0" max="11" placeholder="in" class="half">
+          </div>
+          <div class="hint">We'll convert to cm internally.</div>
+          <div class="err" id="err-height-imp" role="alert"></div>
+        </div>
+        <div class="field metric-only">
+          <label for="weightKg">Weight (kg)</label>
+          <input id="weightKg" type="number" inputmode="decimal" min="31" max="300" value="70">
+          <div class="err" id="err-weight" role="alert"></div>
+        </div>
+        <div class="field imperial-only" hidden>
+          <label for="weightLb">Weight (lb)</label>
+          <input id="weightLb" type="number" inputmode="decimal" min="70" max="660" placeholder="e.g., 154">
+          <div class="hint">We'll convert to kg internally.</div>
+          <div class="err" id="err-weight-imp" role="alert"></div>
+        </div>
+        <div class="field">
+          <label for="bodyFat">Body Fat % (optional)</label>
+          <input id="bodyFat" type="number" inputmode="decimal" min="0" max="60" placeholder="e.g., 20">
+          <div class="hint">Enter 5–60 to enable Katch–McArdle</div>
+          <div class="err" id="err-bf" role="alert"></div>
+        </div>
+      </div>
+      <div>
+        <div class="field">
+          <label for="activity">Activity Level</label>
+          <select id="activity" aria-describedby="actHelp">
+            <option value="1.2">Sedentary (1.2)</option>
+            <option value="1.375">Light (1.375)</option>
+            <option value="1.55" selected>Moderate (1.55)</option>
+            <option value="1.725">Active (1.725)</option>
+            <option value="1.9">Very Active (1.9)</option>
+          </select>
+          <div id="actHelp" class="hint">Activity = <span id="actInfo">Moderate (1.55)</span></div>
+        </div>
+        <div class="field">
+          <label for="goal">Goal</label>
+          <select id="goal">
+            <option value="-0.15">Lose (-15%)</option>
+            <option value="-0.10">Mild Lose (-10%)</option>
+            <option value="0" selected>Maintain (0%)</option>
+            <option value="0.10">Mild Gain (+10%)</option>
+            <option value="0.15">Gain (+15%)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="proteinPreset">Protein Target</label>
+          <select id="proteinPreset">
+            <option value="1.6" selected>Standard (1.6 g/kg)</option>
+            <option value="2.0">Higher (2.0 g/kg)</option>
+            <option value="2.2">Athlete (2.2 g/kg)</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+        <div class="field" id="proteinCustomWrap" hidden>
+          <label for="proteinCustom">Custom Protein (g/kg)</label>
+          <input id="proteinCustom" type="number" inputmode="decimal" min="0.8" max="3.5" step="0.1" value="1.8">
+          <div class="hint">Recommended range: 1.6–2.2 g/kg</div>
+          <div class="err" id="err-prot" role="alert"></div>
+        </div>
+        <div class="field">
+          <label for="macroPreset">Macro Preset</label>
+          <select id="macroPreset">
+            <option value="balanced" selected>Balanced (P30 C45 F25)</option>
+            <option value="lowercarb">Lower Carb (P35 C30 F35)</option>
+            <option value="highercarb">Higher Carb (P25 C55 F20)</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+        <div class="field" id="macroCustomWrap" hidden>
+          <label>Custom Macro Split (%)</label>
+          <div class="slider-row">
+            <span>P</span>
+            <input id="pctP" type="range" min="0" max="70" value="30">
+            <output id="outPctP">30%</output>
+          </div>
+          <div class="slider-row">
+            <span>C</span>
+            <input id="pctC" type="range" min="0" max="90" value="45">
+            <output id="outPctC">45%</output>
+          </div>
+          <div class="slider-row">
+            <span>F</span>
+            <input id="pctF" type="range" min="0" max="60" value="25">
+            <output id="outPctF">25%</output>
+          </div>
+          <div class="hint">Total: <span id="pctTotal">100</span>%</div>
+          <div class="err" id="err-macro" role="alert"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="btnCalc" class="btn btn-primary" type="button" disabled>Calculate</button>
+      <button id="btnReset" class="btn btn-ghost" type="button">Reset</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="wrap card" role="region" aria-label="Results">
+    <h2 class="card-title">Your Results</h2>
+    <div id="live" class="sr-only" aria-live="polite"></div>
+
+    <div class="grid grid-3 kpis">
+      <div><div class="k">BMR</div><div class="v" id="outBMR">—</div><div class="u">kcal/day</div></div>
+      <div><div class="k">TDEE</div><div class="v" id="outTDEE">—</div><div class="u">kcal/day</div></div>
+      <div><div class="k">Goal Calories</div><div class="v" id="outGoalCals">—</div><div class="u">kcal/day</div></div>
+    </div>
+
+    <div class="grid grid-3 macros">
+      <div><div class="k">Protein</div><div class="v" id="outProtG">—</div><div class="u">g/day</div></div>
+      <div><div class="k">Carbs</div><div class="v" id="outCarbG">—</div><div class="u">g/day</div></div>
+      <div><div class="k">Fat</div><div class="v" id="outFatG">—</div><div class="u">g/day</div></div>
+    </div>
+
+    <div id="macroBars" class="bars" aria-label="Macro visualization">
+      <span id="barP" class="bar p" style="width:0%"></span>
+      <span id="barC" class="bar c" style="width:0%"></span>
+      <span id="barF" class="bar f" style="width:0%"></span>
+    </div>
+
+    <div class="grid grid-2 more">
+      <div>
+        <div class="k">Weekly Change</div>
+        <div class="v small" id="outWeekly">—</div>
+      </div>
+      <div>
+        <div class="k">Insight</div>
+        <div class="v small" id="insight">—</div>
+      </div>
+    </div>
+
+    <div id="groceryWrap" class="grocery" hidden>
+      <div class="note">Estimated monthly food spend: <strong id="outGrocery">—</strong> (rough ₹ estimate)</div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-outline" id="btnDownload" type="button">Download Plan (PDF)</button>
+      <a class="btn btn-ghost" id="btnMeals" href="#meal-ideas">Meal Ideas</a>
+      <a class="btn btn-primary" id="cta-start-2" href="#calculator">Start a Plan</a>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section id="guide" class="wrap card" role="region" aria-label="Guide">
+    <h2 class="card-title">How It Works</h2>
+
+    <h3>What are BMR & TDEE?</h3>
+    <p><strong>BMR</strong> is the energy your body needs at rest. <strong>TDEE</strong> multiplies your BMR by activity to estimate your daily maintenance calories.</p>
+
+    <h3>Which formula should I use?</h3>
+    <ul>
+      <li><strong>Mifflin–St Jeor</strong>: Default for most people; accurate and widely used.</li>
+      <li><strong>Katch–McArdle</strong>: Use when you know body fat %; it leverages lean mass.</li>
+    </ul>
+
+    <h3>Activity multipliers</h3>
+    <ul>
+      <li>Sedentary: 1.2</li>
+      <li>Light: 1.375</li>
+      <li>Moderate: 1.55</li>
+      <li>Active: 1.725</li>
+      <li>Very Active: 1.9</li>
+    </ul>
+
+    <h3>Safe calorie deficits/surpluses</h3>
+    <ul>
+      <li>Weight loss: ~10–20% deficit from TDEE.</li>
+      <li>Muscle gain: ~5–15% surplus from TDEE.</li>
+      <li>Recalculate every 4–6 weeks based on trend, not single days.</li>
+    </ul>
+
+    <h3>Protein targets by goal</h3>
+    <ul>
+      <li>General fitness: 1.6–1.8 g/kg</li>
+      <li>Fat loss: 1.8–2.2 g/kg (supports muscle retention)</li>
+      <li>Athletes: 2.0–2.2 g/kg</li>
+    </ul>
+
+    <h3>Macro presets</h3>
+    <ul>
+      <li><strong>Balanced</strong> suits most people.</li>
+      <li><strong>Lower Carb</strong> can help appetite control or insulin sensitivity.</li>
+      <li><strong>Higher Carb</strong> supports high-volume endurance or HIIT training.</li>
+    </ul>
+
+    <h3 id="meal-ideas">Indian meal ideas (veg & non-veg)</h3>
+    <ul>
+      <li><strong>Paneer</strong> (protein + fat), <strong>Dals</strong> (protein + carbs), <strong>Eggs</strong>, <strong>Chicken</strong>, <strong>Fish</strong></li>
+      <li><strong>Roti</strong>, <strong>Rice</strong>, <strong>Millets</strong> (carb base), <strong>Curd</strong> (protein + probiotics)</li>
+      <li>Use fruit, nuts, and seeds for micronutrients and healthy fats.</li>
+    </ul>
+
+    <h3>Recalculate every 4–6 weeks</h3>
+    <p>As body weight changes, your TDEE shifts. Update stats and tweak calories/macros accordingly.</p>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="wrap card cta-banner" role="region" aria-label="Final CTA">
+    <div>
+      <h2>Ready to start?</h2>
+      <p>Lock your plan and take consistent action.</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" id="cta-start-3" href="#calculator">Start a Plan</a>
+      <a class="btn btn-secondary" id="cta-macros-2" href="#results">See Macros</a>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section id="faqs" class="wrap card" role="region" aria-label="FAQs">
+    <h2 class="card-title">FAQs</h2>
+    <details>
+      <summary>What is BMR and TDEE?</summary>
+      <p>BMR is your minimum energy need at rest. TDEE multiplies BMR by your activity to estimate daily maintenance calories.</p>
+    </details>
+    <details>
+      <summary>Which formula is best: Mifflin–St Jeor or Katch–McArdle?</summary>
+      <p>Mifflin–St Jeor is excellent for most. If you know body fat %, Katch–McArdle can be more precise.</p>
+    </details>
+    <details>
+      <summary>How many calories should I eat to lose weight?</summary>
+      <p>Start with a 10–20% deficit from TDEE. Track weekly averages and adjust after 4–6 weeks.</p>
+    </details>
+    <details>
+      <summary>How much protein do I need daily?</summary>
+      <p>Typically 1.6–2.2 g per kg body weight depending on goal and training volume.</p>
+    </details>
+    <details>
+      <summary>What are healthy macro ratios?</summary>
+      <p>Balanced (P30/C45/F25) works well for many; lower or higher carb can be used based on preference and sport.</p>
+    </details>
+    <details>
+      <summary>How fast should I lose or gain weight?</summary>
+      <p>Loss ~0.25–0.75 kg/week; gain ~0.1–0.3 kg/week. Go slower if performance or recovery suffers.</p>
+    </details>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="wrap card" role="region" aria-label="Related tools">
+    <h2 class="card-title">More Tools</h2>
+    <ul class="links">
+      <li><a href="#">BMI Calculator</a></li>
+      <li><a href="#">Protein Calculator</a></li>
+      <li><a href="#">Macro Calculator</a></li>
+      <li><a href="#">Maintenance Calories (TDEE)</a></li>
+      <li><a href="#">Step Counter Estimator</a></li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="wrap">
+      <p class="note">Calorie estimates are guidance only and not medical advice.</p>
+      <p>© <span id="yr"></span> CalculateForMe</p>
+    </div>
+  </footer>
+
+  <!-- STYLES -->
+  <style>
+    :root{--bg:#ffffff;--text:#1f2937;--muted:#64748b;--line:#e2e8f0;--primary:#0d6efd;--primary-600:#0b5ed7;--green:#20c997;--shadow:0 8px 24px rgba(0,0,0,.06);--radius:12px;--wrap:1100px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:var(--primary);text-decoration:none}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+    .nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .brand{font-weight:700;color:var(--primary)}
+    .nav a{margin-left:16px;color:#334155}
+    .hero{padding:28px 0;background:linear-gradient(135deg,#f8fbff,#f6fff9)}
+    .hero h1{margin:0 0 6px;font-size:clamp(24px,4vw,36px)}
+    .hero p{margin:0 0 12px;color:var(--muted)}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:18px auto}
+    .card-title{margin:0 0 10px}
+
+    .btn{display:inline-block;border-radius:999px;padding:10px 16px;font-weight:600;border:1px solid transparent;transition:all .15s ease}
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-primary:hover{background:var(--primary-600)}
+    .btn-secondary{background:var(--green);color:#063}
+    .btn-secondary:hover{background:#18b58a}
+    .btn-outline{border-color:var(--primary);color:var(--primary);background:#fff}
+    .btn-outline:hover{background:#eff6ff}
+    .btn-ghost{border-color:var(--line);color:#111;background:#fff}
+    .btn-ghost:hover{background:#f8fafc}
+
+    .grid{display:grid;gap:12px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+    .options{margin-bottom:8px}
+    .inputs .field{margin-bottom:10px}
+    .lbl{display:block;margin:0 0 6px;font-weight:600;color:#334155}
+    .seg{display:inline-grid;grid-auto-flow:column;gap:6px;background:#f8fafc;border:1px solid var(--line);padding:6px;border-radius:999px}
+    .seg-input{display:none}
+    .seg-btn{padding:8px 12px;border-radius:999px;border:1px solid transparent;cursor:pointer}
+    .seg-input:checked + .seg-btn{background:#fff;border-color:var(--primary);color:var(--primary);font-weight:700}
+
+    .field label{display:block;font-weight:600;margin:0 0 6px}
+    .field input,.field select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;outline:none}
+    .field input:focus,.field select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(13,110,253,.12)}
+    .row{display:flex;gap:8px}
+    .half{flex:1}
+    .hint{font-size:12px;color:var(--muted);margin-top:4px}
+    .err{color:#b91c1c;font-size:12px;margin-top:4px;min-height:14px}
+    .actions{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+
+    .kpis .k,.macros .k{color:#64748b;font-size:13px}
+    .kpis .v,.macros .v{font-weight:800;font-size:22px}
+    .kpis .u,.macros .u{font-size:12px;color:#64748b}
+
+    .bars{position:relative;height:12px;background:#f1f5f9;border-radius:999px;overflow:hidden;margin:10px 0}
+    .bar{display:block;height:100%}
+    .bar.p{background:#0d6efd}
+    .bar.c{background:#20c997}
+    .bar.f{background:#ffc107}
+
+    .small{font-size:14px}
+    .grocery .note{padding:10px;border:1px dashed var(--line);border-radius:8px;background:#fcfefe;color:#0f5132}
+
+    .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;padding:0;margin:0;list-style:none}
+    .links a{display:block;padding:10px;border:1px solid var(--line);border-radius:8px}
+
+    .footer{border-top:1px solid var(--line);padding:18px 0;color:#475569}
+    .note{margin:0 0 6px;color:#64748b}
+
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Print */
+    @media print{
+      .nav,.hero,.actions,.btn-row,.cta-banner,#faqs,.links,.footer{display:none!important}
+      .card{box-shadow:none;border:none;margin:0}
+      body{background:#fff}
+    }
+  </style>
+
+  <!-- SCRIPTS -->
+  <script>
+  (function(){
+    'use strict';
+    const $ = sel => document.querySelector(sel);
+    const $$ = sel => Array.from(document.querySelectorAll(sel));
+    const nf0 = new Intl.NumberFormat('en-IN',{maximumFractionDigits:0});
+    const g0 = n => nf0.format(Math.max(0, Math.round(n||0)));
+    const kg2lb = kg => kg*2.20462, lb2kg = lb => lb/2.20462;
+    const cm2in = cm => cm/2.54, in2cm = inch => inch*2.54;
+
+    // Elements
+    const btnCalc = $('#btnCalc');
+    const btnReset = $('#btnReset');
+    const unitMetric = $('#u-metric');
+    const unitImperial = $('#u-imperial');
+    const fMifflin = $('#f-mifflin');
+    const fKatch = $('#f-katch');
+    const age = $('#age');
+    const sexM = $('#sex-m');
+    const heightCm = $('#heightCm');
+    const heightFt = $('#heightFt');
+    const heightIn = $('#heightIn');
+    const weightKg = $('#weightKg');
+    const weightLb = $('#weightLb');
+    const bodyFat = $('#bodyFat');
+    const activity = $('#activity');
+    const actInfo = $('#actInfo');
+    const goal = $('#goal');
+    const proteinPreset = $('#proteinPreset');
+    const proteinCustomWrap = $('#proteinCustomWrap');
+    const proteinCustom = $('#proteinCustom');
+    const macroPreset = $('#macroPreset');
+    const macroCustomWrap = $('#macroCustomWrap');
+    const pctP = $('#pctP'), pctC = $('#pctC'), pctF = $('#pctF');
+    const outPctP = $('#outPctP'), outPctC = $('#outPctC'), outPctF = $('#outPctF');
+    const pctTotal = $('#pctTotal');
+    const rupeeOn = $('#rupee-on'), rupeeOff = $('#rupee-off');
+
+    // Error nodes
+    const errAge = $('#err-age');
+    const errH = $('#err-height');
+    const errHImp = $('#err-height-imp');
+    const errW = $('#err-weight');
+    const errWImp = $('#err-weight-imp');
+    const errBF = $('#err-bf');
+    const errProt = $('#err-prot');
+    const errMacro = $('#err-macro');
+
+    // Output
+    const outBMR = $('#outBMR');
+    const outTDEE = $('#outTDEE');
+    const outGoalCals = $('#outGoalCals');
+    const outProtG = $('#outProtG');
+    const outCarbG = $('#outCarbG');
+    const outFatG = $('#outFatG');
+    const outWeekly = $('#outWeekly');
+    const insight = $('#insight');
+    const barP = $('#barP'), barC = $('#barC'), barF = $('#barF');
+    const groceryWrap = $('#groceryWrap');
+    const outGrocery = $('#outGrocery');
+    const live = $('#live');
+
+    const metricOnly = $$('.metric-only');
+    const imperialOnly = $$('.imperial-only');
+
+    let computedOnce = false;
+
+    function showUnits(){
+      const metric = unitMetric.checked;
+      metricOnly.forEach(e=>e.hidden=!metric);
+      imperialOnly.forEach(e=>e.hidden=metric);
+    }
+
+    function updateActivityInfo(){
+      const map = {
+        '1.2':'Sedentary', '1.375':'Light', '1.55':'Moderate', '1.725':'Active', '1.9':'Very Active'
+      };
+      const v = activity.value;
+      actInfo.textContent = `${map[v]} (${v})`;
+    }
+
+    function updateFormulaLock(){
+      const bf = parseFloat(bodyFat.value);
+      const ok = isFinite(bf) && bf>=5 && bf<=60;
+      fKatch.disabled = !ok;
+      if(!ok && fKatch.checked){ fMifflin.checked = true; }
+    }
+
+    function updateProteinPreset(){
+      const isCustom = proteinPreset.value === 'custom';
+      proteinCustomWrap.hidden = !isCustom;
+    }
+
+    function updateMacroPreset(){
+      const isCustom = macroPreset.value === 'custom';
+      macroCustomWrap.hidden = !isCustom;
+      if(!isCustom){ errMacro.textContent=''; }
+    }
+
+    function updateSliderOutputs(){
+      outPctP.textContent = pctP.value + '%';
+      outPctC.textContent = pctC.value + '%';
+      outPctF.textContent = pctF.value + '%';
+      const total = (+pctP.value)+(+pctC.value)+(+pctF.value);
+      pctTotal.textContent = total;
+      errMacro.textContent = (macroPreset.value==='custom' && total!==100) ? 'Macro split must total 100%' : '';
+      validate();
+    }
+
+    function metricValues(){
+      let cm, kg;
+      if(unitMetric.checked){
+        cm = parseFloat(heightCm.value);
+        kg = parseFloat(weightKg.value);
+      } else {
+        const ft = parseFloat(heightFt.value), inch = parseFloat(heightIn.value);
+        cm = (isFinite(ft)? ft:0)*30.48 + (isFinite(inch)? inch:0)*2.54;
+        const lb = parseFloat(weightLb.value);
+        kg = isFinite(lb) ? lb2kg(lb) : NaN;
+      }
+      return {cm, kg};
+    }
+
+    function validate(){
+      let ok = true;
+      // Age
+      const a = parseFloat(age.value);
+      if(!(isFinite(a) && a>=18 && a<=80)){ errAge.textContent='Enter age 18–80'; ok=false; } else errAge.textContent='';
+      // Height & weight
+      const {cm, kg} = metricValues();
+      if(unitMetric.checked){
+        if(!(isFinite(cm) && cm>120 && cm<260)){ errH.textContent='Enter height >120 cm'; ok=false; } else errH.textContent='';
+        if(!(isFinite(kg) && kg>30 && kg<400)){ errW.textContent='Enter weight >30 kg'; ok=false; } else errW.textContent='';
+      } else {
+        if(!(isFinite(cm) && cm>120 && cm<260)){ errHImp.textContent='Height out of range'; ok=false; } else errHImp.textContent='';
+        if(!(isFinite(kg) && kg>30 && kg<400)){ errWImp.textContent='Weight out of range'; ok=false; } else errWImp.textContent='';
+      }
+      // Body fat optional
+      if(bodyFat.value){
+        const bf = parseFloat(bodyFat.value);
+        if(!(isFinite(bf) && bf>=5 && bf<=60)){ errBF.textContent='Body fat must be 5–60%'; ok=false; } else errBF.textContent='';
+      } else errBF.textContent='';
+      // Protein custom
+      if(proteinPreset.value==='custom'){
+        const pv = parseFloat(proteinCustom.value);
+        if(!(isFinite(pv) && pv>=0.8 && pv<=3.5)){ errProt.textContent='Enter 0.8–3.5 g/kg'; ok=false; } else errProt.textContent='';
+      } else errProt.textContent='';
+      // Macro custom sum
+      if(macroPreset.value==='custom'){
+        const total = (+pctP.value)+(+pctC.value)+(+pctF.value);
+        if(total!==100){ ok=false; }
+      }
+      btnCalc.disabled = !ok;
+      return ok;
+    }
+
+    function compute(){
+      if(!validate()) return;
+      const {cm, kg} = metricValues();
+      const a = parseFloat(age.value);
+      const male = sexM.checked;
+      const bf = parseFloat(bodyFat.value);
+      const hasBF = isFinite(bf) && bf>=5 && bf<=60;
+
+      // BMR
+      let BMR;
+      if(fKatch.checked && hasBF){
+        const LBW = kg * (1 - bf/100);
+        BMR = 370 + 21.6 * LBW;
+      } else {
+        BMR = 10*kg + 6.25*cm - 5*a + (male? 5 : -161);
+      }
+
+      const act = parseFloat(activity.value);
+      const TDEE = BMR * act;
+      const goalPct = parseFloat(goal.value);
+      const goalCals = TDEE * (1 + goalPct);
+
+      // Weekly change
+      const dailyDelta = goalCals - TDEE; // negative if deficit
+      const weeklyKg = (dailyDelta * 7) / 7700;
+
+      // Protein grams
+      let protPerKg = proteinPreset.value==='custom' ? parseFloat(proteinCustom.value) : parseFloat(proteinPreset.value);
+      if(!isFinite(protPerKg)) protPerKg = 1.6;
+      let proteinG, carbsG, fatG, pPct, cPct, fPct;
+
+      if(macroPreset.value==='custom'){
+        const p = +pctP.value, c = +pctC.value, f = +pctF.value;
+        const total = p+c+f; // already enforced 100
+        proteinG = (goalCals * (p/100)) / 4;
+        carbsG   = (goalCals * (c/100)) / 4;
+        fatG     = (goalCals * (f/100)) / 9;
+        pPct=p; cPct=c; fPct=f;
+      } else {
+        // Protein from body weight
+        proteinG = protPerKg * kg;
+        const pCals = proteinG * 4;
+        let rem = Math.max(0, goalCals - pCals);
+        // Choose ratio for carbs & fats from preset
+        let cRatio=0.45, fRatio=0.25; // default balanced (C45 F25)
+        if(macroPreset.value==='lowercarb'){ cRatio=0.30; fRatio=0.35; }
+        if(macroPreset.value==='highercarb'){ cRatio=0.55; fRatio=0.20; }
+        const totalCF = cRatio + fRatio;
+        const carbCals = rem * (cRatio/totalCF);
+        const fatCals  = rem * (fRatio/totalCF);
+        carbsG = carbCals / 4;
+        fatG   = fatCals / 9;
+        pPct = (pCals/goalCals)*100;
+        cPct = (carbCals/goalCals)*100;
+        fPct = (fatCals/goalCals)*100;
+      }
+
+      // Grocery estimate (very rough)
+      const show₹ = rupeeOn.checked;
+      if(show₹){
+        const costPerKcal = 0.01; // ₹ per kcal (rough heuristic)
+        const monthly = goalCals * 30 * costPerKcal;
+        outGrocery.textContent = '₹ ' + g0(monthly);
+        groceryWrap.hidden = false;
+      } else {
+        groceryWrap.hidden = true;
+      }
+
+      // Write numbers
+      outBMR.textContent = g0(BMR);
+      outTDEE.textContent = g0(TDEE);
+      outGoalCals.textContent = g0(goalCals);
+      outProtG.textContent = g0(proteinG);
+      outCarbG.textContent = g0(carbsG);
+      outFatG.textContent = g0(fatG);
+      outWeekly.textContent = (weeklyKg>=0? '+':'') + (Math.round(weeklyKg*100)/100).toFixed(2) + ' kg/week';
+      insight.textContent = `At ${actInfo.textContent}, your maintenance is ~${g0(TDEE)} kcal.`;
+
+      // Bars
+      const clampPct = x => Math.max(0, Math.min(100, Math.round(x||0)));
+      barP.style.width = clampPct(pPct)+'%';
+      barC.style.width = clampPct(cPct)+'%';
+      barF.style.width = clampPct(fPct)+'%';
+
+      // aria-live
+      live.textContent = `BMR ${g0(BMR)}. TDEE ${g0(TDEE)}. Goal ${g0(goalCals)} kcal.`;
+    }
+
+    function resetAll(){
+      unitMetric.checked = true; unitImperial.checked = false; showUnits();
+      fMifflin.checked = true; updateFormulaLock();
+      age.value = 28; sexM.checked = true; heightCm.value = 170; heightFt.value=''; heightIn.value=''; weightKg.value = 70; weightLb.value='';
+      bodyFat.value = '';
+      activity.value = '1.55'; updateActivityInfo();
+      goal.value = '0';
+      proteinPreset.value = '1.6'; updateProteinPreset();
+      macroPreset.value = 'balanced'; updateMacroPreset();
+      pctP.value=30; pctC.value=45; pctF.value=25; updateSliderOutputs();
+      rupeeOff.checked = true; groceryWrap.hidden = true;
+      errAge.textContent=errH.textContent=errHImp.textContent=errW.textContent=errWImp.textContent=errBF.textContent=errProt.textContent=errMacro.textContent='';
+      computedOnce = false; btnCalc.disabled = !validate();
+      outBMR.textContent=outTDEE.textContent=outGoalCals.textContent=outProtG.textContent=outCarbG.textContent=outFatG.textContent='—';
+      outWeekly.textContent=insight.textContent='—'; barP.style.width=barC.style.width=barF.style.width='0%';
+    }
+
+    // Events
+    [unitMetric, unitImperial].forEach(x=>x.addEventListener('change', ()=>{showUnits(); validate();}));
+    activity.addEventListener('change', ()=>{updateActivityInfo(); if(computedOnce) compute();});
+    bodyFat.addEventListener('input', ()=>{updateFormulaLock(); if(computedOnce) debounceCompute();});
+    proteinPreset.addEventListener('change', ()=>{updateProteinPreset(); validate(); if(computedOnce) debounceCompute();});
+    macroPreset.addEventListener('change', ()=>{updateMacroPreset(); validate(); if(computedOnce) debounceCompute();});
+    ;['input','change'].forEach(evt=>{
+      [age,heightCm,heightFt,heightIn,weightKg,weightLb,proteinCustom,goal,activity].forEach(el=>el.addEventListener(evt, ()=>{validate(); if(computedOnce) debounceCompute();}));
+      [pctP,pctC,pctF].forEach(el=>el.addEventListener(evt, updateSliderOutputs));
+      $$('#calculator input, #calculator select').forEach(el=>el.addEventListener(evt, ()=>{ if(computedOnce) debounceCompute(); }));
+    });
+
+    btnCalc.addEventListener('click', ()=>{ computedOnce = true; compute(); });
+    btnReset.addEventListener('click', resetAll);
+    $('#btnDownload').addEventListener('click', ()=>window.print());
+
+    // Debounce
+    let t; const debounceCompute = ()=>{ clearTimeout(t); t=setTimeout(compute, 200); };
+
+    // Init
+    showUnits(); updateActivityInfo(); updateSliderOutputs(); updateProteinPreset(); updateMacroPreset(); updateFormulaLock();
+    validate();
+    $('#yr').textContent = new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
