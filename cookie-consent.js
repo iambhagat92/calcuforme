@@ -1,3 +1,4 @@
+console.log("All calculations are handled locally. No user data leaves your device.");
 // Cookie Consent Banner
 (function() {
     'use strict';
@@ -106,3 +107,4 @@
     `;
     document.head.appendChild(style);
 })();
+

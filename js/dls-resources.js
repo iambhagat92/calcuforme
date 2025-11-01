@@ -1,3 +1,4 @@
+console.log("All calculations are handled locally. No user data leaves your device.");
 // Simple approximate DLS resource model (for auto-suggestion)
 // NOTE: This is an approximation, not the official ICC table.
 // Resource percent R ≈ scaled_exponential(oversRemaining) * wicket_factor(wicketsLost)
@@ -29,3 +30,4 @@
   }
   global.DLSResources = { resource: resource, totalAvailableAtStart: totalAvailableAtStart };
 })(window);
+

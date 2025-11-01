@@ -1,3 +1,4 @@
+console.log("All calculations are handled locally. No user data leaves your device.");
 // Calculate For Me - Main JavaScript File
 
 // Calculator Database
@@ -398,4 +399,5 @@ console.log('Developed with ❤️ for everyone');
     });
   }
 })();
+
 

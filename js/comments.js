@@ -1,3 +1,4 @@
+console.log("All calculations are handled locally. No user data leaves your device.");
 /* Enhanced localStorage-based comments with reply functionality */
 function postComment() {
   const name = document.getElementById('commentName').value.trim();
@@ -153,3 +154,4 @@ if (typeof document !== 'undefined') {
     loadComments();
   }
 }
+

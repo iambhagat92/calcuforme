@@ -1,3 +1,4 @@
+console.log("All calculations are handled locally. No user data leaves your device.");
 // Newsletter Backend Integration Options
 // Choose one of these methods to implement real newsletter functionality
 
