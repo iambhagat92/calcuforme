@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Goal SIP Calculator India 2025 | Plan Monthly SIP for Your Target | CalculateForMe</title>
+  <meta name="description" content="Goal SIP Calculator India 2025 helps you estimate the SIP amount required to reach any goal, with inflation and step-up options. Plan your investments smartly.">
+  <link rel="canonical" href="https://calculateforme.xyz/blog/goal-sip-planner-india-2025">
+  <meta name="robots" content="index,follow">
+  <meta name="keywords" content="goal sip calculator india 2025, monthly sip for target, inflation-adjusted goal, step-up sip calculator">
+  <meta name="theme-color" content="#0d6efd">
+  <link rel="icon" href="https://calculateforme.xyz/favicon.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Goal SIP Calculator India 2025 | Plan Monthly SIP for Your Target | CalculateForMe">
+  <meta property="og:description" content="Estimate required monthly SIP for your target amount, adjusted for inflation and with step-up options.">
+  <meta property="og:url" content="https://calculateforme.xyz/blog/goal-sip-planner-india-2025">
+  <meta property="og:image" content="https://calculateforme.xyz/images/goal-sip-planner-2025.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Goal SIP Calculator India 2025">
+  <meta name="twitter:description" content="Smart planner for SIP amount with inflation and step-up options.">
+  <meta name="twitter:image" content="https://calculateforme.xyz/images/goal-sip-planner-2025.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Goal SIP Calculator India 2025 | Plan Monthly SIP for Your Target",
+        "description": "Estimate the SIP amount required to reach your financial goal, with inflation-adjusted future cost and annual step-up options.",
+        "inLanguage": "en-IN",
+        "url": "https://calculateforme.xyz/blog/goal-sip-planner-india-2025",
+        "isPartOf": {"@type":"WebSite","name":"CalculateForMe","url":"https://calculateforme.xyz/"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://calculateforme.xyz/"},
+          {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calculateforme.xyz/calculators.html"},
+          {"@type":"ListItem","position":3,"name":"Goal SIP Planner","item":"https://calculateforme.xyz/blog/goal-sip-planner-india-2025"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"How to calculate SIP for a goal?","acceptedAnswer":{"@type":"Answer","text":"Compute the goal's future cost with inflation, then use the SIP formula with monthly return to solve the required monthly investment."}},
+          {"@type":"Question","name":"How does inflation affect goal amount?","acceptedAnswer":{"@type":"Answer","text":"Inflation increases the future cost of your goal: FV = PV × (1+infl)^years."}},
+          {"@type":"Question","name":"What is step-up SIP?","acceptedAnswer":{"@type":"Answer","text":"A plan where your SIP increases annually by a fixed % (e.g., 5–10%) to reach the goal with lower starting SIP."}},
+          {"@type":"Question","name":"How to find SIP for ₹1 crore goal?","acceptedAnswer":{"@type":"Answer","text":"Set your goal amount (or today value + inflation), choose years and expected return, and the calculator will compute the SIP."}},
+          {"@type":"Question","name":"Can SIP reach goals faster than Lumpsum?","acceptedAnswer":{"@type":"Answer","text":"Lumpsum grows longer but needs capital upfront. SIP builds wealth gradually and reduces timing risk."}},
+          {"@type":"Question","name":"What returns should I assume for equity SIPs?","acceptedAnswer":{"@type":"Answer","text":"Historically, diversified equity SIPs can deliver 10–12% p.a. over long horizons, but returns are not guaranteed."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{--blue:#0d6efd;--green:#20c997;--border:#e2e8f0;--text:#1f2937;--muted:#64748b}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#fff;color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{opacity:.85}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.04);padding:16px}
+    section{margin:24px 0}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:1000;background:var(--blue);color:#fff}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+    .brand{font-weight:700}
+    .nav a{color:#fff;font-weight:600}
+
+    /* HERO */
+    .hero{background:#e9f0ff;padding:28px 0}
+    .hero h1{margin:0 0 6px;color:var(--blue);font-size:clamp(22px,4vw,32px)}
+    .hero p{margin:0 0 12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.6rem 1rem;border-radius:999px;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer;font-weight:700}
+    .btn.secondary{background:#fff;color:var(--blue)}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+
+    /* GRID */
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid-2{grid-template-columns:1.1fr .9fr}}
+
+    /* FORM */
+    form label{font-weight:600;color:var(--blue);display:block;margin-bottom:4px}
+    form input{width:100%;padding:.55rem .6rem;border:1px solid var(--border);border-radius:10px;font-size:15px}
+    .row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .help{font-size:12px;color:var(--muted)}
+    .err{font-size:12px;color:#b91c1c}
+
+    /* KPIs */
+    .kpis{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .kpi{border:1px solid var(--border);border-radius:12px;padding:12px}
+    .kpi .label{font-size:12px;color:var(--muted)}
+    .kpi .value{font-size:20px;font-weight:800}
+
+    /* Bars */
+    #bars{display:grid;gap:10px;margin-top:10px}
+    .bar{background:#f1f5f9;height:14px;border-radius:8px;overflow:hidden}
+    .bar span{display:block;height:100%;width:0;transition:width .4s}
+    .goal{background:#94a3b8}
+    .inv{background:var(--blue)}
+    .ret{background:var(--green)}
+
+    /* CTA */
+    .cta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* Print */
+    @media print{.nav,.hero,.btn,.cta{display:none!important}.card{box-shadow:none;border:none}}
+  </style>
+</head>
+<body>
+  <!-- 1) NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-wrap">
+      <div class="brand">CalculateForMe</div>
+      <div class="nav-links">
+        <a href="#calculator">Calculator</a>
+        <a href="#guide">Guide</a>
+        <a href="#faqs">FAQs</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2) HERO -->
+  <header class="hero">
+    <div class="container">
+      <h1>Goal SIP Planner India 2025</h1>
+      <p>Plan how much you need to invest monthly to achieve your dream goal — adjusted for inflation.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" id="ctaStart">Start Planning</button>
+        <button class="btn secondary" id="ctaLearn">Learn More</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3) CALCULATOR -->
+  <section id="calculator" class="container">
+    <div class="card grid grid-2" aria-labelledby="calc-title">
+      <div>
+        <h2 id="calc-title">Goal SIP Calculator</h2>
+        <form id="calcForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="goalToday">Goal Amount Today (₹)</label>
+              <input type="number" id="goalToday" value="1000000" min="0" step="1000" aria-describedby="h-goal">
+              <div class="help" id="h-goal">Current cost of your goal.</div>
+              <div class="err" id="e-goalToday"></div>
+            </div>
+            <div>
+              <label for="years">Time to Goal (Years)</label>
+              <input type="number" id="years" value="10" min="1" max="50" step="1" aria-describedby="h-years">
+              <div class="help" id="h-years">Target horizon in years (min 1).</div>
+              <div class="err" id="e-years"></div>
+            </div>
+            <div>
+              <label for="rate">Expected Annual Return (%)</label>
+              <input type="number" id="rate" value="12" min="0" max="25" step="0.1" aria-describedby="h-rate">
+              <div class="help" id="h-rate">Nominal annual return from SIP investments.</div>
+              <div class="err" id="e-rate"></div>
+            </div>
+            <div>
+              <label for="inflation">Inflation (%)</label>
+              <input type="number" id="inflation" value="6" min="0" max="15" step="0.1" aria-describedby="h-infl">
+              <div class="help" id="h-infl">Used to inflate your goal to future cost.</div>
+              <div class="err" id="e-inflation"></div>
+            </div>
+            <div>
+              <label for="stepup">Annual SIP Step-up (%)</label>
+              <input type="number" id="stepup" value="0" min="0" max="50" step="1" aria-describedby="h-step">
+              <div class="help" id="h-step">Increase monthly SIP each year (optional).</div>
+              <div class="err" id="e-stepup"></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+            <button type="button" id="btnCalc" class="btn">Calculate</button>
+            <button type="reset" id="btnReset" class="btn secondary">Reset</button>
+            <a href="#" id="btnCSV" class="btn secondary" download="goal-sip-schedule.csv" aria-label="Download yearly SIP schedule as CSV">Download CSV</a>
+          </div>
+        </form>
+      </div>
+      <div>
+        <h2>Results</h2>
+        <div class="kpis" aria-live="polite">
+          <div class="kpi"><div class="label">Future Goal Cost</div><div class="value" id="outGoalFuture">₹ 0</div></div>
+          <div class="kpi"><div class="label">Required Monthly SIP</div><div class="value" id="outSIP">₹ 0</div></div>
+          <div class="kpi"><div class="label">Total Investment</div><div class="value" id="outTotal">₹ 0</div></div>
+          <div class="kpi"><div class="label">Expected Wealth</div><div class="value" id="outWealth">₹ 0</div></div>
+        </div>
+        <div id="bars">
+          <div class="bar" aria-hidden="true"><span id="barGoal" class="goal" style="width:100%"></span></div>
+          <div class="bar" aria-hidden="true"><span id="barInv" class="inv" style="width:0%"></span></div>
+          <div class="bar" aria-hidden="true"><span id="barRet" class="ret" style="width:0%"></span></div>
+          <div class="help">Bars compare Goal (100%), Investment share, and Return share.</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <a href="#" class="btn secondary" data-tool="compare">Compare SIP vs Lumpsum</a>
+          <a href="#" class="btn secondary" data-tool="retirement">Retirement Calculator</a>
+          <a href="#" class="btn secondary" data-tool="swp">SWP Planner</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) GUIDE -->
+  <section id="guide" class="container">
+    <div class="card">
+      <h2>Guide</h2>
+      <h3>Inflation-adjusted goal cost</h3>
+      <p><code>FV = PV × (1 + infl)^years</code>. Always plan for the inflated cost of your goal.</p>
+      <h3>SIP formula (no step-up)</h3>
+      <pre><code>SIP = FV × (r/12) / ( (1 + r/12)^(12×years) − 1 )</code></pre>
+      <h3>Step-up SIP</h3>
+      <p>Raising your SIP by ~5–10% yearly can lower the starting SIP. We approximate by simulating month-by-month with annual increases.</p>
+      <h3>Example</h3>
+      <p>₹10,00,000 goal today, 10 years, 12% return, 6% inflation → the calculator inflates the goal and solves the monthly SIP.</p>
+      <h3>SIP vs Lumpsum</h3>
+      <p>Lumpsum needs upfront capital but grows longer; SIPs are cash-flow friendly and reduce timing risk via rupee-cost averaging.</p>
+    </div>
+  </section>
+
+  <!-- 5) CTA -->
+  <section class="container">
+    <div class="card cta">
+      <div>
+        <h2 style="margin:0">Start your SIP today with confidence.</h2>
+        <p style="margin:6px 0;color:var(--muted)">Automate and review annually for best results.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="#" class="btn">Start SIP</a>
+        <a href="#" class="btn secondary">Compare Plans</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) FAQS -->
+  <section id="faqs" class="container">
+    <div class="card">
+      <h2>FAQs</h2>
+      <details>
+        <summary>How to calculate SIP for a goal?</summary>
+        <p>Inflate the goal to its future value and apply the SIP formula using the monthly return. This page does it automatically.</p>
+      </details>
+      <details>
+        <summary>How does inflation affect goal amount?</summary>
+        <p>Higher inflation increases the future cost; plan accordingly using the FV = PV×(1+infl)^years formula.</p>
+      </details>
+      <details>
+        <summary>What is step-up SIP?</summary>
+        <p>An annual percentage increase to your SIP, helping keep pace with income growth and inflation.</p>
+      </details>
+      <details>
+        <summary>How to find SIP for ₹1 crore goal?</summary>
+        <p>Set goal today to ₹1,00,00,000 or use inflation to reach ₹1 crore in future, then compute required SIP.</p>
+      </details>
+      <details>
+        <summary>Can SIP reach goals faster than Lumpsum?</summary>
+        <p>Not faster, but SIPs are consistent and reduce timing risk. Lumpsum can outperform if invested early at good valuations.</p>
+      </details>
+      <details>
+        <summary>What returns should I assume for equity SIPs?</summary>
+        <p>Many planners use 10–12% p.a. long-term for diversified equity; adjust conservatively.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 7) FOOTER -->
+  <footer class="container" style="margin:32px auto 48px">
+    <div class="card" style="text-align:center">
+      <p style="margin:.2rem 0;color:var(--muted)">Calculated values are estimates; invest based on risk tolerance.</p>
+      <p style="margin:.2rem 0">© <span id="year"></span> CalculateForMe</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    const $ = (s,root=document)=>root.querySelector(s);
+
+    // Smooth scroll
+    $('#ctaStart').addEventListener('click',()=>$('#calculator').scrollIntoView({behavior:'smooth'}));
+    $('#ctaLearn').addEventListener('click',()=>$('#guide').scrollIntoView({behavior:'smooth'}));
+
+    function formatINR(num){
+      const n = Math.round(Number(num)||0);
+      const s = String(n);
+      const last3 = s.slice(-3);
+      const other = s.slice(0,-3);
+      return '₹ ' + (other?other.replace(/\B(?=(\d{2})+(?!\d))/g,',')+',':'') + last3;
+    }
+
+    const els = {
+      goalToday: $('#goalToday'), years: $('#years'), rate: $('#rate'), inflation: $('#inflation'), stepup: $('#stepup'),
+      outGoalFuture: $('#outGoalFuture'), outSIP: $('#outSIP'), outTotal: $('#outTotal'), outWealth: $('#outWealth'),
+      barGoal: $('#barGoal'), barInv: $('#barInv'), barRet: $('#barRet'),
+      btnCalc: $('#btnCalc'), btnReset: $('#btnReset'), btnCSV: $('#btnCSV')
+    };
+
+    const rules = {
+      goalToday:v=>v>=0||'Must be ≥ 0',
+      years:v=>v>=1&&v<=50||'1–50 years',
+      rate:v=>v>=0&&v<=25||'0–25% allowed',
+      inflation:v=>v>=0&&v<=15||'0–15% allowed',
+      stepup:v=>v>=0&&v<=50||'0–50% allowed'
+    };
+
+    function validate(){
+      const vals = getVals(); let ok = true;
+      function setErr(id,msg){ const e = document.getElementById('e-'+id); if(e) e.textContent = msg||''; }
+      for(const k of ['goalToday','years','rate','inflation','stepup']){
+        const res = rules[k](Number(vals[k]));
+        if(res!==true){ ok=false; setErr(k,res); } else setErr(k,'');
+      }
+      els.btnCalc.disabled = !ok; return ok;
+    }
+
+    function getVals(){
+      return {
+        goalToday: Number(els.goalToday.value||0),
+        years: Number(els.years.value||0),
+        rate: Number(els.rate.value||0),
+        inflation: Number(els.inflation.value||0),
+        stepup: Number(els.stepup.value||0)
+      }
+    }
+
+    function simulateStepUpFV(monthly0, years, rMonthly, stepUpPct){
+      const n = Math.round(years*12);
+      let v = 0; let mSip = monthly0; let totalContrib = 0;
+      const schedule = []; // yearly rows
+      let y=1, ySip=0, yGrowth=0;
+      for(let i=1;i<=n;i++){
+        if(i>1 && (i-1)%12===0){ mSip *= (1 + stepUpPct/100); schedule.push({year:y, sip:Math.round(ySip), growth:Math.round(yGrowth), value:Math.round(v)}); y++; ySip=0; yGrowth=0; }
+        const before = v; v *= (1 + rMonthly); const growth = v - before; yGrowth += growth;
+        v += mSip; totalContrib += mSip; ySip += mSip;
+      }
+      schedule.push({year:y, sip:Math.round(ySip), growth:Math.round(yGrowth), value:Math.round(v)});
+      return {fv:v, totalContrib, schedule};
+    }
+
+    function findSip(goalFV, years, rMonthly, stepUpPct){
+      if(rMonthly===0 && stepUpPct===0){ return goalFV/Math.max(1, Math.round(years*12)); }
+      const n = Math.max(1, Math.round(years*12));
+      const base = rMonthly>0 ? (goalFV * rMonthly) / (Math.pow(1+rMonthly, n) - 1) : goalFV/n;
+      let lo = 0, hi = base*3 + 1; let best = base;
+      for(let k=0;k<40;k++){
+        const mid = (lo+hi)/2;
+        const fv = simulateStepUpFV(mid, years, rMonthly, stepUpPct).fv;
+        if(fv >= goalFV){ best = mid; hi = mid; } else { lo = mid; }
+      }
+      return best;
+    }
+
+    let hasCalculated = false; let debounce;
+
+    function calc(){
+      if(!validate()) return;
+      const {goalToday, years, rate, inflation, stepup} = getVals();
+      const infl = inflation/100;
+      const rMonthly = rate/100/12;
+      const goalFuture = goalToday * Math.pow(1+infl, years);
+
+      let sipMonthly = 0; let totalInvest = 0; let schedule=[];
+      const n = Math.round(years*12);
+
+      if(stepup===0){
+        if(rMonthly===0){ sipMonthly = goalFuture / Math.max(1,n); }
+        else { sipMonthly = goalFuture * rMonthly / (Math.pow(1+rMonthly, n) - 1); }
+        totalInvest = sipMonthly * n;
+        // Build simple yearly schedule for CSV (flat SIP)
+        let v=0, y=1, ySip=0, yGrowth=0; schedule=[];
+        for(let i=1;i<=n;i++){
+          const before=v; v*=(1+rMonthly); const g=v-before; yGrowth+=g; v+=sipMonthly; ySip+=sipMonthly;
+          if(i%12===0){ schedule.push({year:y, sip:Math.round(ySip), growth:Math.round(yGrowth), value:Math.round(v)}); y++; ySip=0; yGrowth=0; }
+        }
+        if(n%12!==0){ schedule.push({year:y, sip:Math.round(ySip), growth:Math.round(yGrowth), value:Math.round(v)}); }
+      } else {
+        sipMonthly = findSip(goalFuture, years, rMonthly, stepup);
+        const sim = simulateStepUpFV(sipMonthly, years, rMonthly, stepup);
+        totalInvest = sim.totalContrib; schedule = sim.schedule;
+      }
+
+      const wealth = goalFuture; // target wealth
+      const returns = Math.max(0, wealth - totalInvest);
+
+      els.outGoalFuture.textContent = formatINR(wealth);
+      els.outSIP.textContent = formatINR(sipMonthly);
+      els.outTotal.textContent = formatINR(totalInvest);
+      els.outWealth.textContent = formatINR(wealth);
+
+      // Bars
+      const invPct = wealth>0 ? Math.min(100, (totalInvest/wealth)*100) : 0;
+      const retPct = wealth>0 ? Math.max(0, 100 - invPct) : 0;
+      els.barInv.style.width = invPct + '%';
+      els.barRet.style.width = retPct + '%';
+
+      // CSV
+      makeCSV(schedule);
+
+      hasCalculated = true;
+    }
+
+    function makeCSV(rows){
+      const header = ['Year','SIP','Growth','Value'];
+      const csv = [header].concat(rows.map(r=>[r.year,r.sip,r.growth,r.value])).map(a=>a.join(',')).join('\r\n');
+      const blob = new Blob([csv],{type:'text/csv'});
+      const url = URL.createObjectURL(blob);
+      els.btnCSV.href = url;
+    }
+
+    // Events
+    els.btnCalc.addEventListener('click', calc);
+    els.btnReset.addEventListener('click', ()=>{ setTimeout(()=>{ hasCalculated=false; validate(); calc(); },0); });
+    document.getElementById('calcForm').addEventListener('input', ()=>{ validate(); if(!hasCalculated) return; clearTimeout(debounce); debounce=setTimeout(calc,200); });
+
+    // Init
+    document.getElementById('year').textContent = new Date().getFullYear();
+    validate(); calc();
+  })();
+  </script>
+</body>
+</html>
