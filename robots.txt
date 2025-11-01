@@ -1,45 +1,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://calculateforme.xyz/sitemap.xml
-
-# Block duplicate content - prevent indexing of folder/index.html patterns
-Disallow: */index.html
-Disallow: /blog/*/
-Disallow: /calculators/*/
-
-# Block specific redirect folders to prevent duplicate title issues
-Disallow: /blog/age-calculator-life-planning-guide/
-Disallow: /blog/bmi-calculator-ideal-weight-guide/
-Disallow: /blog/calorie-calculator-weight-loss-guide/
-Disallow: /blog/compound-interest-excel-guides/
-Disallow: /blog/compound-interest-formula-excel-with-monthly-contributions/
-Disallow: /blog/email-newsletter-emi-tips/
-Disallow: /blog/epfo-new-rules-2025-epf-eps-withdrawal-guidelines/
-Disallow: /blog/home-loan-emi-calculation-guide/
-Disallow: /blog/how-to-calculate-compound-interest-in-excel-for-days/
-Disallow: /blog/investment-calculator-complete-guide/
-Disallow: /blog/monthly-compound-interest-calculator-india/
-Disallow: /blog/personal-loan-vs-credit-card-emi/
-Disallow: /blog/reduce-home-loan-emi-tips/
-Disallow: /blog/retirement-planning-guide/
-Disallow: /blog/salary-calculator-income-planning-guide/
-Disallow: /blog/scientific-calculator-functions-guide/
-Disallow: /blog/sip-retirement-planning-guide/
-Disallow: /blog/tax-planning-guide-2025/
-
-# Block search engine indexing of any future admin or private directories
+# Disallow any private or system routes (if exist)
 Disallow: /admin/
+Disallow: /login/
 Disallow: /private/
-Disallow: /debug-adsense.html
 
-# Allow specific calculator and blog HTML files (canonical versions)
-Allow: /calculators/*.html
-Allow: /blog/*.html
-
-# Allow llms.txt for AI search engines
-Allow: /llms.txt
-
-# Crawl-delay (optional, adjust if needed)
-# Crawl-delay: 10
+# Sitemap link (always up-to-date)
+Sitemap: https://calculateforme.xyz/sitemap.xml

@@ -1,253 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Homepage -->
   <url>
     <loc>https://calculateforme.xyz/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2025-11-01</lastmod>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Main Pages -->
   <url>
-    <loc>https://calculateforme.xyz/blog.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/about.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/quiz.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/privacy-policy.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/terms-of-service.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- Blog Posts (Actual existing files) -->
-  <url>
-    <loc>https://calculateforme.xyz/blog/bmi-calculator-ideal-weight-guide.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/home-loan-emi-calculation-guide.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/age-calculator-life-planning-guide.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/calorie-calculator-weight-loss-guide.html</loc>
-    <lastmod>2025-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/compound-interest-excel-guides.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/compound-interest-formula-excel-with-monthly-contributions.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/email-newsletter-emi-tips.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/epfo-new-rules-2025-epf-eps-withdrawal-guidelines.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/how-to-calculate-compound-interest-in-excel-for-days.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/blog/investment-calculator-complete-guide.html</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Calculator Pages -->
-  <url>
-    <loc>https://calculateforme.xyz/calculators/emi-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://calculateforme.xyz/blog/retirement-calculator-planning-guide-india-2025</loc>
+    <lastmod>2025-11-01</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calculateforme.xyz/calculators/mortgage-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://calculateforme.xyz/blog/sip-calculator-india-2025</loc>
+    <lastmod>2025-11-01</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calculateforme.xyz/calculators/compound-interest-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://calculateforme.xyz/blog/lumpsum-calculator-india-2025</loc>
+    <lastmod>2025-11-01</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calculateforme.xyz/calculators/investment-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://calculateforme.xyz/blog/inflation-calculator-india-2025</loc>
+    <lastmod>2025-11-01</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calculateforme.xyz/calculators/bmi-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://calculateforme.xyz/blog/goal-sip-planner-india-2025</loc>
+    <lastmod>2025-11-01</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calculateforme.xyz/calculators/age-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://calculateforme.xyz/blog/swp-calculator-india-2025</loc>
+    <lastmod>2025-11-01</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calculateforme.xyz/calculators/calorie-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/loan-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/income-tax-calculator-india.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/gst-calculator-india.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/epf-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/fd-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/hra-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/gratuity-calculator-india.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/michigan-mortgage-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://calculateforme.xyz/blog/scientific-calculator-functions-guide</loc>
+    <lastmod>2025-11-01</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calculateforme.xyz/calculators/gpa-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://calculateforme.xyz/blog/calorie-calculator-guide</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://calculateforme.xyz/calculators/grade-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://calculateforme.xyz/blog/compound-interest-formula-excel-with-monthly-contributions</loc>
+    <lastmod>2025-11-01</lastmod>
+    <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/discount-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/currency-converter.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/percentage-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/scientific-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/tax-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculateforme.xyz/calculators/roi-calculator.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Recent Blog Posts -->
-  <url>
-    <loc>https://calculateforme.xyz/blog/michigan-mortgage-calculator-home-buying-guide-2025.html</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
 </urlset>
