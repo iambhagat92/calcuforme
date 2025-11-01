@@ -33,5 +33,8 @@ build/
 *.log
 logs/
 
+# Uploads (runtime)
+uploads/
+
 # Warp terminal files
 warp/
