@@ -175,8 +175,11 @@ app.delete('/api/posts/:id', auth, async (req,res)=>{
   }catch(e){ res.status(500).json({error:e.message}); }
 });
 
-// Export express app for Vercel serverless
-module.exports = app;
+// Healthcheck
+app.get('/api/health', (req,res)=>res.json({ok:true}));
+
+// Export handler for Vercel serverless (wrap express)
+module.exports = (req, res) => app(req, res);
 
 // Also allow local run
 if (require.main === module) {
