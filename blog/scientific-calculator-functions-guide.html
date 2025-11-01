@@ -1,58 +1,754 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scientific Calculator Functions Guide: Trig, Log, Power, Memory | Calculate For Me</title>
-    <meta name="description" content="Scientific calculator functions guide: trigonometry, logarithms, powers, factorial, memory, and mode settings explained with examples.">
-    <meta name="keywords" content="scientific calculator, trig functions, logarithm, factorial, memory, degrees vs radians">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Scientific Calculator (2025) – All Functions, Formulas & Keyboard Shortcuts | CalculateForMe</title>
+  <meta name="description" content="Free scientific calculator (2025). Trig, logs, powers, roots, factorial, permutations & combinations, modulo, memory, history, and keyboard shortcuts. Degree/Radian/Grad modes with full functions guide.">
+  <link rel="canonical" href="https://calculateforme.xyz/blog/scientific-calculator-functions-guide">
+  <meta name="robots" content="index,follow">
+  <meta name="keywords" content="scientific calculator, trig calculator, log calculator, factorial, nCr, nPr, modulo, keyboard shortcuts, degree radian, functions guide">
+  <meta name="theme-color" content="#0d6efd">
+  
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Scientific Calculator (2025) – All Functions, Formulas & Keyboard Shortcuts | CalculateForMe">
+  <meta property="og:description" content="Free scientific calculator (2025). Trig, logs, powers, roots, factorial, permutations & combinations, modulo, memory, history, and keyboard shortcuts.">
+  <meta property="og:url" content="https://calculateforme.xyz/blog/scientific-calculator-functions-guide">
+  <meta property="og:image" content="https://calculateforme.xyz/images/scientific-calculator-2025.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scientific Calculator (2025) – All Functions, Formulas & Keyboard Shortcuts | CalculateForMe">
+  <meta name="twitter:description" content="Free scientific calculator (2025). Trig, logs, powers, roots, factorial, permutations & combinations, modulo, memory, history, and keyboard shortcuts.">
+  <meta name="twitter:image" content="https://calculateforme.xyz/images/scientific-calculator-2025.jpg">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <!-- JSON-LD: WebPage + BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Scientific Calculator (2025) – All Functions, Formulas & Keyboard Shortcuts | CalculateForMe",
+        "description": "Free scientific calculator (2025). Trig, logs, powers, roots, factorial, permutations & combinations, modulo, memory, history, and keyboard shortcuts.",
+        "inLanguage": "en-IN",
+        "url": "https://calculateforme.xyz/blog/scientific-calculator-functions-guide",
+        "publisher": {"@type":"Organization","name":"CalculateForMe","url":"https://calculateforme.xyz"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://calculateforme.xyz"},
+          {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calculateforme.xyz/calculators.html"},
+          {"@type":"ListItem","position":3,"name":"Scientific Calculator","item":"https://calculateforme.xyz/blog/scientific-calculator-functions-guide"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"What functions does this scientific calculator support?","acceptedAnswer":{"@type":"Answer","text":"Trig (and inverse/hyperbolic), logs, powers/roots, factorial, nCr, nPr, modulo, absolute, rounding, constants, memory, history, and more."}},
+          {"@type":"Question","name":"How do I switch between degrees and radians?","acceptedAnswer":{"@type":"Answer","text":"Use the angle mode controls (DEG/RAD/GRAD) above the keypad. Inputs for trig functions are interpreted in the current mode; inverse trig outputs are returned in that mode."}},
+          {"@type":"Question","name":"How are factorial, nCr and nPr calculated?","acceptedAnswer":{"@type":"Answer","text":"Factorial is defined for integers 0–170. nCr = n!/(r!(n−r)!), nPr = n!/(n−r)! with 0 ≤ r ≤ n ≤ 170. Out‑of‑range or non‑integer inputs raise friendly errors."}},
+          {"@type":"Question","name":"What is the order of operations (precedence)?","acceptedAnswer":{"@type":"Answer","text":"Functions/constants, parentheses, exponentiation (right‑associative), unary ±, multiplication/division/modulo, addition/subtraction."}},
+          {"@type":"Question","name":"Can I use keyboard shortcuts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Numbers and operators work directly. Enter = evaluate, Backspace = delete, Esc = AC, Del = C, s/c/t = sin/cos/tan, l = ln(, g = log10(, b = log2(, e = exp(, q = sqrt(, a = Ans, m/M/Alt+M for MR/M+/M−, r = random."}},
+          {"@type":"Question","name":"How do memory keys (M+, M-, MR, MC) work?","acceptedAnswer":{"@type":"Answer","text":"MR inserts the stored value; M+ adds the last result to memory; M− subtracts it; MC clears memory. A MEM flag shows when memory is not empty."}}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="../index.html" class="logo"><i class="fas fa-calculator"></i><span>Calculate For Me</span></a>
-                <div class="nav-links">
-                    <a href="../calculators.html">Calculators</a>
-                    <a href="../calculators.html">Popular</a>
-                    <a href="../blog.html" class="active"><i class="fas fa-book"></i> Blog</a>
-                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
-                    <a href="../about.html">About</a>
-                    <a href="../contact.html">Contact</a>
-                </div>
-            </div>
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap nav-row">
+      <a class="brand" href="#" aria-label="CalculateForMe">CalculateForMe</a>
+      <nav aria-label="Primary">
+        <a href="#calculator">Calculator</a>
+        <a href="#shortcuts">Shortcuts</a>
+        <a href="#guide">Guide</a>
+        <a href="#faqs">FAQs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" role="region" aria-label="Intro">
+    <div class="wrap">
+      <h1>Scientific Calculator (2025)</h1>
+      <p>Full scientific mode with keyboard, history, memory, angle units, and all essential math functions.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" id="cta-start" href="#calculator">Start Calculating</a>
+        <a class="btn btn-secondary" id="cta-guide" href="#guide">See Functions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR APP -->
+  <section id="calculator" class="wrap card" role="region" aria-label="Scientific calculator">
+    <h2 class="card-title">Calculator</h2>
+
+    <div class="calc-grid">
+      <!-- Left: Display + Controls + Keypad -->
+      <div class="left">
+        <div class="display">
+          <div class="status">
+            <span id="modeAngle">DEG</span>
+            <span id="modeFmt">NORMAL</span>
+            <span id="modeDec">FIX 6</span>
+            <span id="modeMem" hidden>MEM</span>
+          </div>
+          <input id="expr" class="expr" type="text" inputmode="text" autocomplete="off" spellcheck="false" aria-label="Expression line" placeholder="Type expression or use keypad...">
+          <div id="result" class="result" aria-live="polite">0</div>
         </div>
-    </nav>
 
-    <main id="content" class="container" style="min-height:40vh; padding:3rem 0;"></main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
-                    <p>Your comprehensive suite of free online calculators for every need.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../blog.html">Blog</a></li>
-                        <li><a href="../calculators/scientific-calculator.html">Scientific Calculator</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
-            </div>
+        <div class="controls">
+          <div class="group">
+            <span class="lbl">Angle</span>
+            <label><input type="radio" name="angle" id="angleDeg" checked> DEG</label>
+            <label><input type="radio" name="angle" id="angleRad"> RAD</label>
+            <label><input type="radio" name="angle" id="angleGrad"> GRAD</label>
+          </div>
+          <div class="group">
+            <label class="lbl" for="fmt">Format</label>
+            <select id="fmt">
+              <option value="normal" selected>Normal</option>
+              <option value="fixed">Fixed</option>
+              <option value="sci">Scientific</option>
+              <option value="eng">Engineering</option>
+            </select>
+          </div>
+          <div class="group">
+            <label class="lbl" for="decimals">Decimals</label>
+            <input id="decimals" type="number" min="0" max="12" value="6" style="width:72px">
+          </div>
+          <div class="group actions">
+            <button class="btn small" id="keyC" title="Clear entry (Del)">C</button>
+            <button class="btn small" id="keyAC" title="All clear (Esc)">AC</button>
+            <button class="btn small" id="keyBack" title="Backspace">⌫</button>
+            <button class="btn small" id="keyAns" title="Insert last answer (a)">Ans</button>
+          </div>
         </div>
-    </footer>
 
-    <script src="../js/main.js"></script>
+        <div class="keypad" aria-label="Calculator keypad">
+          <div class="row">
+            <button class="btn key" id="second" aria-pressed="false" title="2nd functions toggle">2nd</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-op="(">(</button>
+            <button class="btn key" data-op=")">)</button>
+            <button class="btn key" data-op="," title="Comma">,</button>
+            <button class="btn key" data-op="%" title="Percent">%</button>
+            <button class="btn key" data-op="mod" title="Modulo">mod</button>
+            <button class="btn key" data-func="abs" title="Absolute">|x|</button>
+            <button class="btn key" id="keySign" title="Toggle sign">±</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-const="π" title="pi">π</button>
+            <button class="btn key" data-const="e" title="Euler's e">e</button>
+            <button class="btn key" data-const="φ" title="phi">φ</button>
+            <button class="btn key" data-const="τ" title="tau">τ</button>
+            <button class="btn key" data-func="rand" title="Random 0..1">rand</button>
+            <button class="btn key" data-token="Ans" title="Last result">Ans</button>
+          </div>
+          <div class="row tri">
+            <button class="btn key f-main" data-func="sin" data-alt="sinh" title="sin( or sinh(">sin</button>
+            <button class="btn key f-main" data-func="cos" data-alt="cosh" title="cos( or cosh(">cos</button>
+            <button class="btn key f-main" data-func="tan" data-alt="tanh" title="tan( or tanh(">tan</button>
+            <button class="btn key f-main" data-func="asin" data-alt="asinh" title="asin( or asinh(">asin</button>
+            <button class="btn key f-main" data-func="acos" data-alt="acosh" title="acos( or acosh(">acos</button>
+            <button class="btn key f-main" data-func="atan" data-alt="atanh" title="atan( or atanh(">atan</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-func="ln" title="ln(">ln</button>
+            <button class="btn key" data-func="log10" title="log10(">log10</button>
+            <button class="btn key" data-func="log2" title="log2(">log2</button>
+            <button class="btn key" data-func="exp" title="exp(">exp</button>
+            <button class="btn key" data-op="10^" title="10^x">10^x</button>
+            <button class="btn key" data-op="2^" title="2^x">2^x</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-op="^" title="x^y">x^y</button>
+            <button class="btn key" data-func="sqr" title="x^2">x^2</button>
+            <button class="btn key" data-func="sqrt" title="√x">√</button>
+            <button class="btn key" data-func="cbrt" title="∛x">∛</button>
+            <button class="btn key" data-func="root" title="y√x (root(y,x))">y√x</button>
+            <button class="btn key" data-op="!" title="factorial">x!</button>
+            <button class="btn key" data-func="nCr" title="nCr(n,r)">nCr</button>
+            <button class="btn key" data-func="nPr" title="nPr(n,r)">nPr</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-func="floor">floor</button>
+            <button class="btn key" data-func="ceil">ceil</button>
+            <button class="btn key" data-func="round">round</button>
+            <button class="btn key" data-func="abs">abs</button>
+            <button class="btn key" data-func="min">min</button>
+            <button class="btn key" data-func="max">max</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-num="7">7</button>
+            <button class="btn key" data-num="8">8</button>
+            <button class="btn key" data-num="9">9</button>
+            <button class="btn key op" data-op="/" title="Divide (/)" aria-label="Divide">÷</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-num="4">4</button>
+            <button class="btn key" data-num="5">5</button>
+            <button class="btn key" data-num="6">6</button>
+            <button class="btn key op" data-op="*" title="Multiply (*)" aria-label="Multiply">×</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-num="1">1</button>
+            <button class="btn key" data-num="2">2</button>
+            <button class="btn key" data-num="3">3</button>
+            <button class="btn key op" data-op="-" title="Minus (-)" aria-label="Minus">−</button>
+          </div>
+          <div class="row">
+            <button class="btn key" data-num="0">0</button>
+            <button class="btn key" data-op=".">.</button>
+            <button class="btn key eq" id="keyEq" title="Evaluate (Enter)">=</button>
+            <button class="btn key op" data-op="+" title="Plus (+)" aria-label="Plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: History + Memory -->
+      <aside class="right" aria-label="History and memory">
+        <div class="mem card-lite">
+          <div class="mem-row">
+            <div class="lbl">Memory</div>
+            <div id="memVal" class="mem-val">(empty)</div>
+          </div>
+          <div class="mem-keys">
+            <button class="btn small" id="keyMC" title="Memory clear">MC</button>
+            <button class="btn small" id="keyMR" title="Memory recall (m)">MR</button>
+            <button class="btn small" id="keyMPlus" title="Memory add (Shift+M)">M+</button>
+            <button class="btn small" id="keyMMinus" title="Memory subtract (Alt+M)">M-</button>
+          </div>
+        </div>
+
+        <div class="history card-lite">
+          <div class="lbl">History</div>
+          <ul id="history" class="hist-list" aria-live="polite"></ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SHORTCUTS -->
+  <section id="shortcuts" class="wrap card" role="region" aria-label="Keyboard shortcuts">
+    <h2 class="card-title">Keyboard Shortcuts</h2>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th>Numbers</th><td><code>0..9</code></td></tr>
+          <tr><th>Operators</th><td><code>+ - * / ^ % ( ) .</code></td></tr>
+          <tr><th>Evaluate</th><td><code>Enter</code> = equals</td></tr>
+          <tr><th>Delete</th><td><code>Backspace</code> = delete char, <code>Esc</code> = AC, <code>Delete</code> = C</td></tr>
+          <tr><th>Trig</th><td><code>s</code>=sin(, <code>c</code>=cos(, <code>t</code>=tan(; Shift adds inverse (asin, acos, atan); press 2nd for hyperbolic</td></tr>
+          <tr><th>Logs & Roots</th><td><code>l</code>=ln(, <code>g</code>=log10(, <code>b</code>=log2(, <code>e</code>=exp(, <code>q</code>=sqrt(</td></tr>
+          <tr><th>Ans & Random</th><td><code>a</code>=Ans, <code>r</code>=rand()</td></tr>
+          <tr><th>Memory</th><td><code>m</code>=MR, <code>Shift+m</code>=M+, <code>Alt+m</code>=M-</td></tr>
+          <tr><th>Tokens</th><td>Type <code>pi</code>→π, <code>tau</code>→τ, <code>phi</code>→φ automatically</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FUNCTIONS GUIDE -->
+  <section id="guide" class="wrap card" role="region" aria-label="Functions guide">
+    <h2 class="card-title">Functions & Formulas</h2>
+
+    <h3>Angle Modes</h3>
+    <p>Degree (°), Radian, Grad. Conversions: <code>rad = deg × π/180</code>; <code>grad = deg × 10/9</code>.</p>
+
+    <h3>Trigonometric</h3>
+    <p><code>sin, cos, tan</code> and their inverses/hyperbolics. Inputs interpreted in current angle mode; inverse outputs returned in that mode.</p>
+
+    <h3>Powers & Roots</h3>
+    <p><code>x^y</code>, <code>x^2</code>, <code>√x</code>, <code>∛x</code>, <code>y√x = x^(1/y)</code>.</p>
+
+    <h3>Logs & Exponentials</h3>
+    <p><code>ln(x)=log_e x</code>, <code>log10(x)</code>, <code>log2(x)</code>, <code>exp(x)=e^x</code>, <code>10^x</code>, <code>2^x</code>.</p>
+
+    <h3>Factorial & Gamma Note</h3>
+    <p><code>n!</code> is supported for integers 0 ≤ n ≤ 170. Non‑integers or large n show a friendly error.</p>
+
+    <h3>Combinatorics</h3>
+    <p><code>nCr = n!/(r!(n−r)!)</code>, <code>nPr = n!/(n−r)!</code>, valid when 0 ≤ r ≤ n ≤ 170.</p>
+
+    <h3>Rounding & Integer Ops</h3>
+    <p><code>floor(x)</code>, <code>ceil(x)</code>, <code>round(x)</code>, <code>abs(x)</code>.</p>
+
+    <h3>Modulo vs %</h3>
+    <p><code>%</code> acts as a percentage operator (e.g., <code>50%</code> → 0.5). <code>mod(a,b)</code> returns the remainder with the sign of divisor.</p>
+
+    <h3>Constants</h3>
+    <p><code>π</code>=3.141592653589793, <code>e</code>=2.718281828459045, <code>φ</code>≈1.618033988749895, <code>τ</code>=2π,
+       <code>NA</code>≈6.02214076e23, <code>c</code>=299792458 m/s, <code>g</code>=9.80665 m/s².</p>
+
+    <h3>Precedence</h3>
+    <p>Functions/constants, parentheses, exponentiation (right‑assoc), unary (±), mul/div/mod, add/sub.</p>
+
+    <h4>Examples</h4>
+    <ul class="examples">
+      <li><code>sin(30)</code> in DEG = 0.5; in RAD ≈ −0.988…</li>
+      <li><code>log10(1000)=3</code></li>
+      <li><code>5 nCr 2 = 10</code></li>
+      <li><code>(2+3)*4^2 = 80</code></li>
+    </ul>
+  </section>
+
+  <!-- FAQS -->
+  <section id="faqs" class="wrap card" role="region" aria-label="FAQs">
+    <h2 class="card-title">FAQs</h2>
+    <details><summary>What functions does this scientific calculator support?</summary><p>Trig (and inverse/hyperbolic), logs, powers/roots, factorial, nCr, nPr, modulo, absolute, rounding, constants, memory, history, keyboard shortcuts, and more.</p></details>
+    <details><summary>How do I switch between degrees and radians?</summary><p>Use the angle controls (DEG/RAD/GRAD). Trig inputs follow the current mode; inverse trig returns results in the same mode.</p></details>
+    <details><summary>How are factorial, nCr and nPr calculated?</summary><p>Factorial supports 0–170 integers. nCr = n!/(r!(n−r)!), nPr = n!/(n−r)!. Inputs must be integers within range.</p></details>
+    <details><summary>What is the order of operations (precedence)?</summary><p>Functions/constants → parentheses → exponentiation (right‑assoc) → unary (±) → ×/÷/mod → +/−.</p></details>
+    <details><summary>Can I use keyboard shortcuts?</summary><p>Yes. Enter=evaluate, Backspace=delete, Esc=AC, Del=C, s/c/t trig, l=ln(, g=log10(, b=log2(, e=exp(, q=sqrt(, a=Ans, m/M/Alt+M for MR/M+/M−, r=rand().</p></details>
+    <details><summary>How do memory keys (M+, M-, MR, MC) work?</summary><p>MR inserts memory; M+ adds last result; M− subtracts; MC clears memory. A MEM flag shows when memory has data.</p></details>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="wrap">
+      <p class="note">Results are for education; verify critical calculations.</p>
+      <p>© <span id="yr"></span> CalculateForMe</p>
+    </div>
+  </footer>
+
+  <!-- STYLES -->
+  <style>
+    :root{--bg:#fff;--text:#1f2937;--muted:#64748b;--line:#e2e8f0;--primary:#0d6efd;--primary-600:#0b5ed7;--green:#20c997;--shadow:0 10px 24px rgba(0,0,0,.06);--radius:14px;--wrap:1100px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:var(--primary);text-decoration:none}
+    code{background:#f8fafc;border:1px solid var(--line);padding:.1rem .3rem;border-radius:6px}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+    .nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+    .nav-row{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .brand{font-weight:800;color:var(--primary)}
+    .nav a{margin-left:16px;color:#334155}
+    .hero{padding:28px 0;background:linear-gradient(135deg,#f8fbff,#f4fff9)}
+    .hero h1{margin:0 0 6px;font-size:clamp(24px,4vw,36px)}
+    .hero p{margin:0 0 12px;color:var(--muted)}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin:18px auto}
+    .card-title{margin:0 0 10px}
+    .card-lite{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+
+    .btn{display:inline-block;border-radius:999px;padding:10px 16px;font-weight:600;border:1px solid transparent;transition:all .15s ease}
+    .btn.small{padding:8px 12px}
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-primary:hover{background:var(--primary-600)}
+    .btn-secondary{background:var(--green);color:#063}
+    .btn-secondary:hover{background:#18b58a}
+    .btn-ghost{border-color:var(--line);color:#111;background:#fff}
+
+    .calc-grid{display:grid;gap:16px;grid-template-columns:2fr 1fr}
+    @media(max-width:900px){.calc-grid{grid-template-columns:1fr}}
+
+    .display{border:1px solid var(--line);border-radius:12px;padding:10px;background:#fbfdff}
+    .status{display:flex;gap:10px;color:#334155;font-size:12px;margin-bottom:6px}
+    .expr{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;outline:none;font:600 16px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+    .expr:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(13,110,253,.12)}
+    .result{margin-top:8px;font:800 26px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:#0b1220;user-select:text}
+
+    .controls{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+    .controls .group{display:flex;align-items:center;gap:8px}
+    .controls .lbl{font-weight:700;color:#334155;margin-right:4px}
+
+    .keypad{display:grid;gap:8px}
+    .keypad .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(56px,1fr));gap:8px}
+    .key{border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px;font-weight:700}
+    .key.op{background:#f8fafc}
+    .key.eq{background:var(--primary);color:#fff}
+    .key:hover{background:#f5faff}
+    .key:focus{outline:3px solid rgba(13,110,253,.25)}
+
+    .right .lbl{font-weight:700;color:#334155;margin-bottom:6px}
+    .mem-row{display:flex;justify-content:space-between;align-items:center}
+    .mem-val{font:700 14px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:#0b1220}
+    .mem-keys{display:flex;gap:8px;margin-top:8px}
+
+    .hist-list{list-style:none;margin:8px 0 0;padding:0;max-height:380px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+    .hist-list li{display:flex;justify-content:space-between;gap:8px;padding:8px;border-bottom:1px solid var(--line);font:500 13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+    .hist-list li:last-child{border-bottom:none}
+    .hist-act{display:flex;gap:6px}
+
+    .table-wrap{overflow:auto}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{border:1px solid var(--line);padding:8px;text-align:left}
+
+    .examples{margin:6px 0 0}
+    .examples li{margin:2px 0}
+
+    .footer{border-top:1px solid var(--line);padding:18px 0;color:#475569}
+    .note{margin:0 0 6px;color:#64748b}
+  </style>
+
+  <!-- SCRIPTS (no eval) -->
+  <script>
+  (function(){
+    'use strict';
+    const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+
+    // Elements
+    const exprEl=$('#expr'), resultEl=$('#result');
+    const modeAngleEl=$('#modeAngle'), modeFmtEl=$('#modeFmt'), modeDecEl=$('#modeDec'), modeMemEl=$('#modeMem');
+    const angleDeg=$('#angleDeg'), angleRad=$('#angleRad'), angleGrad=$('#angleGrad');
+    const fmtSel=$('#fmt'), decEl=$('#decimals');
+    const btnEq=$('#keyEq'), btnC=$('#keyC'), btnAC=$('#keyAC'), btnBack=$('#keyBack'), btnAns=$('#keyAns');
+    const second=$('#second');
+    const historyEl=$('#history'), memValEl=$('#memVal');
+    const keyMC=$('#keyMC'), keyMR=$('#keyMR'), keyMPlus=$('#keyMPlus'), keyMMinus=$('#keyMMinus');
+
+    // State
+    let memory=NaN, ans=0;
+
+    function angleMode(){return angleRad.checked? 'RAD' : (angleGrad.checked? 'GRAD':'DEG');}
+    function fmtMode(){return fmtSel.value;}
+    function decimals(){let n=+decEl.value|0; if(n<0)n=0; if(n>12)n=12; decEl.value=n; return n;}
+
+    function updateStatus(){
+      modeAngleEl.textContent=angleMode();
+      const f=fmtMode();
+      modeFmtEl.textContent=f.toUpperCase();
+      modeDecEl.textContent=(f==='fixed'||f==='sci'||f==='eng')? ('FIX '+decimals()) : 'AUTO';
+      modeMemEl.hidden = !(memory===memory); // show if not NaN
+      memValEl.textContent = (memory===memory)? formatNum(memory) : '(empty)';
+      checkParen();
+    }
+
+    // Insert helpers
+    function insertToken(tok){
+      const el=exprEl; const start=el.selectionStart??el.value.length; const end=el.selectionEnd??start; const v=el.value;
+      el.value = v.slice(0,start) + tok + v.slice(end);
+      const pos = start + tok.length; setCaret(el,pos);
+      normalizeShortAliases();
+      checkParen();
+    }
+    function setCaret(el,pos){ el.focus(); try{ el.setSelectionRange(pos,pos); }catch(e){} }
+
+    // Toggle 2nd functions (hyperbolic vs main)
+    second.addEventListener('click',()=>{
+      const pressed = second.getAttribute('aria-pressed')==='true';
+      second.setAttribute('aria-pressed', (!pressed).toString());
+      $$('.f-main').forEach(b=>{
+        const alt=b.getAttribute('data-alt'); const base=b.getAttribute('data-func');
+        if(!pressed){ b.textContent=alt; b.setAttribute('data-func',alt); }
+        else { b.textContent=base; b.setAttribute('data-func',base); }
+      });
+    });
+
+    // Keypad clicks
+    $$('.keypad .key').forEach(b=>{
+      b.addEventListener('click',()=>{
+        const num=b.getAttribute('data-num'); const op=b.getAttribute('data-op');
+        const fn=b.getAttribute('data-func'); const cst=b.getAttribute('data-const'); const tok=b.getAttribute('data-token');
+        if(num) insertToken(num);
+        else if(op){
+          if(op==='10^') insertToken('10^(');
+          else if(op==='2^') insertToken('2^(');
+          else insertToken(op);
+        }
+        else if(fn){
+          if(fn==='sqr') insertToken('(^2)');
+          else if(fn==='root') insertToken('root(');
+          else if(fn==='rand') insertToken('rand()');
+          else insertToken(fn+'(');
+        }
+        else if(cst){ insertToken(cst); }
+        else if(tok){ insertToken(tok); }
+      });
+    });
+
+    $('#keySign').addEventListener('click', toggleSign);
+    btnC.addEventListener('click',()=>{ exprEl.value=''; checkParen(); });
+    btnAC.addEventListener('click',()=>{ exprEl.value=''; resultEl.textContent='0'; });
+    btnBack.addEventListener('click',()=>{ backspaceChar(); });
+    btnAns.addEventListener('click',()=>{ insertToken('Ans'); });
+
+    // Memory
+    keyMC.addEventListener('click',()=>{ memory=NaN; updateStatus(); });
+    keyMR.addEventListener('click',()=>{ if(memory===memory) insertToken(String(memory)); });
+    keyMPlus.addEventListener('click',()=>{ if(isFinite(ans)) memory = (memory===memory? memory:0) + ans; updateStatus(); });
+    keyMMinus.addEventListener('click',()=>{ if(isFinite(ans)) memory = (memory===memory? memory:0) - ans; updateStatus(); });
+
+    // History helpers
+    const history=[]; const HMAX=50;
+    function pushHistory(expr,res){ history.unshift({expr,res}); if(history.length>HMAX) history.pop(); renderHistory(); }
+    function renderHistory(){
+      historyEl.innerHTML='';
+      history.forEach((h,i)=>{
+        const li=document.createElement('li');
+        const left=document.createElement('div'); left.textContent = `${h.expr} = ${formatNum(h.res)}`;
+        const right=document.createElement('div'); right.className='hist-act';
+        const use=document.createElement('button'); use.className='btn small'; use.textContent='↩︎ Use'; use.title='Recall expression';
+        use.addEventListener('click',()=>{ exprEl.value=h.expr; setCaret(exprEl, exprEl.value.length); checkParen(); });
+        const cp=document.createElement('button'); cp.className='btn small'; cp.textContent='Copy'; cp.title='Copy result';
+        cp.addEventListener('click',async()=>{ try{ await navigator.clipboard.writeText(String(h.res)); cp.textContent='Copied'; setTimeout(()=>cp.textContent='Copy',900);}catch(e){}});
+        right.append(use,cp); li.append(left,right); historyEl.append(li);
+      });
+    }
+
+    // Input normalization
+    function normalizeShortAliases(){
+      let v=exprEl.value;
+      v=v.replace(/tau/gi,'τ').replace(/phi/gi,'φ').replace(/pi/gi,'π');
+      v=v.replace(/×/g,'*').replace(/÷/g,'/');
+      exprEl.value=v;
+    }
+
+    function backspaceChar(){
+      const el=exprEl; const s=el.selectionStart??el.value.length; const e=el.selectionEnd??s; const v=el.value;
+      if(s!==e){ el.value=v.slice(0,s)+v.slice(e); setCaret(el,s); }
+      else if(s>0){ el.value=v.slice(0,s-1)+v.slice(s); setCaret(el,s-1); }
+      checkParen();
+    }
+
+    function toggleSign(){
+      const v=exprEl.value; if(!v){ exprEl.value='-'; setCaret(exprEl,1); return; }
+      // find last number/constant/paren group start
+      let i=v.length-1; // skip spaces
+      while(i>=0 && /\s/.test(v[i])) i--;
+      if(i<0){ insertToken('-'); return; }
+      // if last token starts with '-', remove; else add '-'
+      // simple approach: if previous char is '(' or operator, just insert '-'
+      if(/[+\-*/^,(]|mod|^$/.test(v.slice(Math.max(0,i-3),i+1))){ insertToken('-'); return; }
+      // otherwise prepend '-'
+      exprEl.value = v.slice(0,i+1).replace(/([\d.]+)$|([πeφτ])$/,(m)=>'-'+m) + v.slice(i+1);
+      setCaret(exprEl, exprEl.value.length); checkParen();
+    }
+
+    // Parentheses balance
+    function checkParen(){
+      const v=exprEl.value; let bal=0; for(const ch of v){ if(ch==='(') bal++; else if(ch===')') bal--; }
+      btnEq.disabled = bal!==0 || !v.trim();
+      updateStatus();
+    }
+
+    // Keyboard mapping
+    document.addEventListener('keydown',(ev)=>{
+      const k=ev.key; const sh=ev.shiftKey, alt=ev.altKey;
+      if(ev.target===exprEl){
+        if(k==='Enter'){ ev.preventDefault(); evaluate(); return; }
+        if(k==='Escape'){ ev.preventDefault(); btnAC.click(); return; }
+        if(k==='Delete'){ ev.preventDefault(); btnC.click(); return; }
+        if(k==='Backspace'){ setTimeout(checkParen,0); return; }
+      }
+      if(['ArrowLeft','ArrowRight','Tab'].includes(k)) return; // let default
+      // Global shortcuts
+      if(k==='Enter'){ ev.preventDefault(); evaluate(); }
+      else if(k==='Backspace'){ ev.preventDefault(); backspaceChar(); }
+      else if(k==='Escape'){ ev.preventDefault(); btnAC.click(); }
+      else if(k==='Delete'){ ev.preventDefault(); btnC.click(); }
+      else if(k==='a' && !sh && !alt){ ev.preventDefault(); insertToken('Ans'); }
+      else if(k==='r' && !sh && !alt){ ev.preventDefault(); insertToken('rand()'); }
+      else if(k==='m' && !sh && !alt){ ev.preventDefault(); keyMR.click(); }
+      else if((k==='M' || (k==='m'&&sh))){ ev.preventDefault(); keyMPlus.click(); }
+      else if(alt && (k==='m'||k==='M')){ ev.preventDefault(); keyMMinus.click(); }
+      else if(k==='s'){ ev.preventDefault(); insertToken(sh? 'asin(' : 'sin('); }
+      else if(k==='c'){ ev.preventDefault(); insertToken(sh? 'acos(' : 'cos('); }
+      else if(k==='t'){ ev.preventDefault(); insertToken(sh? 'atan(' : 'tan('); }
+      else if(k==='l'){ ev.preventDefault(); insertToken('ln('); }
+      else if(k==='g'){ ev.preventDefault(); insertToken('log10('); }
+      else if(k==='b'){ ev.preventDefault(); insertToken('log2('); }
+      else if(k==='e'){ ev.preventDefault(); insertToken('exp('); }
+      else if(k==='q'){ ev.preventDefault(); insertToken('sqrt('); }
+      else if(/^[0-9.+\-*/^()%]$/.test(k)){ /* allow default into expr */ }
+      else return; // ignore
+    }, true);
+
+    exprEl.addEventListener('input',()=>{ normalizeShortAliases(); checkParen(); });
+
+    // Evaluate
+    btnEq.addEventListener('click', evaluate);
+    function evaluate(){
+      const raw = exprEl.value.trim();
+      try{
+        const val = calc(raw);
+        const out = formatNum(val);
+        resultEl.textContent = out;
+        ans = val;
+        pushHistory(raw, val);
+      }catch(e){ resultEl.textContent = e.message || 'Error'; }
+    }
+
+    // Formatting
+    function formatNum(x){
+      if(!isFinite(x)) return (x===Infinity||x===-Infinity)? '∞' : 'NaN';
+      const f=fmtMode(); const d=decimals();
+      if(f==='fixed') return trimZeros(x.toFixed(d));
+      if(f==='sci') return x.toExponential(d);
+      if(f==='eng'){
+        if(x===0) return '0';
+        const sign = x<0? '-' : ''; x=Math.abs(x);
+        const exp = Math.floor(Math.log10(x));
+        const engExp = Math.floor(exp/3)*3;
+        const m = x/Math.pow(10,engExp);
+        return sign + m.toFixed(d) + 'e' + (engExp>=0? '+' : '') + engExp;
+      }
+      // normal
+      const s = x.toFixed(d);
+      return trimZeros(s);
+    }
+    function trimZeros(s){
+      if(!s.includes('.')) return s;
+      s=s.replace(/0+$/,'').replace(/\.$/,'');
+      return s;
+    }
+
+    // Parser & evaluator (shunting-yard)
+    const CONST={ 'π':Math.PI, 'e':Math.E, 'φ':(1+Math.sqrt(5))/2, 'τ':2*Math.PI, 'NA':6.02214076e23, 'c':299792458, 'g':9.80665 };
+    function toRad(x){ const m=angleMode(); return m==='DEG'? x*Math.PI/180 : (m==='GRAD'? x*Math.PI/200 : x); }
+    function fromRad(x){ const m=angleMode(); return m==='DEG'? x*180/Math.PI : (m==='GRAD'? x*200/Math.PI : x); }
+
+    const FUN={
+      sin:[1,(a)=>Math.sin(toRad(a))], cos:[1,(a)=>Math.cos(toRad(a))], tan:[1,(a)=>Math.tan(toRad(a))],
+      asin:[1,(a)=>fromRad(Math.asin(a))], acos:[1,(a)=>fromRad(Math.acos(a))], atan:[1,(a)=>fromRad(Math.atan(a))],
+      sinh:[1,(a)=>Math.sinh(toRad(a))], cosh:[1,(a)=>Math.cosh(toRad(a))], tanh:[1,(a)=>Math.tanh(toRad(a))],
+      asinh:[1,(a)=>fromRad(Math.asinh(a))], acosh:[1,(a)=>fromRad(Math.acosh(a))], atanh:[1,(a)=>fromRad(Math.atanh(a))],
+      ln:[1,(a)=>{ if(a<=0) throw domain(); return Math.log(a); }], log10:[1,(a)=>{ if(a<=0) throw domain(); return Math.log10(a); }], log2:[1,(a)=>{ if(a<=0) throw domain(); return Math.log2(a); }],
+      exp:[1,(a)=>Math.exp(a)], sqrt:[1,(a)=>{ if(a<0) throw domain(); return Math.sqrt(a); }], cbrt:[1,(a)=>Math.cbrt(a)],
+      abs:[1,(a)=>Math.abs(a)], floor:[1,(a)=>Math.floor(a)], ceil:[1,(a)=>Math.ceil(a)], round:[1,(a)=>Math.round(a)],
+      min:[2,(a,b)=>Math.min(a,b)], max:[2,(a,b)=>Math.max(a,b)],
+      root:[2,(y,x)=>{ if(y===0) throw domain(); const r=Math.pow(x,1/y); if(!isFinite(r)) throw overflow(); return r; }],
+      rand:[0,()=>Math.random()], nCr:[2,(n,r)=>comb(n,r)], nPr:[2,(n,r)=>perm(n,r)]
+    };
+
+    function domain(){ return new Error('Error: domain'); }
+    function overflow(){ return new Error('Error: overflow'); }
+
+    function fact(n){ if(!Number.isInteger(n) || n<0) throw domain(); if(n>170) throw overflow(); let r=1; for(let i=2;i<=n;i++){ r*=i; if(!isFinite(r)) throw overflow(); } return r; }
+    function comb(n,r){ if(!Number.isInteger(n)||!Number.isInteger(r)||r<0||n<0||r>n||n>170) throw domain(); return fact(n)/(fact(r)*fact(n-r)); }
+    function perm(n,r){ if(!Number.isInteger(n)||!Number.isInteger(r)||r<0||n<0||r>n||n>170) throw domain(); return fact(n)/fact(n-r); }
+
+    // Operators
+    const OPS={
+      '+':{p:2,a:'L',n:2,f:(a,b)=>a+b},
+      '-':{p:2,a:'L',n:2,f:(a,b)=>a-b},
+      '*':{p:3,a:'L',n:2,f:(a,b)=>a*b},
+      '/':{p:3,a:'L',n:2,f:(a,b)=>{ if(b===0) throw new Error('Error: div by 0'); return a/b; }},
+      'mod':{p:3,a:'L',n:2,f:(a,b)=>{ if(b===0) throw new Error('Error: div by 0'); return a - b*Math.floor(a/b); }},
+      '^':{p:4,a:'R',n:2,f:(a,b)=>{ const r=Math.pow(a,b); if(!isFinite(r)) throw overflow(); return r; }},
+      'u-':{p:5,a:'R',n:1,f:(a)=>-a},
+      '!':{p:6,a:'L',n:1,post:true,f:(a)=>fact(a)},
+      '%':{p:6,a:'L',n:1,post:true,f:(a)=>a/100}
+    };
+
+    function tokenize(s){
+      s = s.replace(/\s+/g,'');
+      s = s.replace(/Ans/g, String(ans));
+      // convert 10^x and 2^x patterns typed via buttons: left as tokens
+      const tokens=[]; let i=0;
+      const isOp=(c)=>['+','-','*','/','^',','].includes(c);
+      while(i<s.length){
+        const c=s[i];
+        if(/[0-9.]/.test(c)){
+          let j=i+1; while(j<s.length && /[0-9.]/.test(s[j])) j++;
+          tokens.push({t:'num',v:parseFloat(s.slice(i,j))}); i=j; continue;
+        }
+        if(c==='('||c===')'){ tokens.push({t:c}); i++; continue; }
+        if(c===','){ tokens.push({t:'comma'}); i++; continue; }
+        if(c==='π'||c==='τ'||c==='φ'||c==='e'){ tokens.push({t:'num',v:CONST[c]}); i++; continue; }
+        if(c==='!'){ tokens.push({t:'op',op:'!'}); i++; continue; }
+        if(c==='%'){ tokens.push({t:'op',op:'%'}); i++; continue; }
+        if(c==='+'||c==='*'||c==='/'||c==='^'){ tokens.push({t:'op',op:c}); i++; continue; }
+        if(c==='-'){
+          // unary or binary
+          const prev = tokens[tokens.length-1];
+          if(!prev || (prev.t==='op'&& !prev.post) || prev.t==='(' || prev.t==='comma') tokens.push({t:'op',op:'u-'});
+          else tokens.push({t:'op',op:'-'});
+          i++; continue;
+        }
+        // names: functions, constants, mod, 10^, 2^
+        let j=i+1; while(j<s.length && /[A-Za-z]/.test(s[j])) j++;
+        let name=s.slice(i,j);
+        if(name==='mod'){ tokens.push({t:'op',op:'mod'}); i=j; continue; }
+        if(CONST[name]!==undefined){ tokens.push({t:'num',v:CONST[name]}); i=j; continue; }
+        if(name==='rand'){ tokens.push({t:'func',f:'rand'}); i=j; continue; }
+        if(FUN[name]){ tokens.push({t:'func',f:name}); i=j; continue; }
+        // handle 10^ and 2^ typed as name due to button injection
+        if(name==='root'){ tokens.push({t:'func',f:'root'}); i=j; continue; }
+        if(name==='NA'||name==='c'||name==='g'){ tokens.push({t:'num',v:CONST[name]}); i=j; continue; }
+        throw new Error('Error: token '+name);
+      }
+      return tokens;
+    }
+
+    function toRPN(tokens){
+      const out=[]; const st=[]; // operator stack
+      for(let i=0;i<tokens.length;i++){
+        const tk=tokens[i];
+        if(tk.t==='num'){ out.push(tk); continue; }
+        if(tk.t==='func'){ st.push(tk); continue; }
+        if(tk.t==='comma'){
+          while(st.length && st[st.length-1].t!=='('){ out.push(st.pop()); }
+          if(!st.length) throw new Error('Error: parentheses');
+          continue;
+        }
+        if(tk.t==='('){ st.push(tk); continue; }
+        if(tk.t===')'){
+          while(st.length && st[st.length-1].t!=='('){ out.push(st.pop()); }
+          if(!st.length) throw new Error('Error: parentheses');
+          st.pop(); // pop '('
+          if(st.length && st[st.length-1].t==='func'){ out.push(st.pop()); }
+          continue;
+        }
+        if(tk.t==='op'){
+          const o1=OPS[tk.op]; if(!o1) throw new Error('Error: op');
+          while(st.length && st[st.length-1].t==='op'){
+            const o2=OPS[st[st.length-1].op];
+            if(!o2) break;
+            if((o1.a==='L' && o1.p<=o2.p) || (o1.a==='R' && o1.p<o2.p)) out.push(st.pop()); else break;
+          }
+          st.push(tk); continue;
+        }
+      }
+      while(st.length){ const t=st.pop(); if(t.t==='('||t.t===')') throw new Error('Error: parentheses'); out.push(t); }
+      return out;
+    }
+
+    function evalRPN(rpn){
+      const st=[];
+      for(const tk of rpn){
+        if(tk.t==='num'){ st.push(tk.v); continue; }
+        if(tk.t==='op'){
+          const op=OPS[tk.op];
+          if(op.n===1){ if(st.length<1) throw new Error('Error'); const a=st.pop(); st.push(op.f(a)); continue; }
+          if(st.length<2) throw new Error('Error'); const b=st.pop(); const a=st.pop(); st.push(op.f(a,b)); continue;
+        }
+        if(tk.t==='func'){
+          const f=FUN[tk.f]; if(!f) throw new Error('Error: func'); const n=f[0];
+          if(st.length<n) throw new Error('Error');
+          const args=st.splice(st.length-n,n);
+          const v=f[1](...args);
+          if(!isFinite(v)) throw overflow();
+          st.push(v); continue;
+        }
+      }
+      if(st.length!==1) throw new Error('Error');
+      return st[0];
+    }
+
+    function calc(s){
+      if(!s) return 0;
+      const tokens=tokenize(s);
+      const rpn=toRPN(tokens);
+      const val=evalRPN(rpn);
+      return val;
+    }
+
+    // Angle/format changes recompute
+    [angleDeg,angleRad,angleGrad,fmtSel,decEl].forEach(x=>x.addEventListener('change',()=>{ updateStatus(); if(exprEl.value.trim()) try{ const v=calc(exprEl.value); resultEl.textContent=formatNum(v); }catch(e){} }));
+
+    // Init
+    updateStatus();
+    $('#yr').textContent=new Date().getFullYear();
+  })();
+  </script>
 </body>
 </html>
 
