@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SWP Calculator India 2025 | Systematic Withdrawal Plan Planner | CalculateForMe</title>
+  <meta name="description" content="Free SWP Calculator India 2025. Estimate monthly withdrawals, sustainable corpus, and remaining balance over time. Plan post-retirement income smartly.">
+  <link rel="canonical" href="https://calculateforme.xyz/blog/swp-calculator-india-2025">
+  <meta name="robots" content="index,follow">
+  <meta name="keywords" content="swp calculator india 2025, systematic withdrawal plan, retirement corpus withdrawal, monthly income planner, mutual fund swp">
+  <meta name="theme-color" content="#0d6efd">
+  <link rel="icon" href="https://calculateforme.xyz/favicon.png" type="image/png">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SWP Calculator India 2025 | Systematic Withdrawal Plan Planner | CalculateForMe">
+  <meta property="og:description" content="Estimate monthly withdrawals, sustainable corpus, and track remaining balance with inflation-adjusted options.">
+  <meta property="og:url" content="https://calculateforme.xyz/blog/swp-calculator-india-2025">
+  <meta property="og:image" content="https://calculateforme.xyz/images/swp-calculator-2025.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SWP Calculator India 2025">
+  <meta name="twitter:description" content="Plan monthly withdrawals and remaining balance with fixed or inflation-adjusted SWP.">
+  <meta name="twitter:image" content="https://calculateforme.xyz/images/swp-calculator-2025.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "SWP Calculator India 2025 | Systematic Withdrawal Plan Planner",
+        "description": "Free SWP calculator for India 2025. Compute monthly withdrawals, duration, and remaining balance. Supports fixed or inflation-adjusted withdrawals.",
+        "inLanguage": "en-IN",
+        "url": "https://calculateforme.xyz/blog/swp-calculator-india-2025",
+        "isPartOf": {"@type": "WebSite", "name": "CalculateForMe", "url": "https://calculateforme.xyz/"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calculateforme.xyz/"},
+          {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://calculateforme.xyz/calculators.html"},
+          {"@type": "ListItem", "position": 3, "name": "SWP Calculator", "item": "https://calculateforme.xyz/blog/swp-calculator-india-2025"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What is an SWP?", "acceptedAnswer": {"@type": "Answer", "text": "A Systematic Withdrawal Plan lets you withdraw a fixed or increasing amount from your investment at regular intervals."}},
+          {"@type": "Question", "name": "How does an SWP differ from SIP?", "acceptedAnswer": {"@type": "Answer", "text": "SIP invests regularly to build wealth, whereas SWP withdraws regularly to generate income from an existing corpus."}},
+          {"@type": "Question", "name": "How to calculate monthly withdrawals?", "acceptedAnswer": {"@type": "Answer", "text": "Project monthly interest on the corpus and subtract your withdrawal. You can keep withdrawals fixed or increase them by inflation."}},
+          {"@type": "Question", "name": "How long will my corpus last?", "acceptedAnswer": {"@type": "Answer", "text": "Duration depends on the withdrawal amount, investment returns, and inflation. The calculator simulates month-by-month until depletion or 100 years."}},
+          {"@type": "Question", "name": "What happens if returns are lower?", "acceptedAnswer": {"@type": "Answer", "text": "Lower returns mean less interest to offset withdrawals, so the corpus may deplete faster. Consider reducing withdrawals or increasing corpus."}},
+          {"@type": "Question", "name": "Is SWP good for retirement income?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, SWP is popular for post-retirement income. A conservative withdrawal rate (around 3–4% annually) helps sustainability."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{--blue:#0d6efd;--green:#20c997;--border:#e2e8f0;--text:#1f2937;--muted:#64748b}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#fff;color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{opacity:.85}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.04);padding:16px}
+    section{margin:24px 0}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:1000;background:var(--blue);color:#fff}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+    .brand{font-weight:700}
+    .nav a{color:#fff;font-weight:600}
+
+    /* HERO */
+    .hero{background:#e9f0ff;padding:28px 0}
+    .hero h1{margin:0 0 6px;color:var(--blue);font-size:clamp(22px,4vw,32px)}
+    .hero p{margin:0 0 12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.6rem 1rem;border-radius:999px;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer;font-weight:700}
+    .btn.secondary{background:#fff;color:var(--blue)}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+
+    /* GRID */
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid-2{grid-template-columns:1.1fr .9fr}}
+
+    /* FORM */
+    form label{font-weight:600;color:var(--blue);display:block;margin-bottom:4px}
+    form input{width:100%;padding:.55rem .6rem;border:1px solid var(--border);border-radius:10px;font-size:15px}
+    .row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .opts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .help{font-size:12px;color:var(--muted)}
+    .err{font-size:12px;color:#b91c1c}
+
+    /* KPIs */
+    .kpis{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .kpi{border:1px solid var(--border);border-radius:12px;padding:12px}
+    .kpi .label{font-size:12px;color:var(--muted)}
+    .kpi .value{font-size:20px;font-weight:800}
+
+    /* Bars */
+    #bars{display:grid;gap:10px;margin-top:10px}
+    .bar{background:#f1f5f9;height:14px;border-radius:8px;overflow:hidden}
+    .bar span{display:block;height:100%;width:0;transition:width .4s}
+    .rem{background:var(--green)}
+    .dep{background:var(--blue)}
+
+    /* Table */
+    .table-wrap{overflow:auto;border:1px solid var(--border);border-radius:12px}
+    table{width:100%;border-collapse:separate;border-spacing:0;min-width:720px}
+    caption{padding:10px;font-weight:700;color:var(--blue);text-align:left}
+    th,td{padding:10px;border-top:1px solid var(--border)}
+    thead th{position:sticky;top:0;background:#fff;border-top:none;z-index:1}
+    tbody tr:nth-child(odd){background:#fafafa}
+
+    /* CTA */
+    .cta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* Print */
+    @media print{.nav,.hero,.btn,.cta{display:none!important}.card{box-shadow:none;border:none}}
+  </style>
+</head>
+<body>
+  <!-- 1) NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-wrap">
+      <div class="brand">CalculateForMe</div>
+      <div class="nav-links">
+        <a href="#calculator">Calculator</a>
+        <a href="#guide">Guide</a>
+        <a href="#faqs">FAQs</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2) HERO -->
+  <header class="hero">
+    <div class="container">
+      <h1>SWP Calculator India 2025</h1>
+      <p>Plan your monthly withdrawals, sustainable income, and balance tracking — ideal for retirees.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" id="ctaCalc">Calculate Now</button>
+        <button class="btn secondary" id="ctaLearn">Learn More</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3) CALCULATOR -->
+  <section id="calculator" class="container">
+    <div class="card grid grid-2" aria-labelledby="calc-title">
+      <div>
+        <h2 id="calc-title">SWP Planner</h2>
+        <form id="calcForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="corpus">Corpus / Investment (₹)</label>
+              <input type="number" id="corpus" value="5000000" min="0" step="1000" aria-describedby="h-corpus">
+              <div class="help" id="h-corpus">Your starting corpus (lumpsum).</div>
+              <div class="err" id="e-corpus"></div>
+            </div>
+            <div>
+              <label for="rate">Expected Return (% p.a.)</label>
+              <input type="number" id="rate" value="8" min="0" max="20" step="0.1" aria-describedby="h-rate">
+              <div class="help" id="h-rate">Nominal annual return on investment.</div>
+              <div class="err" id="e-rate"></div>
+            </div>
+            <div>
+              <label for="withdrawal">Monthly Withdrawal (₹)</label>
+              <input type="number" id="withdrawal" value="30000" min="0" step="500" aria-describedby="h-w">
+              <div class="help" id="h-w">Amount you plan to withdraw each month.</div>
+              <div class="err" id="e-withdrawal"></div>
+            </div>
+            <div>
+              <label for="inflation">Inflation Rate (%)</label>
+              <input type="number" id="inflation" value="5" min="0" max="15" step="0.1" aria-describedby="h-infl">
+              <div class="help" id="h-infl">Used when withdrawals are inflation-adjusted.</div>
+              <div class="err" id="e-inflation"></div>
+            </div>
+            <div>
+              <label>Withdrawal Type</label>
+              <div class="opts" role="radiogroup" aria-label="Withdrawal Type">
+                <label style="display:flex;align-items:center;gap:6px"><input type="radio" name="wtype" value="fixed" checked> Fixed</label>
+                <label style="display:flex;align-items:center;gap:6px"><input type="radio" name="wtype" value="infl"> Inflation-adjusted</label>
+              </div>
+            </div>
+            <div>
+              <label for="topup">Annual Top-up in Withdrawal (%)</label>
+              <input type="number" id="topup" value="0" min="0" max="50" step="1" aria-describedby="h-top">
+              <div class="help" id="h-top">Optional yearly increase on top of inflation.</div>
+              <div class="err" id="e-topup"></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+            <button type="button" id="btnCalc" class="btn">Calculate</button>
+            <button type="reset" id="btnReset" class="btn secondary">Reset</button>
+            <a href="#" id="btnCSV" class="btn secondary" download="swp-schedule.csv" aria-label="Download schedule as CSV">Download CSV</a>
+          </div>
+        </form>
+      </div>
+      <div>
+        <h2>Results</h2>
+        <div class="kpis" aria-live="polite">
+          <div class="kpi"><div class="label">Duration (years until corpus exhausts)</div><div class="value" id="outYears">–</div></div>
+          <div class="kpi"><div class="label">Total Withdrawn</div><div class="value" id="outTotal">₹ 0</div></div>
+          <div class="kpi"><div class="label">Total Interest Earned</div><div class="value" id="outInterest">₹ 0</div></div>
+          <div class="kpi"><div class="label">Corpus Left After 20 Years</div><div class="value" id="outLeft">₹ 0</div></div>
+        </div>
+        <div id="bars">
+          <div class="bar" aria-hidden="true"><span id="barDepleted" class="dep" style="width:0%"></span></div>
+          <div class="bar" aria-hidden="true"><span id="barRemaining" class="rem" style="width:0%"></span></div>
+          <div class="help">Top: Depleted vs initial corpus • Bottom: Remaining vs initial corpus</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h2 style="margin-top:0">Schedule</h2>
+      <div class="table-wrap">
+        <table id="schedule">
+          <caption>Annual SWP breakdown</caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Opening</th>
+              <th scope="col">Withdrawal</th>
+              <th scope="col">Interest</th>
+              <th scope="col">Closing</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) GUIDE -->
+  <section id="guide" class="container">
+    <div class="card">
+      <h2>Guide</h2>
+      <h3>What is SWP?</h3>
+      <p>A Systematic Withdrawal Plan (SWP) lets you withdraw a fixed or increasing sum from your investments at regular intervals, creating a steady income stream.</p>
+
+      <h3>Formula used</h3>
+      <pre><code>FV = PV*(1+r/12)^(12*t) − PMT*[(1+r/12)^(12*t) − 1]/(r/12)</code></pre>
+      <p>We reverse the cash flow direction to simulate monthly withdrawals until the corpus depletes or reaches the selected horizon.</p>
+
+      <h3>Inflation adjustment</h3>
+      <p>When enabled, the withdrawal increases every month by the monthly inflation rate (inflation/12). You can also add an annual top-up percentage.</p>
+
+      <h3>Safe withdrawal rate (~4%)</h3>
+      <p>A conservative annual withdrawal near 3–4% of the corpus improves sustainability. Adjust based on risk, returns, and expenses.</p>
+
+      <h3>SWP vs SIP</h3>
+      <ul>
+        <li>SIP: invests periodically to build wealth.</li>
+        <li>SWP: withdraws periodically to generate income from existing wealth.</li>
+      </ul>
+
+      <h3>Example</h3>
+      <p>₹50,00,000 corpus, ₹30,000/month, 8% return, fixed withdrawals. Explore results with the calculator.</p>
+    </div>
+  </section>
+
+  <!-- 5) CTA -->
+  <section class="container">
+    <div class="card cta">
+      <div>
+        <h2 style="margin:0">Want to build this corpus?</h2>
+        <p style="margin:6px 0;color:var(--muted)">Plan growth with SIPs or a full retirement plan.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="#" class="btn">Start a SIP</a>
+        <a href="#" class="btn secondary">Try Retirement Calculator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) FAQS -->
+  <section id="faqs" class="container">
+    <div class="card">
+      <h2>FAQs</h2>
+      <details>
+        <summary>What is an SWP?</summary>
+        <p>An SWP is a plan to withdraw a set amount from your investment at regular intervals, providing periodic income.</p>
+      </details>
+      <details>
+        <summary>How does an SWP differ from SIP?</summary>
+        <p>SIP invests regularly into funds; SWP withdraws regularly from your existing corpus.</p>
+      </details>
+      <details>
+        <summary>How to calculate monthly withdrawals?</summary>
+        <p>Each month, interest is added to the corpus, then your withdrawal is deducted. You can keep it fixed or grow it with inflation.</p>
+      </details>
+      <details>
+        <summary>How long will my corpus last?</summary>
+        <p>Depends on return, withdrawal, and inflation. The calculator simulates month-by-month until depletion or 100 years.</p>
+      </details>
+      <details>
+        <summary>What happens if returns are lower?</summary>
+        <p>Lower returns reduce interest earned, so the corpus can deplete sooner. Consider lowering withdrawals or increasing the corpus.</p>
+      </details>
+      <details>
+        <summary>Is SWP good for retirement income?</summary>
+        <p>Yes, if withdrawals are conservative and reviewed annually. Many retirees target around 3–4% per year.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 7) FOOTER -->
+  <footer class="container" style="margin:32px auto 48px">
+    <div class="card" style="text-align:center">
+      <p style="margin:.2rem 0;color:var(--muted)">Estimates are for guidance; not guaranteed returns.</p>
+      <p style="margin:.2rem 0">© <span id="year"></span> CalculateForMe</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    const $ = (s,root=document)=>root.querySelector(s);
+
+    // Scroll CTAs
+    $('#ctaCalc').addEventListener('click',()=>$('#calculator').scrollIntoView({behavior:'smooth'}));
+    $('#ctaLearn').addEventListener('click',()=>$('#guide').scrollIntoView({behavior:'smooth'}));
+
+    function formatINR(num){
+      const n = Math.round(Number(num)||0);
+      const s = String(n);
+      const last3 = s.slice(-3);
+      const other = s.slice(0,-3);
+      return '₹ ' + (other?other.replace(/\B(?=(\d{2})+(?!\d))/g,',')+',':'') + last3;
+    }
+
+    const els = {
+      corpus: $('#corpus'), rate: $('#rate'), withdrawal: $('#withdrawal'), inflation: $('#inflation'), topup: $('#topup'),
+      btnCalc: $('#btnCalc'), btnReset: $('#btnReset'), btnCSV: $('#btnCSV'),
+      outYears: $('#outYears'), outTotal: $('#outTotal'), outInterest: $('#outInterest'), outLeft: $('#outLeft'),
+      barDepleted: $('#barDepleted'), barRemaining: $('#barRemaining'),
+      tbody: document.querySelector('#schedule tbody')
+    };
+
+    function getType(){ return (document.querySelector('input[name="wtype"]:checked')||{}).value || 'fixed'; }
+
+    const rules = {
+      corpus:v=>v>=0||'Must be ≥ 0',
+      rate:v=>v>=0&&v<=20||'0–20% allowed',
+      withdrawal:v=>v>=0||'Must be ≥ 0',
+      inflation:v=>v>=0&&v<=15||'0–15% allowed',
+      topup:v=>v>=0&&v<=50||'0–50% allowed'
+    };
+
+    function validate(){
+      const vals = getVals(); let ok = true;
+      function setErr(id,msg){ const e = document.getElementById('e-'+id); if(e) e.textContent = msg||''; }
+      for(const k of ['corpus','rate','withdrawal','inflation','topup']){
+        const res = rules[k](Number(vals[k]));
+        if(res!==true){ ok=false; setErr(k,res); } else setErr(k,'');
+      }
+      els.btnCalc.disabled = !ok; return ok;
+    }
+
+    function getVals(){
+      return {
+        corpus: Number(els.corpus.value||0),
+        rate: Number(els.rate.value||0),
+        withdrawal: Number(els.withdrawal.value||0),
+        inflation: Number(els.inflation.value||0),
+        topup: Number(els.topup.value||0),
+        type: getType()
+      };
+    }
+
+    let hasCalculated=false; let debounce;
+
+    function calc(){
+      if(!validate()) return;
+      const {corpus, rate, withdrawal, inflation, topup, type} = getVals();
+      const rMonthly = rate/100/12;
+      const inflMonthly = inflation/100/12;
+      const maxMonths = 1200; // 100 years cap
+
+      let balance = corpus;
+      let totalWithdraw = 0; let totalInterest = 0;
+      let months = 0; let currentW = withdrawal;
+      let balanceAfter20 = corpus; // will be updated at m=240
+
+      // schedule per year
+      const schedule=[]; let y=1; let yOpen = balance, yW=0, yI=0;
+
+      while(balance>0 && months < maxMonths){
+        months++;
+        // annual top-up at start of year (month 13, 25, ...)
+        if(months>1 && (months-1)%12===0 && topup>0){ currentW *= (1 + topup/100); }
+        // monthly inflation adjustment if selected
+        if(type==='infl' && months>1){ currentW *= (1 + inflMonthly); }
+
+        const interest = balance * rMonthly;
+        const available = balance + interest;
+        const wThis = Math.min(currentW, available);
+        balance = available - wThis;
+
+        totalInterest += interest;
+        totalWithdraw += wThis;
+        yW += wThis; yI += interest;
+
+        if(months===240){ balanceAfter20 = balance; }
+
+        if(months%12===0 || balance===0){
+          schedule.push({year:y, opening:yOpen, withdrawal:yW, interest:yI, closing:balance});
+          y++; yOpen = balance; yW=0; yI=0;
+        }
+      }
+
+      // KPIs
+      const years = balance===0 ? (months/12) : (months>=maxMonths ? '≥100' : (months/12));
+      els.outYears.textContent = typeof years==='string' ? years : (Math.round(years*100)/100).toString();
+      els.outTotal.textContent = formatINR(totalWithdraw);
+      els.outInterest.textContent = formatINR(totalInterest);
+      els.outLeft.textContent = formatINR(balanceAfter20);
+
+      // Bars vs initial corpus
+      const pctRem = corpus>0 ? Math.max(0, Math.min(100, (balance/corpus)*100)) : 0;
+      els.barRemaining.style.width = pctRem + '%';
+      els.barDepleted.style.width = (100 - pctRem) + '%';
+
+      // Render table
+      renderTable(schedule);
+      makeCSV(schedule);
+      hasCalculated = true;
+    }
+
+    function renderTable(rows){
+      const tb = els.tbody; tb.innerHTML='';
+      const frag = document.createDocumentFragment();
+      for(const r of rows){
+        const tr = document.createElement('tr');
+        const tds = [r.year, formatINR(r.opening), formatINR(r.withdrawal), formatINR(r.interest), formatINR(r.closing)];
+        for(const c of tds){ const td = document.createElement('td'); td.textContent = c; tr.appendChild(td); }
+        frag.appendChild(tr);
+      }
+      tb.appendChild(frag);
+    }
+
+    function makeCSV(rows){
+      const header = ['Year','Opening','Withdrawal','Interest','Closing'];
+      const csv = [header].concat(rows.map(r=>[
+        r.year,
+        Math.round(r.opening),
+        Math.round(r.withdrawal),
+        Math.round(r.interest),
+        Math.round(r.closing)
+      ])).map(a=>a.join(',')).join('\r\n');
+      const blob = new Blob([csv],{type:'text/csv'});
+      const url = URL.createObjectURL(blob);
+      els.btnCSV.href = url;
+    }
+
+    // Events
+    els.btnCalc.addEventListener('click', calc);
+    els.btnReset.addEventListener('click', ()=>{
+      setTimeout(()=>{ hasCalculated=false; validate(); calc(); },0);
+    });
+    document.getElementById('calcForm').addEventListener('input', ()=>{
+      validate(); if(!hasCalculated) return; clearTimeout(debounce); debounce=setTimeout(calc,200);
+    });
+
+    // Init
+    document.getElementById('year').textContent = new Date().getFullYear();
+    validate(); calc();
+  })();
+  </script>
+</body>
+</html>
