@@ -1,62 +1,382 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calorie Calculator Se Weight Loss Kaise Karein - Complete Diet Guide | Calculate For Me</title>
-    <meta name="description" content="Calorie calculator के साथ effective weight loss करें। Daily calorie needs, BMR calculation, diet planning, और weight management की complete guide।">
-    <meta name="keywords" content="calorie calculator, weight loss, BMR calculator, diet plan, calorie counting, weight management, healthy eating">
-    
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calorie Calculator for Weight Loss (India 2025) | BMR, TDEE & Diet Guide | CalculateForMe</title>
+  <meta name="description" content="Free Calorie Calculator India 2025. Calculate your BMR, TDEE, and daily calories for weight loss or muscle gain. Includes BMI, macros, and Indian diet examples.">
+  <link rel="canonical" href="https://calculateforme.xyz/blog/calorie-calculator-weight-loss-guide">
+  <meta name="keywords" content="calorie calculator india, weight loss calculator, bmr tdee calculator, diet plan, calorie deficit, macros, bmi calculator">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0d6efd">
+  <link rel="icon" href="https://calculateforme.xyz/favicon.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calorie Calculator for Weight Loss (India 2025) | BMR, TDEE & Diet Guide | CalculateForMe">
+  <meta property="og:description" content="Calculate BMR, TDEE, and goal calories for weight loss or muscle gain. Includes BMI, macros, and Indian diet tips.">
+  <meta property="og:url" content="https://calculateforme.xyz/blog/calorie-calculator-weight-loss-guide">
+  <meta property="og:image" content="https://calculateforme.xyz/images/calorie-calculator-2025.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calorie Calculator for Weight Loss (India 2025)">
+  <meta name="twitter:description" content="Free BMR & TDEE calculator with Indian diet guide and macros.">
+  <meta name="twitter:image" content="https://calculateforme.xyz/images/calorie-calculator-2025.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Calorie Calculator for Weight Loss (India 2025)",
+        "description": "Free Calorie Calculator India 2025. Calculate your BMR, TDEE, and daily calories for weight loss or muscle gain. Includes BMI, macros, and Indian diet examples.",
+        "inLanguage": "en-IN",
+        "url": "https://calculateforme.xyz/blog/calorie-calculator-weight-loss-guide",
+        "isPartOf": {"@type":"WebSite","name":"CalculateForMe","url":"https://calculateforme.xyz/"},
+        "publisher": {"@type":"Organization","name":"CalculateForMe","logo":{"@type":"ImageObject","url":"https://calculateforme.xyz/favicon.png"}}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://calculateforme.xyz/"},
+          {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calculateforme.xyz/calculators.html"},
+          {"@type":"ListItem","position":3,"name":"Calorie Calculator","item":"https://calculateforme.xyz/blog/calorie-calculator-weight-loss-guide"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"How many calories should I eat to lose weight?","acceptedAnswer":{"@type":"Answer","text":"A 500 kcal/day deficit from your TDEE typically leads to ~0.45 kg/week weight loss. Use the calculator to personalize."}},
+          {"@type":"Question","name":"What is BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR is your resting energy need. TDEE = BMR × activity factor and reflects your daily maintenance calories."}},
+          {"@type":"Question","name":"How to create a calorie deficit?","acceptedAnswer":{"@type":"Answer","text":"Combine modest calorie reduction with activity. Aim for ~500 kcal/day deficit; adjust based on progress and energy."}},
+          {"@type":"Question","name":"How to calculate macros for fat loss?","acceptedAnswer":{"@type":"Answer","text":"A common macro split for fat loss is Protein/Carbs/Fat = 30/45/25 of calories. Adjust to preference and tolerance."}},
+          {"@type":"Question","name":"How much weight can I safely lose per week?","acceptedAnswer":{"@type":"Answer","text":"About 0.25–0.75 kg/week is typical; ~0.45 kg/week with a 500 kcal/day deficit is a common guide."}},
+          {"@type":"Question","name":"What are healthy Indian food options for weight loss?","acceptedAnswer":{"@type":"Answer","text":"Oats, dal, veggies, roti, paneer, curd, nuts, brown rice, and pulses are nutritious options when portioned sensibly."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{--blue:#0d6efd;--green:#20c997;--border:#e2e8f0;--text:#1f2937;--muted:#64748b}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#fff;color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{opacity:.85}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    section{margin:24px 0}
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.04);padding:16px}
+    .grid{display:grid;gap:16px}
+
+    /* NAV */
+    .nav{position:sticky;top:0;background:var(--blue);color:#fff;z-index:1000}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+    .nav a{color:#fff;font-weight:600}
+    .brand{font-weight:800}
+
+    /* HERO */
+    .hero{background:#e9f0ff;padding:28px 0}
+    .hero h1{margin:0 0 6px;color:var(--blue);font-size:clamp(22px,4vw,32px)}
+    .hero p{margin:0 0 12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.6rem 1rem;border-radius:999px;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer;font-weight:700}
+    .btn.secondary{background:#fff;color:var(--blue)}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+
+    /* FORM */
+    @media(min-width:900px){.grid-2{grid-template-columns:1.05fr .95fr}}
+    form label{display:block;font-weight:600;color:var(--blue);margin-bottom:4px}
+    form input,form select{width:100%;padding:.55rem .6rem;border:1px solid var(--border);border-radius:10px;font-size:15px}
+    .row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .help{font-size:12px;color:var(--muted)}
+    .err{font-size:12px;color:#b91c1c}
+
+    /* KPIs */
+    .kpis{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .kpi{border:1px solid var(--border);border-radius:12px;padding:12px}
+    .kpi .label{font-size:12px;color:var(--muted)}
+    .kpi .value{font-size:20px;font-weight:800}
+
+    /* Progress */
+    .bar{background:#f1f5f9;height:14px;border-radius:8px;overflow:hidden}
+    .bar span{display:block;height:100%;width:0;background:var(--green);transition:width .4s}
+    .legend{font-size:12px;color:var(--muted)}
+
+    /* FAQ */
+    details{border:1px solid var(--border);border-radius:10px;padding:10px;margin:8px 0;transition:all .2s}
+    details[open]{box-shadow:0 4px 16px rgba(0,0,0,.05)}
+
+    /* Footer */
+    footer .card{text-align:center}
+
+    /* Print */
+    @media print{.nav,.hero,.btn,.cta,.related{display:none!important}.card{box-shadow:none;border:none}}
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="../index.html" class="logo">
-                    <i class="fas fa-calculator"></i>
-                    <span>Calculate For Me</span>
-                </a>
-                <div class="nav-links">
-                    <a href="../calculators.html">Calculators</a>
-                    <a href="../calculators.html">Popular</a>
-                    <a href="../blog.html"><i class="fas fa-book"></i> Blog</a>
-                    <a href="../saved-calculations.html"><i class="fas fa-save"></i> Saved</a>
-                    <a href="../about.html">About</a>
-                    <a href="../contact.html">Contact</a>
-                </div>
+  <!-- NAVBAR -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container nav-wrap">
+      <div class="brand">CalculateForMe</div>
+      <div class="links" role="navigation" aria-label="Header links" style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="/">Home</a>
+        <a href="/calculators.html">Calculators</a>
+        <a href="#calculator">Health Tools</a>
+        <a href="#faqs">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <h1>Calorie Calculator for Weight Loss (India 2025)</h1>
+      <p>Calculate how many calories you need daily for fat loss or maintenance using the BMR &amp; TDEE method.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" id="ctaCalc">Calculate Now</button>
+        <button class="btn secondary" id="ctaLearn">Learn Diet Tips</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CALCULATOR -->
+  <section id="calculator" class="container">
+    <div class="card grid grid-2" aria-labelledby="calc-title">
+      <div>
+        <h2 id="calc-title">Calorie Calculator</h2>
+        <form id="calcForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="age">Age (years)</label>
+              <input type="number" id="age" value="28" min="15" max="80" aria-describedby="h-age">
+              <div id="h-age" class="help">Enter between 15 and 80 years.</div>
+              <div class="err" id="e-age"></div>
             </div>
+            <div>
+              <label for="gender">Gender</label>
+              <select id="gender" aria-label="Gender">
+                <option value="male" selected>Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div>
+              <label for="height">Height (cm)</label>
+              <input type="number" id="height" value="170" min="120" max="220" aria-describedby="h-height">
+              <div id="h-height" class="help">120–220 cm</div>
+              <div class="err" id="e-height"></div>
+            </div>
+            <div>
+              <label for="weight">Weight (kg)</label>
+              <input type="number" id="weight" value="70" min="30" max="180" aria-describedby="h-weight">
+              <div id="h-weight" class="help">30–180 kg</div>
+              <div class="err" id="e-weight"></div>
+            </div>
+            <div>
+              <label for="activity">Activity Level</label>
+              <select id="activity">
+                <option value="1.2">Sedentary</option>
+                <option value="1.375">Light (1–3 days/week)</option>
+                <option value="1.55" selected>Moderate (3–5 days/week)</option>
+                <option value="1.725">Active (6–7 days/week)</option>
+                <option value="1.9">Very Active</option>
+              </select>
+            </div>
+            <div>
+              <label for="goal">Goal</label>
+              <select id="goal">
+                <option value="lose">Lose Weight</option>
+                <option value="maintain" selected>Maintain</option>
+                <option value="gain">Gain Weight</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+            <button type="button" id="btnCalc" class="btn">Calculate</button>
+            <button type="reset" id="btnReset" class="btn secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <h2>Results</h2>
+        <div class="kpis" aria-live="polite">
+          <div class="kpi"><div class="label">BMR</div><div class="value" id="outBMR">0</div></div>
+          <div class="kpi"><div class="label">TDEE</div><div class="value" id="outTDEE">0</div></div>
+          <div class="kpi"><div class="label">Goal Calories</div><div class="value" id="outGoal">0</div></div>
+          <div class="kpi"><div class="label">Weekly Weight Change</div><div class="value" id="outWeekly">0 kg/week</div></div>
         </div>
-    </nav>
-
-    <main id="content" class="container" style="min-height:40vh; padding:3rem 0;"></main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3><i class="fas fa-calculator"></i> Calculate For Me</h3>
-                    <p>Your comprehensive suite of free online calculators for every need.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../blog.html">Blog</a></li>
-                        <li><a href="../calculators/calorie-calculator.html">Calorie Calculator</a></li>
-                        <li><a href="../calculators/bmi-calculator.html">BMI Calculator</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Calculate For Me. All rights reserved.</p>
-            </div>
+        <div class="bar" style="margin-top:10px" aria-label="Goal vs maintenance bar">
+          <span id="goalBar" style="width:0%"></span>
         </div>
-    </footer>
+        <div class="legend">Bar shows goal calories as % of TDEE (100% = maintenance)</div>
+      </div>
+    </div>
+  </section>
 
-    <script src="../js/main.js"></script>
+  <!-- GUIDE -->
+  <section id="guide" class="container">
+    <div class="card">
+      <h2>Weight Loss Guide</h2>
+      <h3>Understanding Calories, BMR &amp; TDEE</h3>
+      <p>BMR is the energy your body needs at rest. TDEE multiplies BMR by your activity to estimate daily maintenance calories.</p>
+      <h3>Creating a Calorie Deficit Safely</h3>
+      <p>A common target is a 500 kcal/day deficit (≈0.45 kg/week). Prioritize protein, fiber, and whole foods to stay full.</p>
+      <h3>How to Track Food Calories</h3>
+      <p>Use nutrition apps or labels. Typical Indian foods: dal, roti, brown rice, curd, paneer, pulses, and vegetables.</p>
+      <h3>Macro Split Example</h3>
+      <p>P/C/F = 30/45/25. Adjust based on satiety and performance.</p>
+      <h3>Sample 1800 kcal Indian Weight Loss Diet</h3>
+      <ul>
+        <li>Breakfast: Oats + Egg Whites</li>
+        <li>Lunch: Brown Rice + Dal + Veggies</li>
+        <li>Snack: Curd + Nuts</li>
+        <li>Dinner: Roti + Paneer + Salad</li>
+      </ul>
+      <h3>Exercise Recommendation</h3>
+      <p>Do 30–45 minutes of brisk walking or cardio most days. Include strength training 2–3x/week if possible.</p>
+      <h3>Water &amp; Sleep Tips</h3>
+      <p>Drink enough water (2–3L/day) and aim for 7–8 hours of sleep to support recovery and appetite control.</p>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section id="faqs" class="container">
+    <div class="card">
+      <h2>FAQs</h2>
+      <details>
+        <summary>How many calories should I eat to lose weight?</summary>
+        <p>Use a ~500 kcal/day deficit from TDEE for steady, sustainable fat loss.</p>
+      </details>
+      <details>
+        <summary>What is BMR and TDEE?</summary>
+        <p>BMR is resting energy; TDEE includes activity. TDEE ≈ daily maintenance calories.</p>
+      </details>
+      <details>
+        <summary>How to create a calorie deficit?</summary>
+        <p>Reduce portion sizes, choose lean proteins, track intake, and increase daily activity.</p>
+      </details>
+      <details>
+        <summary>How to calculate macros for fat loss?</summary>
+        <p>A starting split of Protein 30%, Carbs 45%, Fat 25% works for many people.</p>
+      </details>
+      <details>
+        <summary>How much weight can I safely lose per week?</summary>
+        <p>About 0.25–0.75 kg/week is typical; ~0.45 kg/week at a 500 kcal/day deficit.</p>
+      </details>
+      <details>
+        <summary>What are healthy Indian food options for weight loss?</summary>
+        <p>Dal, roti, brown rice, veggies, curd, paneer, pulses, fruits, and nuts in sensible portions.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container cta">
+    <div class="card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>
+        <h2 style="margin:0">Plan smarter. Track your calories, reach your goal.</h2>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="#" class="btn secondary">BMI Calculator</a>
+        <a href="#" class="btn secondary">Macro Calculator</a>
+        <a href="#" class="btn">Meal Planner</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="container related">
+    <div class="card">
+      <h2>Related Tools</h2>
+      <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;list-style:none;padding:0;margin:0">
+        <li><a href="#">BMI Calculator</a></li>
+        <li><a href="#">Macro Calculator</a></li>
+        <li><a href="#">Calorie Burn Estimator</a></li>
+        <li><a href="#">Protein Calculator</a></li>
+        <li><a href="#">Step Counter Estimator</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="container" style="margin:32px auto 48px">
+    <div class="card">
+      <p style="margin:.2rem 0;color:var(--muted)">Results are approximate and for informational use only. © CalculateForMe 2025.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    const $ = (s,root=document)=>root.querySelector(s);
+    const formatIN = (num)=>{
+      const n = Math.round(Number(num)||0); const s = String(n);
+      const last3 = s.slice(-3); const other = s.slice(0,-3);
+      return (other?other.replace(/\B(?=(\d{2})+(?!\d))/g,',')+',':'') + last3;
+    };
+
+    // Scroll shortcuts
+    $('#ctaCalc').addEventListener('click',()=>$('#calculator').scrollIntoView({behavior:'smooth'}));
+    $('#ctaLearn').addEventListener('click',()=>$('#guide').scrollIntoView({behavior:'smooth'}));
+
+    const els = {
+      age: $('#age'), gender: $('#gender'), height: $('#height'), weight: $('#weight'), activity: $('#activity'), goal: $('#goal'),
+      outBMR: $('#outBMR'), outTDEE: $('#outTDEE'), outGoal: $('#outGoal'), outWeekly: $('#outWeekly'), goalBar: $('#goalBar'),
+      btnCalc: $('#btnCalc'), btnReset: $('#btnReset')
+    };
+
+    const rules = {
+      age:v=>v>=15&&v<=80||'Enter 15–80',
+      height:v=>v>=120&&v<=220||'Enter 120–220 cm',
+      weight:v=>v>=30&&v<=180||'Enter 30–180 kg'
+    };
+
+    function validate(){
+      let ok = true; const vals = getVals();
+      function setErr(id,msg){ const e = $('#e-'+id); if(e) e.textContent = msg||''; }
+      for(const key of ['age','height','weight']){
+        const pass = rules[key](Number(vals[key])); if(pass!==true){ ok=false; setErr(key, pass);} else setErr(key,'');
+      }
+      els.btnCalc.disabled = !ok; return ok;
+    }
+
+    function getVals(){
+      return {
+        age: Number(els.age.value||0),
+        gender: els.gender.value,
+        height: Number(els.height.value||0),
+        weight: Number(els.weight.value||0),
+        activity: Number(els.activity.value||1.2),
+        goal: els.goal.value
+      };
+    }
+
+    function calc(){
+      if(!validate()) return;
+      const {age, gender, height, weight, activity, goal} = getVals();
+      // Mifflin–St Jeor (metric)
+      let bmr = 10*weight + 6.25*height - 5*age + (gender==='male' ? 5 : -161);
+      const tdee = bmr * activity;
+      let goalCals = tdee;
+      let weekly = 0;
+      if(goal==='lose'){ goalCals = tdee - 500; weekly = -0.45; }
+      if(goal==='gain'){ goalCals = tdee + 500; weekly = 0.45; }
+
+      // Output (no decimals)
+      els.outBMR.textContent = formatIN(bmr);
+      els.outTDEE.textContent = formatIN(tdee);
+      els.outGoal.textContent = formatIN(goalCals);
+      els.outWeekly.textContent = (weekly>0?'+':'') + weekly.toFixed(2) + ' kg/week';
+
+      // Progress bar vs TDEE (100% = maintenance)
+      const pct = tdee>0 ? Math.max(0, Math.min(150, (goalCals/tdee)*100)) : 0; // cap at 150%
+      els.goalBar.style.width = pct + '%';
+    }
+
+    // Events
+    els.btnCalc.addEventListener('click', calc);
+    els.btnReset.addEventListener('click', ()=>{ setTimeout(()=>{ validate(); calc(); },0); });
+    document.getElementById('calcForm').addEventListener('input', ()=>{ validate(); });
+
+    // Init
+    validate(); calc();
+  })();
+  </script>
 </body>
 </html>
